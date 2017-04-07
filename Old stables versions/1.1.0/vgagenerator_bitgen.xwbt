@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\Users\pascal.roulin\Desktop\S5_vga\vgagenerator.ncd
-OUTFILE=C:\Users\pascal.roulin\Desktop\S5_vga\vgagenerator.bit
-FAMILY=Spartan6
-PART=xc6slx16-3csg324
-WORKINGDIR=C:\Users\pascal.roulin\Desktop\S5_vga
-LICENSE=ISE
-USER_INFO=174116392_174116393_210614678_748

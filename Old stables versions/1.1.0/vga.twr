@@ -1,0 +1,91 @@
+--------------------------------------------------------------------------------
+Release 12.4 Trace  (nt)
+Copyright (c) 1995-2010 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\12.4\ISE_DS\ISE\bin\nt\unwrapped\trce.exe -intstyle ise -v 3 -s 3 -n
+3 -fastpaths -xml vga.twx vga.ncd -o vga.twr vga.pcf
+
+Design file:              vga.ncd
+Physical constraint file: vga.pcf
+Device,package,speed:     xc6slx16,csg324,C,-3 (PRODUCTION 1.15 2010-12-02)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:2698 - No timing constraints found, doing default enumeration.
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Setup/Hold to clock pixel_clk
+------------+------------+------------+------------+------------+------------------+--------+
+            |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
+Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
+------------+------------+------------+------------+------------+------------------+--------+
+rst         |    2.339(R)|      SLOW  |    0.052(R)|      SLOW  |pixel_clk_BUFGP   |   0.000|
+------------+------------+------------+------------+------------+------------------+--------+
+
+Clock pixel_clk to Pad
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+            |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
+Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+blank       |         7.683(R)|      SLOW  |         4.011(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hcount<0>   |         7.131(R)|      SLOW  |         3.616(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hcount<1>   |         7.112(R)|      SLOW  |         3.605(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hcount<2>   |         7.143(R)|      SLOW  |         3.630(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hcount<3>   |         7.353(R)|      SLOW  |         3.767(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hcount<4>   |         7.175(R)|      SLOW  |         3.634(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hcount<5>   |         7.314(R)|      SLOW  |         3.724(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hcount<6>   |         7.067(R)|      SLOW  |         3.595(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hcount<7>   |         7.066(R)|      SLOW  |         3.594(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hcount<8>   |         7.216(R)|      SLOW  |         3.675(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hcount<9>   |         7.333(R)|      SLOW  |         3.788(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hcount<10>  |         7.350(R)|      SLOW  |         3.771(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+hs          |         7.146(R)|      SLOW  |         3.589(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+vcount<0>   |         7.046(R)|      SLOW  |         3.568(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+vcount<1>   |         7.125(R)|      SLOW  |         3.619(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+vcount<2>   |         6.930(R)|      SLOW  |         3.516(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+vcount<3>   |         7.010(R)|      SLOW  |         3.568(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+vcount<4>   |         7.080(R)|      SLOW  |         3.590(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+vcount<5>   |         7.336(R)|      SLOW  |         3.753(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+vcount<6>   |         7.360(R)|      SLOW  |         3.771(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+vcount<7>   |         7.433(R)|      SLOW  |         3.837(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+vcount<8>   |         7.477(R)|      SLOW  |         3.880(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+vcount<9>   |         7.449(R)|      SLOW  |         3.879(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+vs          |         6.873(R)|      SLOW  |         3.473(R)|      FAST  |pixel_clk_BUFGP   |   0.000|
+------------+-----------------+------------+-----------------+------------+------------------+--------+
+
+Clock to Setup on destination clock pixel_clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+pixel_clk      |    2.836|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Analysis completed Thu Mar 02 09:56:37 2017 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 144 MB
+
+
+

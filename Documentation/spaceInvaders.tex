@@ -1,0 +1,170 @@
+\documentclass[french]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{babel}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{lipsum}
+\usepackage[european, siunitx]{circuitikz}
+\usepackage{pgfplots}
+\usepackage{nameref} % For reference
+\usepackage{hyperref} % url reference
+\usepackage{tikz} % State diagram
+\usetikzlibrary{automata,positioning} % State diagram
+\usetikzlibrary{arrows} % State diagram
+\usetikzlibrary{automata} 
+\usetikzlibrary[automata]
+\usetikzlibrary{circuits.logic.IEC,calc}
+\usetikzlibrary{babel}
+\usetikzlibrary{positioning} % state diagram x and y 
+\usepackage{amsmath} % For matrix in state machine
+\usepackage{xcolor}
+\usepackage[framemethod=tikz]{mdframed}
+\usepackage{beramono} % monospaced font with bold variant
+\usepackage{lastpage} % To add lastpage référence.
+\usepackage{siunitx} % For microsecond
+\usepackage{listings} % Required for insertion of code
+\usepackage{eso-pic} % Title background
+\usepackage[explicit]{titlesec}
+\usepackage{ulem}
+
+
+\newcommand\BackgroundPic{%
+\put(0,0){%
+\parbox[b][\paperheight]{\paperwidth}{%
+\vfill
+\centering
+\includegraphics[width=\paperwidth,height=\paperheight,%
+keepaspectratio]{background.png}%
+\vfill
+}}} % For title background
+
+
+%----------------------------------------------------------------------------------
+% Configuration, don't touch it motherfucker
+%----------------------------------------------------------------------------------
+
+\pgfplotsset{width=10cm,compat=1.9}
+
+\titleformat{\section}
+{\normalfont\Large\bfseries}{}{0em}{\colorbox{blue!65}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\thesection\quad#1}}}}
+\titleformat{name=\section,numberless}
+{\normalfont\Large\bfseries}{}{0em}{\colorbox{blue!65}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}}
+
+\hypersetup{            % reference colors
+    colorlinks=true,
+    linkcolor=darkgreen,
+    pdfborder = {0 0 0},
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\hypersetup{linkcolor=black}
+
+
+\setcounter{tocdepth}{2} % Only show up to subsection in table of content
+
+
+\setlength{\parindent}{0ex} % Paragraph indet
+\geometry{margin=1in} % Marging
+\pagestyle{fancy} % For header/footer
+\fancyhf{}
+\cfoot{Fribourg, \today}
+\rhead{\leftmark}
+\lhead{Super Mario Bros - FPGA Edition}
+\rfoot{Page \thepage / \pageref*{LastPage}}
+\lfoot{Samuel Riedo \& Pascal Roulin}
+\renewcommand\headrulewidth{0.4pt} % Size of the header rule
+\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
+
+% Signature
+\newcommand*{\Signature}[1]{%
+    \par\noindent\makebox[2.0in]{\hrulefill} 
+    \par\noindent\makebox[2.0in][l]{#1}
+}
+
+% Double signatures
+\newcommand*{\Doublesignature}[2]{%
+    \par\noindent\makebox[2.0in]{\hrulefill} \hfill\makebox[2.0in]{\hrulefill}%
+    \par\noindent\makebox[2.0in][l]{#1}      \hfill\makebox[2.0in][l]{#2}%
+}
+
+% Quatre signatures
+\newcommand*{\Foursignature}[4]{%
+    \par\noindent\makebox[2.0in]{\hrulefill} \hfill\makebox[2.0in]{\hrulefill}%
+    \par\noindent\makebox[2.0in][l]{#1}      \hfill\makebox[2.0in][l]{#2}%
+    \vspace{0.5in}
+    \par\noindent\makebox[2.0in]{\hrulefill} \hfill\makebox[2.0in]{\hrulefill}%
+    \par\noindent\makebox[2.0in][l]{#3}      \hfill\makebox[2.0in][l]{#4}%
+}
+
+\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
+\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
+}
+\lstloadlanguages{vhdl}
+\definecolor{darkgreen}{rgb}{0.1, 0.65, 0.35}
+
+\lstset{language=vhdl,
+    frame=single,
+    basicstyle=\footnotesize,
+    keywordstyle=[1]\color{blue}\bf, % VHDL functions bold and blue
+    keywordstyle=[2]\color{red}\bf, % VHDL function arguments red
+    keywordstyle=[3]\color{cyan!50}, % Custom functions cyan
+    stringstyle=\ttfamily\color{orange}, % String style
+    commentstyle=\color{darkgreen}\small, % Comments small dark green courier font
+    showstringspaces=false, % Don't put marks in string spaces
+    tabsize=2, % 2 spaces per tab
+    numbers=left, % Line numbers on left
+    firstnumber=1, % Line numbers start with line 1
+    numberstyle=\tiny\color{blue}, % Line numbers are blue and small
+    stepnumber=5, % Line numbers go in steps of 5
+    morekeywords=[1]{
+    library, use ,all,entity,is,port,in,out,end,architecture,of, body, function, variable,
+    begin,and,or,Not,downto,ALL, signal, process, if, else, elsif, case, when,
+    then, range, to, component, type, with, select, others, constant, inout,
+    buffer, map, true, false, array, subtype, wait, wait for, generic
+    },
+    morekeywords=[2]{
+    STD_LOGIC_VECTOR,STD_LOGIC,IEEE,STD_LOGIC_1164, work, local, real,
+    math_real, time, 
+    NUMERIC_STD,STD_LOGIC_ARITH,STD_LOGIC_UNSIGNED,std_logic_vector,
+    std_logic, ieee, numeric_std, std_ulogic, std_logic_1164, natural, bit, bit_vector, signed, unsigned, boolean, integer
+    },
+    morekeywords=[3]{rising_edge, falling_edge, resize, to_signed, to_unsigned},
+    morecomment=[l]{--},
+    morecomment=[s][\color{orange}]{'}{'}, % Color in orange string between ' and '
+}
+
+\setlength{\headheight}{12.1638pt}
+
+
+\begin{document}
+
+%----------------------------------------------------------------------------------
+% Title
+%----------------------------------------------------------------------------------
+
+\begingroup
+\thispagestyle{empty}
+\AddToShipoutPicture*{\includegraphics[width=\paperwidth,height=\paperheight]{pictures/background}} % Image background
+\centering
+\vspace*{5.4cm}
+{ \Huge \bfseries Super Mario Bros \\[1cm] }
+{ \Huge \bfseries FPGA Edition \\[1.5cm] }
+{\huge Samuel Riedo \& Pascal Roulin}\par % Author name
+\endgroup
+
+%----------------------------------------------------------------------------------
+% Table of contents
+%----------------------------------------------------------------------------------
+
+\newpage
+\tableofcontents
+\newpage
+
+%----------------------------------------------------------------------------------
+% Introduction
+%----------------------------------------------------------------------------------
+
+
+\end{document}

@@ -1,0 +1,33 @@
+# Reading C:/modeltech64_10.4c/tcl/vsim/pref.tcl
+# //  ModelSim SE-64 10.4c Jul 20 2015 
+# //
+# //  Copyright 1991-2015 Mentor Graphics Corporation
+# //  All Rights Reserved.
+# //
+# //  THIS WORK CONTAINS TRADE SECRET AND PROPRIETARY INFORMATION
+# //  WHICH IS THE PROPERTY OF MENTOR GRAPHICS CORPORATION OR ITS
+# //  LICENSORS AND IS SUBJECT TO LICENSE TERMS.
+# //  THIS DOCUMENT CONTAINS TRADE SECRETS AND COMMERCIAL OR FINANCIAL
+# //  INFORMATION THAT ARE PRIVILEGED, CONFIDENTIAL, AND EXEMPT FROM
+# //  DISCLOSURE UNDER THE FREEDOM OF INFORMATION ACT, 5 U.S.C. SECTION 552.
+# //  FURTHERMORE, THIS INFORMATION IS PROHIBITED FROM DISCLOSURE UNDER
+# //  THE TRADE SECRETS ACT, 18 U.S.C. SECTION 1905.
+# //
+# do {vgagenerator.fdo}
+# ** Warning: (vlib-34) Library already exists at "work".
+# 
+# Model Technology ModelSim SE-64 vcom 10.4c Compiler 2015.07 Jul 20 2015
+# Start time: 10:30:43 on Mar 30,2017
+# vcom -reportprogress 300 -explicit -93 ipcore_dir/rom_map2.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# ** Error: ipcore_dir/rom_map2.vhd(41): Library xilinxcorelib not found.
+# ** Error: ipcore_dir/rom_map2.vhd(43): VHDL Compiler exiting
+# End time: 10:30:43 on Mar 30,2017, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 0
+# ** Error: C:/modeltech64_10.4c/win64/vcom failed.
+# Error in macro ./vgagenerator.fdo line 23
+# C:/modeltech64_10.4c/win64/vcom failed.
+#     while executing
+# "vcom -explicit  -93 "ipcore_dir/rom_map2.vhd""

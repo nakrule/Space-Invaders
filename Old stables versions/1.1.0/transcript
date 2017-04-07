@@ -1,0 +1,73 @@
+# Reading C:/Modeltech_xe_starter/tcl/vsim/pref.tcl 
+# do {vgagenerator.fdo} 
+# ** Warning: (vlib-34) Library already exists at "work".
+# Model Technology ModelSim XE III vcom 6.3c Compiler 2007.09 Sep 12 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling package mariopackage
+# Model Technology ModelSim XE III vcom 6.3c Compiler 2007.09 Sep 12 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mariopackage
+# -- Compiling entity vga
+# -- Compiling architecture logic of vga
+# Model Technology ModelSim XE III vcom 6.3c Compiler 2007.09 Sep 12 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Loading package mariopackage
+# -- Compiling entity display
+# -- Compiling architecture logic of display
+# Model Technology ModelSim XE III vcom 6.3c Compiler 2007.09 Sep 12 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package std_logic_arith
+# -- Loading package std_logic_unsigned
+# -- Loading package numeric_std
+# -- Loading package vcomponents
+# -- Compiling entity dcm
+# -- Compiling architecture xilinx of dcm
+# Model Technology ModelSim XE III vcom 6.3c Compiler 2007.09 Sep 12 2007
+# -- Loading package standard
+# -- Loading package std_logic_1164
+# -- Loading package numeric_std
+# -- Compiling entity vgagenerator
+# -- Compiling architecture behav of vgagenerator
+# vsim -lib work -voptargs=\"+acc\" -t 1ps work.vgagenerator 
+# Loading std.standard
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.vgagenerator(behav)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading unisim.vcomponents
+# Loading work.dcm(xilinx)
+# Loading unisim.ibufg(ibufg_v)
+# Loading std.textio(body)
+# Loading ieee.vital_timing(body)
+# Loading ieee.vital_primitives(body)
+# Loading unisim.vpkg(body)
+# Loading unisim.dcm_sp(dcm_sp_v)
+# Loading unisim.dcm_sp_clock_divide_by_2(dcm_sp_clock_divide_by_2_v)
+# Loading unisim.dcm_sp_maximum_period_check(dcm_sp_maximum_period_check_v)
+# Loading unisim.dcm_sp_clock_lost(dcm_sp_clock_lost_v)
+# Loading unisim.bufg(bufg_v)
+# Loading work.mariopackage
+# Loading work.vga(logic)
+# Loading work.display(logic)
+# ** Warning: (vsim-WLF-5000) Waveform log file vsim.wlf currently in use.
+# File in use by: eia  Hostname: EIA-PC  ProcessID: 3928
+#           Attempting to use alternate file "./wlft7hn8fh".
+# ** Warning: (vsim-WLF-5001) Could not open waveform log file vsim.wlf.  Using ./wlft7hn8fh instead.
+# .main_pane.mdi.interior.cs.vm.paneset.cli_0.wf.clip.cs.pw.wf
+# .main_pane.workspace.interior.cs.nb.canvas.notebook.cs.page2.cs
+# .main_pane.signals.interior.cs
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /vgagenerator/display_map
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ps  Iteration: 0  Instance: /vgagenerator/display_map
+do C:/Users/eia/Desktop/MyProjects/TP/S5/vgaTopLevelMacro.do
+do C:/Users/eia/Desktop/MyProjects/TP/S5/vgaTopLevelMacro.do
+run 10000000

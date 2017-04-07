@@ -1,0 +1,6 @@
+vhdl work "ipcore_dir/rom_map2.vhd"
+vhdl work "marioPackage.vhd"
+vhdl work "vga.vhd"
+vhdl work "display.vhd"
+vhdl work "dcm.vhd"
+vhdl work "vgaDisplayTopModule.vhd"

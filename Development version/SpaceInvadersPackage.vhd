@@ -17,7 +17,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-package marioPackage is
+package SpaceInvadersPackage is
 ----------------------------------------------------------------------------------
   -- vga constants
   constant HMAX      : integer := 1056;
@@ -33,4 +33,4 @@ package marioPackage is
   constant firstMap  : integer := 1;   -- First used map to create world map.
   constant lastMap   : integer := 7;   -- Last used map to create world map.
 ----------------------------------------------------------------------------------
-end marioPackage;
+end SpaceInvadersPackage;

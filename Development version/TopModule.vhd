@@ -104,7 +104,7 @@ begin
       vcount     => vcount,
       red        => red,
       green      => green,
-      imageInput => romsRouterOutput,
+      imageInput => rom1Out,
       blue       => blue,
 		clk        => pixel_clk,
 	   reset      => rst

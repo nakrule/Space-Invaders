@@ -14,7 +14,7 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 library work;
-use work.marioPackage.all;
+use work.SpaceInvadersPackage.all;
 
 entity Display is
   port(
@@ -48,14 +48,15 @@ begin
   blue  <= color(1 downto 0) when blank = '0' else "00";
   
   
-	process(hcounter, vcounter, ImageInput)
-	begin
-	  if hcounter <800 and vcounter < 600 then
-			color <= ImageInput;                   -- Read background from ROM
-		else
-			color <= "00000000";
-	  end if;
-  end process;
+	--process(hcounter, vcounter, ImageInput)
+	--begin
+	  --if hcounter <800 and vcounter < 600 then
+	  color <= "11100000";
+			--color <= ImageInput;                   -- Read background from ROM
+		--else
+			--color <= "00000000";
+	  --end if;
+  --end process;
   
   
   

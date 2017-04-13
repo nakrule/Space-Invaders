@@ -189,12 +189,12 @@ Unit <VGA_Internal> synthesized.
 
 Synthesizing Unit <Display>.
     Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\Display.vhd".
-    Found 11-bit adder for signal <n0055> created at line 60.
-    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_11_OUT<5:0>> created at line 61.
-    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_36_OUT<4:0>> created at line 61.
-    Found 11-bit comparator lessequal for signal <n0008> created at line 60
-    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0001_LessThan_9_o> created at line 60
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_10_o> created at line 60
+    Found 11-bit adder for signal <n0055> created at line 61.
+    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_11_OUT<5:0>> created at line 62.
+    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_36_OUT<4:0>> created at line 62.
+    Found 11-bit comparator lessequal for signal <n0008> created at line 61
+    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0001_LessThan_9_o> created at line 61
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_10_o> created at line 61
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred   3 Comparator(s).
@@ -562,11 +562,11 @@ fpga_clk       |    7.838|         |         |         |
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.96 secs
+Total CPU time to Xst completion: 5.97 secs
  
 --> 
 
-Total memory usage is 279264 kilobytes
+Total memory usage is 280096 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

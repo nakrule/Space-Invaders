@@ -1,6 +1,0 @@
-vhdl work "ipcore_dir/StartScreenRom.vhd"
-vhdl work "SpaceInvadersPackage.vhd"
-vhdl work "VGA_Internal.vhd"
-vhdl work "Display.vhd"
-vhdl work "DCM.vhd"
-vhdl work "TopModule.vhd"

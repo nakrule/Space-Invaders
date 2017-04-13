@@ -35,6 +35,7 @@ architecture logic of Display is
   signal color : std_logic_vector(7 downto 0);  -- Color output
   signal hcounter : integer range 0 to 2047;
   signal vcounter : integer range 0 to 2047;
+  signal positionShip : integer range 0 to 199;
 
 begin
 
@@ -48,15 +49,15 @@ begin
   blue  <= color(1 downto 0) when blank = '0' else "00";
   
   
-	--process(hcounter, vcounter, ImageInput)
-	--begin
-	  --if hcounter <800 and vcounter < 600 then
-	  --color <= "11100000";
-			color <= ImageInput;                   -- Read background from ROM
-		--else
-			--color <= "00000000";
-	  --end if;
-  --end process;
+	process(hcounter, vcounter, ImageInput)
+	begin
+	  if hcounter >369 and hcounter < 431 and vcounter > 570 then
+	   color <= std_logic_vector(to_unsigned(ship((hcounter-369), (vcounter-570)),8));
+
+		else
+			color <= "00000000";
+	  end if;
+  end process;
   
   
   

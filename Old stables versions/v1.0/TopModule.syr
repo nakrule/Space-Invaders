@@ -139,8 +139,6 @@ Elaborating entity <DCM> (architecture <xilinx>) from library <work>.
 Elaborating entity <VGA_Internal> (architecture <logic>) from library <work>.
 
 Elaborating entity <Display> (architecture <logic>) from library <work>.
-WARNING:HDLCompiler:1127 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\Display.vhd" Line 41: Assignment to hcounter ignored, since the identifier is never used
-WARNING:HDLCompiler:1127 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\Display.vhd" Line 42: Assignment to vcounter ignored, since the identifier is never used
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -186,12 +184,18 @@ Unit <VGA_Internal> synthesized.
 
 Synthesizing Unit <Display>.
     Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\Display.vhd".
-WARNING:Xst:647 - Input <hcount> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <vcount> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ImageInput> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_9_OUT<5:0>> created at line 55.
+    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_34_OUT<4:0>> created at line 55.
+    Found 11-bit comparator greater for signal <GND_18_o_hcounter[10]_LessThan_6_o> created at line 54
+    Found 11-bit comparator greater for signal <hcounter[10]_GND_18_o_LessThan_7_o> created at line 54
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_8_o> created at line 54
     Summary:
-	inferred   3 Multiplexer(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred   3 Comparator(s).
+	inferred  17 Multiplexer(s).
 Unit <Display> synthesized.
 
 =========================================================================
@@ -200,24 +204,27 @@ HDL Synthesis Report
 Macro Statistics
 # Multipliers                                          : 1
  9x8-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 3
+# Adders/Subtractors                                   : 5
  10-bit adder                                          : 1
  11-bit adder                                          : 1
  17-bit adder                                          : 1
+ 5-bit subtractor                                      : 1
+ 6-bit subtractor                                      : 1
 # Registers                                            : 5
  1-bit register                                        : 3
  10-bit register                                       : 1
  11-bit register                                       : 1
-# Comparators                                          : 6
+# Comparators                                          : 9
  10-bit comparator greater                             : 2
  10-bit comparator lessequal                           : 1
- 11-bit comparator greater                             : 2
+ 11-bit comparator greater                             : 5
  11-bit comparator lessequal                           : 1
-# Multiplexers                                         : 5
+# Multiplexers                                         : 19
  10-bit 2-to-1 multiplexer                             : 1
  11-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 1
  3-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 14
 
 =========================================================================
 
@@ -243,19 +250,23 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # MACs                                                 : 1
  9x8-to-15-bit MAC                                     : 1
+# Adders/Subtractors                                   : 2
+ 5-bit subtractor                                      : 1
+ 6-bit subtractor                                      : 1
 # Counters                                             : 2
  10-bit up counter                                     : 1
  11-bit up counter                                     : 1
 # Registers                                            : 3
  Flip-Flops                                            : 3
-# Comparators                                          : 6
+# Comparators                                          : 9
  10-bit comparator greater                             : 2
  10-bit comparator lessequal                           : 1
- 11-bit comparator greater                             : 2
+ 11-bit comparator greater                             : 5
  11-bit comparator lessequal                           : 1
-# Multiplexers                                         : 3
+# Multiplexers                                         : 17
  2-bit 2-to-1 multiplexer                              : 1
  3-bit 2-to-1 multiplexer                              : 2
+ 8-bit 2-to-1 multiplexer                              : 14
 
 =========================================================================
 
@@ -267,9 +278,11 @@ Optimizing unit <TopModule> ...
 
 Optimizing unit <VGA_Internal> ...
 
+Optimizing unit <Display> ...
+
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block TopModule, actual ratio is 0.
+Found area constraint ratio of 100 (+ 5) on block TopModule, actual ratio is 1.
 
 Final Macro Processing ...
 
@@ -301,14 +314,14 @@ Top Level Output File Name         : TopModule.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 105
+# BELS                             : 123
 #      GND                         : 2
 #      INV                         : 1
-#      LUT2                        : 9
-#      LUT3                        : 32
-#      LUT4                        : 1
-#      LUT5                        : 1
-#      LUT6                        : 17
+#      LUT2                        : 2
+#      LUT3                        : 39
+#      LUT4                        : 2
+#      LUT5                        : 4
+#      LUT6                        : 31
 #      MUXCY                       : 19
 #      VCC                         : 2
 #      XORCY                       : 21
@@ -338,14 +351,14 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:              28  out of  18224     0%  
- Number of Slice LUTs:                   61  out of   9112     0%  
-    Number used as Logic:                61  out of   9112     0%  
+ Number of Slice LUTs:                   79  out of   9112     0%  
+    Number used as Logic:                79  out of   9112     0%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     65
-   Number with an unused Flip Flop:      37  out of     65    56%  
-   Number with an unused LUT:             4  out of     65     6%  
-   Number of fully used LUT-FF pairs:    24  out of     65    36%  
+ Number of LUT Flip Flop pairs used:     83
+   Number with an unused Flip Flop:      55  out of     83    66%  
+   Number with an unused LUT:             4  out of     83     4%  
+   Number of fully used LUT-FF pairs:    24  out of     83    28%  
    Number of unique control sets:         3
 
 IO Utilization: 
@@ -392,9 +405,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 3.090ns (Maximum Frequency: 323.608MHz)
+   Minimum period: 3.194ns (Maximum Frequency: 313.067MHz)
    Minimum input arrival time before clock: 2.824ns
-   Maximum output required time after clock: 7.599ns
+   Maximum output required time after clock: 8.333ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -403,27 +416,27 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_clk'
-  Clock period: 3.090ns (frequency: 323.608MHz)
+  Clock period: 3.194ns (frequency: 313.067MHz)
   Total number of paths / destination ports: 5652 / 252
 -------------------------------------------------------------------------
-Delay:               7.725ns (Levels of Logic = 3)
-  Source:            VGA/hcounter_9 (FF)
+Delay:               7.985ns (Levels of Logic = 3)
+  Source:            VGA/hcounter_4 (FF)
   Destination:       StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAM)
   Source Clock:      fpga_clk rising 0.4X
   Destination Clock: fpga_clk rising 0.4X
 
-  Data Path: VGA/hcounter_9 to StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+  Data Path: VGA/hcounter_4 to StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              6   0.447   0.744  VGA/hcounter_9 (VGA/hcounter_9)
-     DSP48A1:B7->P13      12   4.394   1.137  Maddsub_n0011 (n0007<13>)
+     FDC:C->Q             16   0.447   1.004  VGA/hcounter_4 (VGA/hcounter_4)
+     DSP48A1:B2->P13      12   4.394   1.137  Maddsub_n0011 (n0007<13>)
      begin scope: 'StartScreenRom_map:addra<13>'
      LUT4:I1->O            1   0.205   0.579  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/bindec_a.bindec_inst_a/ADDR[3]_PWR_16_o_equal_15_o<3>1 (U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ena_array<14>)
      RAMB16BWER:ENA            0.220          U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
     ----------------------------------------
-    Total                      7.725ns (5.266ns logic, 2.459ns route)
-                                       (68.2% logic, 31.8% route)
+    Total                      7.985ns (5.266ns logic, 2.720ns route)
+                                       (65.9% logic, 34.1% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_clk'
@@ -446,26 +459,26 @@ Offset:              2.824ns (Levels of Logic = 1)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk'
-  Total number of paths / destination ports: 74 / 10
+  Total number of paths / destination ports: 962 / 10
 -------------------------------------------------------------------------
-Offset:              7.599ns (Levels of Logic = 5)
-  Source:            StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAM)
+Offset:              8.333ns (Levels of Logic = 5)
+  Source:            VGA/hcounter_0 (FF)
   Destination:       red<2> (PAD)
   Source Clock:      fpga_clk rising 0.4X
 
-  Data Path: StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram to red<2>
+  Data Path: VGA/hcounter_0 to red<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     RAMB16BWER:CLKA->DOA3    1   1.850   0.827  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[10].ram.ram_douta<3>)
-     LUT6:I2->O            1   0.203   0.580  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/douta_i<7>1 (U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/douta_i<7>)
-     LUT3:I2->O            1   0.205   0.580  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/douta_i<7>2 (douta<7>)
-     end scope: 'StartScreenRom_map:douta<7>'
-     LUT2:I1->O            1   0.205   0.579  Display_Map/Mmux_red31 (red_2_OBUF)
+     FDC:C->Q             10   0.447   1.085  VGA/hcounter_0 (VGA/hcounter_0)
+     LUT3:I0->O            2   0.205   0.864  Display_Map/_n0114<16>11 (Display_Map/_n0114<16>1)
+     LUT6:I2->O            1   0.203   0.924  Display_Map/Mmux_blue613 (Display_Map/Mmux_blue612)
+     LUT6:I1->O            1   0.203   0.827  Display_Map/Mmux_blue614 (Display_Map/Mmux_blue613)
+     LUT6:I2->O            8   0.203   0.802  Display_Map/Mmux_blue622 (blue_0_OBUF)
      OBUF:I->O                 2.571          red_2_OBUF (red<2>)
     ----------------------------------------
-    Total                      7.599ns (5.034ns logic, 2.565ns route)
-                                       (66.2% logic, 33.8% route)
+    Total                      8.333ns (3.832ns logic, 4.501ns route)
+                                       (46.0% logic, 54.0% route)
 
 =========================================================================
 
@@ -477,20 +490,20 @@ Clock to Setup on destination clock fpga_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fpga_clk       |    7.725|         |         |         |
+fpga_clk       |    7.985|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 5.00 secs
-Total CPU time to Xst completion: 5.05 secs
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 5.76 secs
  
 --> 
 
-Total memory usage is 276256 kilobytes
+Total memory usage is 279712 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    6 (   0 filtered)
+Number of warnings :    3 (   0 filtered)
 Number of infos    :    2 (   0 filtered)
 

@@ -51,8 +51,8 @@ begin
 	--process(hcounter, vcounter, ImageInput)
 	--begin
 	  --if hcounter <800 and vcounter < 600 then
-	  color <= "11100000";
-			--color <= ImageInput;                   -- Read background from ROM
+	  --color <= "11100000";
+			color <= ImageInput;                   -- Read background from ROM
 		--else
 			--color <= "00000000";
 	  --end if;

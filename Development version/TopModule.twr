@@ -4,6 +4,7 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 3
 -n 3 -fastpaths -xml TopModule.twx TopModule.ncd -o TopModule.twr TopModule.pcf
+-ucf ucf_File.ucf
 
 Design file:              TopModule.ncd
 Physical constraint file: TopModule.pcf
@@ -36,7 +37,7 @@ Setup/Hold to clock fpga_clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-rst         |    3.219(R)|      SLOW  |   -1.489(R)|      FAST  |pixel_clk         |   0.000|
+rst         |    4.600(R)|      SLOW  |   -1.984(R)|      FAST  |pixel_clk         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock fpga_clk to Pad
@@ -44,11 +45,16 @@ Clock fpga_clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-HS          |         5.067(R)|      SLOW  |         3.054(R)|      FAST  |pixel_clk         |   0.000|
-VS          |         5.062(R)|      SLOW  |         3.090(R)|      FAST  |pixel_clk         |   0.000|
-red<0>      |         6.067(R)|      SLOW  |         3.650(R)|      FAST  |pixel_clk         |   0.000|
-red<1>      |         6.227(R)|      SLOW  |         3.746(R)|      FAST  |pixel_clk         |   0.000|
-red<2>      |         6.227(R)|      SLOW  |         3.746(R)|      FAST  |pixel_clk         |   0.000|
+HS          |         6.286(R)|      SLOW  |         4.077(R)|      FAST  |pixel_clk         |   0.000|
+VS          |         6.610(R)|      SLOW  |         4.273(R)|      FAST  |pixel_clk         |   0.000|
+blue<0>     |        10.457(R)|      SLOW  |         4.511(R)|      FAST  |pixel_clk         |   0.000|
+blue<1>     |         9.979(R)|      SLOW  |         4.514(R)|      FAST  |pixel_clk         |   0.000|
+green<0>    |         9.700(R)|      SLOW  |         4.494(R)|      FAST  |pixel_clk         |   0.000|
+green<1>    |         9.906(R)|      SLOW  |         4.487(R)|      FAST  |pixel_clk         |   0.000|
+green<2>    |        10.890(R)|      SLOW  |         5.247(R)|      FAST  |pixel_clk         |   0.000|
+red<0>      |        10.527(R)|      SLOW  |         5.080(R)|      FAST  |pixel_clk         |   0.000|
+red<1>      |        10.783(R)|      SLOW  |         5.230(R)|      FAST  |pixel_clk         |   0.000|
+red<2>      |        10.324(R)|      SLOW  |         4.901(R)|      FAST  |pixel_clk         |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock fpga_clk
@@ -56,18 +62,18 @@ Clock to Setup on destination clock fpga_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fpga_clk       |    4.119|         |         |         |
+fpga_clk       |   10.148|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Thu Apr 13 10:24:13 2017 
+Analysis completed Thu Apr 13 11:02:12 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:
 -------------------------
 Trace Settings 
 
-Peak Memory Usage: 218 MB
+Peak Memory Usage: 219 MB
 
 
 

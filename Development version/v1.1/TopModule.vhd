@@ -6,6 +6,9 @@ entity TopModule is
   port(
     fpga_clk : in  std_logic;           -- 100MHz
     rst      : in  std_logic;           -- Active high
+	 fire     : in  std_logic;           -- Fire/OK button
+	 right    : in  std_logic;				 -- Right arrow button
+	 left     : in  std_logic;				 -- Left arrow button
     HS       : out std_logic;           -- VGA horizontal synchronization
     VS       : out std_logic;           -- VGA vertical synchronization
     red      : out std_logic_vector(2 downto 0);  -- VGA red bus
@@ -19,17 +22,19 @@ architecture Behavioral of TopModule is
   signal pixel_clk         : std_logic;  -- 40MHz clock
   signal blank             : std_logic;  -- When 1, VGA color outputs must be 0
   signal locked            : std_logic;  -- Unused
+  signal gameStarted       : std_logic;  -- When 0, show start screen
+  signal startScreenROMOut : std_logic_vector(7 downto 0);
+  signal shipPosition      : std_logic_vector(9 downto 0);
   signal hcount            : std_logic_vector(10 downto 0);  -- VGA horizontal synchronization
   signal vcount            : std_logic_vector(10 downto 0);  -- VGA vertical synchronization
   signal romAddress        : std_logic_vector(14 downto 0);  -- Combination of hcount
                                                              -- and vcount
-  signal startScreenROMOut : std_logic_vector(7 downto 0);
 
   component display is
     port(
       blank      : in  std_logic;       -- If 1, video output must be null
-      clk        : in  std_logic;       -- 100MHz
-      reset      : in  std_logic;       -- Active high
+		gameStarted : in std_logic; -- When 0, show start screen
+		shipPosition : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
       hcount     : in  std_logic_vector(10 downto 0);  -- Pixel x coordinate
       vcount     : in  std_logic_vector(10 downto 0);  -- Pixel y coordinate
       imageInput : in  std_logic_vector(7 downto 0);   -- data from rom
@@ -67,6 +72,17 @@ architecture Behavioral of TopModule is
       douta : out std_logic_vector(7 downto 0)    -- ROM output
       );
   end component;
+  
+  component Input is
+		port(
+			fire : in std_logic; -- When 1, shoot or start game
+			clk : in std_logic; -- 40MHz
+			left : in std_logic; -- Left arrow button
+		   right : in std_logic; -- Right arrow button
+			gameStarted : out std_logic; -- When 0, show start screen
+			shipPosition : out  std_logic_vector(9 downto 0)  -- Ship x coordinate
+		);
+	end component;
 
 begin
 
@@ -102,14 +118,24 @@ begin
   Display_Map : Display
     port map(
       blank      => blank,
+		gameStarted => gameStarted,
       hcount     => hcount,
       vcount     => vcount,
+		shipPosition => shipPosition,
       red        => red,
       green      => green,
       imageInput => startScreenROMOut,
-      blue       => blue,
-      clk        => pixel_clk,
-      reset      => rst
+      blue       => blue
       );
+		
+	Input_Map : Input
+		port map(
+			fire => fire,
+			clk => pixel_clk,
+			right => right,
+			left => left,
+			shipPosition => shipPosition,
+			gameStarted => gameStarted
+		);
 
 end architecture;

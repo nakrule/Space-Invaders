@@ -108,21 +108,24 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\ipcore_dir\StartScreenRom.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\ipcore_dir\StartScreenRom.vhd" into library work
 Parsing entity <StartScreenRom>.
 Parsing architecture <StartScreenRom_a> of entity <startscreenrom>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\SpaceInvadersPackage.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\SpaceInvadersPackage.vhd" into library work
 Parsing package <SpaceInvadersPackage>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\VGA_Internal.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\VGA_Internal.vhd" into library work
 Parsing entity <VGA_Internal>.
 Parsing architecture <logic> of entity <vga_internal>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\Display.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\Input.vhd" into library work
+Parsing entity <Input>.
+Parsing architecture <Behavioral> of entity <input>.
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\Display.vhd" into library work
 Parsing entity <Display>.
 Parsing architecture <logic> of entity <display>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\DCM.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\DCM.vhd" into library work
 Parsing entity <DCM>.
 Parsing architecture <xilinx> of entity <dcm>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\TopModule.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\TopModule.vhd" into library work
 Parsing entity <TopModule>.
 Parsing architecture <Behavioral> of entity <topmodule>.
 
@@ -140,28 +143,30 @@ Elaborating entity <VGA_Internal> (architecture <logic>) from library <work>.
 
 Elaborating entity <Display> (architecture <logic>) from library <work>.
 
+Elaborating entity <Input> (architecture <Behavioral>) from library <work>.
+
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <TopModule>.
-    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\TopModule.vhd".
-INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\TopModule.vhd" line 81: Output port <LOCKED> of the instance <DCM_map> is unconnected or connected to loadless signal.
-    Found 17-bit adder for signal <n0007> created at line 70.
-    Found 8x9-bit multiplier for signal <n0011> created at line 70.
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\TopModule.vhd".
+INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\TopModule.vhd" line 99: Output port <LOCKED> of the instance <DCM_map> is unconnected or connected to loadless signal.
+    Found 17-bit adder for signal <n0009> created at line 90.
+    Found 8x9-bit multiplier for signal <n0012> created at line 90.
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   1 Adder/Subtractor(s).
 Unit <TopModule> synthesized.
 
 Synthesizing Unit <DCM>.
-    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\DCM.vhd".
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\DCM.vhd".
     Summary:
 	no macro.
 Unit <DCM> synthesized.
 
 Synthesizing Unit <VGA_Internal>.
-    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\VGA_Internal.vhd".
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\VGA_Internal.vhd".
     Found 1-bit register for signal <blank>.
     Found 10-bit register for signal <vcounter>.
     Found 11-bit register for signal <hcounter>.
@@ -183,20 +188,37 @@ Synthesizing Unit <VGA_Internal>.
 Unit <VGA_Internal> synthesized.
 
 Synthesizing Unit <Display>.
-    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\Display.vhd".
-WARNING:Xst:647 - Input <ImageInput> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <clk> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_9_OUT<5:0>> created at line 55.
-    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_34_OUT<4:0>> created at line 55.
-    Found 11-bit comparator greater for signal <GND_18_o_hcounter[10]_LessThan_6_o> created at line 54
-    Found 11-bit comparator greater for signal <hcounter[10]_GND_18_o_LessThan_7_o> created at line 54
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_8_o> created at line 54
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\Display.vhd".
+    Found 11-bit adder for signal <n0055> created at line 60.
+    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_11_OUT<5:0>> created at line 61.
+    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_36_OUT<4:0>> created at line 61.
+    Found 11-bit comparator lessequal for signal <n0008> created at line 60
+    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0001_LessThan_9_o> created at line 60
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_10_o> created at line 60
     Summary:
-	inferred   2 Adder/Subtractor(s).
+	inferred   3 Adder/Subtractor(s).
 	inferred   3 Comparator(s).
-	inferred  17 Multiplexer(s).
+	inferred  18 Multiplexer(s).
 Unit <Display> synthesized.
+
+Synthesizing Unit <Input>.
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.1\Input.vhd".
+    Found 1-bit register for signal <start>.
+    Found 16-bit register for signal <shipTimer>.
+    Found 10-bit register for signal <shipPos>.
+    Found 16-bit register for signal <fireTimer>.
+    Found 16-bit adder for signal <fireTimer[15]_GND_19_o_add_3_OUT> created at line 52.
+    Found 10-bit adder for signal <shipPos[9]_GND_19_o_add_10_OUT> created at line 64.
+    Found 16-bit adder for signal <shipTimer[15]_GND_19_o_add_14_OUT> created at line 68.
+    Found 10-bit subtractor for signal <GND_19_o_GND_19_o_sub_8_OUT<9:0>> created at line 60.
+    Found 16-bit comparator greater for signal <n0002> created at line 46
+    Found 16-bit comparator greater for signal <n0008> created at line 56
+    Found 10-bit comparator lessequal for signal <shipPos[9]_PWR_14_o_LessThan_10_o> created at line 63
+    Summary:
+	inferred   3 Adder/Subtractor(s).
+	inferred  43 D-type flip-flop(s).
+	inferred   3 Comparator(s).
+Unit <Input> synthesized.
 
 =========================================================================
 HDL Synthesis Report
@@ -204,29 +226,34 @@ HDL Synthesis Report
 Macro Statistics
 # Multipliers                                          : 1
  9x8-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 5
+# Adders/Subtractors                                   : 9
  10-bit adder                                          : 1
- 11-bit adder                                          : 1
+ 10-bit addsub                                         : 1
+ 11-bit adder                                          : 2
+ 16-bit adder                                          : 2
  17-bit adder                                          : 1
  5-bit subtractor                                      : 1
  6-bit subtractor                                      : 1
-# Registers                                            : 5
- 1-bit register                                        : 3
- 10-bit register                                       : 1
+# Registers                                            : 9
+ 1-bit register                                        : 4
+ 10-bit register                                       : 2
  11-bit register                                       : 1
-# Comparators                                          : 9
+ 16-bit register                                       : 2
+# Comparators                                          : 12
  10-bit comparator greater                             : 2
- 10-bit comparator lessequal                           : 1
- 11-bit comparator greater                             : 5
- 11-bit comparator lessequal                           : 1
-# Multiplexers                                         : 19
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator greater                             : 4
+ 11-bit comparator lessequal                           : 2
+ 16-bit comparator greater                             : 2
+# Multiplexers                                         : 20
  10-bit 2-to-1 multiplexer                             : 1
  11-bit 2-to-1 multiplexer                             : 1
  2-bit 2-to-1 multiplexer                              : 1
  3-bit 2-to-1 multiplexer                              : 2
- 8-bit 2-to-1 multiplexer                              : 14
+ 8-bit 2-to-1 multiplexer                              : 15
 
 =========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 
 =========================================================================
 *                       Advanced HDL Synthesis                          *
@@ -235,8 +262,14 @@ Macro Statistics
 Reading core <ipcore_dir/StartScreenRom.ngc>.
 Loading core <StartScreenRom> for timing and area information for instance <StartScreenRom_map>.
 
+Synthesizing (advanced) Unit <Input>.
+The following registers are absorbed into counter <shipTimer>: 1 register on signal <shipTimer>.
+The following registers are absorbed into counter <fireTimer>: 1 register on signal <fireTimer>.
+The following registers are absorbed into counter <shipPos>: 1 register on signal <shipPos>.
+Unit <Input> synthesized (advanced).
+
 Synthesizing (advanced) Unit <TopModule>.
-	Multiplier <Mmult_n0011> in block <TopModule> and adder/subtractor <Madd_n0007_Madd> in block <TopModule> are combined into a MAC<Maddsub_n0011>.
+	Multiplier <Mmult_n0012> in block <TopModule> and adder/subtractor <Madd_n0009_Madd> in block <TopModule> are combined into a MAC<Maddsub_n0012>.
 Unit <TopModule> synthesized (advanced).
 
 Synthesizing (advanced) Unit <VGA_Internal>.
@@ -250,23 +283,27 @@ Advanced HDL Synthesis Report
 Macro Statistics
 # MACs                                                 : 1
  9x8-to-15-bit MAC                                     : 1
-# Adders/Subtractors                                   : 2
+# Adders/Subtractors                                   : 3
+ 11-bit adder                                          : 1
  5-bit subtractor                                      : 1
  6-bit subtractor                                      : 1
-# Counters                                             : 2
+# Counters                                             : 5
  10-bit up counter                                     : 1
+ 10-bit updown counter                                 : 1
  11-bit up counter                                     : 1
-# Registers                                            : 3
- Flip-Flops                                            : 3
-# Comparators                                          : 9
+ 16-bit up counter                                     : 2
+# Registers                                            : 4
+ Flip-Flops                                            : 4
+# Comparators                                          : 12
  10-bit comparator greater                             : 2
- 10-bit comparator lessequal                           : 1
- 11-bit comparator greater                             : 5
- 11-bit comparator lessequal                           : 1
-# Multiplexers                                         : 17
+ 10-bit comparator lessequal                           : 2
+ 11-bit comparator greater                             : 4
+ 11-bit comparator lessequal                           : 2
+ 16-bit comparator greater                             : 2
+# Multiplexers                                         : 18
  2-bit 2-to-1 multiplexer                              : 1
  3-bit 2-to-1 multiplexer                              : 2
- 8-bit 2-to-1 multiplexer                              : 14
+ 8-bit 2-to-1 multiplexer                              : 15
 
 =========================================================================
 
@@ -278,11 +315,29 @@ Optimizing unit <TopModule> ...
 
 Optimizing unit <VGA_Internal> ...
 
+Optimizing unit <Input> ...
+
 Optimizing unit <Display> ...
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_0> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_0> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_1> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_1> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_2> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_2> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_3> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_3> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_4> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_4> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_5> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_5> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_6> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_6> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_7> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_7> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_8> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_8> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_9> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_9> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_10> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_10> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_11> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_11> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_12> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_12> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_13> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_13> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_14> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_14> 
+INFO:Xst:2261 - The FF/Latch <Input_Map/fireTimer_15> in Unit <TopModule> is equivalent to the following FF/Latch, which will be removed : <Input_Map/shipTimer_15> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block TopModule, actual ratio is 1.
+Found area constraint ratio of 100 (+ 5) on block TopModule, actual ratio is 2.
 
 Final Macro Processing ...
 
@@ -290,8 +345,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 24
- Flip-Flops                                            : 24
+# Registers                                            : 51
+ Flip-Flops                                            : 51
 
 =========================================================================
 
@@ -314,28 +369,32 @@ Top Level Output File Name         : TopModule.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 123
+# BELS                             : 268
 #      GND                         : 2
-#      INV                         : 1
-#      LUT2                        : 2
-#      LUT3                        : 39
-#      LUT4                        : 2
-#      LUT5                        : 4
-#      LUT6                        : 31
-#      MUXCY                       : 19
+#      INV                         : 3
+#      LUT1                        : 15
+#      LUT2                        : 19
+#      LUT3                        : 38
+#      LUT4                        : 31
+#      LUT5                        : 11
+#      LUT6                        : 35
+#      MUXCY                       : 57
+#      MUXF7                       : 3
 #      VCC                         : 2
-#      XORCY                       : 21
-# FlipFlops/Latches                : 28
+#      XORCY                       : 52
+# FlipFlops/Latches                : 55
+#      FD                          : 1
 #      FDC                         : 13
 #      FDCE                        : 10
-#      FDE                         : 4
+#      FDE                         : 14
 #      FDP                         : 1
+#      FDR                         : 16
 # RAMS                             : 15
 #      RAMB16BWER                  : 15
 # Clock Buffers                    : 2
 #      BUFG                        : 2
-# IO Buffers                       : 12
-#      IBUF                        : 1
+# IO Buffers                       : 15
+#      IBUF                        : 4
 #      IBUFG                       : 1
 #      OBUF                        : 10
 # DCMs                             : 1
@@ -350,20 +409,20 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:              28  out of  18224     0%  
- Number of Slice LUTs:                   79  out of   9112     0%  
-    Number used as Logic:                79  out of   9112     0%  
+ Number of Slice Registers:              55  out of  18224     0%  
+ Number of Slice LUTs:                  152  out of   9112     1%  
+    Number used as Logic:               152  out of   9112     1%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:     83
-   Number with an unused Flip Flop:      55  out of     83    66%  
-   Number with an unused LUT:             4  out of     83     4%  
-   Number of fully used LUT-FF pairs:    24  out of     83    28%  
-   Number of unique control sets:         3
+ Number of LUT Flip Flop pairs used:    156
+   Number with an unused Flip Flop:     101  out of    156    64%  
+   Number with an unused LUT:             4  out of    156     2%  
+   Number of fully used LUT-FF pairs:    51  out of    156    32%  
+   Number of unique control sets:         6
 
 IO Utilization: 
- Number of IOs:                          12
- Number of bonded IOBs:                  12  out of    232     5%  
+ Number of IOs:                          15
+ Number of bonded IOBs:                  15  out of    232     6%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:               15  out of     32    46%  
@@ -392,7 +451,7 @@ Clock Information:
 -----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                                                                                                       | Load  |
 -----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
-fpga_clk                           | DCM_SP:CLKFX                                                                                                                                | 43    |
+fpga_clk                           | DCM_SP:CLKFX                                                                                                                                | 70    |
 StartScreenRom_map/N1              | NONE(StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 15    |
 -----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -405,9 +464,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 3.194ns (Maximum Frequency: 313.067MHz)
-   Minimum input arrival time before clock: 2.824ns
-   Maximum output required time after clock: 8.333ns
+   Minimum period: 3.135ns (Maximum Frequency: 318.975MHz)
+   Minimum input arrival time before clock: 4.434ns
+   Maximum output required time after clock: 11.254ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -416,69 +475,75 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_clk'
-  Clock period: 3.194ns (frequency: 313.067MHz)
-  Total number of paths / destination ports: 5652 / 252
+  Clock period: 3.135ns (frequency: 318.975MHz)
+  Total number of paths / destination ports: 6386 / 305
 -------------------------------------------------------------------------
-Delay:               7.985ns (Levels of Logic = 3)
-  Source:            VGA/hcounter_4 (FF)
+Delay:               7.838ns (Levels of Logic = 3)
+  Source:            VGA/hcounter_5 (FF)
   Destination:       StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram (RAM)
   Source Clock:      fpga_clk rising 0.4X
   Destination Clock: fpga_clk rising 0.4X
 
-  Data Path: VGA/hcounter_4 to StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
+  Data Path: VGA/hcounter_5 to StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             16   0.447   1.004  VGA/hcounter_4 (VGA/hcounter_4)
-     DSP48A1:B2->P13      12   4.394   1.137  Maddsub_n0011 (n0007<13>)
+     FDC:C->Q             10   0.447   0.856  VGA/hcounter_5 (VGA/hcounter_5)
+     DSP48A1:B3->P13      12   4.394   1.137  Maddsub_n0012 (n0009<13>)
      begin scope: 'StartScreenRom_map:addra<13>'
      LUT4:I1->O            1   0.205   0.579  U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/bindec_a.bindec_inst_a/ADDR[3]_PWR_16_o_equal_15_o<3>1 (U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ena_array<14>)
      RAMB16BWER:ENA            0.220          U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[3].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram
     ----------------------------------------
-    Total                      7.985ns (5.266ns logic, 2.720ns route)
-                                       (65.9% logic, 34.1% route)
+    Total                      7.838ns (5.266ns logic, 2.572ns route)
+                                       (67.2% logic, 32.8% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_clk'
-  Total number of paths / destination ports: 24 / 24
+  Total number of paths / destination ports: 110 / 45
 -------------------------------------------------------------------------
-Offset:              2.824ns (Levels of Logic = 1)
-  Source:            rst (PAD)
-  Destination:       VGA/vcounter_9 (FF)
+Offset:              4.434ns (Levels of Logic = 3)
+  Source:            right (PAD)
+  Destination:       Input_Map/shipPos_9 (FF)
   Destination Clock: fpga_clk rising 0.4X
 
-  Data Path: rst to VGA/vcounter_9
+  Data Path: right to Input_Map/shipPos_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            24   1.222   1.172  rst_IBUF (rst_IBUF)
-     FDC:CLR                   0.430          VGA/vs
+     IBUF:I->O             1   1.222   0.944  right_IBUF (right_IBUF)
+     LUT6:I0->O            1   0.203   0.684  Input_Map/_n0062_inv5 (Input_Map/_n0062_inv4)
+     LUT4:I2->O           10   0.203   0.856  Input_Map/_n0062_inv6 (Input_Map/_n0062_inv)
+     FDE:CE                    0.322          Input_Map/shipPos_0
     ----------------------------------------
-    Total                      2.824ns (1.652ns logic, 1.172ns route)
-                                       (58.5% logic, 41.5% route)
+    Total                      4.434ns (1.950ns logic, 2.484ns route)
+                                       (44.0% logic, 56.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk'
-  Total number of paths / destination ports: 962 / 10
+  Total number of paths / destination ports: 6754 / 10
 -------------------------------------------------------------------------
-Offset:              8.333ns (Levels of Logic = 5)
-  Source:            VGA/hcounter_0 (FF)
+Offset:              11.254ns (Levels of Logic = 9)
+  Source:            Input_Map/shipPos_1 (FF)
   Destination:       red<2> (PAD)
   Source Clock:      fpga_clk rising 0.4X
 
-  Data Path: VGA/hcounter_0 to red<2>
+  Data Path: Input_Map/shipPos_1 to red<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q             10   0.447   1.085  VGA/hcounter_0 (VGA/hcounter_0)
-     LUT3:I0->O            2   0.205   0.864  Display_Map/_n0114<16>11 (Display_Map/_n0114<16>1)
-     LUT6:I2->O            1   0.203   0.924  Display_Map/Mmux_blue613 (Display_Map/Mmux_blue612)
-     LUT6:I1->O            1   0.203   0.827  Display_Map/Mmux_blue614 (Display_Map/Mmux_blue613)
-     LUT6:I2->O            8   0.203   0.802  Display_Map/Mmux_blue622 (blue_0_OBUF)
-     OBUF:I->O                 2.571          red_2_OBUF (red<2>)
+     FDE:C->Q             13   0.447   1.180  Input_Map/shipPos_1 (Input_Map/shipPos_1)
+     LUT5:I1->O            4   0.203   0.684  Display_Map/Madd_n0055_xor<9>111 (Display_Map/Madd_n0055_xor<9>11)
+     LUT4:I3->O            2   0.205   0.864  Display_Map/Madd_n0055_xor<8>11 (Display_Map/n0055<8>)
+     LUT4:I0->O            1   0.203   0.000  Display_Map/Mcompar_hcounter[10]_BUS_0001_LessThan_9_o_lut<4> (Display_Map/Mcompar_hcounter[10]_BUS_0001_LessThan_9_o_lut<4>)
+     MUXCY:S->O            1   0.366   0.580  Display_Map/Mcompar_hcounter[10]_BUS_0001_LessThan_9_o_cy<4> (Display_Map/Mcompar_hcounter[10]_BUS_0001_LessThan_9_o_cy<4>)
+     LUT3:I2->O            1   0.205   0.808  Display_Map/Mcompar_hcounter[10]_BUS_0001_LessThan_9_o_cy<5> (Display_Map/Mcompar_hcounter[10]_BUS_0001_LessThan_9_o_cy<5>)
+     LUT5:I2->O            1   0.205   0.944  Display_Map/Mmux_blue321 (Display_Map/Mmux_blue321)
+     LUT6:I0->O            8   0.203   0.803  Display_Map/Mmux_blue3221 (Display_Map/Mmux_blue32)
+     LUT4:I3->O            1   0.205   0.579  Display_Map/Mmux_blue61 (blue_1_OBUF)
+     OBUF:I->O                 2.571          blue_1_OBUF (blue<1>)
     ----------------------------------------
-    Total                      8.333ns (3.832ns logic, 4.501ns route)
-                                       (46.0% logic, 54.0% route)
+    Total                     11.254ns (4.813ns logic, 6.441ns route)
+                                       (42.8% logic, 57.2% route)
 
 =========================================================================
 
@@ -490,20 +555,20 @@ Clock to Setup on destination clock fpga_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fpga_clk       |    7.985|         |         |         |
+fpga_clk       |    7.838|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 6.00 secs
-Total CPU time to Xst completion: 5.76 secs
+Total CPU time to Xst completion: 5.96 secs
  
 --> 
 
-Total memory usage is 279712 kilobytes
+Total memory usage is 279264 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :    3 (   0 filtered)
-Number of infos    :    2 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :   19 (   0 filtered)
 

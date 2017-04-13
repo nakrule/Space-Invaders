@@ -1,11 +1,11 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <report-views version="2.0" >
  <header>
-  <DateModified>2017-04-13T10:57:53</DateModified>
+  <DateModified>2017-04-13T14:50:20</DateModified>
   <ModuleName>TopModule</ModuleName>
   <SummaryTimeStamp>Unknown</SummaryTimeStamp>
-  <SavedFilePath>C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version/iseconfig/TopModule.xreport</SavedFilePath>
-  <ImplementationReportsDirectory>C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version\</ImplementationReportsDirectory>
+  <SavedFilePath>C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version/v1.1/iseconfig/TopModule.xreport</SavedFilePath>
+  <ImplementationReportsDirectory>C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version/v1.1\</ImplementationReportsDirectory>
   <DateInitialized>2017-04-13T09:46:03</DateInitialized>
   <EnableMessageFiltering>false</EnableMessageFiltering>
  </header>

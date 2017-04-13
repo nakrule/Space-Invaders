@@ -19,7 +19,7 @@ use ieee.numeric_std.all;
 
 package SpaceInvadersPackage is
 ----------------------------------------------------------------------------------
-  -- vga constants
+  -- VGA
   constant HMAX      : integer := 1056;
   constant VMAX      : integer := 628;
   constant HLINES    : integer := 800;
@@ -28,6 +28,11 @@ package SpaceInvadersPackage is
   constant HFP       : integer := 840;
   constant VFP       : integer := 601;
   constant VSP       : integer := 605;
+  ----------------------------------------------------------------------------------
+  -- Inputs
+  constant fireSpeed : integer := 60000;
+  constant shipSpeed : integer := 60000;
+  constant maxShipPosValue : integer := 737;
 ----------------------------------------------------------------------------------
   -- Tables of aliens and ship
   type shipPicture is array(0 to 61, 0 to 29) of integer;

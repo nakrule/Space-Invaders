@@ -33,7 +33,6 @@ architecture xilinx of DCM is
   signal status_internal                   : std_logic_vector(7 downto 0);
 begin
 
-
   -- Input buffering
   --------------------------------------
   clkin1_buf : IBUFG

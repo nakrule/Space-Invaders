@@ -29,6 +29,8 @@ architecture Behavioral of TopModule is
   signal vcount            : std_logic_vector(10 downto 0);  -- VGA vertical synchronization
   signal romAddress        : std_logic_vector(14 downto 0);  -- Combination of hcount
                                                              -- and vcount
+  signal alienX            : std_logic_vector(9 downto 0); -- first alien position from left screen
+  signal alienY            : std_logic_vector(8 downto 0); -- first alien position from top screen
 
   component display is
     port(
@@ -38,6 +40,8 @@ architecture Behavioral of TopModule is
       hcount     : in  std_logic_vector(10 downto 0);  -- Pixel x coordinate
       vcount     : in  std_logic_vector(10 downto 0);  -- Pixel y coordinate
       imageInput : in  std_logic_vector(7 downto 0);   -- data from rom
+		alienX     : in std_logic_vector(9 downto 0); -- first alien position from left screen
+		alienY     : in std_logic_vector(8 downto 0); -- first alien position from top screen
       red        : out std_logic_vector(2 downto 0);   -- Red color output
       green      : out std_logic_vector(2 downto 0);   -- Green color output
       blue       : out std_logic_vector(1 downto 0)    -- Blue color output
@@ -77,9 +81,13 @@ architecture Behavioral of TopModule is
 		port(
 			fire : in std_logic; -- When 1, shoot or start game
 			clk : in std_logic; -- 40MHz
+			fastCLK : in std_logic; -- 100MHz clock for random counter
+			reset : in std_logic; -- Active high
 			left : in std_logic; -- Left arrow button
 		   right : in std_logic; -- Right arrow button
 			gameStarted : out std_logic; -- When 0, show start screen
+			alienX : out std_logic_vector(9 downto 0); -- first alien position from left screen
+		   alienY : out std_logic_vector(8 downto 0); -- first alien position from top screen
 			shipPosition : out  std_logic_vector(9 downto 0)  -- Ship x coordinate
 		);
 	end component;
@@ -122,6 +130,8 @@ begin
       hcount     => hcount,
       vcount     => vcount,
 		shipPosition => shipPosition,
+		alienX => alienX,
+		alienY => alienY,
       red        => red,
       green      => green,
       imageInput => startScreenROMOut,
@@ -132,10 +142,14 @@ begin
 		port map(
 			fire => fire,
 			clk => pixel_clk,
+			fastCLK => pixel_clk,
+			reset => rst,
 			right => right,
 			left => left,
 			shipPosition => shipPosition,
-			gameStarted => gameStarted
+			gameStarted => gameStarted,
+			alienX => alienX,
+			alienY => alienY
 		);
 
 end architecture;

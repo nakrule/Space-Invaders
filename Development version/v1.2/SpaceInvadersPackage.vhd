@@ -18,6 +18,7 @@ use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
 package SpaceInvadersPackage is
+
 ----------------------------------------------------------------------------------
   -- VGA
   constant HMAX      : integer := 1056;
@@ -32,16 +33,21 @@ package SpaceInvadersPackage is
   -- Inputs
   constant fireSpeed : integer := 60000;
   constant shipSpeed : integer := 60000;
+  constant alienSpeed : integer := 10000000;
   constant maxShipPosValue : integer := 736; -- must be pair
-  constant shipMargin : integer := 50;
+  constant shipMargin : integer := 50; -- minimum space between side screen and ship
+  constant alienXMargin : integer := 50; -- minimum space between side screen and aliens
+  constant alienYUpMargin : integer := 50; -- minimum space between top screen and aliens
+  constant alienYDownMargin : integer := 200; -- maximum space between top screen and aliens
+  constant maxAlienJump : integer := 10; -- max pixel aliens can shift in a single time
 ----------------------------------------------------------------------------------
   -- Tables of aliens and ship
   
   -- 0 = no alien
   -- 1 = blue, 3 = dark blue, 5 = green, 7 = purple, 9 = yellow
   -- 2 = blue alien killed, 4 = dark blue alien killed, etc ...
---  type aliensArray is array(9 downto 0, 4 downto 0) of integer range 0 to 10;
---  signal aliens : aliensArray := (others => (others => 1)); -- Initialized to 0
+  type aliensArray is array(9 downto 0, 4 downto 0) of integer range 0 to 10;
+  signal aliens : aliensArray := (others => (others => 1)); -- Initialized to 0
   
   type alienPicture is array(0 to 29, 0 to 29) of integer;
   

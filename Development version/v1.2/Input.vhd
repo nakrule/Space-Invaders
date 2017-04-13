@@ -32,7 +32,7 @@ architecture Behavioral of Input is
 	signal start : integer range 0 to 1 := 0;
 	signal fireTimer : integer range 0 to fireSpeed := 0;
 	signal shipTimer : integer range 0 to shipSpeed := 0;
-	signal shipPos : integer range 0 to 737;   -- x position of the ship
+	signal shipPos : integer range 0 to 737 := (maxShipPosValue/2);   -- x position of the ship
 
 begin
 
@@ -56,11 +56,11 @@ begin
 			if shipTimer >= shipSpeed then
 				shipTimer <= 0;
 				if left = '1' then
-					if shipPos >0 then
+					if shipPos >(0+shipMargin) then
 						shipPos <= shipPos - 1;
 					end if;
 				elsif right = '1' then
-					if shipPos < maxShipPosValue then
+					if shipPos < (maxShipPosValue-shipMargin) then
 						shipPos <= shipPos + 1;
 					end if;
 				end if;

@@ -7,4 +7,4 @@
 -- Target Devices:  Digilent NEXYS 3 (Xilinx Spartan 6 XC6LX16-CS324)
 -- Version:         1.2
 ----------------------------------------------------------------------------------
--- Changelog:       - 
+-- Changelog:       - Add margin for ship position

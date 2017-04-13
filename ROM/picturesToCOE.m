@@ -1,5 +1,5 @@
 %read the image
-I = imread('map/startScreen.jpg');	
+I = imread('aliens/jpg/blue.jpg');	
 [x,y,z] = size(I); % x = width, y = heigh
 width = x-1;
 		

@@ -1,5 +1,5 @@
 %read the image
-I = imread('aliens/jpg/yellow.jpg');	
+I = imread('pictures/ship.jpg');	
 [x,y,z] = size(I); % x = width, y = heigh
 width = x-1;
 		
@@ -34,7 +34,7 @@ R = bitshift(R, 5);
 COLOR = R+G+B;
 
 %save variable COLOR to a file in HEX format for the chip to read
-fileID = fopen ('vhdlTable/yellow.vhd', 'w');
+fileID = fopen ('vhdlTable/ship.vhd', 'w');
 fprintf (fileID, 'type memoryPicture is array(0 to ');
 fprintf (fileID, '%d', y-1);
 fprintf (fileID, ', 0 to ');

@@ -2,8 +2,8 @@
 -- Company:        HES-SO
 -- Engineer:       Samuel Riedo & Pascal Roulin
 -- Create Date:    11:24:52 03/02/2017
--- Design Name:    marioPackage.vhd
--- Project Name:   Super Mario World - FPGA Edition
+-- Design Name:    SpaceInvadersPackage.vhd
+-- Project Name:   Space Invaders - FPGA Edition
 -- Target Devices: Digilent NEXYS 3 (Xilinx Spartan 6 XC6LX16-CS324)
 -- Description:    Contain all constant.
 -- Revision 0.01 - File Created
@@ -19,7 +19,7 @@ use ieee.numeric_std.all;
 
 package SpaceInvadersPackage is
 ----------------------------------------------------------------------------------
-  -- vga constants
+  -- VGA
   constant HMAX      : integer := 1056;
   constant VMAX      : integer := 628;
   constant HLINES    : integer := 800;
@@ -28,6 +28,9 @@ package SpaceInvadersPackage is
   constant HFP       : integer := 840;
   constant VFP       : integer := 601;
   constant VSP       : integer := 605;
+----------------------------------------------------------------------------------
+  -- Input
+  constant shipMargin : integer := 0;
 ----------------------------------------------------------------------------------
   -- Tables of aliens and ship
   type shipPicture is array(0 to 61, 0 to 29) of integer;

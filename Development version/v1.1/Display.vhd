@@ -3,7 +3,7 @@
 -- Engineer:        Samuel Riedo & Pascal Roulin
 -- Create Date:     09:20:02 03/02/2017
 -- Design Name:     Display.vhd
--- Project Name:    Super Mario World - FPGA Edition
+-- Project Name:    Space Invaders - FPGA Edition
 -- Target Devices:  Digilent NEXYS 3 (Xilinx Spartan 6 XC6LX16-CS324)
 -- Description:     Display pixel at vga coordinates using ROM data and package tables
 -- Revision 0.01 -  File Created
@@ -22,9 +22,9 @@ entity Display is
     blank      : in  std_logic;         -- If 1, video output must be null
     clk        : in  std_logic;         -- 40MHz
     reset      : in  std_logic;         -- Active high
+    ImageInput : in  std_logic_vector(7 downto 0);   -- ROM data input
     hcount     : in  std_logic_vector(10 downto 0);  -- Pixel x coordinate
     vcount     : in  std_logic_vector(10 downto 0);  -- Pixel y coordinate
-    ImageInput : in  std_logic_vector(7 downto 0);   -- ROM data input
     red        : out std_logic_vector(2 downto 0);   -- Red color output
     green      : out std_logic_vector(2 downto 0);   -- Green color output
     blue       : out std_logic_vector(1 downto 0));  -- Blue color output

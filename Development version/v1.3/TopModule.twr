@@ -37,10 +37,10 @@ Setup/Hold to clock fpga_clk
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-fire        |    4.678(R)|      SLOW  |   -2.028(R)|      FAST  |pixel_clk         |   0.000|
-left        |    5.907(R)|      SLOW  |   -1.991(R)|      FAST  |pixel_clk         |   0.000|
-right       |    4.283(R)|      SLOW  |   -2.189(R)|      FAST  |pixel_clk         |   0.000|
-rst         |   10.826(R)|      SLOW  |   -2.495(R)|      FAST  |pixel_clk         |   0.000|
+fire        |    4.965(R)|      SLOW  |   -1.784(R)|      FAST  |pixel_clk         |   0.000|
+left        |    5.603(R)|      SLOW  |   -2.237(R)|      FAST  |pixel_clk         |   0.000|
+right       |    4.968(R)|      SLOW  |   -2.210(R)|      FAST  |pixel_clk         |   0.000|
+rst         |   10.039(R)|      SLOW  |   -2.700(R)|      FAST  |pixel_clk         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock fpga_clk to Pad
@@ -48,16 +48,16 @@ Clock fpga_clk to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-HS          |         7.759(R)|      SLOW  |         5.016(R)|      FAST  |pixel_clk         |   0.000|
-VS          |         8.149(R)|      SLOW  |         5.248(R)|      FAST  |pixel_clk         |   0.000|
-blue<0>     |        36.012(R)|      SLOW  |         5.808(R)|      FAST  |pixel_clk         |   0.000|
-blue<1>     |        15.485(R)|      SLOW  |         5.230(R)|      FAST  |pixel_clk         |   0.000|
-green<0>    |        38.011(R)|      SLOW  |         5.514(R)|      FAST  |pixel_clk         |   0.000|
-green<1>    |        38.833(R)|      SLOW  |         5.820(R)|      FAST  |pixel_clk         |   0.000|
-green<2>    |        39.014(R)|      SLOW  |         5.622(R)|      FAST  |pixel_clk         |   0.000|
-red<0>      |        37.900(R)|      SLOW  |         5.404(R)|      FAST  |pixel_clk         |   0.000|
-red<1>      |        39.072(R)|      SLOW  |         5.759(R)|      FAST  |pixel_clk         |   0.000|
-red<2>      |        38.751(R)|      SLOW  |         5.538(R)|      FAST  |pixel_clk         |   0.000|
+HS          |         6.631(R)|      SLOW  |         4.279(R)|      FAST  |pixel_clk         |   0.000|
+VS          |         7.648(R)|      SLOW  |         4.976(R)|      FAST  |pixel_clk         |   0.000|
+blue<0>     |        16.519(R)|      SLOW  |         5.098(R)|      FAST  |pixel_clk         |   0.000|
+blue<1>     |        16.193(R)|      SLOW  |         5.080(R)|      FAST  |pixel_clk         |   0.000|
+green<0>    |        34.389(R)|      SLOW  |         5.363(R)|      FAST  |pixel_clk         |   0.000|
+green<1>    |        35.834(R)|      SLOW  |         5.232(R)|      FAST  |pixel_clk         |   0.000|
+green<2>    |        35.899(R)|      SLOW  |         5.082(R)|      FAST  |pixel_clk         |   0.000|
+red<0>      |        34.895(R)|      SLOW  |         5.041(R)|      FAST  |pixel_clk         |   0.000|
+red<1>      |        16.166(R)|      SLOW  |         5.201(R)|      FAST  |pixel_clk         |   0.000|
+red<2>      |        36.101(R)|      SLOW  |         5.390(R)|      FAST  |pixel_clk         |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock fpga_clk
@@ -65,11 +65,11 @@ Clock to Setup on destination clock fpga_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fpga_clk       |    9.798|         |         |         |
+fpga_clk       |    9.446|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Fri Apr 14 15:30:16 2017 
+Analysis completed Fri Apr 14 16:03:13 2017 
 --------------------------------------------------------------------------------
 
 Trace Settings:

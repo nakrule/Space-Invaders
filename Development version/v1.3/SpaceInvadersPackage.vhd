@@ -32,8 +32,8 @@ package SpaceInvadersPackage is
   constant VSP              : integer := 605;
   ----------------------------------------------------------------------------------
   -- Inputs
-  constant fireSpeed        : integer := 60000;
-  constant shipSpeed        : integer := 60000;
+  constant fireSpeed        : integer := 600000;
+  constant shipSpeed        : integer := 100000;
   constant alienSpeed       : integer := 6000000;
   constant maxShipPosValue  : integer := 736;  -- must be pair
   constant shipMargin       : integer := 50;   -- minimum space between side screen and ship
@@ -45,6 +45,7 @@ package SpaceInvadersPackage is
   -- rocketManager
 	constant missileSpeed    : integer := 60000; -- missile speed
 	constant rocketLength	 : integer := 4;     -- rocket length in pixel
+	constant rocketColor     : std_logic_vector(7 downto 0) := "11111111";
 ----------------------------------------------------------------------------------
   -- Tables of aliens and ship
 

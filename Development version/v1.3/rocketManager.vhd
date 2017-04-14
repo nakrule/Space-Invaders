@@ -31,8 +31,8 @@ architecture Behavioral of rocketManager is
 
 	signal rocketY : integer range 0 to (VLINES-30); -- Pixels between top screen and top missile
 	signal missileTimer : integer range 0 to missileSpeed;
-	signal rocketDisplayed : std_logic; -- integer of rocketOnScreen
-	signal shootFinished : integer range 0 to 1; -- if 1, current missile is off screen
+	signal rocketDisplayed : std_logic; -- Integer of rocketOnScreen
+	signal shootFinished : integer range 0 to 1; -- If 1, current missile is off screen
 	
 begin
 	

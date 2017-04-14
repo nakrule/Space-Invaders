@@ -1,3 +1,14 @@
+----------------------------------------------------------------------------------
+-- Company:         HES-SO
+-- Engineer:        Samuel Riedo & Pascal Roulin
+-- Create Date:     3/03/2017
+-- Design Name:     DCM.vhd
+-- Project Name:    Space Invaders - FPGA Edition
+-- Target Devices:  Digilent NEXYS 3 (Xilinx Spartan 6 XC6LX16-CS324)
+-- Description:     Create a 40MHz clock with a 100MHz clock
+-- Revision 0.01 -  File Created
+--          1.00 -  Implemented with IP Core
+----------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_unsigned.all;
@@ -8,8 +19,8 @@ library unisim;
 use unisim.vcomponents.all;
 
 entity DCM is
-  port
-    (                                   -- Clock in ports
+  port(
+      -- Clock in ports
       CLK_IN1  : in  std_logic;
       -- Clock out ports
       CLK_OUT1 : out std_logic;

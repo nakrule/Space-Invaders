@@ -74,20 +74,24 @@ begin
       end if;
 
       -- left and right
-      if shipTimer >= shipSpeed then
-        shipTimer <= 0;
-        if left = '1' then
-          if shipPos > (0+shipMargin) then
-            shipPos <= shipPos - 1;
-          end if;
-        elsif right = '1' then
-          if shipPos < (maxShipPosValue-shipMargin) then
-            shipPos <= shipPos + 1;
-          end if;
-        end if;
-      else
-        shipTimer <= shipTimer + 1;
-      end if;
+		if start = 1 then
+			if shipTimer >= shipSpeed then
+			  shipTimer <= 0;
+			  if left = '1' then
+				 if shipPos > (0+shipMargin) then
+					shipPos <= shipPos - 1;
+				 end if;
+			  elsif right = '1' then
+				 if shipPos < (maxShipPosValue-shipMargin) then
+					shipPos <= shipPos + 1;
+				 end if;
+			  end if;
+			else
+			  shipTimer <= shipTimer + 1;
+			end if;
+		else
+			shipTimer <= 0;
+		end if;
 
       -- aliens
       if alienTimer >= alienSpeed then
@@ -96,46 +100,46 @@ begin
           when 0 =>                     -- go left
             if alienXX > alienXMargin then
               alienXX    <= alienXX -alienJump;
-              alienTimer <= alienXX mod alienSpeed;
+              alienTimer <= alienXX + fireTimer;
             end if;
           when 1 =>                     -- go up left
             if alienXX > alienXMargin and alienYY > alienYUpMargin then
               alienXX    <= alienXX -alienJump;
               alienYY    <= alienYY -alienJump;
-              alienTimer <= alienYY mod alienSpeed;
+              alienTimer <= alienYY + shipTimer;
             end if;
           when 2 =>                     -- go up
             if alienYY > alienYUpMargin then
               alienYY    <= alienYY -alienJump;
-              alienTimer <= alienYY mod alienSpeed;
+              alienTimer <= alienYY + shipTimer;
             end if;
           when 3 =>                     -- go up right
             if alienXX < (800-alienXMargin) and alienYY > alienYUpMargin then
               alienXX    <= alienXX +alienJump;
               alienYY    <= alienYY -alienJump;
-              alienTimer <= alienXX mod alienSpeed;
+              alienTimer <= alienXX + fireTimer;
             end if;
           when 4 =>                     -- go right
             if alienXX < (800-alienXMargin) then
               alienXX    <= alienXX +alienJump;
-              alienTimer <= alienXX mod alienSpeed;
+              alienTimer <= alienXX + shipTimer;
             end if;
           when 5 =>                     -- go right down
             if alienXX < (800-alienXMargin) and alienYY < alienYDownMargin then
               alienXX    <= alienXX +alienJump;
               alienYY    <= alienYY +alienJump;
-              alienTimer <= alienYY mod alienSpeed;
+              alienTimer <= alienYY + fireTimer;
             end if;
           when 6 =>                     -- go down
             if alienYY < alienYDownMargin then
               alienYY    <= alienYY +alienJump;
-              alienTimer <= alienXX mod alienSpeed;
+              alienTimer <= alienXX + shipTimer;
             end if;
           when others =>                -- go down left
             if alienXX > alienXMargin and alienYY < alienYDownMargin then
               alienXX    <= alienXX -alienJump;
               alienYY    <= alienYY +alienJump;
-              alienTimer <= alienYY mod alienSpeed;
+              alienTimer <= alienYY + fireTimer;
             end if;
         end case;
       else
@@ -162,6 +166,7 @@ begin
       else
         alienJump <= alienJump + 1;
       end if;
+		
     end if;
   end process;
 

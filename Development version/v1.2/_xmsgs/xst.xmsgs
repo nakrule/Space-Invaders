@@ -5,58 +5,10 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.2\TopModule.vhd</arg>&quot; line <arg fmt="%s" index="2">107</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">DCM_map</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.2\TopModule.vhd</arg>&quot; line <arg fmt="%s" index="2">119</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">DCM_map</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="info" file="Xst" num="3218" delta="old" >HDL ADVISOR - The RAM &lt;<arg fmt="%s" index="1">Mram__n0243</arg>&gt; will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_0&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_1</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_1&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_2</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_2&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_3&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_4&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_5&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_6&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_7</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_7&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_8</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_8&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_9&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_10&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_11</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_11&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_12</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_12&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_13</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_13&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_14</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_14&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/fireTimer_15</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/shipTimer_15&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="3203" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Input_Map/alienDirection_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">TopModule</arg>&gt; is the opposite to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Input_Map/alienJump_0&gt; </arg>

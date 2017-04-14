@@ -25,6 +25,7 @@ entity Input is
     reset        : in  std_logic;       -- Active high
     left         : in  std_logic;       -- Left arrow button
     right        : in  std_logic;       -- Right arrow button
+	 newMissile   : out std_logic;       -- If 1, new missile launched
     gameStarted  : out std_logic;       -- When 0, show start screen
     alienX       : out std_logic_vector(9 downto 0);  -- first alien position from left screen
     alienY       : out std_logic_vector(8 downto 0);  -- first alien position from top screen
@@ -41,7 +42,7 @@ architecture Behavioral of Input is
   signal alienDirection : integer range 0 to 7                             := 0;  -- If 0, aliens move left, 1=up left, 2 = up, ...
   signal alienJump      : integer range 1 to maxAlienJump                  := 1;  -- Pixels number alien use as unit to move
   signal shipPos        : integer range 0 to 737                           := (maxShipPosValue/2);  -- X position of the ship
-  signal alienXX        : integer range alienXMargin to (800-alienXMargin) := 250;  -- alienX in integer, 499=799-300
+  signal alienXX        : integer range alienXMargin to (500-alienXMargin) := 250;  -- alienX in integer, 499=799-300
   signal alienYY        : integer range alienYUpMargin to alienYDownMargin := 100;  -- alienY in integer
 
 begin
@@ -62,15 +63,24 @@ begin
       shipTimer  <= 0;
       fireTimer  <= 0;
       start      <= 0;
+		newMissile <= '0';
     elsif rising_edge(clk) then
       -- fire
       if fireTimer >= fireSpeed then
         fireTimer <= 0;
         if fire = '1' then
-          start <= 1;
+          if start = 1 then
+				newMissile <= '1';
+			  else
+				newMissile <= '0';
+			  end if;
+			 start <= 1;
+		  else
+			newMissile <= '0';
         end if;
       else
         fireTimer <= fireTimer + 1;
+		  newMissile <= '0';
       end if;
 
       -- left and right
@@ -114,18 +124,18 @@ begin
               alienTimer <= alienYY + shipTimer;
             end if;
           when 3 =>                     -- go up right
-            if alienXX < (800-alienXMargin) and alienYY > alienYUpMargin then
+            if alienXX < (500-alienXMargin) and alienYY > alienYUpMargin then
               alienXX    <= alienXX +alienJump;
               alienYY    <= alienYY -alienJump;
               alienTimer <= alienXX + fireTimer;
             end if;
           when 4 =>                     -- go right
-            if alienXX < (800-alienXMargin) then
+            if alienXX < (500-alienXMargin) then
               alienXX    <= alienXX +alienJump;
               alienTimer <= alienXX + shipTimer;
             end if;
           when 5 =>                     -- go right down
-            if alienXX < (800-alienXMargin) and alienYY < alienYDownMargin then
+            if alienXX < (500-alienXMargin) and alienYY < alienYDownMargin then
               alienXX    <= alienXX +alienJump;
               alienYY    <= alienYY +alienJump;
               alienTimer <= alienYY + fireTimer;

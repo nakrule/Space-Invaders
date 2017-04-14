@@ -36,18 +36,24 @@ architecture Behavioral of TopModule is
   signal blank             : std_logic;  -- When 1, VGA color outputs must be 0
   signal locked            : std_logic;  -- Unused
   signal gameStarted       : std_logic;  -- When 0, show start screen
+  signal newMissile        : std_logic;  -- When 1, new missile launched
+  signal rocketOnScreen    : std_logic;		-- If 1, display a rocket
   signal startScreenROMOut : std_logic_vector(7 downto 0);  -- Used as ImageInput in display
   signal alienY            : std_logic_vector(8 downto 0);  -- first alien position from top screen
   signal shipPosition      : std_logic_vector(9 downto 0);  -- From left screen
   signal alienX            : std_logic_vector(9 downto 0);  -- first alien position from left screen
+  signal missileY          : std_logic_vector(9 downto 0);    -- Pixels between top screen and top missile position
   signal hcount            : std_logic_vector(10 downto 0);  -- VGA horizontal synchronization
   signal vcount            : std_logic_vector(10 downto 0);  -- VGA vertical synchronization
   signal romAddress        : std_logic_vector(14 downto 0);  -- Combination of hcount and vcount
+  
 
   component display is
     port(
       blank        : in  std_logic;     -- If 1, video output must be null
       gameStarted  : in  std_logic;     -- When 0, show start screen
+		rocketOnScreen : in std_logic;		-- If 1, display a rocket
+		missileY : in std_logic_vector(9 downto 0); -- Pixels between top screen and top missile position
       shipPosition : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
       hcount       : in  std_logic_vector(10 downto 0);  -- Pixel x coordinate
       vcount       : in  std_logic_vector(10 downto 0);  -- Pixel y coordinate
@@ -97,12 +103,23 @@ architecture Behavioral of TopModule is
       reset        : in  std_logic;     -- Active high
       left         : in  std_logic;     -- Left arrow button
       right        : in  std_logic;     -- Right arrow button
+		newMissile   : out std_logic;     -- If 1, new missile launched
       gameStarted  : out std_logic;     -- When 0, show start screen
       alienX       : out std_logic_vector(9 downto 0);  -- first alien position from left screen
       alienY       : out std_logic_vector(8 downto 0);  -- first alien position from top screen
       shipPosition : out std_logic_vector(9 downto 0)   -- Ship x coordinate
       );
   end component;
+  
+  component rocketManager is
+	port(
+		newMissile : in std_logic;				-- If 1, new missile launched
+		reset : in std_logic;					-- Active high
+		clk : in std_logic;						-- 40MHz
+		rocketOnScreen : out std_logic;		-- If 1, display a rocket
+		missileY : out std_logic_vector(9 downto 0) -- Pixels between top screen and top missile position
+	);
+end component;
 
 begin
 
@@ -139,6 +156,8 @@ begin
     port map(
       blank        => blank,
       gameStarted  => gameStarted,
+		rocketOnScreen => rocketOnScreen,
+		missileY => missileY,
       hcount       => hcount,
       vcount       => vcount,
       shipPosition => shipPosition,
@@ -158,10 +177,20 @@ begin
       reset        => rst,
       right        => right,
       left         => left,
+		newMissile   => newMissile,
       shipPosition => shipPosition,
       gameStarted  => gameStarted,
       alienX       => alienX,
       alienY       => alienY
       );
+		
+	rocketManager_Map : rocketManager
+	port map(
+		newMissile => newMissile,
+		reset => rst,
+		clk => pixel_clk,
+		rocketOnScreen => rocketOnScreen,
+		missileY => missileY
+	);
 
 end architecture;

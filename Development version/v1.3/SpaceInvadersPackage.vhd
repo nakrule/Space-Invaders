@@ -34,13 +34,17 @@ package SpaceInvadersPackage is
   -- Inputs
   constant fireSpeed        : integer := 60000;
   constant shipSpeed        : integer := 60000;
-  constant alienSpeed       : integer := 10000000;
+  constant alienSpeed       : integer := 6000000;
   constant maxShipPosValue  : integer := 736;  -- must be pair
-  constant shipMargin       : integer := 50;  -- minimum space between side screen and ship
-  constant alienXMargin     : integer := 50;  -- minimum space between side screen and aliens
-  constant alienYUpMargin   : integer := 50;  -- minimum space between top screen and aliens
+  constant shipMargin       : integer := 50;   -- minimum space between side screen and ship
+  constant alienXMargin     : integer := 50;   -- minimum space between side screen and aliens
+  constant alienYUpMargin   : integer := 50;   -- minimum space between top screen and aliens
   constant alienYDownMargin : integer := 200;  -- maximum space between top screen and aliens
-  constant maxAlienJump     : integer := 10;  -- max pixel aliens can shift in a single time
+  constant maxAlienJump     : integer := 10;   -- max pixel aliens can shift in a single time
+----------------------------------------------------------------------------------
+  -- rocketManager
+	constant missileSpeed    : integer := 60000; -- missile speed
+	constant rocketLength	 : integer := 4;     -- rocket length in pixel
 ----------------------------------------------------------------------------------
   -- Tables of aliens and ship
 

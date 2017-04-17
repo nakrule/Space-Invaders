@@ -30,8 +30,7 @@ entity Input is
     gameStarted  : out std_logic;       -- When 0, show start screen
     alienX       : out std_logic_vector(9 downto 0);  -- first alien position from left screen
     alienY       : out std_logic_vector(8 downto 0);  -- first alien position from top screen
-    shipPosition : out std_logic_vector(9 downto 0)  -- Ship x coordinate
-	 --MissileX     : out std_logic_vector(9 downto 0)   -- Missile x coordinate
+    shipPosition : out std_logic_vector(9 downto 0)   -- Ship x coordinate
     );
 end Input;
 

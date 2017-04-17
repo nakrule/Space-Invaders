@@ -47,6 +47,7 @@ architecture Behavioral of TopModule is
   signal hcount            : std_logic_vector(10 downto 0);  -- VGA horizontal synchronization
   signal vcount            : std_logic_vector(10 downto 0);  -- VGA vertical synchronization
   signal romAddress        : std_logic_vector(14 downto 0);  -- Combination of hcount and vcount
+  signal MissileX          : std_logic_vector(9 downto 0);   -- Missile x coordinate
   
 
   component display is
@@ -56,6 +57,7 @@ architecture Behavioral of TopModule is
 		rocketOnScreen : in std_logic;		-- If 1, display a rocket
 		missileY : in std_logic_vector(9 downto 0); -- Pixels between top screen and top missile position
       shipPosition : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
+		MissileX     : in std_logic_vector(9 downto 0);   -- Missile x coordinate
       hcount       : in  std_logic_vector(10 downto 0);  -- Pixel x coordinate
       vcount       : in  std_logic_vector(10 downto 0);  -- Pixel y coordinate
       imageInput   : in  std_logic_vector(7 downto 0);  -- data from rom
@@ -118,8 +120,10 @@ architecture Behavioral of TopModule is
 		newMissile : in std_logic;				-- If 1, new missile launched
 		reset : in std_logic;					-- Active high
 		clk : in std_logic;						-- 40MHz
+		shipPosition : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
 		rocketOnScreen : out std_logic;		-- If 1, display a rocket
-		missileY : out std_logic_vector(9 downto 0) -- Pixels between top screen and top missile position
+		missileY : out std_logic_vector(9 downto 0); -- Pixels between top screen and top missile position
+		MissileX     : out std_logic_vector(9 downto 0)   -- Missile x coordinate
 	);
 end component;
 
@@ -162,6 +166,7 @@ begin
 		missileY => missileY,
       hcount       => hcount,
       vcount       => vcount,
+		MissileX => MissileX,
       shipPosition => shipPosition,
       alienX       => alienX,
       alienY       => alienY,
@@ -192,8 +197,10 @@ begin
 		newMissile => newMissile,
 		reset => rst,
 		clk => pixel_clk,
+		shipPosition => shipPosition,
 		rocketOnScreen => rocketOnScreen,
-		missileY => missileY
+		missileY => missileY,
+		MissileX => missileX
 	);
 
 end architecture;

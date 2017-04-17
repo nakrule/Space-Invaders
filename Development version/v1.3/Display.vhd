@@ -26,6 +26,7 @@ entity Display is
 	 rocketOnScreen : in std_logic;		-- If 1, display a rocket
 	 missileY     : in std_logic_vector(9 downto 0); -- Pixels between top screen and top missile position
     shipPosition : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
+	 MissileX     : in std_logic_vector(9 downto 0);   -- Missile x coordinate
     hcount       : in  std_logic_vector(10 downto 0);  -- Pixel x coordinate
     vcount       : in  std_logic_vector(10 downto 0);  -- Pixel y coordinate
     alienX       : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
@@ -46,6 +47,7 @@ architecture logic of Display is
   signal alienXX  : integer range 0 to 1000;  -- Integer value of alienX
   signal alienYY  : integer range 0 to 1000;  -- Integer value of alienY
   signal missileYY : integer range 0 to 1023; -- Integer value of missileY
+  signal missileXX : integer range shipMargin to (HLINES-shipMargin) := shipMargin;  -- Current Missile x value from left screen
 
 begin
 
@@ -55,6 +57,7 @@ begin
   alienXX  <= to_integer(unsigned(alienX));
   alienYY  <= to_integer(unsigned(alienY));
   missileYY  <= to_integer(unsigned(missileY));
+  missileXX  <= to_integer(unsigned(missileX));
 
   -- Outputs must be 0 is blank = 0, this happen
   -- when hcount and vcount are higher than 800x600.
@@ -62,7 +65,7 @@ begin
   green <= color(4 downto 2) when blank = '0' else "000";
   blue  <= color(1 downto 0) when blank = '0' else "00";
 
-  process(hcounter, vcounter, shipPos, gameStarted, ImageInput, alienXX, alienYY, rocketOnScreen, missileYY)
+  process(hcounter, vcounter, shipPos, gameStarted, ImageInput, alienXX, alienYY, rocketOnScreen, missileYY, missileXX)
   begin
     if gameStarted = '0' then
       color <= ImageInput;
@@ -85,7 +88,7 @@ begin
 		
 		-- Missile
 		if rocketOnScreen = '1' then
-			if hcounter = 200 and vcounter > missileYY and vcounter < (missileYY+rocketLength) then
+			if hcounter = missileXX and vcounter > missileYY and vcounter < (missileYY+rocketLength) then
 				color <= rocketColor;
 			end if;
 		end if;

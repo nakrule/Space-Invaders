@@ -22,8 +22,10 @@ entity rocketManager is
 		newMissile : in std_logic;				-- If 1, new missile launched
 		reset : in std_logic;					-- Active high
 		clk : in std_logic;						-- 40MHz
+		shipPosition : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
 		rocketOnScreen : out std_logic;		-- If 1, display a rocket
-		missileY : out std_logic_vector(9 downto 0) -- Pixels between top screen and top missile position
+		missileY : out std_logic_vector(9 downto 0); -- Pixels between top screen and top missile position
+		MissileX     : out std_logic_vector(9 downto 0)   -- Missile x coordinate
 	);
 end rocketManager;
 
@@ -33,11 +35,13 @@ architecture Behavioral of rocketManager is
 	signal missileTimer : integer range 0 to missileSpeed;
 	signal rocketDisplayed : std_logic; -- Integer of rocketOnScreen
 	signal shootFinished : integer range 0 to 1; -- If 1, current missile is off screen
+	signal MissileXX      : integer range shipMargin to (HLINES-shipMargin) := shipMargin;  -- Current Missile x value from left screen
 	
 begin
 	
 	rocketOnScreen <= rocketDisplayed;
 	missileY <= std_logic_vector(to_unsigned(rocketY, 10));
+	MissileX <= std_logic_vector(to_unsigned(MissileXX, 10));
 
 	-- Update rocketY
 	process(reset, clk)
@@ -45,19 +49,23 @@ begin
 		if reset = '1' then
 			missileTimer <= 0;
 			rocketY <= 0;
+			MissileXX <= shipMargin;
 		elsif rising_edge(clk) then
 			if rocketDisplayed = '1' then
 				if rocketY = 0 then
 					rocketY <= (VLINES-30);
+					MissileXX <= (to_integer(unsigned(shipPosition))+31);
 				end if;
 				if missileTimer = missileSpeed then
 					missileTimer <= 0;
 					rocketY <= rocketY - 1;
+					MissileXX <= MissileXX;
 				else
 					missileTimer <= missileTimer + 1;
 				end if;
 			else
 				rocketY <= 0;
+				MissileXX <= shipMargin;
 			end if;
 		end if;
 	end process;
@@ -82,6 +90,17 @@ begin
 			shootFinished <= 0;
 		end if;
 	end process;
+	
+	-- MissileXX
+--	process(newMissile, shootFinished, shipPosition, MissileXX)
+--	begin
+--		MissileXX <= 400;
+--		if rocketY = (VLINES-30) then
+--			MissileXX <= (to_integer(unsigned(shipPosition))+31);
+--		else
+--			MissileXX <= MissileXX;
+--		end if;
+--	end process;
 
 end Behavioral;
 

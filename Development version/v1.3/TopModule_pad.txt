@@ -1,7 +1,7 @@
 Release 14.7 - par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-Fri Apr 14 16:03:08 2017
+Mon Apr 17 11:12:56 2017
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -27,7 +27,7 @@ Pinout by Pin Number:
 |A5        |           |IOBS     |IO_L6N_0                     |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A6        |           |IOBS     |IO_L8N_VREF_0                |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A7        |           |IOBS     |IO_L10N_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
-|A8        |           |IOBS     |IO_L33N_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
+|A8        |fire       |IOB      |IO_L33N_0                    |INPUT    |LVCMOS33   |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |A9        |           |IOBS     |IO_L35N_GCLK16_0             |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A10       |           |IOBS     |IO_L37N_GCLK12_0             |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |A11       |           |IOBS     |IO_L39N_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
@@ -45,7 +45,7 @@ Pinout by Pin Number:
 |B5        |           |         |VCCO_0                       |         |           |0             |          |         |           |         |any******|          |           |                |
 |B6        |           |IOBM     |IO_L8P_0                     |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B7        |           |         |GND                          |         |           |              |          |         |           |         |         |          |           |                |
-|B8        |fire       |IOB      |IO_L33P_0                    |INPUT    |LVCMOS33   |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
+|B8        |startButton|IOB      |IO_L33P_0                    |INPUT    |LVCMOS33   |0             |          |         |           |NONE     |         |LOCATED   |NO         |NONE            |
 |B9        |           |IOBM     |IO_L35P_GCLK17_0             |UNUSED   |           |0             |          |         |           |         |         |          |           |                |
 |B10       |           |         |VCCO_0                       |         |           |0             |          |         |           |         |any******|          |           |                |
 |B11       |           |IOBM     |IO_L39P_0                    |UNUSED   |           |0             |          |         |           |         |         |          |           |                |

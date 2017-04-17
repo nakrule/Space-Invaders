@@ -19,7 +19,8 @@ entity TopModule is
   port(
     fpga_clk : in  std_logic;           -- 100MHz
     rst      : in  std_logic;           -- Active high
-    fire     : in  std_logic;           -- Fire/OK button
+    startButton     : in  std_logic;    -- Start button
+	 fire     : in  std_logic;           -- Fire button
     right    : in  std_logic;           -- Right arrow button
     left     : in  std_logic;           -- Left arrow button
     HS       : out std_logic;           -- VGA horizontal synchronization
@@ -97,7 +98,8 @@ architecture Behavioral of TopModule is
 
   component Input is
     port(
-      fire         : in  std_logic;     -- When 1, shoot or start game
+      startButton  : in  std_logic;       -- When 1, start game
+		fire         : in  std_logic;       -- When 1, shoot a rocket
       clk          : in  std_logic;     -- 40MHz
       fastCLK      : in  std_logic;     -- 100MHz clock for random counter
       reset        : in  std_logic;     -- Active high
@@ -171,7 +173,8 @@ begin
 
   Input_Map : Input
     port map(
-      fire         => fire,
+      startButton         => startButton,
+		fire => 		fire,
       clk          => pixel_clk,
       fastCLK      => pixel_clk,
       reset        => rst,

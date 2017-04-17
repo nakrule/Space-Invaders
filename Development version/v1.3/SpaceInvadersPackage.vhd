@@ -44,7 +44,7 @@ package SpaceInvadersPackage is
 ----------------------------------------------------------------------------------
   -- rocketManager
 	constant missileSpeed    : integer := 60000; -- missile speed
-	constant rocketLength	 : integer := 4;     -- rocket length in pixel
+	constant rocketLength	 : integer := 10;    -- rocket length in pixel
 	constant rocketColor     : std_logic_vector(7 downto 0) := "11111111";
 ----------------------------------------------------------------------------------
   -- Tables of aliens and ship

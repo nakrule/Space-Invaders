@@ -156,9 +156,9 @@ Elaborating entity <rocketManager> (architecture <Behavioral>) from library <wor
 
 Synthesizing Unit <TopModule>.
     Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.3\TopModule.vhd".
-INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.3\TopModule.vhd" line 136: Output port <LOCKED> of the instance <DCM_map> is unconnected or connected to loadless signal.
-    Found 17-bit adder for signal <n0012> created at line 127.
-    Found 8x9-bit multiplier for signal <n0015> created at line 127.
+INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.3\TopModule.vhd" line 138: Output port <LOCKED> of the instance <DCM_map> is unconnected or connected to loadless signal.
+    Found 17-bit adder for signal <n0012> created at line 129.
+    Found 8x9-bit multiplier for signal <n0015> created at line 129.
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   1 Adder/Subtractor(s).
@@ -299,7 +299,7 @@ Synthesizing Unit <Input>.
     Found 8-bit subtractor for signal <GND_23_o_GND_23_o_sub_46_OUT<7:0>> created at line 129.
     Found 9-bit subtractor for signal <GND_23_o_GND_23_o_sub_71_OUT<8:0>> created at line 150.
     Found 21-bit 8-to-1 multiplexer for signal <alienDirection[2]_GND_23_o_wide_mux_77_OUT> created at line 109.
-    Found 20-bit comparator greater for signal <n0003> created at line 69
+    Found 20-bit comparator greater for signal <n0003> created at line 71
     Found 17-bit comparator greater for signal <n0012> created at line 88
     Found 10-bit comparator lessequal for signal <GND_23_o_shipPos[9]_LessThan_11_o> created at line 91
     Found 10-bit comparator lessequal for signal <shipPos[9]_PWR_19_o_LessThan_14_o> created at line 95
@@ -314,7 +314,7 @@ Synthesizing Unit <Input>.
 	inferred  13 Adder/Subtractor(s).
 	inferred  96 D-type flip-flop(s).
 	inferred  11 Comparator(s).
-	inferred  20 Multiplexer(s).
+	inferred  19 Multiplexer(s).
 Unit <Input> synthesized.
 
 Synthesizing Unit <rocketManager>.
@@ -392,8 +392,8 @@ Macro Statistics
  4-bit comparator lessequal                            : 1
  8-bit comparator greater                              : 2
  9-bit comparator greater                              : 2
-# Multiplexers                                         : 378
- 1-bit 2-to-1 multiplexer                              : 315
+# Multiplexers                                         : 377
+ 1-bit 2-to-1 multiplexer                              : 314
  10-bit 2-to-1 multiplexer                             : 3
  11-bit 2-to-1 multiplexer                             : 1
  12-bit 2-to-1 multiplexer                             : 2
@@ -508,8 +508,8 @@ Macro Statistics
  4-bit comparator lessequal                            : 1
  8-bit comparator greater                              : 2
  9-bit comparator greater                              : 2
-# Multiplexers                                         : 372
- 1-bit 2-to-1 multiplexer                              : 315
+# Multiplexers                                         : 371
+ 1-bit 2-to-1 multiplexer                              : 314
  10-bit 2-to-1 multiplexer                             : 2
  12-bit 2-to-1 multiplexer                             : 2
  17-bit 2-to-1 multiplexer                             : 2
@@ -576,13 +576,13 @@ Top Level Output File Name         : TopModule.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1665
+# BELS                             : 1666
 #      GND                         : 2
 #      INV                         : 44
 #      LUT1                        : 76
 #      LUT2                        : 107
-#      LUT3                        : 169
-#      LUT4                        : 146
+#      LUT3                        : 168
+#      LUT4                        : 148
 #      LUT5                        : 180
 #      LUT6                        : 191
 #      MUXCY                       : 376
@@ -599,8 +599,8 @@ Primitive and Black Box Usage:
 #      RAMB16BWER                  : 15
 # Clock Buffers                    : 2
 #      BUFG                        : 2
-# IO Buffers                       : 15
-#      IBUF                        : 4
+# IO Buffers                       : 16
+#      IBUF                        : 5
 #      IBUFG                       : 1
 #      OBUF                        : 10
 # DCMs                             : 1
@@ -616,19 +616,19 @@ Selected Device : 6slx16csg324-3
 
 Slice Logic Utilization: 
  Number of Slice Registers:             149  out of  18224     0%  
- Number of Slice LUTs:                  913  out of   9112    10%  
-    Number used as Logic:               913  out of   9112    10%  
+ Number of Slice LUTs:                  914  out of   9112    10%  
+    Number used as Logic:               914  out of   9112    10%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:    921
-   Number with an unused Flip Flop:     772  out of    921    83%  
-   Number with an unused LUT:             8  out of    921     0%  
-   Number of fully used LUT-FF pairs:   141  out of    921    15%  
+ Number of LUT Flip Flop pairs used:    922
+   Number with an unused Flip Flop:     773  out of    922    83%  
+   Number with an unused LUT:             8  out of    922     0%  
+   Number of fully used LUT-FF pairs:   141  out of    922    15%  
    Number of unique control sets:         9
 
 IO Utilization: 
- Number of IOs:                          15
- Number of bonded IOBs:                  15  out of    232     6%  
+ Number of IOs:                          16
+ Number of bonded IOBs:                  16  out of    232     6%  
 
 Specific Feature Utilization:
  Number of Block RAM/FIFO:               15  out of     32    46%  
@@ -727,7 +727,7 @@ Offset:              4.496ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk'
-  Total number of paths / destination ports: 26286691939114 / 10
+  Total number of paths / destination ports: 26286691939250 / 10
 -------------------------------------------------------------------------
 Offset:              38.606ns (Levels of Logic = 43)
   Source:            VGA/hcounter_0 (FF)
@@ -802,12 +802,12 @@ fpga_clk       |    7.985|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 9.00 secs
-Total CPU time to Xst completion: 9.23 secs
+Total REAL time to Xst completion: 10.00 secs
+Total CPU time to Xst completion: 9.20 secs
  
 --> 
 
-Total memory usage is 286944 kilobytes
+Total memory usage is 288160 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

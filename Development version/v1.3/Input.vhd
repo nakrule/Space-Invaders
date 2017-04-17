@@ -19,7 +19,8 @@ use work.SpaceInvadersPackage.all;
 
 entity Input is
   port(
-    fire         : in  std_logic;       -- When 1, shoot or start game
+    startButton  : in  std_logic;       -- When 1, start game
+	 fire         : in  std_logic;       -- When 1, shoot a rocket
     clk          : in  std_logic;       -- 40MHz
     fastCLK      : in  std_logic;       -- 100MHz clock for random counter
     reset        : in  std_logic;       -- Active high
@@ -29,7 +30,8 @@ entity Input is
     gameStarted  : out std_logic;       -- When 0, show start screen
     alienX       : out std_logic_vector(9 downto 0);  -- first alien position from left screen
     alienY       : out std_logic_vector(8 downto 0);  -- first alien position from top screen
-    shipPosition : out std_logic_vector(9 downto 0)   -- Ship x coordinate
+    shipPosition : out std_logic_vector(9 downto 0)  -- Ship x coordinate
+	 --MissileX     : out std_logic_vector(9 downto 0)   -- Missile x coordinate
     );
 end Input;
 
@@ -68,16 +70,14 @@ begin
       -- fire
       if fireTimer >= fireSpeed then
         fireTimer <= 0;
-        if fire = '1' then
-          if start = 1 then
-				newMissile <= '1';
-			  else
-				newMissile <= '0';
-			  end if;
+        if startButton = '1' then
 			 start <= 1;
-		  else
-			newMissile <= '0';
         end if;
+		  if fire = '1' and start = 1 then
+			newMissile <= '1';
+			else
+				newMissile <= '0';
+			end if;
       else
         fireTimer <= fireTimer + 1;
 		  newMissile <= '0';

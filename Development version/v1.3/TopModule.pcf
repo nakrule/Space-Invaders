@@ -1,12 +1,12 @@
 //! **************************************************************************
-// Written by: Map P.20131013 on Fri Apr 14 16:02:30 2017
+// Written by: Map P.20131013 on Mon Apr 17 11:12:18 2017
 //! **************************************************************************
 
 SCHEMATIC START;
 COMP "HS" LOCATE = SITE "N6" LEVEL 1;
 COMP "VS" LOCATE = SITE "P7" LEVEL 1;
 COMP "rst" LOCATE = SITE "T10" LEVEL 1;
-COMP "fire" LOCATE = SITE "B8" LEVEL 1;
+COMP "fire" LOCATE = SITE "A8" LEVEL 1;
 COMP "left" LOCATE = SITE "C4" LEVEL 1;
 COMP "blue<0>" LOCATE = SITE "R7" LEVEL 1;
 COMP "blue<1>" LOCATE = SITE "T7" LEVEL 1;
@@ -18,5 +18,6 @@ COMP "fpga_clk" LOCATE = SITE "V10" LEVEL 1;
 COMP "green<0>" LOCATE = SITE "P8" LEVEL 1;
 COMP "green<1>" LOCATE = SITE "T6" LEVEL 1;
 COMP "green<2>" LOCATE = SITE "V6" LEVEL 1;
+COMP "startButton" LOCATE = SITE "B8" LEVEL 1;
 SCHEMATIC END;
 

@@ -25,6 +25,7 @@ entity Display is
     blank          : in  std_logic;     -- If 1, video output must be null
     gameStarted    : in  std_logic;     -- When 0, show start screen
     rocketOnScreen : in  std_logic;     -- If 1, display a rocket
+	 reset          : in  std_logic;     -- Active high
     missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
     MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
@@ -33,6 +34,7 @@ entity Display is
     alienX         : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
     alienY         : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
     imageInput     : in  std_logic_vector(7 downto 0);  -- data from rom
+	 alienCollision : out std_logic; -- If 1, the rocket hit an alien
     red            : out std_logic_vector(2 downto 0);  -- Red color output
     green          : out std_logic_vector(2 downto 0);  -- Green color output
     blue           : out std_logic_vector(1 downto 0)   -- Blue color output
@@ -51,6 +53,12 @@ architecture logic of Display is
   signal missileXX : integer range shipMargin to (HLINES-shipMargin) := shipMargin;  -- Current Missile x value from left screen
   signal alienLine : integer range 0 to 4 := 0;
   signal alienIndex : integer range 0 to 9 := 0;
+  
+  signal alienLine1 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine2 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine3 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine4 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine5 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
 
 begin
 
@@ -61,6 +69,7 @@ begin
   alienYY   <= to_integer(unsigned(alienY));
   missileYY <= to_integer(unsigned(missileY));
   missileXX <= to_integer(unsigned(missileX));
+  
   
   alienLine <= (((vcounter-alienYY) / 30) mod 5) when (vcounter-alienYY) >= 0 else 0;
   alienIndex <= (((hcounter-alienXX) / 30) mod 10) when (hcounter-alienXX) >= 0 else 0;
@@ -89,40 +98,35 @@ begin
 			case alienLine is
 				when 0 =>
 					if alienLine1(alienIndex) = '1' then
-						color <= std_logic_vector(to_unsigned(greenAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
+						color <= std_logic_vector(to_unsigned(blueAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
 					else
 						color <= "00000000";
 					end if;
 				when 1 =>
 					if alienLine2(alienIndex) = '1' then
-							color <= std_logic_vector(to_unsigned(blueAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
+							color <= std_logic_vector(to_unsigned(DarkBlueAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
 						else
 							color <= "00000000";
 						end if;
 				when 2 =>
 					if alienLine3(alienIndex) = '1' then
-						color <= std_logic_vector(to_unsigned(DarkBlueAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
+						color <= std_logic_vector(to_unsigned(greenAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
 					else
 						color <= "00000000";
 					end if;
 				when 3 =>
 					if alienLine4(alienIndex) = '1' then
-						color <= std_logic_vector(to_unsigned(purpleAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
+						color <= std_logic_vector(to_unsigned(yellowAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
 					else
 						color <= "00000000";
 					end if;
 				when others =>
 					if alienLine5(alienIndex) = '1' then
-						color <= std_logic_vector(to_unsigned(yellowAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
+						color <= std_logic_vector(to_unsigned(purpleAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
 					else
 						color <= "00000000";
 					end if;
 				end case;
-        --color <= std_logic_vector(to_unsigned(blueAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)),8));
-        --color <= std_logic_vector(to_unsigned(DarkBlueAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)),8));
-        --color <= std_logic_vector(to_unsigned(greenAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
-      --color <= std_logic_vector(to_unsigned(purpleAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)),8));
-      --color <= std_logic_vector(to_unsigned(yellowAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
       end if;
 
       -- Missile
@@ -131,8 +135,36 @@ begin
           color <= rocketColor;
         end if;
       end if;
-
     end if;
+  end process;
+  
+  
+  -- Alien collision
+  process(reset, alienXX, alienYY, missileXX, missileYY,alienLine1, alienLine2, alienLine3, alienLine4, alienLine5)
+  begin
+	alienCollision <= '0';
+--	if reset = '1' then
+--		alienLine1 <= "1111111111";
+--		alienLine2 <= "1111111111";
+--		alienLine3 <= "1111111111";
+--		alienLine4 <= "1111111111";
+--		alienLine5 <= "1111111111";
+	-- If rocket position is in the alien table
+	if missileYY >= alienYY and missileYY < (alienYY+150) and missileXX >= alienXX and missileXX < (alienXX+300) then
+		case ((missileYY-alienYY)/30) is
+			when 0 => -- top line
+				alienLine1((missileXX-alienXX)/30) <= '0';
+			when 1 =>
+				alienLine2((missileXX-alienXX)/30) <= '0';
+			when 2 =>
+				alienLine3((missileXX-alienXX)/30) <= '0';
+			when 3 =>
+				alienLine4((missileXX-alienXX)/30) <= '0';
+			when others=> -- bottom line
+				alienLine5((missileXX-alienXX)/30) <= '0';
+			end case;
+	end if;
+  
   end process;
 
 end architecture;

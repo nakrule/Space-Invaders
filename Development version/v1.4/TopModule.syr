@@ -156,9 +156,10 @@ Elaborating entity <rocketManager> (architecture <Behavioral>) from library <wor
 
 Synthesizing Unit <TopModule>.
     Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\TopModule.vhd".
-INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\TopModule.vhd" line 142: Output port <LOCKED> of the instance <DCM_map> is unconnected or connected to loadless signal.
-    Found 17-bit adder for signal <n0012> created at line 133.
-    Found 8x9-bit multiplier for signal <n0016> created at line 133.
+INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\TopModule.vhd" line 143: Output port <LOCKED> of the instance <DCM_map> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\TopModule.vhd" line 162: Output port <alienCollision> of the instance <Display_Map> is unconnected or connected to loadless signal.
+    Found 17-bit adder for signal <n0012> created at line 134.
+    Found 8x9-bit multiplier for signal <n0016> created at line 134.
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   1 Adder/Subtractor(s).
@@ -194,55 +195,98 @@ Unit <VGA_Internal> synthesized.
 
 Synthesizing Unit <Display>.
     Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\Display.vhd".
-WARNING:Xst:37 - Detected unknown constraint/property " package_net". This constraint/property is not supported by the current software release and will be ignored.
-WARNING:Xst:37 - Detected unknown constraint/property " package_net". This constraint/property is not supported by the current software release and will be ignored.
-WARNING:Xst:37 - Detected unknown constraint/property " package_net". This constraint/property is not supported by the current software release and will be ignored.
-WARNING:Xst:37 - Detected unknown constraint/property " package_net". This constraint/property is not supported by the current software release and will be ignored.
-WARNING:Xst:37 - Detected unknown constraint/property " package_net". This constraint/property is not supported by the current software release and will be ignored.
-WARNING:Xst:2999 - Signal 'alienLine1', unconnected in block 'Display', is tied to its initial value.
-WARNING:Xst:2999 - Signal 'alienLine2', unconnected in block 'Display', is tied to its initial value.
-WARNING:Xst:2999 - Signal 'alienLine3', unconnected in block 'Display', is tied to its initial value.
-WARNING:Xst:2999 - Signal 'alienLine4', unconnected in block 'Display', is tied to its initial value.
-WARNING:Xst:2999 - Signal 'alienLine5', unconnected in block 'Display', is tied to its initial value.
-WARNING:Xst:3035 - Index value(s) does not match array range for signal <alienLine1>, simulation mismatch.
-    Found 13x1-bit single-port Read Only RAM <Mram_alienLine1> for signal <alienLine1>.
-WARNING:Xst:3035 - Index value(s) does not match array range for signal <alienLine2>, simulation mismatch.
-    Found 13x1-bit single-port Read Only RAM <Mram_alienLine2> for signal <alienLine2>.
-WARNING:Xst:3035 - Index value(s) does not match array range for signal <alienLine3>, simulation mismatch.
-    Found 13x1-bit single-port Read Only RAM <Mram_alienLine3> for signal <alienLine3>.
-WARNING:Xst:3035 - Index value(s) does not match array range for signal <alienLine4>, simulation mismatch.
-    Found 13x1-bit single-port Read Only RAM <Mram_alienLine4> for signal <alienLine4>.
-WARNING:Xst:3035 - Index value(s) does not match array range for signal <alienLine5>, simulation mismatch.
-    Found 13x1-bit single-port Read Only RAM <Mram_alienLine5> for signal <alienLine5>.
-    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_10_OUT> created at line 65.
-    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_188_OUT> created at line 116.
-    Found 11-bit adder for signal <n0305> created at line 81.
-    Found 11-bit adder for signal <n0310> created at line 88.
-    Found 11-bit adder for signal <n0313> created at line 88.
-    Found 11-bit adder for signal <n0366> created at line 130.
-    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_27_OUT<5:0>> created at line 82.
-    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_52_OUT<4:0>> created at line 82.
-    Found 32x486-bit Read Only RAM for signal <_n0499>
-    Found 7-bit 27-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_124_OUT> created at line 98.
-    Found 6-bit 21-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_154_OUT> created at line 104.
-    Found 8-bit 5-to-1 multiplexer for signal <alienLine[2]_GND_18_o_wide_mux_213_OUT> created at line 89.
-    Found 12-bit comparator lessequal for signal <n0007> created at line 65
-    Found 12-bit comparator lessequal for signal <n0011> created at line 66
-    Found 11-bit comparator lessequal for signal <n0019> created at line 81
-    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0001_LessThan_25_o> created at line 81
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_26_o> created at line 81
-    Found 11-bit comparator lessequal for signal <n0039> created at line 88
-    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0002_LessThan_57_o> created at line 88
-    Found 11-bit comparator lessequal for signal <n0043> created at line 88
-    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0003_LessThan_60_o> created at line 88
-    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_216_o> created at line 130
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_217_o> created at line 130
-    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0009_LessThan_219_o> created at line 130
+WARNING:Xst:647 - Input <reset> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_10_OUT> created at line 74.
+    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_185_OUT> created at line 125.
+    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_229_OUT> created at line 154.
+    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_231_OUT> created at line 156.
+    Found 11-bit adder for signal <n0479> created at line 90.
+    Found 11-bit adder for signal <n0484> created at line 97.
+    Found 11-bit adder for signal <n0487> created at line 97.
+    Found 11-bit adder for signal <n0540> created at line 134.
+    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_27_OUT<5:0>> created at line 91.
+    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_52_OUT<4:0>> created at line 91.
+    Found 32x486-bit Read Only RAM for signal <_n0734>
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_60_o> created at line 100.
+    Found 7-bit 27-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_95_OUT> created at line 101.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_97_o> created at line 106.
+    Found 6-bit 21-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_125_OUT> created at line 107.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_127_o> created at line 112.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_156_o> created at line 118.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_183_o> created at line 124.
+    Found 8-bit 5-to-1 multiplexer for signal <alienLine[2]_GND_18_o_wide_mux_213_OUT> created at line 98.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
+    Found 12-bit comparator lessequal for signal <n0007> created at line 74
+    Found 12-bit comparator lessequal for signal <n0011> created at line 75
+    Found 11-bit comparator lessequal for signal <n0019> created at line 90
+    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0001_LessThan_25_o> created at line 90
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_26_o> created at line 90
+    Found 11-bit comparator lessequal for signal <n0039> created at line 97
+    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0002_LessThan_57_o> created at line 97
+    Found 11-bit comparator lessequal for signal <n0043> created at line 97
+    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0003_LessThan_60_o> created at line 97
+    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_216_o> created at line 134
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_217_o> created at line 134
+    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0004_LessThan_219_o> created at line 134
+    Found 10-bit comparator lessequal for signal <n0155> created at line 153
+    Found 11-bit comparator greater for signal <GND_18_o_BUS_0005_LessThan_225_o> created at line 153
+    Found 10-bit comparator lessequal for signal <n0158> created at line 153
+    Found 11-bit comparator greater for signal <GND_18_o_BUS_0006_LessThan_228_o> created at line 153
     Summary:
-	inferred   6 RAM(s).
-	inferred   8 Adder/Subtractor(s).
-	inferred  12 Comparator(s).
-	inferred  80 Multiplexer(s).
+	inferred   1 RAM(s).
+	inferred  10 Adder/Subtractor(s).
+	inferred  50 Latch(s).
+	inferred  16 Comparator(s).
+	inferred 138 Multiplexer(s).
 Unit <Display> synthesized.
 
 Synthesizing Unit <div_12s_6s>.
@@ -421,6 +465,51 @@ Synthesizing Unit <mod_12s_6s>.
 	inferred 159 Multiplexer(s).
 Unit <mod_12s_6s> synthesized.
 
+Synthesizing Unit <div_11s_6s>.
+    Related source file is "".
+    Found 11-bit subtractor for signal <a[10]_unary_minus_1_OUT> created at line 0.
+    Found 6-bit subtractor for signal <b[5]_unary_minus_3_OUT> created at line 0.
+    Found 17-bit adder for signal <n0443> created at line 0.
+    Found 17-bit adder for signal <GND_29_o_b[5]_add_5_OUT> created at line 0.
+    Found 16-bit adder for signal <n0447> created at line 0.
+    Found 16-bit adder for signal <GND_29_o_b[5]_add_7_OUT> created at line 0.
+    Found 15-bit adder for signal <n0451> created at line 0.
+    Found 15-bit adder for signal <GND_29_o_b[5]_add_9_OUT> created at line 0.
+    Found 14-bit adder for signal <n0455> created at line 0.
+    Found 14-bit adder for signal <GND_29_o_b[5]_add_11_OUT> created at line 0.
+    Found 13-bit adder for signal <n0459> created at line 0.
+    Found 13-bit adder for signal <GND_29_o_b[5]_add_13_OUT> created at line 0.
+    Found 12-bit adder for signal <n0463> created at line 0.
+    Found 12-bit adder for signal <GND_29_o_b[5]_add_15_OUT> created at line 0.
+    Found 11-bit adder for signal <n0467> created at line 0.
+    Found 11-bit adder for signal <a[10]_b[5]_add_17_OUT> created at line 0.
+    Found 11-bit adder for signal <n0471> created at line 0.
+    Found 11-bit adder for signal <a[10]_GND_29_o_add_19_OUT> created at line 0.
+    Found 11-bit adder for signal <n0475> created at line 0.
+    Found 11-bit adder for signal <a[10]_GND_29_o_add_21_OUT[10:0]> created at line 0.
+    Found 11-bit adder for signal <n0479> created at line 0.
+    Found 11-bit adder for signal <a[10]_GND_29_o_add_23_OUT[10:0]> created at line 0.
+    Found 11-bit adder for signal <n0483> created at line 0.
+    Found 11-bit adder for signal <a[10]_GND_29_o_add_25_OUT[10:0]> created at line 0.
+    Found 12-bit adder for signal <GND_29_o_BUS_0001_add_28_OUT[11:0]> created at line 0.
+    Found 17-bit comparator greater for signal <BUS_0001_INV_1085_o> created at line 0
+    Found 16-bit comparator greater for signal <BUS_0002_INV_1084_o> created at line 0
+    Found 15-bit comparator greater for signal <BUS_0003_INV_1083_o> created at line 0
+    Found 14-bit comparator greater for signal <BUS_0004_INV_1082_o> created at line 0
+    Found 13-bit comparator greater for signal <BUS_0005_INV_1081_o> created at line 0
+    Found 12-bit comparator greater for signal <BUS_0006_INV_1080_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0007_INV_1079_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0008_INV_1078_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0009_INV_1077_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0010_INV_1076_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0011_INV_1075_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0012_INV_1074_o> created at line 0
+    Summary:
+	inferred  25 Adder/Subtractor(s).
+	inferred  12 Comparator(s).
+	inferred  94 Multiplexer(s).
+Unit <div_11s_6s> synthesized.
+
 Synthesizing Unit <Input>.
     Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\Input.vhd".
     Found 9-bit register for signal <alienXX>.
@@ -433,31 +522,31 @@ Synthesizing Unit <Input>.
     Found 8-bit register for signal <alienYY>.
     Found 1-bit register for signal <start>.
     Found 1-bit register for signal <newMissile>.
-    Found 20-bit adder for signal <fireTimer[19]_GND_29_o_add_6_OUT> created at line 82.
-    Found 10-bit adder for signal <shipPos[9]_GND_29_o_add_14_OUT> created at line 96.
-    Found 17-bit adder for signal <shipTimer[16]_GND_29_o_add_18_OUT> created at line 100.
+    Found 20-bit adder for signal <fireTimer[19]_GND_81_o_add_6_OUT> created at line 82.
+    Found 10-bit adder for signal <shipPos[9]_GND_81_o_add_14_OUT> created at line 96.
+    Found 17-bit adder for signal <shipTimer[16]_GND_81_o_add_18_OUT> created at line 100.
     Found 18-bit adder for signal <n0157> created at line 124.
     Found 21-bit adder for signal <n0156> created at line 130.
-    Found 9-bit adder for signal <alienXX[8]_GND_29_o_add_57_OUT> created at line 139.
+    Found 9-bit adder for signal <alienXX[8]_GND_81_o_add_57_OUT> created at line 139.
     Found 18-bit adder for signal <n0164> created at line 146.
-    Found 8-bit adder for signal <alienYY[7]_GND_29_o_add_71_OUT> created at line 151.
+    Found 8-bit adder for signal <alienYY[7]_GND_81_o_add_71_OUT> created at line 151.
     Found 21-bit adder for signal <n0166> created at line 152.
-    Found 23-bit adder for signal <alienTimer[22]_GND_29_o_add_79_OUT> created at line 156.
-    Found 3-bit adder for signal <alienDirection[2]_GND_29_o_add_90_OUT> created at line 171.
-    Found 4-bit adder for signal <alienJump[3]_GND_29_o_add_93_OUT> created at line 177.
-    Found 10-bit subtractor for signal <GND_29_o_GND_29_o_sub_12_OUT<9:0>> created at line 92.
-    Found 8-bit subtractor for signal <GND_29_o_GND_29_o_sub_46_OUT<7:0>> created at line 129.
-    Found 9-bit subtractor for signal <GND_29_o_GND_29_o_sub_71_OUT<8:0>> created at line 150.
-    Found 21-bit 8-to-1 multiplexer for signal <alienDirection[2]_GND_29_o_wide_mux_77_OUT> created at line 109.
+    Found 23-bit adder for signal <alienTimer[22]_GND_81_o_add_79_OUT> created at line 156.
+    Found 3-bit adder for signal <alienDirection[2]_GND_81_o_add_90_OUT> created at line 171.
+    Found 4-bit adder for signal <alienJump[3]_GND_81_o_add_93_OUT> created at line 177.
+    Found 10-bit subtractor for signal <GND_81_o_GND_81_o_sub_12_OUT<9:0>> created at line 92.
+    Found 8-bit subtractor for signal <GND_81_o_GND_81_o_sub_46_OUT<7:0>> created at line 129.
+    Found 9-bit subtractor for signal <GND_81_o_GND_81_o_sub_71_OUT<8:0>> created at line 150.
+    Found 21-bit 8-to-1 multiplexer for signal <alienDirection[2]_GND_81_o_wide_mux_77_OUT> created at line 109.
     Found 20-bit comparator greater for signal <n0003> created at line 71
     Found 17-bit comparator greater for signal <n0012> created at line 88
-    Found 10-bit comparator lessequal for signal <GND_29_o_shipPos[9]_LessThan_11_o> created at line 91
-    Found 10-bit comparator lessequal for signal <shipPos[9]_PWR_30_o_LessThan_14_o> created at line 95
+    Found 10-bit comparator lessequal for signal <GND_81_o_shipPos[9]_LessThan_11_o> created at line 91
+    Found 10-bit comparator lessequal for signal <shipPos[9]_PWR_85_o_LessThan_14_o> created at line 95
     Found 23-bit comparator greater for signal <n0027> created at line 107
-    Found 8-bit comparator greater for signal <GND_29_o_alienYY[7]_LessThan_44_o> created at line 127
-    Found 9-bit comparator greater for signal <alienXX[8]_PWR_30_o_LessThan_56_o> created at line 138
-    Found 9-bit comparator greater for signal <GND_29_o_alienXX[8]_LessThan_69_o> created at line 149
-    Found 8-bit comparator greater for signal <alienYY[7]_PWR_30_o_LessThan_70_o> created at line 149
+    Found 8-bit comparator greater for signal <GND_81_o_alienYY[7]_LessThan_44_o> created at line 127
+    Found 9-bit comparator greater for signal <alienXX[8]_PWR_85_o_LessThan_56_o> created at line 138
+    Found 9-bit comparator greater for signal <GND_81_o_alienXX[8]_LessThan_69_o> created at line 149
+    Found 8-bit comparator greater for signal <alienYY[7]_PWR_85_o_LessThan_70_o> created at line 149
     Found 3-bit comparator lessequal for signal <n0080> created at line 168
     Found 4-bit comparator lessequal for signal <n0084> created at line 174
     Summary:
@@ -472,9 +561,9 @@ Synthesizing Unit <rocketManager>.
     Found 10-bit register for signal <rocketY>.
     Found 16-bit register for signal <missileTimer>.
     Found 10-bit register for signal <MissileXX>.
-    Found 10-bit adder for signal <shipPosition[9]_GND_31_o_add_3_OUT> created at line 58.
-    Found 16-bit adder for signal <missileTimer[15]_GND_31_o_add_8_OUT> created at line 65.
-    Found 10-bit subtractor for signal <GND_31_o_GND_31_o_sub_8_OUT<9:0>> created at line 62.
+    Found 10-bit adder for signal <shipPosition[9]_GND_83_o_add_3_OUT> created at line 58.
+    Found 16-bit adder for signal <missileTimer[15]_GND_83_o_add_8_OUT> created at line 65.
+    Found 10-bit subtractor for signal <GND_83_o_GND_83_o_sub_8_OUT<9:0>> created at line 62.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  36 D-type flip-flop(s).
@@ -485,24 +574,24 @@ Unit <rocketManager> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 6
- 13x1-bit single-port Read Only RAM                    : 5
+# RAMs                                                 : 1
  32x486-bit single-port Read Only RAM                  : 1
 # Multipliers                                          : 1
  9x8-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 175
+# Adders/Subtractors                                   : 227
  10-bit adder                                          : 2
  10-bit addsub                                         : 1
  10-bit subtractor                                     : 1
- 11-bit adder                                          : 5
- 12-bit adder                                          : 52
+ 11-bit adder                                          : 25
+ 11-bit subtractor                                     : 4
+ 12-bit adder                                          : 58
  12-bit subtractor                                     : 6
- 13-bit adder                                          : 29
+ 13-bit adder                                          : 33
  13-bit subtractor                                     : 2
- 14-bit adder                                          : 10
- 15-bit adder                                          : 10
- 16-bit adder                                          : 11
- 17-bit adder                                          : 12
+ 14-bit adder                                          : 14
+ 15-bit adder                                          : 14
+ 16-bit adder                                          : 15
+ 17-bit adder                                          : 16
  18-bit adder                                          : 11
  20-bit adder                                          : 1
  21-bit adder                                          : 2
@@ -512,7 +601,7 @@ Macro Statistics
  5-bit adder                                           : 1
  5-bit subtractor                                      : 1
  6-bit adder                                           : 6
- 6-bit subtractor                                      : 5
+ 6-bit subtractor                                      : 7
  8-bit addsub                                          : 1
  9-bit adder                                           : 1
  9-bit subtractor                                      : 1
@@ -528,23 +617,25 @@ Macro Statistics
  4-bit register                                        : 1
  8-bit register                                        : 1
  9-bit register                                        : 1
-# Comparators                                          : 109
+# Latches                                              : 50
+ 1-bit latch                                           : 50
+# Comparators                                          : 137
  10-bit comparator greater                             : 2
- 10-bit comparator lessequal                           : 3
+ 10-bit comparator lessequal                           : 5
  11-bit comparator equal                               : 1
- 11-bit comparator greater                             : 8
+ 11-bit comparator greater                             : 22
  11-bit comparator lessequal                           : 4
- 12-bit comparator greater                             : 14
+ 12-bit comparator greater                             : 16
  12-bit comparator lessequal                           : 16
- 13-bit comparator greater                             : 2
+ 13-bit comparator greater                             : 4
  13-bit comparator lessequal                           : 21
- 14-bit comparator greater                             : 2
+ 14-bit comparator greater                             : 4
  14-bit comparator lessequal                           : 4
- 15-bit comparator greater                             : 2
+ 15-bit comparator greater                             : 4
  15-bit comparator lessequal                           : 4
- 16-bit comparator greater                             : 2
+ 16-bit comparator greater                             : 4
  16-bit comparator lessequal                           : 4
- 17-bit comparator greater                             : 3
+ 17-bit comparator greater                             : 5
  17-bit comparator lessequal                           : 4
  18-bit comparator greater                             : 2
  18-bit comparator lessequal                           : 3
@@ -554,11 +645,12 @@ Macro Statistics
  4-bit comparator lessequal                            : 1
  8-bit comparator greater                              : 2
  9-bit comparator greater                              : 2
-# Multiplexers                                         : 1003
- 1-bit 2-to-1 multiplexer                              : 880
+# Multiplexers                                         : 1249
+ 1-bit 10-to-1 multiplexer                             : 5
+ 1-bit 2-to-1 multiplexer                              : 1110
  10-bit 2-to-1 multiplexer                             : 4
- 11-bit 2-to-1 multiplexer                             : 1
- 12-bit 2-to-1 multiplexer                             : 10
+ 11-bit 2-to-1 multiplexer                             : 9
+ 12-bit 2-to-1 multiplexer                             : 12
  13-bit 2-to-1 multiplexer                             : 4
  16-bit 2-to-1 multiplexer                             : 1
  17-bit 2-to-1 multiplexer                             : 2
@@ -570,15 +662,15 @@ Macro Statistics
  23-bit 2-to-1 multiplexer                             : 1
  3-bit 2-to-1 multiplexer                              : 3
  4-bit 2-to-1 multiplexer                              : 2
- 5-bit 2-to-1 multiplexer                              : 2
- 6-bit 2-to-1 multiplexer                              : 6
+ 5-bit 2-to-1 multiplexer                              : 1
+ 6-bit 2-to-1 multiplexer                              : 8
  6-bit 21-to-1 multiplexer                             : 1
  7-bit 27-to-1 multiplexer                             : 1
  8-bit 2-to-1 multiplexer                              : 70
  8-bit 5-to-1 multiplexer                              : 1
  9-bit 2-to-1 multiplexer                              : 3
-# Xors                                                 : 6
- 1-bit xor2                                            : 6
+# Xors                                                 : 8
+ 1-bit xor2                                            : 8
 
 =========================================================================
 
@@ -588,71 +680,116 @@ Macro Statistics
 
 Reading core <ipcore_dir/StartScreenRom.ngc>.
 Loading core <StartScreenRom> for timing and area information for instance <StartScreenRom_map>.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_0 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_1 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_2 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_3 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_4 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_5 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_6 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_7 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_8 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_9 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_0 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_1 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_2 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_3 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_4 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_5 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_6 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_7 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_8 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_9 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_0 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_1 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_2 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_3 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_4 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_5 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_6 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_7 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_8 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_9 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_0 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_1 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_2 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_3 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_4 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_5 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_6 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_7 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_8 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_9 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_0 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_1 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_2 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_3 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_4 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_5 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_6 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_7 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_8 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_9 hinder the constant cleaning in the block Display_Map.
+   You should achieve better results by setting this init to 0.
 
 Synthesizing (advanced) Unit <Display>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0499> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0734> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 486-bit                   |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <n0259>         |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_alienLine1> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 13-word x 1-bit                     |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <n0175>         |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_alienLine2> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 13-word x 1-bit                     |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <n0175>         |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_alienLine3> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 13-word x 1-bit                     |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <n0175>         |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_alienLine4> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 13-word x 1-bit                     |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <n0175>         |          |
-    |     diA            | connected to signal <GND>           |          |
-    |     doA            | connected to internal node          |          |
-    -----------------------------------------------------------------------
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram_alienLine5> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
-    -----------------------------------------------------------------------
-    | ram_type           | Distributed                         |          |
-    -----------------------------------------------------------------------
-    | Port A                                                              |
-    |     aspect ratio   | 13-word x 1-bit                     |          |
-    |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <n0175>         |          |
+    |     addrA          | connected to signal <n0429>         |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -681,16 +818,18 @@ Unit <rocketManager> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 6
- 13x1-bit single-port distributed Read Only RAM        : 5
+# RAMs                                                 : 1
  32x486-bit single-port distributed Read Only RAM      : 1
 # MACs                                                 : 1
  9x8-to-15-bit MAC                                     : 1
-# Adders/Subtractors                                   : 116
+# Adders/Subtractors                                   : 146
  10-bit adder                                          : 1
  10-bit addsub                                         : 1
  10-bit subtractor                                     : 1
  11-bit adder                                          : 4
+ 11-bit adder carry in                                 : 22
+ 11-bit subtractor                                     : 4
+ 12-bit adder                                          : 2
  12-bit adder carry in                                 : 48
  12-bit subtractor                                     : 6
  13-bit adder                                          : 28
@@ -703,7 +842,7 @@ Macro Statistics
  5-bit subtractor                                      : 1
  6-bit adder                                           : 2
  6-bit adder carry in                                  : 4
- 6-bit subtractor                                      : 5
+ 6-bit subtractor                                      : 7
  8-bit addsub                                          : 1
  9-bit adder                                           : 1
  9-bit subtractor                                      : 1
@@ -716,23 +855,23 @@ Macro Statistics
  3-bit up counter                                      : 1
 # Registers                                            : 73
  Flip-Flops                                            : 73
-# Comparators                                          : 109
+# Comparators                                          : 137
  10-bit comparator greater                             : 2
- 10-bit comparator lessequal                           : 3
+ 10-bit comparator lessequal                           : 5
  11-bit comparator equal                               : 1
- 11-bit comparator greater                             : 8
+ 11-bit comparator greater                             : 22
  11-bit comparator lessequal                           : 4
- 12-bit comparator greater                             : 14
+ 12-bit comparator greater                             : 16
  12-bit comparator lessequal                           : 16
- 13-bit comparator greater                             : 2
+ 13-bit comparator greater                             : 4
  13-bit comparator lessequal                           : 21
- 14-bit comparator greater                             : 2
+ 14-bit comparator greater                             : 4
  14-bit comparator lessequal                           : 4
- 15-bit comparator greater                             : 2
+ 15-bit comparator greater                             : 4
  15-bit comparator lessequal                           : 4
- 16-bit comparator greater                             : 2
+ 16-bit comparator greater                             : 4
  16-bit comparator lessequal                           : 4
- 17-bit comparator greater                             : 3
+ 17-bit comparator greater                             : 5
  17-bit comparator lessequal                           : 4
  18-bit comparator greater                             : 2
  18-bit comparator lessequal                           : 3
@@ -742,10 +881,12 @@ Macro Statistics
  4-bit comparator lessequal                            : 1
  8-bit comparator greater                              : 2
  9-bit comparator greater                              : 2
-# Multiplexers                                         : 997
- 1-bit 2-to-1 multiplexer                              : 880
+# Multiplexers                                         : 1243
+ 1-bit 10-to-1 multiplexer                             : 5
+ 1-bit 2-to-1 multiplexer                              : 1110
  10-bit 2-to-1 multiplexer                             : 3
- 12-bit 2-to-1 multiplexer                             : 10
+ 11-bit 2-to-1 multiplexer                             : 8
+ 12-bit 2-to-1 multiplexer                             : 12
  13-bit 2-to-1 multiplexer                             : 4
  17-bit 2-to-1 multiplexer                             : 2
  18-bit 2-to-1 multiplexer                             : 4
@@ -754,21 +895,121 @@ Macro Statistics
  21-bit 8-to-1 multiplexer                             : 1
  3-bit 2-to-1 multiplexer                              : 2
  4-bit 2-to-1 multiplexer                              : 2
- 5-bit 2-to-1 multiplexer                              : 2
- 6-bit 2-to-1 multiplexer                              : 6
+ 5-bit 2-to-1 multiplexer                              : 1
+ 6-bit 2-to-1 multiplexer                              : 8
  6-bit 21-to-1 multiplexer                             : 1
  7-bit 27-to-1 multiplexer                             : 1
  8-bit 2-to-1 multiplexer                              : 70
  8-bit 5-to-1 multiplexer                              : 1
  9-bit 2-to-1 multiplexer                              : 3
-# Xors                                                 : 6
- 1-bit xor2                                            : 6
+# Xors                                                 : 8
+ 1-bit xor2                                            : 8
 
 =========================================================================
 
 =========================================================================
 *                         Low Level Synthesis                           *
 =========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_0 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_1 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_2 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_3 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_4 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_5 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_6 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_7 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_8 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine1_9 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_0 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_1 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_2 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_3 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_4 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_5 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_6 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_7 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_8 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine2_9 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_0 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_1 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_2 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_3 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_4 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_5 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_6 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_7 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_8 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine3_9 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_0 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_1 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_2 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_3 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_4 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_5 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_6 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_7 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_8 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine4_9 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_0 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_1 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_2 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_3 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_4 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_5 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_6 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_7 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_8 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
+WARNING:Xst:1426 - The value init of the FF/Latch alienLine5_9 hinder the constant cleaning in the block Display.
+   You should achieve better results by setting this init to 0.
 
 Optimizing unit <TopModule> ...
 
@@ -779,11 +1020,10 @@ Optimizing unit <Display> ...
 Optimizing unit <mod_13s_5s> ...
 
 Optimizing unit <mod_13s_4s> ...
-INFO:Xst:3203 - The FF/Latch <Input_Map/alienJump_0> in Unit <TopModule> is the opposite to the following FF/Latch, which will be removed : <Input_Map/alienDirection_0> 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block TopModule, actual ratio is 25.
+Found area constraint ratio of 100 (+ 5) on block TopModule, actual ratio is 30.
 
 Final Macro Processing ...
 
@@ -791,8 +1031,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 155
- Flip-Flops                                            : 155
+# Registers                                            : 156
+ Flip-Flops                                            : 156
 
 =========================================================================
 
@@ -815,29 +1055,30 @@ Top Level Output File Name         : TopModule.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2674
+# BELS                             : 3184
 #      GND                         : 2
-#      INV                         : 68
+#      INV                         : 72
 #      LUT1                        : 77
-#      LUT2                        : 111
-#      LUT3                        : 281
-#      LUT4                        : 181
-#      LUT5                        : 383
-#      LUT6                        : 503
-#      MUXCY                       : 522
-#      MUXF7                       : 18
+#      LUT2                        : 134
+#      LUT3                        : 336
+#      LUT4                        : 220
+#      LUT5                        : 401
+#      LUT6                        : 659
+#      MUXCY                       : 629
+#      MUXF7                       : 24
 #      VCC                         : 2
-#      XORCY                       : 526
-# FlipFlops/Latches                : 159
-#      FDC                         : 79
+#      XORCY                       : 628
+# FlipFlops/Latches                : 210
+#      FDC                         : 80
 #      FDCE                        : 58
 #      FDE                         : 4
 #      FDP                         : 2
 #      FDPE                        : 16
+#      LDE                         : 50
 # RAMS                             : 15
 #      RAMB16BWER                  : 15
-# Clock Buffers                    : 2
-#      BUFG                        : 2
+# Clock Buffers                    : 3
+#      BUFG                        : 3
 # IO Buffers                       : 16
 #      IBUF                        : 5
 #      IBUFG                       : 1
@@ -854,16 +1095,16 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             159  out of  18224     0%  
- Number of Slice LUTs:                 1604  out of   9112    17%  
-    Number used as Logic:              1604  out of   9112    17%  
+ Number of Slice Registers:             210  out of  18224     1%  
+ Number of Slice LUTs:                 1899  out of   9112    20%  
+    Number used as Logic:              1899  out of   9112    20%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1611
-   Number with an unused Flip Flop:    1452  out of   1611    90%  
-   Number with an unused LUT:             7  out of   1611     0%  
-   Number of fully used LUT-FF pairs:   152  out of   1611     9%  
-   Number of unique control sets:        10
+ Number of LUT Flip Flop pairs used:   1956
+   Number with an unused Flip Flop:    1746  out of   1956    89%  
+   Number with an unused LUT:            57  out of   1956     2%  
+   Number of fully used LUT-FF pairs:   153  out of   1956     7%  
+   Number of unique control sets:        60
 
 IO Utilization: 
  Number of IOs:                          16
@@ -872,7 +1113,7 @@ IO Utilization:
 Specific Feature Utilization:
  Number of Block RAM/FIFO:               15  out of     32    46%  
     Number using Block RAM only:         15
- Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
  Number of DSP48A1s:                      1  out of     32     3%  
 
 ---------------------------
@@ -893,12 +1134,16 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
-Clock Signal                       | Clock buffer(FF name)                                                                                                                       | Load  |
------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
-fpga_clk                           | DCM_SP:CLKFX                                                                                                                                | 174   |
-StartScreenRom_map/N1              | NONE(StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 15    |
------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                                                                           | Clock buffer(FF name)                                                                                                                       | Load  |
+---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+fpga_clk                                                                               | DCM_SP:CLKFX                                                                                                                                | 175   |
+Display_Map/alienYY[9]_GND_18_o_AND_102_o(Display_Map/alienYY[9]_GND_18_o_AND_102_o1:O)| BUFG(*)(Display_Map/alienLine1_9)                                                                                                           | 50    |
+StartScreenRom_map/N1                                                                  | NONE(StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 15    |
+---------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+(*) This 1 clock signal(s) are generated by combinatorial logic,
+and XST is not able to identify which are the primary clock signals.
+Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -910,8 +1155,8 @@ Timing Summary:
 Speed Grade: -3
 
    Minimum period: 3.194ns (Maximum Frequency: 313.067MHz)
-   Minimum input arrival time before clock: 4.496ns
-   Maximum output required time after clock: 66.879ns
+   Minimum input arrival time before clock: 4.600ns
+   Maximum output required time after clock: 67.713ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -921,7 +1166,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_clk'
   Clock period: 3.194ns (frequency: 313.067MHz)
-  Total number of paths / destination ports: 69521 / 446
+  Total number of paths / destination ports: 60226 / 447
 -------------------------------------------------------------------------
 Delay:               7.985ns (Levels of Logic = 3)
   Source:            VGA/hcounter_5 (FF)
@@ -944,9 +1189,9 @@ Delay:               7.985ns (Levels of Logic = 3)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_clk'
-  Total number of paths / destination ports: 195 / 176
+  Total number of paths / destination ports: 193 / 177
 -------------------------------------------------------------------------
-Offset:              4.496ns (Levels of Logic = 4)
+Offset:              4.600ns (Levels of Logic = 4)
   Source:            left (PAD)
   Destination:       Input_Map/shipPos_9 (FF)
   Destination Clock: fpga_clk rising 0.4X
@@ -955,32 +1200,31 @@ Offset:              4.496ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            12   1.222   0.909  left_IBUF (left_IBUF)
-     LUT3:I2->O            2   0.205   0.864  Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_cy<2>11 (Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_cy<2>1)
-     LUT6:I2->O            4   0.203   0.788  Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_cy<5>12 (Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_cy<5>)
-     LUT6:I4->O            1   0.203   0.000  Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_xor<9>11 (Input_Map/shipPos[9]_shipPos[9]_mux_17_OUT<9>)
+     IBUF:I->O            13   1.222   1.297  left_IBUF (left_IBUF)
+     LUT6:I0->O            4   0.203   0.684  Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_cy<5>11 (Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_cy<5>1)
+     LUT4:I3->O            1   0.205   0.684  Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_xor<9>11_SW0 (N208)
+     LUT5:I3->O            1   0.203   0.000  Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_xor<9>11 (Input_Map/shipPos[9]_shipPos[9]_mux_17_OUT<9>)
      FDCE:D                    0.102          Input_Map/shipPos_9
     ----------------------------------------
-    Total                      4.496ns (1.935ns logic, 2.561ns route)
-                                       (43.0% logic, 57.0% route)
+    Total                      4.600ns (1.935ns logic, 2.665ns route)
+                                       (42.1% logic, 57.9% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk'
-  Total number of paths / destination ports: 6953922407924340100000 / 10
+  Total number of paths / destination ports: 7663622063601165000000 / 10
 -------------------------------------------------------------------------
-Offset:              66.879ns (Levels of Logic = 66)
-  Source:            VGA/vcounter_1 (FF)
-  Destination:       red<2> (PAD)
+Offset:              67.713ns (Levels of Logic = 67)
+  Source:            VGA/vcounter_2 (FF)
+  Destination:       red<0> (PAD)
   Source Clock:      fpga_clk rising 0.4X
 
-  Data Path: VGA/vcounter_1 to red<2>
+  Data Path: VGA/vcounter_2 to red<0>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            23   0.447   1.258  VGA/vcounter_1 (VGA/vcounter_1)
-     LUT2:I0->O            1   0.203   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_lut<1> (Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_lut<1>)
-     MUXCY:S->O            1   0.172   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<1> (Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<2> (Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<2>)
+     FDCE:C->Q            23   0.447   1.258  VGA/vcounter_2 (VGA/vcounter_2)
+     LUT2:I0->O            1   0.203   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_lut<2> (Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_lut<2>)
+     MUXCY:S->O            1   0.172   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<2> (Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<2>)
      MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<3> (Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<3>)
      MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<4> (Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<4>)
      MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<5> (Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<5>)
@@ -989,26 +1233,26 @@ Offset:              66.879ns (Levels of Logic = 66)
      MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<8> (Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<8>)
      MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<9> (Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<9>)
      MUXCY:CI->O           0   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<10> (Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_cy<10>)
-     XORCY:CI->O         119   0.180   1.927  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_xor<11> (Display_Map/GND_18_o_GND_18_o_sub_10_OUT<11>)
+     XORCY:CI->O         128   0.180   1.950  Display_Map/Msub_GND_18_o_GND_18_o_sub_10_OUT_xor<11> (Display_Map/GND_18_o_GND_18_o_sub_10_OUT<11>)
      INV:I->O              0   0.206   0.000  Display_Map/GND_18_o_GND_18_o_mod_210/Msub_a[11]_unary_minus_1_OUT_lut<11>_INV_0 (Display_Map/GND_18_o_GND_18_o_div_10/Msub_a[11]_unary_minus_1_OUT_lut<11>)
-     XORCY:LI->O           9   0.136   1.174  Display_Map/GND_18_o_GND_18_o_div_10/Msub_a[11]_unary_minus_1_OUT_xor<11> (Display_Map/GND_18_o_GND_18_o_div_10/a[11]_unary_minus_1_OUT<11>)
-     LUT5:I0->O            6   0.203   1.109  Display_Map/GND_18_o_GND_18_o_div_10/Mmux_a[11]_GND_20_o_MUX_247_o14 (Display_Map/GND_18_o_GND_18_o_div_10/a[11]_GND_20_o_MUX_247_o)
-     LUT6:I0->O           35   0.203   1.563  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0007_INV_228_o1 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<6>)
-     LUT3:I0->O            9   0.205   1.194  Display_Map/GND_18_o_GND_18_o_div_10/Mmux_a[11]_a[11]_MUX_259_o16 (Display_Map/GND_18_o_GND_18_o_div_10/a[11]_a[11]_MUX_259_o)
-     LUT6:I0->O           42   0.203   1.778  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0008_INV_227_o1 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<5>)
-     LUT5:I0->O            5   0.203   1.079  Display_Map/GND_18_o_GND_18_o_div_10/Mmux_a[11]_a[11]_MUX_271_o111 (Display_Map/GND_18_o_GND_18_o_div_10/a[11]_a[11]_MUX_272_o)
-     LUT6:I0->O           26   0.203   1.571  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0009_INV_226_o2 (Display_Map/GND_18_o_GND_18_o_div_10/BUS_0009_INV_226_o1)
+     XORCY:LI->O          11   0.136   1.247  Display_Map/GND_18_o_GND_18_o_div_10/Msub_a[11]_unary_minus_1_OUT_xor<11> (Display_Map/GND_18_o_GND_18_o_div_10/a[11]_unary_minus_1_OUT<11>)
+     LUT6:I0->O            1   0.203   0.580  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0007_INV_228_o1 (Display_Map/GND_18_o_GND_18_o_div_10/BUS_0007_INV_228_o)
+     LUT6:I5->O           36   0.205   1.577  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0007_INV_228_o2 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<6>)
+     LUT3:I0->O           15   0.205   1.346  Display_Map/GND_18_o_GND_18_o_div_10/Mmux_a[11]_a[11]_MUX_259_o12 (Display_Map/GND_18_o_GND_18_o_div_10/a[11]_a[11]_MUX_259_o)
+     LUT6:I0->O           46   0.203   1.835  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0008_INV_227_o1 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<5>)
+     LUT5:I0->O            6   0.203   1.089  Display_Map/GND_18_o_GND_18_o_div_10/Mmux_a[11]_a[11]_MUX_271_o121 (Display_Map/GND_18_o_GND_18_o_div_10/a[11]_a[11]_MUX_273_o)
+     LUT6:I1->O           27   0.203   1.585  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0009_INV_226_o1 (Display_Map/GND_18_o_GND_18_o_div_10/BUS_0009_INV_226_o1)
      LUT6:I0->O            7   0.203   1.138  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0009_INV_226_o11 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<4>)
-     LUT6:I0->O            1   0.203   0.924  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0010_INV_225_o1_SW0 (N65)
-     LUT6:I1->O           32   0.203   1.656  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0010_INV_225_o1 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<3>)
+     LUT6:I0->O            1   0.203   0.924  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0010_INV_225_o1_SW0 (N71)
+     LUT6:I1->O           35   0.203   1.699  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0010_INV_225_o1 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<3>)
      LUT6:I0->O            3   0.203   1.015  Display_Map/GND_18_o_GND_18_o_div_10/Mmux_n0539111 (Display_Map/GND_18_o_GND_18_o_div_10/n0539<8>)
      LUT6:I0->O            1   0.203   0.924  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0011_INV_224_o1_SW0 (N69)
      LUT6:I1->O           27   0.203   1.449  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0011_INV_224_o1 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<2>)
      LUT3:I0->O            2   0.205   0.961  Display_Map/GND_18_o_GND_18_o_div_10/Mmux_n0543101 (Display_Map/GND_18_o_GND_18_o_div_10/n0543<7>)
      LUT5:I0->O            1   0.203   0.924  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0012_INV_223_o1_SW0 (N55)
-     LUT6:I1->O           12   0.203   1.273  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0012_INV_223_o1 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<1>)
-     LUT6:I0->O           10   0.203   1.221  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0013_INV_222_o15 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_cy<0>)
-     LUT6:I0->O           17   0.203   1.256  Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_cy<4>11 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_cy<4>)
+     LUT6:I1->O           13   0.203   1.297  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0012_INV_223_o1 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<1>)
+     LUT6:I0->O           11   0.203   0.883  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0013_INV_222_o15 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_cy<0>)
+     LUT6:I5->O           17   0.205   1.256  Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_cy<4>11 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_cy<4>)
      LUT5:I2->O            1   0.205   0.000  Display_Map/GND_18_o_GND_18_o_mod_11/Msub_a[12]_unary_minus_1_OUT_lut<7> (Display_Map/GND_18_o_GND_18_o_mod_11/Msub_a[12]_unary_minus_1_OUT_lut<7>)
      MUXCY:S->O            1   0.172   0.000  Display_Map/GND_18_o_GND_18_o_mod_11/Msub_a[12]_unary_minus_1_OUT_cy<7> (Display_Map/GND_18_o_GND_18_o_mod_11/Msub_a[12]_unary_minus_1_OUT_cy<7>)
      MUXCY:CI->O           1   0.019   0.000  Display_Map/GND_18_o_GND_18_o_mod_11/Msub_a[12]_unary_minus_1_OUT_cy<8> (Display_Map/GND_18_o_GND_18_o_mod_11/Msub_a[12]_unary_minus_1_OUT_cy<8>)
@@ -1029,29 +1273,66 @@ Offset:              66.879ns (Levels of Logic = 66)
      LUT6:I3->O            8   0.205   1.167  Display_Map/GND_18_o_GND_18_o_mod_11/Mmux_a[12]_a[12]_MUX_500_o131 (Display_Map/GND_18_o_GND_18_o_mod_11/a[12]_a[12]_MUX_503_o)
      LUT6:I0->O           15   0.203   1.210  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0011_INV_402_o1 (Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0011_INV_402_o)
      LUT5:I2->O            5   0.205   1.059  Display_Map/GND_18_o_GND_18_o_mod_11/Mmux_a[12]_a[12]_MUX_513_o151 (Display_Map/GND_18_o_GND_18_o_mod_11/a[12]_a[12]_MUX_518_o)
-     LUT5:I0->O            3   0.203   0.651  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0012_INV_416_o1_SW0 (N109)
+     LUT5:I0->O            3   0.203   0.651  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0012_INV_416_o1_SW0 (N132)
      LUT6:I5->O           19   0.205   1.319  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0012_INV_416_o1 (Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0012_INV_416_o)
      LUT6:I2->O            3   0.203   1.015  Display_Map/GND_18_o_GND_18_o_mod_11/Mmux_a[12]_a[12]_MUX_526_o191 (Display_Map/GND_18_o_GND_18_o_mod_11/a[12]_a[12]_MUX_535_o)
      LUT6:I0->O            1   0.203   0.580  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0013_INV_430_o11 (Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0013_INV_430_o1)
      LUT6:I5->O            8   0.205   1.147  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0013_INV_430_o13 (Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0013_INV_430_o)
      LUT6:I1->O            3   0.203   0.995  Display_Map/GND_18_o_GND_18_o_mod_11/Mmux_a[12]_a[12]_MUX_561_o131 (Display_Map/GND_18_o_GND_18_o_mod_11/Mmux_a[12]_a[12]_MUX_561_o13)
-     LUT6:I1->O            1   0.203   0.000  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_444_o25_G (N226)
-     MUXF7:I1->O           6   0.140   1.109  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_444_o25 (Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_444_o)
+     LUT6:I1->O            1   0.203   0.000  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_444_o25_G (N287)
+     MUXF7:I1->O           5   0.140   1.079  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_444_o25 (Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_444_o)
      LUT6:I0->O            2   0.203   0.961  Display_Map/GND_18_o_GND_18_o_mod_11/Mmux_a[12]_a[12]_MUX_561_o111 (Display_Map/GND_18_o_GND_18_o_mod_11/Madd_b[3]_a[12]_add_33_OUT[3:0]_lut<2>)
-     LUT6:I1->O            2   0.203   0.961  Display_Map/GND_18_o_GND_18_o_mod_11/a[12]_a[12]_AND_90_o (Display_Map/GND_18_o_GND_18_o_mod_11/a[12]_a[12]_AND_90_o)
-     LUT6:I1->O            8   0.203   1.147  Display_Map/Mmux_alienLine<0>11 (Display_Map/alienLine<0>)
-     LUT6:I1->O            2   0.203   0.961  Display_Map/Mmux_blue15111 (Display_Map/Mmux_blue1511)
-     LUT5:I0->O            1   0.203   0.684  Display_Map/Mmux_blue164_SW0 (N193)
-     LUT6:I4->O            1   0.203   0.579  Display_Map/Mmux_blue164 (red_2_OBUF)
-     OBUF:I->O                 2.571          red_2_OBUF (red<2>)
+     LUT6:I1->O            1   0.203   0.924  Display_Map/GND_18_o_GND_18_o_mod_11/a[12]_a[12]_AND_90_o (Display_Map/GND_18_o_GND_18_o_mod_11/a[12]_a[12]_AND_90_o)
+     LUT6:I1->O           11   0.203   1.111  Display_Map/Mmux_alienLine<0>11 (Display_Map/alienLine<0>)
+     LUT3:I0->O            5   0.205   1.079  Display_Map/GND_18_o_vcounter[10]_AND_96_o855211 (Display_Map/GND_18_o_vcounter[10]_AND_96_o85521)
+     LUT6:I0->O            1   0.203   0.000  Display_Map/Mmux_blue1414_F (N294)
+     MUXF7:I0->O           1   0.131   0.827  Display_Map/Mmux_blue1414 (Display_Map/Mmux_blue1414)
+     LUT6:I2->O            1   0.203   0.808  Display_Map/Mmux_blue1417 (Display_Map/Mmux_blue1417)
+     LUT6:I3->O            1   0.205   0.579  Display_Map/Mmux_blue1418 (red_0_OBUF)
+     OBUF:I->O                 2.571          red_0_OBUF (red<0>)
     ----------------------------------------
-    Total                     66.879ns (13.974ns logic, 52.905ns route)
-                                       (20.9% logic, 79.1% route)
+    Total                     67.713ns (14.297ns logic, 53.416ns route)
+                                       (21.1% logic, 78.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'Display_Map/alienYY[9]_GND_18_o_AND_102_o'
+  Total number of paths / destination ports: 380 / 8
+-------------------------------------------------------------------------
+Offset:              10.237ns (Levels of Logic = 9)
+  Source:            Display_Map/alienLine4_6 (LATCH)
+  Destination:       blue<0> (PAD)
+  Source Clock:      Display_Map/alienYY[9]_GND_18_o_AND_102_o falling
+
+  Data Path: Display_Map/alienLine4_6 to blue<0>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     LDE:G->Q              1   0.498   0.827  Display_Map/alienLine4_6 (Display_Map/alienLine4_6)
+     LUT6:I2->O            1   0.203   0.000  Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_156_o_6 (Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_156_o_6)
+     MUXF7:I1->O           1   0.140   0.580  Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_156_o_5_f7 (Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_156_o_5_f7)
+     LUT6:I5->O            5   0.205   0.819  Display_Map/alienIndex<3>41 (Display_Map/alienIndex[3]_X_12_o_Mux_156_o)
+     LUT5:I3->O            1   0.203   0.580  Display_Map/Mmux_blue112 (Display_Map/Mmux_blue18)
+     LUT6:I5->O            1   0.205   0.827  Display_Map/Mmux_blue113 (Display_Map/Mmux_blue19)
+     LUT6:I2->O            1   0.203   0.580  Display_Map/Mmux_blue119 (Display_Map/Mmux_blue115)
+     LUT2:I1->O            1   0.205   0.808  Display_Map/Mmux_blue120_SW0 (N250)
+     LUT6:I3->O            1   0.205   0.579  Display_Map/Mmux_blue120 (blue_0_OBUF)
+     OBUF:I->O                 2.571          blue_0_OBUF (blue<0>)
+    ----------------------------------------
+    Total                     10.237ns (4.638ns logic, 5.599ns route)
+                                       (45.3% logic, 54.7% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
+
+Clock to Setup on destination clock Display_Map/alienYY[9]_GND_18_o_AND_102_o
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fpga_clk       |         |         |   28.467|         |
+---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock fpga_clk
 ---------------+---------+---------+---------+---------+
@@ -1064,14 +1345,14 @@ fpga_clk       |    7.985|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 16.00 secs
-Total CPU time to Xst completion: 16.71 secs
+Total REAL time to Xst completion: 19.00 secs
+Total CPU time to Xst completion: 18.41 secs
  
 --> 
 
-Total memory usage is 284832 kilobytes
+Total memory usage is 286944 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   15 (   0 filtered)
-Number of infos    :    9 (   0 filtered)
+Number of warnings :  151 (   0 filtered)
+Number of infos    :    4 (   0 filtered)
 

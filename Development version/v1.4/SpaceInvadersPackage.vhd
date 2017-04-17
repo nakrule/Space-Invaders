@@ -47,9 +47,15 @@ package SpaceInvadersPackage is
 	constant missileSpeed    : integer := 60000; -- missile speed
 	constant rocketLength	 : integer := 10;    -- rocket length in pixel
 	constant rocketColor     : std_logic_vector(7 downto 0) := "11111111";
+	-- 000 = blue, 001 = dark blue, 010 = green, 011 = yellow, 100 = purple
+  signal alienLine1 : std_logic_vector(12 downto 0) := "0001111001111"; -- 3 first bit for color, then 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine2 : std_logic_vector(12 downto 0) := "0010011111101"; -- 3 first bit for color, then 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine3 : std_logic_vector(12 downto 0) := "0101100110111"; -- 3 first bit for color, then 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine4 : std_logic_vector(12 downto 0) := "0111100011111"; -- 3 first bit for color, then 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine5 : std_logic_vector(12 downto 0) := "1001111111111"; -- 3 first bit for color, then 1 bit for every alien ; 1 alien alive, 0 dead alien
 ----------------------------------------------------------------------------------
   -- Tables of aliens and ship
-
+  
   -- 0 = no alien
   -- 1 = blue, 3 = dark blue, 5 = green, 7 = purple, 9 = yellow
   -- 2 = blue alien killed, 4 = dark blue alien killed, etc ...

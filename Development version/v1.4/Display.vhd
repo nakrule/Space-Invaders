@@ -49,6 +49,8 @@ architecture logic of Display is
   signal alienYY   : integer range 0 to 1000;  -- Integer value of alienY
   signal missileYY : integer range 0 to 1023;  -- Integer value of missileY
   signal missileXX : integer range shipMargin to (HLINES-shipMargin) := shipMargin;  -- Current Missile x value from left screen
+  signal alienLine : integer range 0 to 4 := 0;
+  signal alienIndex : integer range 0 to 9 := 0;
 
 begin
 
@@ -59,6 +61,9 @@ begin
   alienYY   <= to_integer(unsigned(alienY));
   missileYY <= to_integer(unsigned(missileY));
   missileXX <= to_integer(unsigned(missileX));
+  
+  alienLine <= (((vcounter-alienYY) / 30) mod 5) when (vcounter-alienYY) >= 0 else 0;
+  alienIndex <= (((hcounter-alienXX) / 30) mod 10) when (hcounter-alienXX) >= 0 else 0;
 
   -- Outputs must be 0 is blank = 0, this happen
   -- when hcount and vcount are higher than 800x600.
@@ -66,7 +71,8 @@ begin
   green <= color(4 downto 2) when blank = '0' else "000";
   blue  <= color(1 downto 0) when blank = '0' else "00";
 
-  process(hcounter, vcounter, shipPos, gameStarted, ImageInput, alienXX, alienYY, rocketOnScreen, missileYY, missileXX)
+  process(hcounter, vcounter, shipPos, gameStarted, ImageInput, alienXX, alienYY, rocketOnScreen, missileYY, missileXX, alienLine1, 
+  alienLine2, alienLine3, alienLine4, alienLine5, alienLine, alienIndex)
   begin
     if gameStarted = '0' then
       color <= ImageInput;
@@ -80,9 +86,41 @@ begin
 
       -- Display aliens
       if hcounter >= alienXX and hcounter < (alienXX + 300) and vcounter >= alienYY and vcounter < (alienYY + 150) then
+			case alienLine is
+				when 0 =>
+					if alienLine1(alienIndex) = '1' then
+						color <= std_logic_vector(to_unsigned(greenAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
+					else
+						color <= "00000000";
+					end if;
+				when 1 =>
+					if alienLine2(alienIndex) = '1' then
+							color <= std_logic_vector(to_unsigned(blueAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
+						else
+							color <= "00000000";
+						end if;
+				when 2 =>
+					if alienLine3(alienIndex) = '1' then
+						color <= std_logic_vector(to_unsigned(DarkBlueAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
+					else
+						color <= "00000000";
+					end if;
+				when 3 =>
+					if alienLine4(alienIndex) = '1' then
+						color <= std_logic_vector(to_unsigned(purpleAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
+					else
+						color <= "00000000";
+					end if;
+				when others =>
+					if alienLine5(alienIndex) = '1' then
+						color <= std_logic_vector(to_unsigned(yellowAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
+					else
+						color <= "00000000";
+					end if;
+				end case;
         --color <= std_logic_vector(to_unsigned(blueAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)),8));
         --color <= std_logic_vector(to_unsigned(DarkBlueAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)),8));
-        color <= std_logic_vector(to_unsigned(greenAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
+        --color <= std_logic_vector(to_unsigned(greenAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
       --color <= std_logic_vector(to_unsigned(purpleAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)),8));
       --color <= std_logic_vector(to_unsigned(yellowAlien(((hcounter-alienXX) mod 30), ((vcounter-alienYY)mod 30)), 8));
       end if;

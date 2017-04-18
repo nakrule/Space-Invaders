@@ -25,7 +25,6 @@ entity Display is
     blank          : in  std_logic;     -- If 1, video output must be null
     gameStarted    : in  std_logic;     -- When 0, show start screen
     rocketOnScreen : in  std_logic;     -- If 1, display a rocket
-	 reset          : in  std_logic;     -- Active high
     missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
     MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
@@ -53,16 +52,17 @@ architecture logic of Display is
   signal alienLine : integer range 0 to 4 := 0;
   signal alienIndex : integer range 0 to 9 := 0;
   
-  signal alienLine1 : std_logic_vector(0 to 9) := "1111111001"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine1 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine2 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine3 : std_logic_vector(0 to 9) := "1111011111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine3 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine4 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine5 : std_logic_vector(0 to 9) := "1110011100"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine5 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   
   -- Temp signals used for alienLine computation
   signal temp  : integer range 0 to 1023 := 0;
   signal temp2 : integer range 0 to 1023 := 0;
   signal temp3 : integer range 0 to 1023 := 0;
+
 
 begin
 
@@ -146,15 +146,40 @@ begin
     end if;
   end process;
   
-  alienLine1 <= "1111111100";
-  alienLine2 <= "1111101111";
-  alienLine3 <= "1100011111";
-  alienLine4 <= "1111111111";
-  alienLine5 <= "1010101010";
+--	alienLine1 <= "1111111111";
+--	alienLine2 <= "1111111111";
+--	alienLine3 <= "1111000011";
+--	alienLine4 <= "1111111111";
+--	alienLine5 <= "1111111111";
+	
+	-- Alien collision
+  process(alienXX, gameStarted, alienYY, missileXX, missileYY,alienLine1, alienLine2, alienLine3, alienLine4, alienLine5)
+  begin
+	if gameStarted = '0' then
+		alienLine1 <= "1111111111";
+		alienLine2 <= "1111111111";
+		alienLine3 <= "1111111111";
+		alienLine4 <= "1111111111";
+		alienLine5 <= "1111111111";
+	-- If rocket position is in the alien table
+	elsif missileYY >= alienYY and missileYY < (alienYY+150) and missileXX >= alienXX and missileXX < (alienXX+300) then
+		case ((missileYY-alienYY)/30) is
+			when 0 => -- top line
+				alienLine1((missileXX-alienXX)/30) <= '0';
+			when 1 =>
+				alienLine2((missileXX-alienXX)/30) <= '0';
+			when 2 =>
+				alienLine3((missileXX-alienXX)/30) <= '0';
+			when 3 =>
+				alienLine4((missileXX-alienXX)/30) <= '0';
+			when others=> -- bottom line
+				alienLine5((missileXX-alienXX)/30) <= '0';
+			end case;
+	end if;
   
---  process(missileYY, missileXX, alienXX, alienYY)
---  begin
---		if reset = '1' then
---			
+  end process;
+  
+
+
 
 end architecture;

@@ -39,6 +39,7 @@ architecture Behavioral of TopModule is
   signal gameStarted       : std_logic;  -- When 0, show start screen
   signal newMissile        : std_logic;  -- When 1, new missile launched
   signal rocketOnScreen    : std_logic;  -- If 1, display a rocket
+  signal alienKilled       : std_logic;  -- If 1, the rocket killed an alien
   signal startScreenROMOut : std_logic_vector(7 downto 0);  -- Used as ImageInput in display
   signal alienY            : std_logic_vector(8 downto 0);  -- first alien position from top screen
   signal shipPosition      : std_logic_vector(9 downto 0);  -- From left screen
@@ -63,6 +64,7 @@ architecture Behavioral of TopModule is
       imageInput     : in  std_logic_vector(7 downto 0);  -- data from rom
       alienX         : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
       alienY         : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
+		alienKilled    : out std_logic; -- 1 if alien killed
       red            : out std_logic_vector(2 downto 0);  -- Red color output
       green          : out std_logic_vector(2 downto 0);  -- Green color output
       blue           : out std_logic_vector(1 downto 0)   -- Blue color output
@@ -121,6 +123,7 @@ architecture Behavioral of TopModule is
       reset          : in  std_logic;   -- Active high
       clk            : in  std_logic;   -- 40MHz
       shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
+		alienKilled    : in  std_logic;     -- 1 if alien killed
       rocketOnScreen : out std_logic;   -- If 1, display a rocket
       missileY       : out std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
       MissileX       : out std_logic_vector(9 downto 0)  -- Missile x coordinate
@@ -166,6 +169,7 @@ begin
       missileY       => missileY,
       hcount         => hcount,
       vcount         => vcount,
+		alienKilled    => alienKilled,
       MissileX       => MissileX,
       shipPosition   => shipPosition,
       alienX         => alienX,
@@ -199,6 +203,7 @@ begin
       clk            => pixel_clk,
       shipPosition   => shipPosition,
       rocketOnScreen => rocketOnScreen,
+		alienKilled    => alienKilled,
       missileY       => missileY,
       MissileX       => missileX
       );

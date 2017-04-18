@@ -24,6 +24,7 @@ entity rocketManager is
     reset          : in  std_logic;     -- Active high
     clk            : in  std_logic;     -- 40MHz
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
+	 alienKilled    : in  std_logic;     -- 1 if alien killed
     rocketOnScreen : out std_logic;     -- If 1, display a rocket
     missileY       : out std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     MissileX       : out std_logic_vector(9 downto 0)   -- Missile x coordinate
@@ -47,7 +48,7 @@ begin
   -- Update rocketY
   process(reset, clk)
   begin
-    if reset = '1' then
+    if reset = '1' or alienKilled = '1' then
       missileTimer <= 0;
       rocketY      <= 0;
       MissileXX    <= shipMargin;

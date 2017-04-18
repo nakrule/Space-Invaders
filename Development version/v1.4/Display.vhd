@@ -33,6 +33,7 @@ entity Display is
     alienX         : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
     alienY         : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
     imageInput     : in  std_logic_vector(7 downto 0);  -- data from rom
+	 alienKilled    : out std_logic; -- 1 if alien killed
     red            : out std_logic_vector(2 downto 0);  -- Red color output
     green          : out std_logic_vector(2 downto 0);  -- Green color output
     blue           : out std_logic_vector(1 downto 0)   -- Blue color output
@@ -161,20 +162,39 @@ begin
 		alienLine3 <= "1111111111";
 		alienLine4 <= "1111111111";
 		alienLine5 <= "1111111111";
+		alienKilled <= '0';
 	-- If rocket position is in the alien table
 	elsif missileYY >= alienYY and missileYY < (alienYY+150) and missileXX >= alienXX and missileXX < (alienXX+300) then
+		alienKilled <= '0';
 		case ((missileYY-alienYY)/30) is
 			when 0 => -- top line
-				alienLine1((missileXX-alienXX)/30) <= '0';
+				if alienLine1((missileXX-alienXX)/30) = '1' then
+					alienLine1((missileXX-alienXX)/30) <= '0';
+					alienKilled <= '1';
+				end if;
 			when 1 =>
-				alienLine2((missileXX-alienXX)/30) <= '0';
+				if alienLine2((missileXX-alienXX)/30) = '1' then
+					alienLine2((missileXX-alienXX)/30) <= '0';
+					alienKilled <= '1';
+				end if;
 			when 2 =>
-				alienLine3((missileXX-alienXX)/30) <= '0';
+				if alienLine3((missileXX-alienXX)/30) = '1' then
+					alienLine3((missileXX-alienXX)/30) <= '0';
+					alienKilled <= '1';
+				end if;
 			when 3 =>
-				alienLine4((missileXX-alienXX)/30) <= '0';
+				if alienLine4((missileXX-alienXX)/30) = '1' then
+					alienLine4((missileXX-alienXX)/30) <= '0';
+					alienKilled <= '1';
+				end if;
 			when others=> -- bottom line
-				alienLine5((missileXX-alienXX)/30) <= '0';
+				if alienLine5((missileXX-alienXX)/30) = '1' then
+					alienLine5((missileXX-alienXX)/30) <= '0';
+					alienKilled <= '1';
+				end if;
 			end case;
+	else
+		alienKilled <= '0';
 	end if;
   
   end process;

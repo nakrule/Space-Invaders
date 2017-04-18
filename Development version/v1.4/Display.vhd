@@ -26,7 +26,6 @@ entity Display is
     gameStarted    : in  std_logic;     -- When 0, show start screen
     rocketOnScreen : in  std_logic;     -- If 1, display a rocket
 	 reset          : in  std_logic;     -- Active high
-	 clk            : in  std_logic;        -- 40MHz
     missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
     MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
@@ -54,26 +53,11 @@ architecture logic of Display is
   signal alienLine : integer range 0 to 4 := 0;
   signal alienIndex : integer range 0 to 9 := 0;
   
-  signal alienLine1 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine2 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine3 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine4 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine5 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  
-  signal al1 : integer range 0 to 1023 := 1023;
-  signal al2 : integer range 0 to 1023 := 1023;
-  signal al3 : integer range 0 to 1023 := 1023;
-  signal al4 : integer range 0 to 1023 := 1023;
-  signal al5 : integer range 0 to 1023 := 1023;
-  
-  
-  signal temp  : integer range 0 to 1023 := 0;
-  signal temp2 : integer range 0 to 1023 := 0;
-  signal temp3 : integer range 0 to 1023 := 0;
-  
-  signal temp4 : integer range 0 to 1023 := 0;
-  signal temp5 : integer range 0 to 1023 := 0;
-  signal temp6 : integer range 0 to 1023 := 0;
+  signal alienLine1 : std_logic_vector(0 to 9) := "1111111001"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine2 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine3 : std_logic_vector(0 to 9) := "1111011111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine4 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine5 : std_logic_vector(0 to 9) := "1110011100"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
 
 begin
 
@@ -85,26 +69,9 @@ begin
   missileYY <= to_integer(unsigned(missileY));
   missileXX <= to_integer(unsigned(missileX));
   
-
-  temp <= (vcounter-alienYY) when (vcounter-alienYY) >= 0 else 0;
-  temp2 <= temp / 30;
-  temp3 <= temp2 mod 5;
-  alienLine <= temp3;
   
-  temp4 <= (hcounter-alienXX) when (hcounter-alienXX) >= 0 else 0;
-  temp5 <= 0 when temp4>= 0 and temp4<30 else
-			  1 when temp4>= 30 and temp4<60 else
-			  2 when temp4>= 60 and temp4<90 else
-			  3 when temp4>= 90 and temp4<120 else
-			  4 when temp4>= 120 and temp4<150 else
-			  5 when temp4>= 150 and temp4<180 else
-			  6 when temp4>= 180 and temp4<210 else
-			  7 when temp4>= 210 and temp4<240 else
-			  8 when temp4>= 240 and temp4<270 else
-			  9 when temp4>= 270 and temp4<300 else 0;
-  temp6 <= temp5 when temp5>10 else 0;
-  
-  alienIndex <=temp6;
+  alienLine <= (((vcounter-alienYY) / 30) mod 5) when (vcounter-alienYY) >= 0 else 0;
+  alienIndex <= (((hcounter-alienXX) / 30) mod 10) when (hcounter-alienXX) >= 0 else 0;
 
   -- Outputs must be 0 is blank = 0, this happen
   -- when hcount and vcount are higher than 800x600.
@@ -169,40 +136,5 @@ begin
       end if;
     end if;
   end process;
-  
-  
-  -- Alien collision
-  process(reset, clk)
-  begin
-	if reset = '1' then
-		al1 <= 1023;
-		al2 <= 1023;
-		al3 <= 1023;
-		al4 <= 1023;
-		al5 <= 1023;
-
-	-- If rocket position is in the alien table
-	elsif rising_edge(clk) then
-		if al1 = 1023 then
-			al1 <= 0;
-			al2 <= 0;
-			al3 <= 0;
-			al4 <= 0;
-			al5 <= 0;
-		else
-			al1 <= al1+1;
-			al2 <= al2+1;
-			al3 <= al3+1;
-			al4 <= al4+1;
-			al5 <= al5+1;
-		end if;
-	end if;
-  end process;
-  
-  alienLine1 <= std_logic_vector(to_unsigned(al1,10));
-  alienLine2 <= std_logic_vector(to_unsigned(al2,10));
-  alienLine3 <= std_logic_vector(to_unsigned(al3,10));
-  alienLine4 <= std_logic_vector(to_unsigned(al4,10));
-  alienLine5 <= std_logic_vector(to_unsigned(al5,10));
 
 end architecture;

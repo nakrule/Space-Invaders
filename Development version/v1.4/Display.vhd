@@ -25,7 +25,8 @@ entity Display is
     blank          : in  std_logic;     -- If 1, video output must be null
     gameStarted    : in  std_logic;     -- When 0, show start screen
     rocketOnScreen : in  std_logic;     -- If 1, display a rocket
-	 --reset          : in  std_logic;     -- Active high
+	 reset          : in  std_logic;     -- Active high
+	 clk            : in  std_logic;        -- 40MHz
     missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
     MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
@@ -59,8 +60,14 @@ architecture logic of Display is
   signal alienLine4 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine5 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   
+  signal al1 : integer range 0 to 1023 := 1023;
+  signal al2 : integer range 0 to 1023 := 1023;
+  signal al3 : integer range 0 to 1023 := 1023;
+  signal al4 : integer range 0 to 1023 := 1023;
+  signal al5 : integer range 0 to 1023 := 1023;
   
-  signal temp : integer range 0 to 1023 := 0;
+  
+  signal temp  : integer range 0 to 1023 := 0;
   signal temp2 : integer range 0 to 1023 := 0;
   signal temp3 : integer range 0 to 1023 := 0;
   
@@ -165,96 +172,37 @@ begin
   
   
   -- Alien collision
-  process(alienXX, alienYY, missileXX, missileYY,alienLine1, alienLine2, alienLine3, alienLine4, alienLine5)
+  process(reset, clk)
   begin
---	if reset = '1' then
---		alienLine1 <= "1111111111";
---		alienLine2 <= "1111111111";
---		alienLine3 <= "1111111111";
---		alienLine4 <= "1111111111";
---		alienLine5 <= "1111111111";
-		
+	if reset = '1' then
+		al1 <= 1023;
+		al2 <= 1023;
+		al3 <= 1023;
+		al4 <= 1023;
+		al5 <= 1023;
+
 	-- If rocket position is in the alien table
-	if missileYY >= alienYY and missileYY < (alienYY+150) and missileXX >= alienXX and missileXX < (alienXX+300) then
-		case ((missileYY-alienYY)/30) is
-			when 0 => -- top line
-				if (alienLine1((missileXX-alienXX)/30)) = '1' then
-					alienLine1 <= "1111111111";
-					alienLine2 <= "1111111111";
-					alienLine3 <= "1111111111";
-					alienLine4 <= "1111111111";
-					alienLine5 <= "1111111111";
-				else
-					alienLine1 <= "1111111111";
-					alienLine2 <= "1111111111";
-					alienLine3 <= "1111111111";
-					alienLine4 <= "1111111111";
-					alienLine5 <= "1111111111";
-				end if;
-			when 1 =>
-				if (alienLine2((missileXX-alienXX)/30)) = '1' then
-					alienLine1 <= "1111111111";
-					alienLine2 <= "1111111111";
-					alienLine3 <= "1111111111";
-					alienLine4 <= "1111111111";
-					alienLine5 <= "1111111111";
-				else
-					alienLine1 <= "1111111111";
-					alienLine2 <= "1111111111";
-					alienLine3 <= "1111111111";
-					alienLine4 <= "1111111111";
-					alienLine5 <= "1111111111";
-				end if;
-			when 2 =>
-				if (alienLine3((missileXX-alienXX)/30)) = '1' then
-					alienLine1 <= "1111111111";
-					alienLine2 <= "1111111111";
-					alienLine3 <= "1111111111";
-					alienLine4 <= "1111111111";
-					alienLine5 <= "1111111111";
-				else
-					alienLine1 <= "1111111111";
-					alienLine2 <= "1111111111";
-					alienLine3 <= "1111111111";
-					alienLine4 <= "1111111111";
-					alienLine5 <= "1111111111";
-				end if;
-			when 3 =>
-				if (alienLine4((missileXX-alienXX)/30)) = '1' then
-					alienLine1 <= "1111111111";
-					alienLine2 <= "1111111111";
-					alienLine3 <= "1111111111";
-					alienLine4 <= "1111111111";
-					alienLine5 <= "1111111111";
-				else
-					alienLine1 <= "1111111111";
-					alienLine2 <= "1111111111";
-					alienLine3 <= "1111111111";
-					alienLine4 <= "1111111111";
-					alienLine5 <= "1111111111";
-				end if;
-			when others=> -- bottom line
-				if (alienLine5((missileXX-alienXX)/30)) = '1' then
-					alienLine1 <= "1111111111";
-					alienLine2 <= "1111111111";
-					alienLine3 <= "1111111111";
-					alienLine4 <= "1111111111";
-					alienLine5 <= "1111111111";
-				else
-					alienLine1 <= "1111111111";
-					alienLine2 <= "1111111111";
-					alienLine3 <= "1111111111";
-					alienLine4 <= "1111111111";
-					alienLine5 <= "1111111111";
-				end if;
-			end case;
+	elsif rising_edge(clk) then
+		if al1 = 1023 then
+			al1 <= 0;
+			al2 <= 0;
+			al3 <= 0;
+			al4 <= 0;
+			al5 <= 0;
 		else
-			alienLine1 <= "1111111111";
-			alienLine2 <= "1111111111";
-			alienLine3 <= "1111111111";
-			alienLine4 <= "1111111111";
-			alienLine5 <= "1111111111";
+			al1 <= al1+1;
+			al2 <= al2+1;
+			al3 <= al3+1;
+			al4 <= al4+1;
+			al5 <= al5+1;
+		end if;
 	end if;
   end process;
+  
+  alienLine1 <= std_logic_vector(to_unsigned(al1,10));
+  alienLine2 <= std_logic_vector(to_unsigned(al2,10));
+  alienLine3 <= std_logic_vector(to_unsigned(al3,10));
+  alienLine4 <= std_logic_vector(to_unsigned(al4,10));
+  alienLine5 <= std_logic_vector(to_unsigned(al5,10));
 
 end architecture;

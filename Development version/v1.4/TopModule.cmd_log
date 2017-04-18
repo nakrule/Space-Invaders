@@ -834,3 +834,7 @@ map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -re
 par -w -intstyle ise -ol high -mt off TopModule_map.ncd TopModule.ncd TopModule.pcf 
 trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml TopModule.twx TopModule.ncd -o TopModule.twr TopModule.pcf -ucf top_module.ucf 
 bitgen -intstyle ise -f TopModule.ut TopModule.ncd 
+xst -intstyle ise -ifn "C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version/v1.4/TopModule.xst" -ofn "C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version/v1.4/TopModule.syr" 
+xst -intstyle ise -ifn "C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version/v1.4/TopModule.xst" -ofn "C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version/v1.4/TopModule.syr" 
+xst -intstyle ise -ifn "C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version/v1.4/TopModule.xst" -ofn "C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version/v1.4/TopModule.syr" 
+xst -intstyle ise -ifn "C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version/v1.4/TopModule.xst" -ofn "C:/Users/samuel.riedo/Desktop/Space-Invaders/Development version/v1.4/TopModule.syr" 

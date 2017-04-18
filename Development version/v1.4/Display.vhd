@@ -58,6 +58,16 @@ architecture logic of Display is
   signal alienLine3 : std_logic_vector(0 to 9) := "1111011111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine4 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine5 : std_logic_vector(0 to 9) := "1110011100"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  
+  -- Temp signals used for alienLine computation
+  signal temp  : integer range 0 to 1023 := 0;
+  signal temp2 : integer range 0 to 1023 := 0;
+  signal temp3 : integer range 0 to 1023 := 0;
+  
+  -- Temp signals used for alienIndex computation
+  signal temp4 : integer range 0 to 1023 := 0;
+  signal temp5 : integer range 0 to 1023 := 0;
+  signal temp6 : integer range 0 to 1023 := 0;
 
 begin
 
@@ -70,8 +80,27 @@ begin
   missileXX <= to_integer(unsigned(missileX));
   
   
-  alienLine <= (((vcounter-alienYY) / 30) mod 5) when (vcounter-alienYY) >= 0 else 0;
-  alienIndex <= (((hcounter-alienXX) / 30) mod 10) when (hcounter-alienXX) >= 0 else 0;
+--  alienLine <= (((vcounter-alienYY) / 30) mod 5) when (vcounter-alienYY) >= 0 else 0;
+--  alienIndex <= (((hcounter-alienXX) / 30) mod 10) when (hcounter-alienXX) >= 0 else 0;
+
+temp <= (vcounter-alienYY) when (vcounter-alienYY) >= 0 else 0;
+  temp2 <= temp / 30;
+  temp3 <= temp2 mod 5;
+  alienLine <= temp3;
+  
+  temp4 <= (hcounter-alienXX) when (hcounter-alienXX) >= 0 else 0;
+  temp5 <= 0 when temp4>= 0 and temp4<30 else
+			  1 when temp4>= 30 and temp4<60 else
+			  2 when temp4>= 60 and temp4<90 else
+			  3 when temp4>= 90 and temp4<120 else
+			  4 when temp4>= 120 and temp4<150 else
+			  5 when temp4>= 150 and temp4<180 else
+			  6 when temp4>= 180 and temp4<210 else
+			  7 when temp4>= 210 and temp4<240 else
+			  8 when temp4>= 240 and temp4<270 else
+			  9 when temp4>= 270 and temp4<300 else 0;
+  temp6 <= temp5 when temp5>10 else 0;
+  alienIndex <=temp6;
 
   -- Outputs must be 0 is blank = 0, this happen
   -- when hcount and vcount are higher than 800x600.
@@ -136,5 +165,16 @@ begin
       end if;
     end if;
   end process;
+  
+  alienLine1 <= "1111111111";
+  alienLine2 <= "1111111111";
+  alienLine3 <= "1111111111";
+  alienLine4 <= "1111111111";
+  alienLine5 <= "1111111111";
+  
+--  process(missileYY, missileXX, alienXX, alienYY)
+--  begin
+--		if reset = '1' then
+--			
 
 end architecture;

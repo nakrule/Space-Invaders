@@ -55,7 +55,7 @@ architecture Behavioral of TopModule is
       blank          : in  std_logic;   -- If 1, video output must be null
       gameStarted    : in  std_logic;   -- When 0, show start screen
       rocketOnScreen : in  std_logic;   -- If 1, display a rocket
-		reset          : in  std_logic;     -- Active high
+		--reset          : in  std_logic;     -- Active high
       missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
       shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
       MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
@@ -164,7 +164,7 @@ begin
       blank          => blank,
       gameStarted    => gameStarted,
       rocketOnScreen => rocketOnScreen,
-		reset => rst,
+		--reset => rst,
       missileY       => missileY,
       hcount         => hcount,
       vcount         => vcount,

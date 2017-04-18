@@ -25,7 +25,7 @@ entity Display is
     blank          : in  std_logic;     -- If 1, video output must be null
     gameStarted    : in  std_logic;     -- When 0, show start screen
     rocketOnScreen : in  std_logic;     -- If 1, display a rocket
-	 reset          : in  std_logic;     -- Active high
+	 --reset          : in  std_logic;     -- Active high
     missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
     MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
@@ -53,17 +53,20 @@ architecture logic of Display is
   signal alienLine : integer range 0 to 4 := 0;
   signal alienIndex : integer range 0 to 9 := 0;
   
-  signal alienLine1 : std_logic_vector(9 downto 0); -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine2 : std_logic_vector(9 downto 0); -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine3 : std_logic_vector(9 downto 0); -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine4 : std_logic_vector(9 downto 0); -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine5 : std_logic_vector(9 downto 0); -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine1 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine2 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine3 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine4 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine5 : std_logic_vector(9 downto 0) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   
-  signal alienLine1I : integer range 0 to 1023 := 1023;
-  signal alienLine2I : integer range 0 to 1023 := 1023;
-  signal alienLine3I : integer range 0 to 1023 := 1023;
-  signal alienLine4I : integer range 0 to 1023 := 1023;
-  signal alienLine5I : integer range 0 to 1023 := 1023;
+  
+  signal temp : integer range 0 to 1023 := 0;
+  signal temp2 : integer range 0 to 1023 := 0;
+  signal temp3 : integer range 0 to 1023 := 0;
+  
+  signal temp4 : integer range 0 to 1023 := 0;
+  signal temp5 : integer range 0 to 1023 := 0;
+  signal temp6 : integer range 0 to 1023 := 0;
 
 begin
 
@@ -74,15 +77,27 @@ begin
   alienYY   <= to_integer(unsigned(alienY));
   missileYY <= to_integer(unsigned(missileY));
   missileXX <= to_integer(unsigned(missileX));
-  alienLine1 <= std_logic_vector(to_unsigned(alienLine1I, 10));
-  alienLine2 <= std_logic_vector(to_unsigned(alienLine2I, 10));
-  alienLine3 <= std_logic_vector(to_unsigned(alienLine3I, 10));
-  alienLine4 <= std_logic_vector(to_unsigned(alienLine4I, 10));
-  alienLine5 <= std_logic_vector(to_unsigned(alienLine5I, 10));
   
+
+  temp <= (vcounter-alienYY) when (vcounter-alienYY) >= 0 else 0;
+  temp2 <= temp / 30;
+  temp3 <= temp2 mod 5;
+  alienLine <= temp3;
   
-  alienLine <= (((vcounter-alienYY) / 30) mod 5) when (vcounter-alienYY) >= 0 else 0;
-  alienIndex <= (((hcounter-alienXX) / 30) mod 10) when (hcounter-alienXX) >= 0 else 0;
+  temp4 <= (hcounter-alienXX) when (hcounter-alienXX) >= 0 else 0;
+  temp5 <= 0 when temp4>= 0 and temp4<30 else
+			  1 when temp4>= 30 and temp4<60 else
+			  2 when temp4>= 60 and temp4<90 else
+			  3 when temp4>= 90 and temp4<120 else
+			  4 when temp4>= 120 and temp4<150 else
+			  5 when temp4>= 150 and temp4<180 else
+			  6 when temp4>= 180 and temp4<210 else
+			  7 when temp4>= 210 and temp4<240 else
+			  8 when temp4>= 240 and temp4<270 else
+			  9 when temp4>= 270 and temp4<300 else 0;
+  temp6 <= temp5 when temp5>10 else 0;
+  
+  alienIndex <=temp6;
 
   -- Outputs must be 0 is blank = 0, this happen
   -- when hcount and vcount are higher than 800x600.
@@ -150,44 +165,95 @@ begin
   
   
   -- Alien collision
-  process(reset, alienXX, alienYY, missileXX, missileYY,alienLine1, alienLine2, alienLine3, alienLine4, alienLine5)
+  process(alienXX, alienYY, missileXX, missileYY,alienLine1, alienLine2, alienLine3, alienLine4, alienLine5)
   begin
-	if reset = '1' then
-		alienLine1I <= 1023;
-		alienLine2I <= 1023;
-		alienLine3I <= 1023;
-		alienLine4I <= 1023;
-		alienLine5I <= 1023;
+--	if reset = '1' then
+--		alienLine1 <= "1111111111";
+--		alienLine2 <= "1111111111";
+--		alienLine3 <= "1111111111";
+--		alienLine4 <= "1111111111";
+--		alienLine5 <= "1111111111";
+		
 	-- If rocket position is in the alien table
-	elsif missileYY >= alienYY and missileYY < (alienYY+150) and missileXX >= alienXX and missileXX < (alienXX+300) then
+	if missileYY >= alienYY and missileYY < (alienYY+150) and missileXX >= alienXX and missileXX < (alienXX+300) then
 		case ((missileYY-alienYY)/30) is
 			when 0 => -- top line
 				if (alienLine1((missileXX-alienXX)/30)) = '1' then
-					alienLine1I <= (alienLine1I - (2**((missileXX-alienXX)/30)));
+					alienLine1 <= "1111111111";
+					alienLine2 <= "1111111111";
+					alienLine3 <= "1111111111";
+					alienLine4 <= "1111111111";
+					alienLine5 <= "1111111111";
+				else
+					alienLine1 <= "1111111111";
+					alienLine2 <= "1111111111";
+					alienLine3 <= "1111111111";
+					alienLine4 <= "1111111111";
+					alienLine5 <= "1111111111";
 				end if;
 			when 1 =>
 				if (alienLine2((missileXX-alienXX)/30)) = '1' then
-					alienLine2I <= (alienLine2I - (2**((missileXX-alienXX)/30)));
+					alienLine1 <= "1111111111";
+					alienLine2 <= "1111111111";
+					alienLine3 <= "1111111111";
+					alienLine4 <= "1111111111";
+					alienLine5 <= "1111111111";
+				else
+					alienLine1 <= "1111111111";
+					alienLine2 <= "1111111111";
+					alienLine3 <= "1111111111";
+					alienLine4 <= "1111111111";
+					alienLine5 <= "1111111111";
 				end if;
 			when 2 =>
 				if (alienLine3((missileXX-alienXX)/30)) = '1' then
-					alienLine3I <= (alienLine3I - (2**((missileXX-alienXX)/30)));
+					alienLine1 <= "1111111111";
+					alienLine2 <= "1111111111";
+					alienLine3 <= "1111111111";
+					alienLine4 <= "1111111111";
+					alienLine5 <= "1111111111";
+				else
+					alienLine1 <= "1111111111";
+					alienLine2 <= "1111111111";
+					alienLine3 <= "1111111111";
+					alienLine4 <= "1111111111";
+					alienLine5 <= "1111111111";
 				end if;
 			when 3 =>
 				if (alienLine4((missileXX-alienXX)/30)) = '1' then
-					alienLine4I <= (alienLine4I - (2**((missileXX-alienXX)/30)));
+					alienLine1 <= "1111111111";
+					alienLine2 <= "1111111111";
+					alienLine3 <= "1111111111";
+					alienLine4 <= "1111111111";
+					alienLine5 <= "1111111111";
+				else
+					alienLine1 <= "1111111111";
+					alienLine2 <= "1111111111";
+					alienLine3 <= "1111111111";
+					alienLine4 <= "1111111111";
+					alienLine5 <= "1111111111";
 				end if;
 			when others=> -- bottom line
 				if (alienLine5((missileXX-alienXX)/30)) = '1' then
-					alienLine5I <= (alienLine5I - (2**((missileXX-alienXX)/30)));
+					alienLine1 <= "1111111111";
+					alienLine2 <= "1111111111";
+					alienLine3 <= "1111111111";
+					alienLine4 <= "1111111111";
+					alienLine5 <= "1111111111";
+				else
+					alienLine1 <= "1111111111";
+					alienLine2 <= "1111111111";
+					alienLine3 <= "1111111111";
+					alienLine4 <= "1111111111";
+					alienLine5 <= "1111111111";
 				end if;
 			end case;
 		else
-			alienLine1I <= alienLine1I;
-			alienLine2I <= alienLine2I;
-			alienLine3I <= alienLine3I;
-			alienLine4I <=alienLine4I;
-			alienLine5I <= alienLine5I;
+			alienLine1 <= "1111111111";
+			alienLine2 <= "1111111111";
+			alienLine3 <= "1111111111";
+			alienLine4 <= "1111111111";
+			alienLine5 <= "1111111111";
 	end if;
   end process;
 

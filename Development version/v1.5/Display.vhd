@@ -62,7 +62,7 @@ architecture logic of Display is
   signal alienLine  : integer range 0 to 4                            := 0;
   signal alienIndex : integer range 0 to 9                            := 0;
   signal gameWin : std_logic := '0'; -- If 1, game win
-  --signal gameOver : std_logic := '0' -- If 1, game loose
+  signal gameOver : std_logic := '0'; -- If 1, game loose
 
   signal alienLine1 : std_logic_vector(0 to 9) := "1111111111";  -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine2 : std_logic_vector(0 to 9) := "1111111111";  -- 1 bit for every alien ; 1 alien alive, 0 dead alien
@@ -118,12 +118,22 @@ begin
   blue  <= color(1 downto 0) when blank = '0' else "00";
 
   process(hcounter, vcounter, shipPos, gameStarted, ImageInput, alienXX, alienYY, rocketOnScreen, missileYY, missileXX, alienLine1,
-          alienLine2, alienLine3, alienLine4, alienLine5, alienLine, alienIndex, alienrocketx, alienrockety,gameWin)
+          alienLine2, alienLine3, alienLine4, alienLine5, alienLine, alienIndex, alienrocketx, alienrockety, gameWin, gameOver)
   begin
     if gameStarted = '0' then
       color <= ImageInput;
 	elsif gameWin = '1' then
-		color <= "00000000";
+		if hcounter >= 250 and hcounter<550 and vcounter >=273 and vcounter< 327 then
+			color <= std_logic_vector(to_unsigned(win(hcounter-250, vcounter-273),8));
+		else
+			color <= "00000000";
+		end if;
+	elsif gameOver = '1' then
+		if hcounter >= 250 and hcounter<550 and vcounter >=209 and vcounter< 391 then
+			color <= std_logic_vector(to_unsigned(gameOverTable(hcounter-250, vcounter-391),8));
+		else
+			color <= "00000000";
+		end if;
     else
       -- Display the ship
       if hcounter >= shipPos and hcounter < (shipPos+62) and vcounter > 570 then
@@ -392,6 +402,21 @@ begin
         touched <= 0;
       end if;
     end if;
+  end process;
+  
+  -- Update gameOver
+  process(gameStarted, clk, shipPos, alienRocketx, alienRockety)
+  begin
+  if gameStarted = '0' then
+		gameOver <= '0';
+  elsif rising_edge(clk) then
+		if to_integer(unsigned(alienRockety))>=570 then
+			if to_integer(unsigned(alienRocketx)) >= shipPos and to_integer(unsigned(alienRocketx)) < (shipPos+62) then
+				gameOver <= '1';
+			end if;
+		end if;
+  end if;
+  
   end process;
 
 end architecture;

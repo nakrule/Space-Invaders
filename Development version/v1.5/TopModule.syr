@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.05 secs
+Total CPU time to Xst completion: 0.06 secs
  
 --> Reading design: TopModule.prj
 
@@ -205,101 +205,117 @@ Synthesizing Unit <Display>.
     Found 10-bit register for signal <ali5>.
     Found 10-bit register for signal <ali1>.
     Found 1-bit register for signal <touched>.
+    Found 1-bit register for signal <gameOver>.
     Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_26_OUT> created at line 108.
-    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_196_OUT> created at line 164.
-    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_414_OUT> created at line 321.
-    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_454_OUT> created at line 350.
-    Found 11-bit adder for signal <n0739> created at line 129.
-    Found 11-bit adder for signal <n0744> created at line 136.
-    Found 11-bit adder for signal <n0747> created at line 136.
-    Found 11-bit adder for signal <n0800> created at line 173.
-    Found 11-bit adder for signal <n0803> created at line 179.
-    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_38_OUT<5:0>> created at line 130.
-    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_63_OUT<4:0>> created at line 130.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_259_OUT<9:0>> created at line 219.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_263_OUT<9:0>> created at line 222.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_267_OUT<9:0>> created at line 225.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_271_OUT<9:0>> created at line 228.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_275_OUT<9:0>> created at line 231.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_279_OUT<9:0>> created at line 234.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_283_OUT<9:0>> created at line 237.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_287_OUT<9:0>> created at line 240.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_291_OUT<9:0>> created at line 243.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_295_OUT<9:0>> created at line 246.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_313_OUT<9:0>> created at line 254.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_317_OUT<9:0>> created at line 257.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_321_OUT<9:0>> created at line 260.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_325_OUT<9:0>> created at line 263.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_329_OUT<9:0>> created at line 266.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_333_OUT<9:0>> created at line 269.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_337_OUT<9:0>> created at line 272.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_341_OUT<9:0>> created at line 275.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_345_OUT<9:0>> created at line 278.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_349_OUT<9:0>> created at line 281.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_367_OUT<9:0>> created at line 289.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_371_OUT<9:0>> created at line 292.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_375_OUT<9:0>> created at line 295.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_379_OUT<9:0>> created at line 298.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_383_OUT<9:0>> created at line 301.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_387_OUT<9:0>> created at line 304.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_391_OUT<9:0>> created at line 307.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_395_OUT<9:0>> created at line 310.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_399_OUT<9:0>> created at line 313.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_403_OUT<9:0>> created at line 316.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_421_OUT<9:0>> created at line 324.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_425_OUT<9:0>> created at line 327.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_429_OUT<9:0>> created at line 330.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_433_OUT<9:0>> created at line 333.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_437_OUT<9:0>> created at line 336.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_441_OUT<9:0>> created at line 339.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_445_OUT<9:0>> created at line 342.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_449_OUT<9:0>> created at line 345.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_453_OUT<9:0>> created at line 348.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_457_OUT<9:0>> created at line 351.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_475_OUT<9:0>> created at line 359.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_479_OUT<9:0>> created at line 362.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_483_OUT<9:0>> created at line 365.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_487_OUT<9:0>> created at line 368.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_491_OUT<9:0>> created at line 371.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_495_OUT<9:0>> created at line 374.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_499_OUT<9:0>> created at line 377.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_503_OUT<9:0>> created at line 380.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_507_OUT<9:0>> created at line 383.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_511_OUT<9:0>> created at line 386.
-    Found 32x486-bit Read Only RAM for signal <_n1326>
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_71_o> created at line 139.
-    Found 7-bit 27-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_106_OUT> created at line 140.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_108_o> created at line 145.
-    Found 6-bit 21-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_136_OUT> created at line 146.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_138_o> created at line 151.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_167_o> created at line 157.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_194_o> created at line 163.
-    Found 8-bit 5-to-1 multiplexer for signal <alienLine[2]_GND_18_o_wide_mux_224_OUT> created at line 137.
+    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_414_OUT> created at line 174.
+    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_633_OUT> created at line 331.
+    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_673_OUT> created at line 360.
+    Found 11-bit adder for signal <n1194> created at line 139.
+    Found 11-bit adder for signal <n1199> created at line 146.
+    Found 11-bit adder for signal <n1202> created at line 146.
+    Found 11-bit adder for signal <n1255> created at line 183.
+    Found 11-bit adder for signal <n1258> created at line 189.
+    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_93_OUT<5:0>> created at line 127.
+    Found 9-bit subtractor for signal <GND_18_o_GND_18_o_sub_100_OUT<8:0>> created at line 133.
+    Found 8-bit subtractor for signal <GND_18_o_GND_18_o_sub_249_OUT<7:0>> created at line 133.
+    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_256_OUT<5:0>> created at line 140.
+    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_281_OUT<4:0>> created at line 140.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_478_OUT<9:0>> created at line 229.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_482_OUT<9:0>> created at line 232.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_486_OUT<9:0>> created at line 235.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_490_OUT<9:0>> created at line 238.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_494_OUT<9:0>> created at line 241.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_498_OUT<9:0>> created at line 244.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_502_OUT<9:0>> created at line 247.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_506_OUT<9:0>> created at line 250.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_510_OUT<9:0>> created at line 253.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_514_OUT<9:0>> created at line 256.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_532_OUT<9:0>> created at line 264.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_536_OUT<9:0>> created at line 267.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_540_OUT<9:0>> created at line 270.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_544_OUT<9:0>> created at line 273.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_548_OUT<9:0>> created at line 276.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_552_OUT<9:0>> created at line 279.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_556_OUT<9:0>> created at line 282.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_560_OUT<9:0>> created at line 285.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_564_OUT<9:0>> created at line 288.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_568_OUT<9:0>> created at line 291.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_586_OUT<9:0>> created at line 299.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_590_OUT<9:0>> created at line 302.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_594_OUT<9:0>> created at line 305.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_598_OUT<9:0>> created at line 308.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_602_OUT<9:0>> created at line 311.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_606_OUT<9:0>> created at line 314.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_610_OUT<9:0>> created at line 317.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_614_OUT<9:0>> created at line 320.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_618_OUT<9:0>> created at line 323.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_622_OUT<9:0>> created at line 326.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_640_OUT<9:0>> created at line 334.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_644_OUT<9:0>> created at line 337.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_648_OUT<9:0>> created at line 340.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_652_OUT<9:0>> created at line 343.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_656_OUT<9:0>> created at line 346.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_660_OUT<9:0>> created at line 349.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_664_OUT<9:0>> created at line 352.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_668_OUT<9:0>> created at line 355.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_672_OUT<9:0>> created at line 358.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_676_OUT<9:0>> created at line 361.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_694_OUT<9:0>> created at line 369.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_698_OUT<9:0>> created at line 372.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_702_OUT<9:0>> created at line 375.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_706_OUT<9:0>> created at line 378.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_710_OUT<9:0>> created at line 381.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_714_OUT<9:0>> created at line 384.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_718_OUT<9:0>> created at line 387.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_722_OUT<9:0>> created at line 390.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_726_OUT<9:0>> created at line 393.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_730_OUT<9:0>> created at line 396.
+    Found 512x1598-bit Read Only RAM for signal <_n2193>
+    Found 32x486-bit Read Only RAM for signal <_n2304>
+    Found 8-bit 54-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_93_OUT> created at line 127.
+    Found 8-bit 153-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_249_OUT> created at line 133.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_289_o> created at line 149.
+    Found 7-bit 27-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_324_OUT> created at line 150.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_326_o> created at line 155.
+    Found 6-bit 21-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_354_OUT> created at line 156.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_356_o> created at line 161.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_385_o> created at line 167.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_412_o> created at line 173.
+    Found 8-bit 5-to-1 multiplexer for signal <alienLine[2]_GND_18_o_wide_mux_442_OUT> created at line 147.
     Found 12-bit comparator lessequal for signal <n0021> created at line 106
     Found 12-bit comparator lessequal for signal <n0024> created at line 108
-    Found 11-bit comparator lessequal for signal <n0034> created at line 129
-    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0001_LessThan_36_o> created at line 129
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_37_o> created at line 129
-    Found 11-bit comparator lessequal for signal <n0054> created at line 136
-    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0002_LessThan_68_o> created at line 136
-    Found 11-bit comparator lessequal for signal <n0058> created at line 136
-    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0003_LessThan_71_o> created at line 136
-    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_227_o> created at line 173
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_228_o> created at line 173
-    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0004_LessThan_230_o> created at line 173
-    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_233_o> created at line 179
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_234_o> created at line 179
-    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0005_LessThan_236_o> created at line 179
-    Found 10-bit comparator lessequal for signal <n0184> created at line 213
-    Found 11-bit comparator greater for signal <GND_18_o_BUS_0006_LessThan_248_o> created at line 213
-    Found 10-bit comparator lessequal for signal <n0187> created at line 213
-    Found 11-bit comparator greater for signal <GND_18_o_BUS_0007_LessThan_251_o> created at line 213
+    Found 11-bit comparator lessequal for signal <n0034> created at line 126
+    Found 11-bit comparator greater for signal <vcounter[10]_GND_18_o_LessThan_37_o> created at line 126
+    Found 11-bit comparator lessequal for signal <n0096> created at line 132
+    Found 11-bit comparator greater for signal <hcounter[10]_GND_18_o_LessThan_97_o> created at line 132
+    Found 11-bit comparator lessequal for signal <n0099> created at line 132
+    Found 11-bit comparator greater for signal <vcounter[10]_GND_18_o_LessThan_99_o> created at line 132
+    Found 11-bit comparator lessequal for signal <n0257> created at line 139
+    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0001_LessThan_254_o> created at line 139
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_255_o> created at line 139
+    Found 11-bit comparator lessequal for signal <n0277> created at line 146
+    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0002_LessThan_286_o> created at line 146
+    Found 11-bit comparator lessequal for signal <n0281> created at line 146
+    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0003_LessThan_289_o> created at line 146
+    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_445_o> created at line 183
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_446_o> created at line 183
+    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0004_LessThan_448_o> created at line 183
+    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_451_o> created at line 189
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_452_o> created at line 189
+    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0005_LessThan_454_o> created at line 189
+    Found 10-bit comparator lessequal for signal <n0408> created at line 223
+    Found 11-bit comparator greater for signal <GND_18_o_BUS_0006_LessThan_467_o> created at line 223
+    Found 10-bit comparator lessequal for signal <n0411> created at line 223
+    Found 11-bit comparator greater for signal <GND_18_o_BUS_0007_LessThan_470_o> created at line 223
+    Found 10-bit comparator greater for signal <n0672> created at line 413
+    Found 10-bit comparator lessequal for signal <n0674> created at line 414
+    Found 11-bit comparator greater for signal <GND_18_o_BUS_0008_LessThan_769_o> created at line 414
     Summary:
-	inferred   1 RAM(s).
-	inferred  16 Adder/Subtractor(s).
-	inferred  51 D-type flip-flop(s).
-	inferred  19 Comparator(s).
-	inferred 133 Multiplexer(s).
+	inferred   2 RAM(s).
+	inferred  19 Adder/Subtractor(s).
+	inferred  52 D-type flip-flop(s).
+	inferred  28 Comparator(s).
+	inferred 138 Multiplexer(s).
 Unit <Display> synthesized.
 
 Synthesizing Unit <div_12s_6s>.
@@ -701,11 +717,12 @@ Unit <alienRocket> synthesized.
 HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 2
  32x486-bit single-port Read Only RAM                  : 1
+ 512x1598-bit single-port Read Only RAM                : 1
 # Multipliers                                          : 1
  9x8-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 217
+# Adders/Subtractors                                   : 220
  10-bit adder                                          : 31
  10-bit addsub                                         : 1
  10-bit subtractor                                     : 6
@@ -728,12 +745,13 @@ Macro Statistics
  5-bit adder                                           : 1
  5-bit subtractor                                      : 1
  6-bit adder                                           : 6
- 6-bit subtractor                                      : 5
+ 6-bit subtractor                                      : 6
  8-bit addsub                                          : 1
+ 8-bit subtractor                                      : 1
  9-bit adder                                           : 1
- 9-bit subtractor                                      : 1
-# Registers                                            : 48
- 1-bit register                                        : 27
+ 9-bit subtractor                                      : 2
+# Registers                                            : 49
+ 1-bit register                                        : 28
  10-bit register                                       : 9
  11-bit register                                       : 1
  16-bit register                                       : 2
@@ -744,12 +762,12 @@ Macro Statistics
  4-bit register                                        : 2
  8-bit register                                        : 1
  9-bit register                                        : 1
-# Comparators                                          : 186
- 10-bit comparator greater                             : 3
- 10-bit comparator lessequal                           : 19
+# Comparators                                          : 195
+ 10-bit comparator greater                             : 4
+ 10-bit comparator lessequal                           : 20
  11-bit comparator equal                               : 2
- 11-bit comparator greater                             : 24
- 11-bit comparator lessequal                           : 6
+ 11-bit comparator greater                             : 28
+ 11-bit comparator lessequal                           : 9
  12-bit comparator greater                             : 9
  12-bit comparator lessequal                           : 18
  13-bit comparator greater                             : 3
@@ -772,7 +790,7 @@ Macro Statistics
  5-bit comparator lessequal                            : 10
  8-bit comparator greater                              : 2
  9-bit comparator greater                              : 2
-# Multiplexers                                         : 1203
+# Multiplexers                                         : 1208
  1-bit 10-to-1 multiplexer                             : 5
  1-bit 12-to-1 multiplexer                             : 1
  1-bit 2-to-1 multiplexer                              : 948
@@ -795,8 +813,10 @@ Macro Statistics
  6-bit 2-to-1 multiplexer                              : 6
  6-bit 21-to-1 multiplexer                             : 1
  7-bit 27-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 72
+ 8-bit 153-to-1 multiplexer                            : 1
+ 8-bit 2-to-1 multiplexer                              : 75
  8-bit 5-to-1 multiplexer                              : 1
+ 8-bit 54-to-1 multiplexer                             : 1
  9-bit 2-to-1 multiplexer                              : 3
 # Xors                                                 : 6
  1-bit xor2                                            : 6
@@ -812,14 +832,25 @@ Reading core <ipcore_dir/StartScreenRom.ngc>.
 Loading core <StartScreenRom> for timing and area information for instance <StartScreenRom_map>.
 
 Synthesizing (advanced) Unit <Display>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n1326> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n2193> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 512-word x 1598-bit                 |          |
+    |     weA            | connected to signal <GND>           | high     |
+    |     addrA          | connected to signal <GND_18_o_GND_18_o_sub_100_OUT> |          |
+    |     diA            | connected to signal <GND>           |          |
+    |     doA            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n2304> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 486-bit                   |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <n0566>         |          |
+    |     addrA          | connected to signal <n1008>         |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -853,11 +884,12 @@ Unit <rocketManager> synthesized (advanced).
 Advanced HDL Synthesis Report
 
 Macro Statistics
-# RAMs                                                 : 1
+# RAMs                                                 : 2
  32x486-bit single-port distributed Read Only RAM      : 1
+ 512x1598-bit single-port distributed Read Only RAM    : 1
 # MACs                                                 : 1
  9x8-to-15-bit MAC                                     : 1
-# Adders/Subtractors                                   : 158
+# Adders/Subtractors                                   : 161
  10-bit adder                                          : 37
  10-bit addsub                                         : 1
  10-bit subtractor                                     : 6
@@ -879,10 +911,11 @@ Macro Statistics
  5-bit subtractor                                      : 1
  6-bit adder                                           : 2
  6-bit adder carry in                                  : 4
- 6-bit subtractor                                      : 5
+ 6-bit subtractor                                      : 6
  8-bit addsub                                          : 1
+ 8-bit subtractor                                      : 1
  9-bit adder                                           : 1
- 9-bit subtractor                                      : 1
+ 9-bit subtractor                                      : 2
 # Counters                                             : 8
  10-bit up counter                                     : 1
  11-bit up counter                                     : 1
@@ -891,14 +924,14 @@ Macro Statistics
  23-bit up counter                                     : 1
  3-bit up counter                                      : 1
  4-bit up counter                                      : 1
-# Registers                                            : 168
- Flip-Flops                                            : 168
-# Comparators                                          : 186
- 10-bit comparator greater                             : 3
- 10-bit comparator lessequal                           : 19
+# Registers                                            : 169
+ Flip-Flops                                            : 169
+# Comparators                                          : 195
+ 10-bit comparator greater                             : 4
+ 10-bit comparator lessequal                           : 20
  11-bit comparator equal                               : 2
- 11-bit comparator greater                             : 24
- 11-bit comparator lessequal                           : 6
+ 11-bit comparator greater                             : 28
+ 11-bit comparator lessequal                           : 9
  12-bit comparator greater                             : 9
  12-bit comparator lessequal                           : 18
  13-bit comparator greater                             : 3
@@ -921,7 +954,7 @@ Macro Statistics
  5-bit comparator lessequal                            : 10
  8-bit comparator greater                              : 2
  9-bit comparator greater                              : 2
-# Multiplexers                                         : 1196
+# Multiplexers                                         : 1201
  1-bit 10-to-1 multiplexer                             : 5
  1-bit 12-to-1 multiplexer                             : 1
  1-bit 2-to-1 multiplexer                              : 948
@@ -942,8 +975,10 @@ Macro Statistics
  6-bit 2-to-1 multiplexer                              : 6
  6-bit 21-to-1 multiplexer                             : 1
  7-bit 27-to-1 multiplexer                             : 1
- 8-bit 2-to-1 multiplexer                              : 72
+ 8-bit 153-to-1 multiplexer                            : 1
+ 8-bit 2-to-1 multiplexer                              : 75
  8-bit 5-to-1 multiplexer                              : 1
+ 8-bit 54-to-1 multiplexer                             : 1
  9-bit 2-to-1 multiplexer                              : 3
 # Xors                                                 : 6
  1-bit xor2                                            : 6
@@ -971,7 +1006,7 @@ INFO:Xst:2261 - The FF/Latch <Input_Map/alienDirection_0> in Unit <TopModule> is
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block TopModule, actual ratio is 35.
+Found area constraint ratio of 100 (+ 5) on block TopModule, actual ratio is 94.
 FlipFlop Input_Map/alienXX_0 has been replicated 1 time(s)
 FlipFlop Input_Map/alienXX_1 has been replicated 1 time(s)
 FlipFlop Input_Map/alienXX_2 has been replicated 1 time(s)
@@ -995,8 +1030,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 286
- Flip-Flops                                            : 286
+# Registers                                            : 287
+ Flip-Flops                                            : 287
 
 =========================================================================
 
@@ -1019,22 +1054,23 @@ Top Level Output File Name         : TopModule.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 3812
+# BELS                             : 10142
 #      GND                         : 2
-#      INV                         : 64
-#      LUT1                        : 113
-#      LUT2                        : 170
-#      LUT3                        : 337
-#      LUT4                        : 265
-#      LUT5                        : 544
-#      LUT6                        : 1074
-#      MUXCY                       : 604
-#      MUXF7                       : 58
+#      INV                         : 68
+#      LUT1                        : 115
+#      LUT2                        : 221
+#      LUT3                        : 730
+#      LUT4                        : 504
+#      LUT5                        : 1683
+#      LUT6                        : 4876
+#      MUXCY                       : 612
+#      MUXF7                       : 686
+#      MUXF8                       : 64
 #      VCC                         : 2
 #      XORCY                       : 579
-# FlipFlops/Latches                : 290
+# FlipFlops/Latches                : 291
 #      FDC                         : 119
-#      FDCE                        : 66
+#      FDCE                        : 67
 #      FDE                         : 4
 #      FDP                         : 9
 #      FDPE                        : 76
@@ -1059,16 +1095,16 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             290  out of  18224     1%  
- Number of Slice LUTs:                 2567  out of   9112    28%  
-    Number used as Logic:              2567  out of   9112    28%  
+ Number of Slice Registers:             291  out of  18224     1%  
+ Number of Slice LUTs:                 8197  out of   9112    89%  
+    Number used as Logic:              8197  out of   9112    89%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   2594
-   Number with an unused Flip Flop:    2304  out of   2594    88%  
-   Number with an unused LUT:            27  out of   2594     1%  
-   Number of fully used LUT-FF pairs:   263  out of   2594    10%  
-   Number of unique control sets:        18
+ Number of LUT Flip Flop pairs used:   8225
+   Number with an unused Flip Flop:    7934  out of   8225    96%  
+   Number with an unused LUT:            28  out of   8225     0%  
+   Number of fully used LUT-FF pairs:   263  out of   8225     3%  
+   Number of unique control sets:        19
 
 IO Utilization: 
  Number of IOs:                          16
@@ -1101,7 +1137,7 @@ Clock Information:
 -----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)                                                                                                                       | Load  |
 -----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
-fpga_clk                           | DCM_SP:CLKFX                                                                                                                                | 305   |
+fpga_clk                           | DCM_SP:CLKFX                                                                                                                                | 306   |
 StartScreenRom_map/N1              | NONE(StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 15    |
 -----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
@@ -1114,9 +1150,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 8.160ns (Maximum Frequency: 122.553MHz)
+   Minimum period: 8.488ns (Maximum Frequency: 117.813MHz)
    Minimum input arrival time before clock: 5.339ns
-   Maximum output required time after clock: 55.936ns
+   Maximum output required time after clock: 57.833ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1125,48 +1161,49 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_clk'
-  Clock period: 8.160ns (frequency: 122.553MHz)
-  Total number of paths / destination ports: 286778723679 / 775
+  Clock period: 8.488ns (frequency: 117.813MHz)
+  Total number of paths / destination ports: 284489636854 / 777
 -------------------------------------------------------------------------
-Delay:               20.399ns (Levels of Logic = 24)
-  Source:            rocketManager_Map/MissileXX_0 (FF)
+Delay:               21.220ns (Levels of Logic = 25)
+  Source:            rocketManager_Map/rocketY_0 (FF)
   Destination:       Display_Map/touched_0 (FF)
   Source Clock:      fpga_clk rising 0.4X
   Destination Clock: fpga_clk rising 0.4X
 
-  Data Path: rocketManager_Map/MissileXX_0 to Display_Map/touched_0
+  Data Path: rocketManager_Map/rocketY_0 to Display_Map/touched_0
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDC:C->Q              7   0.447   0.774  rocketManager_Map/MissileXX_0 (rocketManager_Map/MissileXX_0)
-     LUT2:I1->O            1   0.205   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_454_OUT_lut<0> (Display_Map/Msub_GND_18_o_GND_18_o_sub_454_OUT_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_454_OUT_cy<0> (Display_Map/Msub_GND_18_o_GND_18_o_sub_454_OUT_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_454_OUT_cy<1> (Display_Map/Msub_GND_18_o_GND_18_o_sub_454_OUT_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_454_OUT_cy<2> (Display_Map/Msub_GND_18_o_GND_18_o_sub_454_OUT_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_454_OUT_cy<3> (Display_Map/Msub_GND_18_o_GND_18_o_sub_454_OUT_cy<3>)
-     XORCY:CI->O          11   0.180   1.227  Display_Map/Msub_GND_18_o_GND_18_o_sub_454_OUT_xor<4> (Display_Map/GND_18_o_GND_18_o_sub_454_OUT<4>)
-     LUT6:I1->O            9   0.203   0.830  Display_Map/GND_18_o_GND_18_o_div_454/BUS_0007_INV_1128_o1_SW3 (N260)
-     LUT6:I5->O            4   0.205   0.684  Display_Map/GND_18_o_GND_18_o_div_454/BUS_0007_INV_1128_o1_1 (Display_Map/GND_18_o_GND_18_o_div_454/BUS_0007_INV_1128_o1)
-     LUT5:I4->O           14   0.205   0.957  Display_Map/GND_18_o_GND_18_o_div_454/Mmux_a[10]_a[10]_MUX_1227_o151 (Display_Map/GND_18_o_GND_18_o_div_454/Madd_a[10]_GND_36_o_add_19_OUT_Madd_lut<5>)
-     MUXCY:DI->O           1   0.145   0.000  Display_Map/GND_18_o_GND_18_o_div_454/Madd_a[10]_GND_36_o_add_19_OUT_Madd_cy<5> (Display_Map/GND_18_o_GND_18_o_div_454/Madd_a[10]_GND_36_o_add_19_OUT_Madd_cy<5>)
-     XORCY:CI->O           7   0.180   0.774  Display_Map/GND_18_o_GND_18_o_div_454/Madd_a[10]_GND_36_o_add_19_OUT_Madd_xor<6> (Display_Map/GND_18_o_GND_18_o_div_454/a[10]_GND_36_o_add_19_OUT<6>)
-     LUT3:I2->O            8   0.205   1.050  Display_Map/GND_18_o_GND_18_o_div_454/BUS_0009_INV_1126_o2_SW0 (N239)
-     LUT6:I2->O            4   0.203   0.684  Display_Map/GND_18_o_GND_18_o_div_454/BUS_0009_INV_1126_o2_1 (Display_Map/GND_18_o_GND_18_o_div_454/BUS_0009_INV_1126_o2)
-     LUT6:I5->O           18   0.205   1.049  Display_Map/GND_18_o_GND_18_o_div_454/Mmux_n047771 (Display_Map/GND_18_o_GND_18_o_div_454/Madd_a[10]_GND_36_o_add_23_OUT[10:0]_Madd_lut<5>)
-     MUXCY:DI->O           1   0.145   0.000  Display_Map/GND_18_o_GND_18_o_div_454/Madd_a[10]_GND_36_o_add_23_OUT[10:0]_Madd_cy<5> (Display_Map/GND_18_o_GND_18_o_div_454/Madd_a[10]_GND_36_o_add_23_OUT[10:0]_Madd_cy<5>)
-     XORCY:CI->O           7   0.180   0.774  Display_Map/GND_18_o_GND_18_o_div_454/Madd_a[10]_GND_36_o_add_23_OUT[10:0]_Madd_xor<6> (Display_Map/GND_18_o_GND_18_o_div_454/a[10]_GND_36_o_add_23_OUT[10:0]<6>)
-     LUT6:I5->O           13   0.205   1.161  Display_Map/GND_18_o_GND_18_o_div_454/Mmux_n048181 (Display_Map/GND_18_o_GND_18_o_div_454/n0481<6>)
-     LUT6:I3->O            4   0.205   0.684  Display_Map/GND_18_o_GND_18_o_div_454/BUS_0011_INV_1124_o11_SW0_SW0 (N515)
-     LUT6:I5->O            7   0.205   0.878  Display_Map/GND_18_o_GND_18_o_div_454/BUS_0012_INV_1123_o13_1 (Display_Map/GND_18_o_GND_18_o_div_454/BUS_0012_INV_1123_o13)
-     LUT6:I4->O           15   0.203   0.982  Display_Map/GND_18_o_GND_18_o_equal_428_o<11>1 (Display_Map/GND_18_o_GND_18_o_equal_428_o)
-     LUT6:I5->O            8   0.205   1.031  Display_Map/Mmux_ali4[9]_GND_18_o_mux_358_OUT_B511 (Display_Map/Mmux_ali4[9]_GND_18_o_mux_358_OUT_B51)
-     LUT6:I3->O            1   0.205   0.580  Display_Map/_n1189 (Display_Map/_n1189)
-     LUT6:I5->O            1   0.205   0.808  Display_Map/_n1215_inv3_SW1 (N195)
-     LUT6:I3->O            1   0.205   0.579  Display_Map/_n1215_inv4 (Display_Map/_n1215_inv)
+     FDCE:C->Q            17   0.447   1.132  rocketManager_Map/rocketY_0 (rocketManager_Map/rocketY_0)
+     LUT2:I0->O            1   0.203   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_633_OUT_lut<0> (Display_Map/Msub_GND_18_o_GND_18_o_sub_633_OUT_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_633_OUT_cy<0> (Display_Map/Msub_GND_18_o_GND_18_o_sub_633_OUT_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_633_OUT_cy<1> (Display_Map/Msub_GND_18_o_GND_18_o_sub_633_OUT_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_633_OUT_cy<2> (Display_Map/Msub_GND_18_o_GND_18_o_sub_633_OUT_cy<2>)
+     XORCY:CI->O           6   0.180   0.973  Display_Map/Msub_GND_18_o_GND_18_o_sub_633_OUT_xor<3> (Display_Map/GND_18_o_GND_18_o_sub_633_OUT<3>)
+     LUT5:I2->O           14   0.205   0.958  Display_Map/GND_18_o_GND_18_o_div_633/Msub_a[10]_unary_minus_1_OUT_cy<4>11 (Display_Map/GND_18_o_GND_18_o_div_633/Msub_a[10]_unary_minus_1_OUT_cy<4>)
+     LUT4:I3->O            7   0.205   0.773  Display_Map/GND_18_o_GND_18_o_div_633/Mmux_a[10]_a[10]_mux_1_OUT81 (Display_Map/GND_18_o_GND_18_o_div_633/Madd_a[10]_b[5]_add_17_OUT_Madd_lut<6>)
+     MUXCY:DI->O           1   0.145   0.000  Display_Map/GND_18_o_GND_18_o_div_633/Madd_a[10]_b[5]_add_17_OUT_Madd_cy<6> (Display_Map/GND_18_o_GND_18_o_div_633/Madd_a[10]_b[5]_add_17_OUT_Madd_cy<6>)
+     XORCY:CI->O           9   0.180   0.830  Display_Map/GND_18_o_GND_18_o_div_633/Madd_a[10]_b[5]_add_17_OUT_Madd_xor<7> (Display_Map/GND_18_o_GND_18_o_div_633/a[10]_b[5]_add_17_OUT<7>)
+     LUT3:I2->O            5   0.205   0.714  Display_Map/GND_18_o_GND_18_o_div_633/Mmux_a[10]_a[10]_MUX_1993_o131 (Display_Map/GND_18_o_GND_18_o_div_633/Madd_a[10]_GND_36_o_add_19_OUT_Madd_lut<7>)
+     MUXCY:DI->O           1   0.145   0.000  Display_Map/GND_18_o_GND_18_o_div_633/Madd_a[10]_GND_36_o_add_19_OUT_Madd_cy<7> (Display_Map/GND_18_o_GND_18_o_div_633/Madd_a[10]_GND_36_o_add_19_OUT_Madd_cy<7>)
+     XORCY:CI->O           2   0.180   0.617  Display_Map/GND_18_o_GND_18_o_div_633/Madd_a[10]_GND_36_o_add_19_OUT_Madd_xor<8> (Display_Map/GND_18_o_GND_18_o_div_633/a[10]_GND_36_o_add_19_OUT<8>)
+     LUT6:I5->O           10   0.205   1.085  Display_Map/GND_18_o_GND_18_o_div_633/Mmux_a[10]_a[10]_MUX_2004_o121 (Display_Map/GND_18_o_GND_18_o_div_633/a[10]_a[10]_MUX_2006_o)
+     LUT6:I3->O           18   0.205   1.050  Display_Map/GND_18_o_GND_18_o_div_633/BUS_0009_INV_1126_o1 (Display_Map/GND_18_o_GND_18_o_div_633/BUS_0009_INV_1126_o1)
+     LUT6:I5->O            5   0.205   0.715  Display_Map/GND_18_o_GND_18_o_div_633/BUS_0010_INV_1125_o1_SW0 (N130)
+     LUT6:I5->O            2   0.205   0.617  Display_Map/GND_18_o_GND_18_o_div_633/BUS_0010_INV_1125_o1_SW3 (N294)
+     LUT6:I5->O            4   0.205   1.028  Display_Map/GND_18_o_GND_18_o_div_633/Mmux_n048171 (Display_Map/GND_18_o_GND_18_o_div_633/Madd_a[10]_GND_36_o_add_25_OUT[10:0]_Madd_lut<5>)
+     LUT5:I0->O            7   0.203   0.774  Display_Map/GND_18_o_GND_18_o_div_633/BUS_0011_INV_1124_o11 (Display_Map/GND_18_o_GND_18_o_div_633/Madd_GND_36_o_BUS_0001_add_28_OUT[11:0]_lut<1>)
+     LUT6:I5->O            4   0.205   0.684  Display_Map/GND_18_o_GND_18_o_div_633/BUS_0012_INV_1123_o11 (Display_Map/GND_18_o_GND_18_o_div_633/BUS_0012_INV_1123_o1)
+     LUT5:I4->O            5   0.205   0.714  Display_Map/GND_18_o_GND_18_o_div_633/BUS_0012_INV_1123_o14 (Display_Map/GND_18_o_GND_18_o_div_633/Madd_GND_36_o_BUS_0001_add_28_OUT[11:0]_cy<0>)
+     MUXF7:S->O            9   0.148   0.830  Display_Map/GND_18_o_GND_18_o_AND_126_o11 (Display_Map/GND_18_o_GND_18_o_AND_126_o1)
+     LUT6:I5->O            2   0.205   0.617  Display_Map/_n160521_SW0 (N329)
+     LUT6:I5->O            2   0.205   0.617  Display_Map/_n1605 (Display_Map/_n1605)
+     LUT6:I5->O            1   0.205   0.684  Display_Map/_n1677_inv1_SW1 (N579)
+     LUT6:I4->O            1   0.203   0.579  Display_Map/_n1677_inv4 (Display_Map/_n1677_inv)
      FDCE:CE                   0.322          Display_Map/touched_0
     ----------------------------------------
-    Total                     20.399ns (4.897ns logic, 15.502ns route)
-                                       (24.0% logic, 76.0% route)
+    Total                     21.220ns (5.231ns logic, 15.989ns route)
+                                       (24.7% logic, 75.3% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_clk'
@@ -1190,32 +1227,32 @@ Offset:              5.339ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk'
-  Total number of paths / destination ports: 126179210038254750 / 10
+  Total number of paths / destination ports: 148691710060472290 / 10
 -------------------------------------------------------------------------
-Offset:              55.936ns (Levels of Logic = 55)
-  Source:            Input_Map/alienXX_0 (FF)
-  Destination:       red<1> (PAD)
+Offset:              57.833ns (Levels of Logic = 56)
+  Source:            VGA/hcounter_0 (FF)
+  Destination:       red<2> (PAD)
   Source Clock:      fpga_clk rising 0.4X
 
-  Data Path: Input_Map/alienXX_0 to red<1>
+  Data Path: VGA/hcounter_0 to red<2>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDCE:C->Q            66   0.447   1.654  Input_Map/alienXX_0 (Input_Map/alienXX_0)
-     LUT2:I1->O            1   0.205   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_lut<0> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_lut<0>)
-     MUXCY:S->O            1   0.172   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<0> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<0>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<1> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<1>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<2> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<2>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<3> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<3>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<4> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<4>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<5> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<5>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<6> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<6>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<7> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<7>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<8> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<8>)
-     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<9> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<9>)
-     MUXCY:CI->O           0   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<10> (Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_cy<10>)
-     XORCY:CI->O         120   0.180   1.929  Display_Map/Msub_GND_18_o_GND_18_o_sub_196_OUT_xor<11> (Display_Map/GND_18_o_GND_18_o_sub_196_OUT<11>)
-     INV:I->O              0   0.206   0.000  Display_Map/GND_18_o_GND_18_o_mod_196/Msub_a[11]_unary_minus_1_OUT_lut<11>_INV_0 (Display_Map/GND_18_o_GND_18_o_div_20/Msub_a[11]_unary_minus_1_OUT_lut<11>)
+     FDC:C->Q           2726   0.447   2.726  VGA/hcounter_0 (VGA/hcounter_0)
+     LUT2:I0->O            1   0.203   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_lut<0> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_lut<0>)
+     MUXCY:S->O            1   0.172   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<0> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<0>)
+     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<1> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<2> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<3> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<3>)
+     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<4> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<4>)
+     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<5> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<5>)
+     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<6> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<6>)
+     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<7> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<7>)
+     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<8> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<8>)
+     MUXCY:CI->O           1   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<9> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<9>)
+     MUXCY:CI->O           0   0.019   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<10> (Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_cy<10>)
+     XORCY:CI->O         119   0.180   1.927  Display_Map/Msub_GND_18_o_GND_18_o_sub_414_OUT_xor<11> (Display_Map/GND_18_o_GND_18_o_sub_414_OUT<11>)
+     INV:I->O              0   0.206   0.000  Display_Map/GND_18_o_GND_18_o_mod_414/Msub_a[11]_unary_minus_1_OUT_lut<11>_INV_0 (Display_Map/GND_18_o_GND_18_o_div_20/Msub_a[11]_unary_minus_1_OUT_lut<11>)
      XORCY:LI->O           3   0.136   0.755  Display_Map/GND_18_o_GND_18_o_div_20/Msub_a[11]_unary_minus_1_OUT_xor<11> (Display_Map/GND_18_o_GND_18_o_div_20/a[11]_unary_minus_1_OUT<11>)
      LUT5:I3->O           17   0.203   1.256  Display_Map/GND_18_o_GND_18_o_div_20/BUS_0006_INV_229_o1 (Display_Map/GND_18_o_GND_18_o_div_20/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<7>)
      LUT6:I3->O           17   0.205   1.275  Display_Map/GND_18_o_GND_18_o_div_20/BUS_0007_INV_228_o1 (Display_Map/GND_18_o_GND_18_o_div_20/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<6>)
@@ -1251,15 +1288,16 @@ Offset:              55.936ns (Levels of Logic = 55)
      LUT6:I0->O            5   0.203   1.059  Display_Map/GND_18_o_GND_18_o_mod_21/BUS_0014_INV_450_o14 (Display_Map/GND_18_o_GND_18_o_mod_21/BUS_0014_INV_450_o)
      LUT5:I0->O            1   0.203   0.684  Display_Map/GND_18_o_GND_18_o_mod_21/Mmux_o311 (Display_Map/GND_18_o_GND_18_o_mod_21/Mmux_o31)
      LUT3:I1->O            5   0.203   0.714  Display_Map/Mmux_alienIndex<2>11 (Display_Map/alienIndex<2>)
-     MUXF7:S->O            1   0.148   0.580  Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_167_o_5_f7 (Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_167_o_5_f7)
-     LUT6:I5->O            4   0.205   1.028  Display_Map/alienIndex<3>21 (Display_Map/alienIndex[3]_X_12_o_Mux_167_o)
-     LUT6:I1->O            2   0.203   0.864  Display_Map/Mmux_blue2101111 (Display_Map/Mmux_blue210111)
-     LUT4:I0->O            1   0.203   0.827  Display_Map/Mmux_blue2103 (Display_Map/Mmux_blue2102)
-     LUT6:I2->O            1   0.203   0.579  Display_Map/Mmux_blue2104 (red_1_OBUF)
-     OBUF:I->O                 2.571          red_1_OBUF (red<1>)
+     MUXF7:S->O            1   0.148   0.580  Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_385_o_5_f7 (Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_385_o_5_f7)
+     LUT6:I5->O            6   0.205   0.992  Display_Map/alienIndex<3>21 (Display_Map/alienIndex[3]_X_12_o_Mux_385_o)
+     LUT6:I2->O            2   0.203   0.845  Display_Map/GND_18_o_vcounter[10]_AND_105_o871 (Display_Map/GND_18_o_vcounter[10]_AND_105_o87)
+     LUT6:I3->O            1   0.205   0.580  Display_Map/Mmux_blue2124 (Display_Map/Mmux_blue2124)
+     LUT6:I5->O            1   0.205   0.924  Display_Map/Mmux_blue2125_SW0 (N764)
+     LUT6:I1->O            1   0.203   0.579  Display_Map/Mmux_blue2125 (red_2_OBUF)
+     OBUF:I->O                 2.571          red_2_OBUF (red<2>)
     ----------------------------------------
-    Total                     55.936ns (11.983ns logic, 43.953ns route)
-                                       (21.4% logic, 78.6% route)
+    Total                     57.833ns (12.188ns logic, 45.645ns route)
+                                       (21.1% logic, 78.9% route)
 
 =========================================================================
 
@@ -1271,20 +1309,20 @@ Clock to Setup on destination clock fpga_clk
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-fpga_clk       |   20.399|         |         |         |
+fpga_clk       |   21.220|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 26.00 secs
-Total CPU time to Xst completion: 26.86 secs
+Total REAL time to Xst completion: 177.00 secs
+Total CPU time to Xst completion: 177.01 secs
  
 --> 
 
-Total memory usage is 346592 kilobytes
+Total memory usage is 655008 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)
-Number of infos    :    5 (   0 filtered)
+Number of infos    :    6 (   0 filtered)
 

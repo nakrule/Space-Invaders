@@ -10,6 +10,7 @@
 --          1.00 -  VGA_internal, Display, DCM and StartScreenROM added
 --          1.1  -  Ship and aliens movements implemented
 --          1.2  -  Inputs added
+--          1.3  -  Display now have a clk
 ----------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
@@ -50,13 +51,12 @@ architecture Behavioral of TopModule is
   signal romAddress        : std_logic_vector(14 downto 0);  -- Combination of hcount and vcount
   signal MissileX          : std_logic_vector(9 downto 0);  -- Missile x coordinate
 
-
   component display is
     port(
       blank          : in  std_logic;   -- If 1, video output must be null
       gameStarted    : in  std_logic;   -- When 0, show start screen
       rocketOnScreen : in  std_logic;   -- If 1, display a rocket
-		clk            : in  std_logic;     -- 40MHz
+      clk            : in  std_logic;   -- 40MHz
       missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
       shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
       MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
@@ -65,7 +65,7 @@ architecture Behavioral of TopModule is
       imageInput     : in  std_logic_vector(7 downto 0);  -- data from rom
       alienX         : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
       alienY         : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
-		alienKilled    : out std_logic; -- 1 if alien killed
+      alienKilled    : out std_logic;   -- 1 if alien killed
       red            : out std_logic_vector(2 downto 0);  -- Red color output
       green          : out std_logic_vector(2 downto 0);  -- Green color output
       blue           : out std_logic_vector(1 downto 0)   -- Blue color output
@@ -123,8 +123,8 @@ architecture Behavioral of TopModule is
       newMissile     : in  std_logic;   -- If 1, new missile launched
       reset          : in  std_logic;   -- Active high
       clk            : in  std_logic;   -- 40MHz
+      alienKilled    : in  std_logic;   -- 1 if alien killed
       shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
-		alienKilled    : in  std_logic;     -- 1 if alien killed
       rocketOnScreen : out std_logic;   -- If 1, display a rocket
       missileY       : out std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
       MissileX       : out std_logic_vector(9 downto 0)  -- Missile x coordinate
@@ -167,11 +167,11 @@ begin
       blank          => blank,
       gameStarted    => gameStarted,
       rocketOnScreen => rocketOnScreen,
-		clk            => pixel_clk,
+      clk            => pixel_clk,
       missileY       => missileY,
       hcount         => hcount,
       vcount         => vcount,
-		alienKilled    => alienKilled,
+      alienKilled    => alienKilled,
       MissileX       => MissileX,
       shipPosition   => shipPosition,
       alienX         => alienX,
@@ -205,7 +205,7 @@ begin
       clk            => pixel_clk,
       shipPosition   => shipPosition,
       rocketOnScreen => rocketOnScreen,
-		alienKilled    => alienKilled,
+      alienKilled    => alienKilled,
       missileY       => missileY,
       MissileX       => missileX
       );

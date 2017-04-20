@@ -10,6 +10,7 @@
 --          1.00 -  Fire, left and write implemented
 --          1.1  -  Ship and aliens movements implemented
 --          1.2  -  Ship rocket implemented
+--          1.3  -  Rocket can be stopped by Display when an alien is killed
 ----------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -24,7 +25,7 @@ entity rocketManager is
     reset          : in  std_logic;     -- Active high
     clk            : in  std_logic;     -- 40MHz
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
-	 alienKilled    : in  std_logic;     -- 1 if alien killed
+    alienKilled    : in  std_logic;     -- 1 if alien killed
     rocketOnScreen : out std_logic;     -- If 1, display a rocket
     missileY       : out std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     MissileX       : out std_logic_vector(9 downto 0)   -- Missile x coordinate
@@ -33,9 +34,9 @@ end rocketManager;
 
 architecture Behavioral of rocketManager is
 
+  signal rocketDisplayed : std_logic;   -- Integer of rocketOnScreen
   signal rocketY         : integer range 0 to (VLINES-30);  -- Pixels between top screen and top missile
   signal missileTimer    : integer range 0 to missileSpeed;
-  signal rocketDisplayed : std_logic;   -- Integer of rocketOnScreen
   signal shootFinished   : integer range 0 to 1;  -- If 1, current missile is off screen
   signal MissileXX       : integer range shipMargin to (HLINES-shipMargin) := shipMargin;  -- Current Missile x value from left screen
 

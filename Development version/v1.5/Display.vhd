@@ -27,6 +27,8 @@ entity Display is
     gameStarted    : in  std_logic;     -- When 0, show start screen
     rocketOnScreen : in  std_logic;     -- If 1, display a rocket
     clk            : in  std_logic;     -- 40MHz
+	 alienRocketx   : in std_logic_vector(9 downto 0); -- Alien rocket x position
+	 alienRockety   : in std_logic_vector(9 downto 0); -- Alien rocket y position
     missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
     MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
@@ -38,7 +40,12 @@ entity Display is
     alienKilled    : out std_logic;     -- 1 if alien killed
     red            : out std_logic_vector(2 downto 0);  -- Red color output
     green          : out std_logic_vector(2 downto 0);  -- Green color output
-    blue           : out std_logic_vector(1 downto 0)   -- Blue color output
+    blue           : out std_logic_vector(1 downto 0);  -- Blue color output
+	 alienL1     : out std_logic_vector(0 to 9); -- Same value as alienLine1
+	 alienL2     : out std_logic_vector(0 to 9); -- Same value as alienLine2
+	 alienL3     : out std_logic_vector(0 to 9); -- Same value as alienLine3
+	 alienL4     : out std_logic_vector(0 to 9); -- Same value as alienLine4
+	 alienL5     : out std_logic_vector(0 to 9) -- Same value as alienLine5
     );
 end entity Display;
 
@@ -77,6 +84,12 @@ architecture logic of Display is
 
 begin
 
+	alienL1 <= alienLine1;
+	alienL2 <= alienLine2;
+	alienL3 <= alienLine3;
+	alienL4 <= alienLine4;
+	alienL5 <= alienLine5;
+
   hcounter  <= to_integer(unsigned(hcount));
   vcounter  <= to_integer(unsigned(vcount));
   shipPos   <= to_integer(unsigned(shipPosition));
@@ -100,7 +113,7 @@ begin
   blue  <= color(1 downto 0) when blank = '0' else "00";
 
   process(hcounter, vcounter, shipPos, gameStarted, ImageInput, alienXX, alienYY, rocketOnScreen, missileYY, missileXX, alienLine1,
-          alienLine2, alienLine3, alienLine4, alienLine5, alienLine, alienIndex)
+          alienLine2, alienLine3, alienLine4, alienLine5, alienLine, alienIndex, alienrocketx, alienrockety)
   begin
     if gameStarted = '0' then
       color <= ImageInput;
@@ -148,12 +161,19 @@ begin
         end case;
       end if;
 
-      -- Missile
+      -- Ship missile
       if rocketOnScreen = '1' then
         if hcounter = missileXX and vcounter > missileYY and vcounter < (missileYY+rocketLength) then
           color <= rocketColor;
         end if;
       end if;
+		
+		-- Alien missile
+		if hcounter = to_integer(unsigned(alienRocketx)) and vcounter > to_integer(unsigned(alienRockety)) and vcounter < (to_integer(unsigned(alienRockety))+rocketLength) then
+          color <= rocketColor;
+        end if;
+		
+		
     end if;
   end process;
 

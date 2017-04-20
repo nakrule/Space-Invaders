@@ -6,7 +6,7 @@ Command Line: C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 xc6slx16-csg324-3 TopModule.ngc TopModule.ngd
 
 Reading NGO file "C:/Users/samuel.riedo/Desktop/Space-Invaders/Development
-version/v1.4/TopModule.ngc" ...
+version/v1.5/TopModule.ngc" ...
 Loading design module "ipcore_dir/StartScreenRom.ngc"...
 Gathering constraint information from source properties...
 Done.
@@ -29,7 +29,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 171528 kilobytes
+Total memory usage is 173576 kilobytes
 
 Writing NGD file "TopModule.ngd" ...
 Total REAL time to NGDBUILD completion:  2 sec

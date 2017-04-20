@@ -2,10 +2,10 @@
 -- Company:         HES-SO
 -- Engineer:        Samuel Riedo & Pascal Roulin
 -- Create Date:     13/04/2017
--- Design Name:     Input.vhd
+-- Design Name:     rocketManager.vhd
 -- Project Name:    Space Invaders - FPGA Edition
 -- Target Devices:  Digilent NEXYS 3 (Xilinx Spartan 6 XC6LX16-CS324)
--- Description:     Slow inputs
+-- Description:     Manage rocket shoot by the ship
 -- Revision 0.01 -  File Created
 --          1.00 -  Fire, left and write implemented
 --          1.1  -  Ship and aliens movements implemented
@@ -24,8 +24,8 @@ entity rocketManager is
     newMissile     : in  std_logic;     -- If 1, new missile launched
     reset          : in  std_logic;     -- Active high
     clk            : in  std_logic;     -- 40MHz
+	 alienKilled    : in  std_logic;     -- 1 if alien killed
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
-    alienKilled    : in  std_logic;     -- 1 if alien killed
     rocketOnScreen : out std_logic;     -- If 1, display a rocket
     missileY       : out std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     MissileX       : out std_logic_vector(9 downto 0)   -- Missile x coordinate

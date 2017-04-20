@@ -1,7 +1,7 @@
 Release 14.7 par P.20131013 (nt64)
 Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
-EIFRWSE01327::  Thu Apr 20 15:23:04 2017
+EIFRWSE01327::  Thu Apr 20 15:37:16 2017
 
 par -w -intstyle ise -ol high -mt off TopModule_map.ncd TopModule.ncd
 TopModule.pcf 
@@ -45,25 +45,25 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                2
-  Number of Slice LUTs:                      2,281 out of   9,112   25%
-    Number used as logic:                    2,276 out of   9,112   24%
-      Number using O6 output only:           1,766
+  Number of Slice LUTs:                      2,305 out of   9,112   25%
+    Number used as logic:                    2,299 out of   9,112   25%
+      Number using O6 output only:           1,796
       Number using O5 output only:             108
-      Number using O5 and O6:                  402
+      Number using O5 and O6:                  395
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:      5
-      Number with same-slice register load:      0
+    Number used exclusively as route-thrus:      6
+      Number with same-slice register load:      1
       Number with same-slice carry load:         5
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   797 out of   2,278   34%
+  Number of occupied Slices:                   810 out of   2,278   35%
   Number of MUXCYs used:                       732 out of   4,556   16%
-  Number of LUT Flip Flop pairs used:        2,299
-    Number with an unused Flip Flop:         2,032 out of   2,299   88%
-    Number with an unused LUT:                  18 out of   2,299    1%
-    Number of fully used LUT-FF pairs:         249 out of   2,299   10%
+  Number of LUT Flip Flop pairs used:        2,320
+    Number with an unused Flip Flop:         2,043 out of   2,320   88%
+    Number with an unused LUT:                  15 out of   2,320    1%
+    Number of fully used LUT-FF pairs:         262 out of   2,320   11%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -118,13 +118,13 @@ Finished initial Timing Analysis.  REAL time: 32 secs
 Starting Router
 
 
-Phase  1  : 13824 unrouted;      REAL time: 32 secs 
+Phase  1  : 13969 unrouted;      REAL time: 32 secs 
 
-Phase  2  : 11560 unrouted;      REAL time: 33 secs 
+Phase  2  : 11705 unrouted;      REAL time: 33 secs 
 
-Phase  3  : 5237 unrouted;      REAL time: 35 secs 
+Phase  3  : 5525 unrouted;      REAL time: 35 secs 
 
-Phase  4  : 5237 unrouted; (Par is working to improve performance)     REAL time: 35 secs 
+Phase  4  : 5554 unrouted; (Par is working to improve performance)     REAL time: 36 secs 
 
 Updating file: TopModule.ncd with current fully routed design.
 
@@ -140,7 +140,7 @@ Phase  9  : 0 unrouted; (Par is working to improve performance)     REAL time: 3
 
 Phase 10  : 0 unrouted; (Par is working to improve performance)     REAL time: 39 secs 
 Total REAL time to Router completion: 39 secs 
-Total CPU time to Router completion: 10 secs 
+Total CPU time to Router completion: 9 secs 
 
 Partition Implementation Status
 -------------------------------
@@ -160,8 +160,8 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net pix | SETUP       |         N/A|    18.136ns|     N/A|           0
-  el_clk                                    | HOLD        |     0.404ns|            |       0|           0
+  Autotimespec constraint for clock net pix | SETUP       |         N/A|    17.928ns|     N/A|           0
+  el_clk                                    | HOLD        |     0.400ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
@@ -180,7 +180,7 @@ All signals are completely routed.
 Total REAL time to PAR completion: 40 secs 
 Total CPU time to PAR completion: 10 secs 
 
-Peak Memory Usage:  389 MB
+Peak Memory Usage:  390 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

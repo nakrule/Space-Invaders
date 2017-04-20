@@ -47,12 +47,13 @@ architecture logic of alienRocket is
 	signal column10 : std_logic_vector(4 downto 0);  -- Last column of alien
 	
 	signal columnCounter : integer range 0 to 9 := 0; -- Determine the shooting column
+	signal newShoot : integer range 0 to 1 := 0; -- Force a new shoot if 1
 	signal shootTimer : integer range 0 to rocketFrequency := 0; -- Determine the shooting column
 	signal rocketYY : integer range 0 to VLINES := VLINES; -- Alien rocket y position from top screen
 	signal rocketLaunched : integer range 0 to 1 := 0; -- If 1, a rocket is launched
-	signal rocketXX : integer range alienXMargin to (HLINES - alienXMargin) := alienXMargin;
+	signal rocketXX : integer range alienXMargin to (HLINES - alienXMargin) := alienXMargin; -- Rocket x position when a new one is launched
 	signal rocketXXX : integer range alienXMargin to (HLINES - alienXMargin) := alienXMargin; -- Copy of rocketXX before it is reset to 0
-	signal newRocketYY : integer range 0 to VLINES := 0;
+	signal newRocketYY : integer range 0 to VLINES := 0; -- Y position of a new rocket launched
 	signal alienXX    : integer range 0 to 1000;  -- Integer value of alienX
    signal alienYY    : integer range 0 to 1000;  -- Integer value of alienY
 	signal rocketSpeed : integer range 0 to missileSpeed; -- Missile speed
@@ -99,7 +100,9 @@ begin
 				columnCounter <= columnCounter + 1;
 			end if;
 			-- shootTimer
-			if shootTimer = rocketFrequency then
+			if newShoot = 1 then
+				shootTimer <= rocketFrequency;
+			elsif shootTimer = rocketFrequency then
 				shootTimer <= 0;
 			else
 				shootTimer <= shootTimer + 1;
@@ -111,6 +114,7 @@ begin
 	begin
 		if shootTimer = rocketFrequency and rocketFinished = 1 then
 			rocketLaunched <= 1;
+			newShoot <= 0;
 			case columnCounter is
 				when 0 =>
 					if column1 > "00000" then
@@ -133,6 +137,7 @@ begin
 					else
 						newRocketYY <= 0;
 						rocketXX <= alienXMargin;
+						newShoot <= 1;
 					end if;
 				when 1 =>
 					if column2 > "00000" then
@@ -155,6 +160,7 @@ begin
 					else
 						newRocketYY <= 0;
 						rocketXX <= alienXMargin;
+						newShoot <= 1;
 					end if;
 				when 2 =>
 					if column3 > "00000" then
@@ -177,6 +183,7 @@ begin
 					else
 						newRocketYY <= 0;
 						rocketXX <= alienXMargin;
+						newShoot <= 1;
 					end if;
 				when 3 =>
 					if column4 > "00000" then
@@ -199,6 +206,7 @@ begin
 					else
 						newRocketYY <= 0;
 						rocketXX <= alienXMargin;
+						newShoot <= 1;
 					end if;
 				when 4 =>
 					if column5 > "00000" then
@@ -221,6 +229,7 @@ begin
 					else
 						newRocketYY <= 0;
 						rocketXX <= alienXMargin;
+						newShoot <= 1;
 					end if;
 				when 5 =>
 					if column6 > "00000" then
@@ -243,6 +252,7 @@ begin
 					else
 						newRocketYY <= 0;
 						rocketXX <= alienXMargin;
+						newShoot <= 1;
 					end if;
 				when 6 =>
 					if column7 > "00000" then
@@ -265,6 +275,7 @@ begin
 					else
 						newRocketYY <= 0;
 						rocketXX <= alienXMargin;
+						newShoot <= 1;
 					end if;
 				when 7 =>
 					if column8 > "00000" then
@@ -287,6 +298,7 @@ begin
 					else
 						newRocketYY <= 0;
 						rocketXX <= alienXMargin;
+						newShoot <= 1;
 					end if;
 				when 8 =>
 					if column9 > "00000" then
@@ -309,6 +321,7 @@ begin
 					else
 						newRocketYY <= 0;
 						rocketXX <= alienXMargin;
+						newShoot <= 1;
 					end if;
 				when others =>
 					if column10 > "00000" then
@@ -331,19 +344,21 @@ begin
 					else
 						newRocketYY <= 0;
 						rocketXX <= alienXMargin;
+						newShoot <= 1;
 					end if;
 			end case;
 		else
 			rocketLaunched <= 0;
 			newRocketYY <= 0;
 			rocketXX <= alienXMargin;
+			newShoot <= 0;
 		end if;
 	end process;
 	
 	-- Update rocketYY
-	process(reset, clk)
+	process(reset, clk, newShoot)
 	begin
-		if reset = '1' then
+		if reset = '1' or newShoot = 1 then
 			rocketYY <= VLINES;
 			rocketFinished <= 1;
 		elsif rising_edge(clk) then

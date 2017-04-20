@@ -62,6 +62,10 @@ architecture logic of Display is
   
   signal touched    : integer range 0 to 1 := 0; -- if 1, an alien is killed
   
+  signal ali1 : integer range 0 to 1023 := 1023;
+  signal ali2 : integer range 0 to 1023 := 1023;
+  signal ali3 : integer range 0 to 1023 := 1023;
+  signal ali4 : integer range 0 to 1023 := 1023;
   signal ali5 : integer range 0 to 1023 := 1023;
   
   -- Temp signals used for alienLine computation
@@ -152,17 +156,29 @@ begin
     end if;
   end process;
   
-	alienLine1 <= "1111000111";
-	alienLine2 <= "1101010101";
-	alienLine3 <= "1111000011";
-	alienLine4 <= "0011110011";
+	alienLine1 <= std_logic_vector(to_unsigned(ali1,10));
+	alienLine2 <= std_logic_vector(to_unsigned(ali2,10));
+	alienLine3 <= std_logic_vector(to_unsigned(ali3,10));
+	alienLine4 <= std_logic_vector(to_unsigned(ali4,10));
 	alienLine5 <= std_logic_vector(to_unsigned(ali5,10));
-	alienKilled <= '0';
+	
+	process(touched)
+	begin
+		if touched = 1 then
+			alienKilled <= '1';
+		else
+			alienKilled <= '0';
+		end if;
+	end process;
 	
 	-- Alien collision
 	process(gameStarted, clk)
 	begin
 		if gameStarted = '0' then
+			ali1 <= 1023;
+			ali2 <= 1023;
+			ali3 <= 1023;
+			ali4 <= 1023;
 			ali5 <= 1023;
 			touched <= 0;
 		elsif rising_edge(clk) then
@@ -200,6 +216,146 @@ begin
 						touched <= 1;
 					elsif alienLine5(9) = '1' and ((missileXX-alienXX)/30) = 9 then	
 						ali5 <= ali5 - 1;
+						touched <= 1;
+					end if;
+					
+				-- line 4
+				elsif ((missileYY-alienYY)/30) = 3 and touched = 0 then
+
+					if alienLine4(0) = '1' and ((missileXX-alienXX)/30) = 0 then	
+						ali4 <= ali4 - 512;
+						touched <= 1;
+					elsif alienLine4(1) = '1' and ((missileXX-alienXX)/30) = 1 then	
+						ali4 <= ali4 - 256;
+						touched <= 1;
+					elsif alienLine4(2) = '1' and ((missileXX-alienXX)/30) = 2 then	
+						ali4 <= ali4 - 128;
+						touched <= 1;
+					elsif alienLine4(3) = '1' and ((missileXX-alienXX)/30) = 3 then	
+						ali4 <= ali4 - 64;
+						touched <= 1;
+					elsif alienLine4(4) = '1' and ((missileXX-alienXX)/30) = 4 then	
+						ali4 <= ali4 - 32;
+						touched <= 1;
+					elsif alienLine4(5) = '1' and ((missileXX-alienXX)/30) = 5 then	
+						ali4 <= ali4 - 16;
+						touched <= 1;
+					elsif alienLine4(6) = '1' and ((missileXX-alienXX)/30) = 6 then	
+						ali4 <= ali4 - 8;
+						touched <= 1;
+					elsif alienLine4(7) = '1' and ((missileXX-alienXX)/30) = 7 then	
+						ali4 <= ali4 - 4;
+						touched <= 1;
+					elsif alienLine4(8) = '1' and ((missileXX-alienXX)/30) = 8 then	
+						ali4 <= ali4 - 2;
+						touched <= 1;
+					elsif alienLine4(9) = '1' and ((missileXX-alienXX)/30) = 9 then	
+						ali4 <= ali4 - 1;
+						touched <= 1;
+					end if;
+					
+				-- line 3
+				elsif ((missileYY-alienYY)/30) = 2 and touched = 0 then
+
+					if alienLine3(0) = '1' and ((missileXX-alienXX)/30) = 0 then	
+						ali3 <= ali3 - 512;
+						touched <= 1;
+					elsif alienLine3(1) = '1' and ((missileXX-alienXX)/30) = 1 then	
+						ali3 <= ali3 - 256;
+						touched <= 1;
+					elsif alienLine3(2) = '1' and ((missileXX-alienXX)/30) = 2 then	
+						ali3 <= ali3 - 128;
+						touched <= 1;
+					elsif alienLine3(3) = '1' and ((missileXX-alienXX)/30) = 3 then	
+						ali3 <= ali3 - 64;
+						touched <= 1;
+					elsif alienLine3(4) = '1' and ((missileXX-alienXX)/30) = 4 then	
+						ali3 <= ali3 - 32;
+						touched <= 1;
+					elsif alienLine3(5) = '1' and ((missileXX-alienXX)/30) = 5 then	
+						ali3 <= ali3 - 16;
+						touched <= 1;
+					elsif alienLine3(6) = '1' and ((missileXX-alienXX)/30) = 6 then	
+						ali3 <= ali3 - 8;
+						touched <= 1;
+					elsif alienLine3(7) = '1' and ((missileXX-alienXX)/30) = 7 then	
+						ali3 <= ali3 - 4;
+						touched <= 1;
+					elsif alienLine3(8) = '1' and ((missileXX-alienXX)/30) = 8 then	
+						ali3 <= ali3 - 2;
+						touched <= 1;
+					elsif alienLine3(9) = '1' and ((missileXX-alienXX)/30) = 9 then	
+						ali3 <= ali3 - 1;
+						touched <= 1;
+					end if;
+					
+				-- line 2
+				elsif ((missileYY-alienYY)/30) = 1 and touched = 0 then
+
+					if alienLine2(0) = '1' and ((missileXX-alienXX)/30) = 0 then	
+						ali2 <= ali2 - 512;
+						touched <= 1;
+					elsif alienLine2(1) = '1' and ((missileXX-alienXX)/30) = 1 then	
+						ali2 <= ali2 - 256;
+						touched <= 1;
+					elsif alienLine2(2) = '1' and ((missileXX-alienXX)/30) = 2 then	
+						ali2 <= ali2 - 128;
+						touched <= 1;
+					elsif alienLine2(3) = '1' and ((missileXX-alienXX)/30) = 3 then	
+						ali2 <= ali2 - 64;
+						touched <= 1;
+					elsif alienLine2(4) = '1' and ((missileXX-alienXX)/30) = 4 then	
+						ali2 <= ali2 - 32;
+						touched <= 1;
+					elsif alienLine2(5) = '1' and ((missileXX-alienXX)/30) = 5 then	
+						ali2 <= ali2 - 16;
+						touched <= 1;
+					elsif alienLine2(6) = '1' and ((missileXX-alienXX)/30) = 6 then	
+						ali2 <= ali2 - 8;
+						touched <= 1;
+					elsif alienLine2(7) = '1' and ((missileXX-alienXX)/30) = 7 then	
+						ali2 <= ali2 - 4;
+						touched <= 1;
+					elsif alienLine2(8) = '1' and ((missileXX-alienXX)/30) = 8 then	
+						ali2 <= ali2 - 2;
+						touched <= 1;
+					elsif alienLine2(9) = '1' and ((missileXX-alienXX)/30) = 9 then	
+						ali2 <= ali2 - 1;
+						touched <= 1;
+					end if;
+					
+				-- line 1
+				elsif ((missileYY-alienYY)/30) = 0 and touched = 0 then
+
+					if alienLine1(0) = '1' and ((missileXX-alienXX)/30) = 0 then	
+						ali1 <= ali1 - 512;
+						touched <= 1;
+					elsif alienLine1(1) = '1' and ((missileXX-alienXX)/30) = 1 then	
+						ali1 <= ali1 - 256;
+						touched <= 1;
+					elsif alienLine1(2) = '1' and ((missileXX-alienXX)/30) = 2 then	
+						ali1 <= ali1 - 128;
+						touched <= 1;
+					elsif alienLine1(3) = '1' and ((missileXX-alienXX)/30) = 3 then	
+						ali1 <= ali1 - 64;
+						touched <= 1;
+					elsif alienLine1(4) = '1' and ((missileXX-alienXX)/30) = 4 then	
+						ali1 <= ali1 - 32;
+						touched <= 1;
+					elsif alienLine1(5) = '1' and ((missileXX-alienXX)/30) = 5 then	
+						ali1 <= ali1 - 16;
+						touched <= 1;
+					elsif alienLine1(6) = '1' and ((missileXX-alienXX)/30) = 6 then	
+						ali1 <= ali1 - 8;
+						touched <= 1;
+					elsif alienLine1(7) = '1' and ((missileXX-alienXX)/30) = 7 then	
+						ali1 <= ali1 - 4;
+						touched <= 1;
+					elsif alienLine1(8) = '1' and ((missileXX-alienXX)/30) = 8 then	
+						ali1 <= ali1 - 2;
+						touched <= 1;
+					elsif alienLine1(9) = '1' and ((missileXX-alienXX)/30) = 9 then	
+						ali1 <= ali1 - 1;
 						touched <= 1;
 					end if;
 					

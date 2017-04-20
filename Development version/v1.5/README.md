@@ -7,4 +7,4 @@
 -- Target Devices:  Digilent NEXYS 3 (Xilinx Spartan 6 XC6LX16-CS324)
 -- Version:         1.5
 ----------------------------------------------------------------------------------
--- Changelog:       - 
+-- Changelog:       - Alien now fire

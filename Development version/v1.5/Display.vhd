@@ -61,6 +61,8 @@ architecture logic of Display is
   signal missileXX  : integer range shipMargin to (HLINES-shipMargin) := shipMargin;  -- Current Missile x value from left screen
   signal alienLine  : integer range 0 to 4                            := 0;
   signal alienIndex : integer range 0 to 9                            := 0;
+  signal gameWin : std_logic := '0'; -- If 1, game win
+  --signal gameOver : std_logic := '0' -- If 1, game loose
 
   signal alienLine1 : std_logic_vector(0 to 9) := "1111111111";  -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine2 : std_logic_vector(0 to 9) := "1111111111";  -- 1 bit for every alien ; 1 alien alive, 0 dead alien
@@ -83,6 +85,9 @@ architecture logic of Display is
 
 
 begin
+
+	gameWin <= '1' when (alienLine1 = "0000000000" and alienLine2 = "0000000000" and alienLine3 = "0000000000" and alienLine4 = "0000000000"
+	and alienLine5 = "0000000000") else '0';
 
 	alienL1 <= alienLine1;
 	alienL2 <= alienLine2;
@@ -113,10 +118,12 @@ begin
   blue  <= color(1 downto 0) when blank = '0' else "00";
 
   process(hcounter, vcounter, shipPos, gameStarted, ImageInput, alienXX, alienYY, rocketOnScreen, missileYY, missileXX, alienLine1,
-          alienLine2, alienLine3, alienLine4, alienLine5, alienLine, alienIndex, alienrocketx, alienrockety)
+          alienLine2, alienLine3, alienLine4, alienLine5, alienLine, alienIndex, alienrocketx, alienrockety,gameWin)
   begin
     if gameStarted = '0' then
       color <= ImageInput;
+	elsif gameWin = '1' then
+		color <= "00000000";
     else
       -- Display the ship
       if hcounter >= shipPos and hcounter < (shipPos+62) and vcounter > 570 then

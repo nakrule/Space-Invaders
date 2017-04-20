@@ -1,5 +1,5 @@
 %read the image
-I = imread('pictures/gameover.jpg');	
+I = imread('pictures/gameOver.jpg');	
 [x,y,z] = size(I); % x = width, y = heigh
 width = x-1;
 		

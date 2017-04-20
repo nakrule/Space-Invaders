@@ -25,9 +25,9 @@ entity alienRocket is
 		alienLine3 : in std_logic_vector(0 to 9);
 		alienLine4 : in std_logic_vector(0 to 9);
 		alienLine5 : in std_logic_vector(0 to 9);
+		shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate, only used to generate random
       alienX     : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
       alienY     : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
-
 		alienRocketx : out std_logic_vector(9 downto 0);
 		alienRockety : out std_logic_vector(9 downto 0)
 	);
@@ -46,6 +46,7 @@ architecture logic of alienRocket is
 	signal column9 : std_logic_vector(4 downto 0);
 	signal column10 : std_logic_vector(4 downto 0);  -- Last column of alien
 	
+	signal shipPos    : integer range 0 to maxShipPosValue;  -- x position of the ship
 	signal columnCounter : integer range 0 to 9 := 0; -- Determine the shooting column
 	signal newShoot : integer range 0 to 1 := 0; -- Force a new shoot if 1
 	signal shootTimer : integer range 0 to rocketFrequency := 0; -- Determine the shooting column
@@ -63,6 +64,8 @@ begin
 
 	alienRocketx <=  std_logic_vector(to_unsigned(rocketXXX, 10));
 	alienRockety <=  std_logic_vector(to_unsigned(rocketYY, 10));
+	
+	shipPos   <= to_integer(unsigned(shipPosition));
 	
 
 	column1 <= alienLine5(0) & alienLine4(0) & alienLine3(0) & alienLine2(0) & alienLine1(0);
@@ -95,7 +98,7 @@ begin
 			end if;
 			-- columnCounter
 			if columnCounter = 9 then
-				columnCounter <= 0;
+				columnCounter <= 0; --shipPos mod columnCounter;
 			else
 				columnCounter <= columnCounter + 1;
 			end if;

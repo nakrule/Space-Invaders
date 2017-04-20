@@ -129,8 +129,8 @@ begin
 			color <= "00000000";
 		end if;
 	elsif gameOver = '1' then
-		if hcounter >= 250 and hcounter<550 and vcounter >=209 and vcounter< 391 then
-			color <= std_logic_vector(to_unsigned(gameOverTable(hcounter-250, vcounter-391),8));
+		if hcounter >= 310 and hcounter<490 and vcounter >=245 and vcounter< 354 then
+			color <= std_logic_vector(to_unsigned(gameOverTable(hcounter-310, vcounter-245),8));
 		else
 			color <= "00000000";
 		end if;
@@ -410,8 +410,8 @@ begin
   if gameStarted = '0' then
 		gameOver <= '0';
   elsif rising_edge(clk) then
-		if to_integer(unsigned(alienRockety))>=570 then
-			if to_integer(unsigned(alienRocketx)) >= shipPos and to_integer(unsigned(alienRocketx)) < (shipPos+62) then
+		if to_integer(unsigned(alienRockety))>=570 and to_integer(unsigned(alienRockety))<600 then
+			if (to_integer(unsigned(alienRocketx))+6) >= shipPos and to_integer(unsigned(alienRocketx)) < (shipPos+56) then
 				gameOver <= '1';
 			end if;
 		end if;

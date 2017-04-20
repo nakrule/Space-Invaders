@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\TopModule.ncd
+OUTFILE=C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\TopModule.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4
+LICENSE=ISE
+USER_INFO=174116392_174116393_210614678_748

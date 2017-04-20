@@ -149,7 +149,6 @@ Elaborating entity <Display> (architecture <logic>) from library <work>.
 Elaborating entity <Input> (architecture <Behavioral>) from library <work>.
 
 Elaborating entity <rocketManager> (architecture <Behavioral>) from library <work>.
-WARNING:HDLCompiler:92 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\rocketManager.vhd" Line 51: alienkilled should be on the sensitivity list of the process
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -157,9 +156,9 @@ WARNING:HDLCompiler:92 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Developme
 
 Synthesizing Unit <TopModule>.
     Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\TopModule.vhd".
-INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\TopModule.vhd" line 145: Output port <LOCKED> of the instance <DCM_map> is unconnected or connected to loadless signal.
-    Found 17-bit adder for signal <n0012> created at line 136.
-    Found 8x9-bit multiplier for signal <n0016> created at line 136.
+INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\TopModule.vhd" line 146: Output port <LOCKED> of the instance <DCM_map> is unconnected or connected to loadless signal.
+    Found 17-bit adder for signal <n0012> created at line 137.
+    Found 8x9-bit multiplier for signal <n0016> created at line 137.
     Summary:
 	inferred   1 Multiplier(s).
 	inferred   1 Adder/Subtractor(s).
@@ -195,103 +194,55 @@ Unit <VGA_Internal> synthesized.
 
 Synthesizing Unit <Display>.
     Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.4\Display.vhd".
-    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_16_OUT> created at line 80.
-    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_186_OUT> created at line 134.
-    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_230_OUT> created at line 169.
-    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_232_OUT> created at line 171.
-    Found 11-bit adder for signal <n0539> created at line 99.
-    Found 11-bit adder for signal <n0599> created at line 143.
-    Found 11-bit adder for signal <n0546> created at line 167.
-    Found 11-bit adder for signal <n0544> created at line 167.
-    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_28_OUT<5:0>> created at line 100.
-    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_53_OUT<4:0>> created at line 100.
-    Found 32x486-bit Read Only RAM for signal <_n0801>
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_61_o> created at line 109.
-    Found 7-bit 27-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_96_OUT> created at line 110.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_98_o> created at line 115.
-    Found 6-bit 21-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_126_OUT> created at line 116.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_128_o> created at line 121.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_157_o> created at line 127.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_184_o> created at line 133.
-    Found 8-bit 5-to-1 multiplexer for signal <alienLine[2]_GND_18_o_wide_mux_214_OUT> created at line 107.
-    Found 1-bit 10-to-1 multiplexer for signal <GND_18_o_X_12_o_Mux_233_o> created at line 171.
-    Found 1-bit 10-to-1 multiplexer for signal <GND_18_o_X_12_o_Mux_240_o> created at line 176.
-    Found 1-bit 10-to-1 multiplexer for signal <GND_18_o_X_12_o_Mux_247_o> created at line 181.
-    Found 1-bit 10-to-1 multiplexer for signal <GND_18_o_X_12_o_Mux_254_o> created at line 186.
-    Found 1-bit 10-to-1 multiplexer for signal <GND_18_o_X_12_o_Mux_261_o> created at line 191.
-    Found 1-bit 4-to-1 multiplexer for signal <_n0680> created at line 169.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine2<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine3<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine4<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<1>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<2>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<3>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<4>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<5>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<6>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<7>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<8>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine5<9>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-WARNING:Xst:737 - Found 1-bit latch for signal <alienLine1<0>>. Latches may be generated from incomplete case or if statements. We do not recommend the use of latches in FPGA/CPLD designs, as they may lead to timing problems.
-    Found 12-bit comparator lessequal for signal <n0007> created at line 78
-    Found 12-bit comparator lessequal for signal <n0010> created at line 80
-    Found 11-bit comparator lessequal for signal <n0019> created at line 99
-    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0001_LessThan_26_o> created at line 99
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_27_o> created at line 99
-    Found 11-bit comparator lessequal for signal <n0039> created at line 106
-    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0002_LessThan_58_o> created at line 106
-    Found 11-bit comparator lessequal for signal <n0042> created at line 106
-    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0003_LessThan_61_o> created at line 106
-    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_217_o> created at line 143
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_218_o> created at line 143
-    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0004_LessThan_220_o> created at line 143
-    Found 10-bit comparator lessequal for signal <n0154> created at line 167
-    Found 11-bit comparator greater for signal <GND_18_o_BUS_0005_LessThan_226_o> created at line 167
-    Found 10-bit comparator lessequal for signal <n0158> created at line 167
-    Found 11-bit comparator greater for signal <GND_18_o_BUS_0006_LessThan_229_o> created at line 167
+    Found 10-bit register for signal <ali5>.
+    Found 1-bit register for signal <touched>.
+    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_16_OUT> created at line 85.
+    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_186_OUT> created at line 139.
+    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_235_OUT> created at line 172.
+    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_275_OUT> created at line 201.
+    Found 11-bit adder for signal <n0411> created at line 104.
+    Found 11-bit adder for signal <n0416> created at line 111.
+    Found 11-bit adder for signal <n0419> created at line 111.
+    Found 11-bit adder for signal <n0472> created at line 148.
+    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_28_OUT<5:0>> created at line 105.
+    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_53_OUT<4:0>> created at line 105.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_242_OUT<9:0>> created at line 175.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_246_OUT<9:0>> created at line 178.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_250_OUT<9:0>> created at line 181.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_254_OUT<9:0>> created at line 184.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_258_OUT<9:0>> created at line 187.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_262_OUT<9:0>> created at line 190.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_266_OUT<9:0>> created at line 193.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_270_OUT<9:0>> created at line 196.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_274_OUT<9:0>> created at line 199.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_278_OUT<9:0>> created at line 202.
+    Found 32x486-bit Read Only RAM for signal <_n0683>
+    Found 7-bit 27-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_96_OUT> created at line 115.
+    Found 6-bit 21-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_126_OUT> created at line 121.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_184_o> created at line 138.
+    Found 8-bit 5-to-1 multiplexer for signal <alienLine[2]_GND_18_o_wide_mux_214_OUT> created at line 112.
+    Found 12-bit comparator lessequal for signal <n0007> created at line 83
+    Found 12-bit comparator lessequal for signal <n0010> created at line 85
+    Found 11-bit comparator lessequal for signal <n0020> created at line 104
+    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0001_LessThan_26_o> created at line 104
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_27_o> created at line 104
+    Found 11-bit comparator lessequal for signal <n0040> created at line 111
+    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0002_LessThan_58_o> created at line 111
+    Found 11-bit comparator lessequal for signal <n0044> created at line 111
+    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0003_LessThan_61_o> created at line 111
+    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_217_o> created at line 148
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_218_o> created at line 148
+    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0004_LessThan_220_o> created at line 148
+    Found 10-bit comparator lessequal for signal <n0162> created at line 169
+    Found 11-bit comparator greater for signal <GND_18_o_BUS_0005_LessThan_231_o> created at line 169
+    Found 10-bit comparator lessequal for signal <n0165> created at line 169
+    Found 11-bit comparator greater for signal <GND_18_o_BUS_0006_LessThan_234_o> created at line 169
     Summary:
 	inferred   1 RAM(s).
-	inferred  10 Adder/Subtractor(s).
-	inferred  50 Latch(s).
+	inferred  11 Adder/Subtractor(s).
+	inferred  11 D-type flip-flop(s).
 	inferred  16 Comparator(s).
-	inferred 145 Multiplexer(s).
+	inferred  91 Multiplexer(s).
 Unit <Display> synthesized.
 
 Synthesizing Unit <div_12s_6s>.
@@ -505,18 +456,18 @@ Synthesizing Unit <div_11s_6s>.
     Found 11-bit adder for signal <n0483> created at line 0.
     Found 11-bit adder for signal <a[10]_GND_36_o_add_25_OUT[10:0]> created at line 0.
     Found 12-bit adder for signal <GND_36_o_BUS_0001_add_28_OUT[11:0]> created at line 0.
-    Found 17-bit comparator greater for signal <BUS_0001_INV_1131_o> created at line 0
-    Found 16-bit comparator greater for signal <BUS_0002_INV_1130_o> created at line 0
-    Found 15-bit comparator greater for signal <BUS_0003_INV_1129_o> created at line 0
-    Found 14-bit comparator greater for signal <BUS_0004_INV_1128_o> created at line 0
-    Found 13-bit comparator greater for signal <BUS_0005_INV_1127_o> created at line 0
-    Found 12-bit comparator greater for signal <BUS_0006_INV_1126_o> created at line 0
-    Found 11-bit comparator greater for signal <BUS_0007_INV_1125_o> created at line 0
-    Found 11-bit comparator greater for signal <BUS_0008_INV_1124_o> created at line 0
-    Found 11-bit comparator greater for signal <BUS_0009_INV_1123_o> created at line 0
-    Found 11-bit comparator greater for signal <BUS_0010_INV_1122_o> created at line 0
-    Found 11-bit comparator greater for signal <BUS_0011_INV_1121_o> created at line 0
-    Found 11-bit comparator greater for signal <BUS_0012_INV_1120_o> created at line 0
+    Found 17-bit comparator greater for signal <BUS_0001_INV_1133_o> created at line 0
+    Found 16-bit comparator greater for signal <BUS_0002_INV_1132_o> created at line 0
+    Found 15-bit comparator greater for signal <BUS_0003_INV_1131_o> created at line 0
+    Found 14-bit comparator greater for signal <BUS_0004_INV_1130_o> created at line 0
+    Found 13-bit comparator greater for signal <BUS_0005_INV_1129_o> created at line 0
+    Found 12-bit comparator greater for signal <BUS_0006_INV_1128_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0007_INV_1127_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0008_INV_1126_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0009_INV_1125_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0010_INV_1124_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0011_INV_1123_o> created at line 0
+    Found 11-bit comparator greater for signal <BUS_0012_INV_1122_o> created at line 0
     Summary:
 	inferred  25 Adder/Subtractor(s).
 	inferred  12 Comparator(s).
@@ -535,31 +486,31 @@ Synthesizing Unit <Input>.
     Found 8-bit register for signal <alienYY>.
     Found 1-bit register for signal <start>.
     Found 1-bit register for signal <newMissile>.
-    Found 20-bit adder for signal <fireTimer[19]_GND_89_o_add_6_OUT> created at line 82.
-    Found 10-bit adder for signal <shipPos[9]_GND_89_o_add_14_OUT> created at line 96.
-    Found 17-bit adder for signal <shipTimer[16]_GND_89_o_add_18_OUT> created at line 100.
+    Found 20-bit adder for signal <fireTimer[19]_GND_39_o_add_6_OUT> created at line 82.
+    Found 10-bit adder for signal <shipPos[9]_GND_39_o_add_14_OUT> created at line 96.
+    Found 17-bit adder for signal <shipTimer[16]_GND_39_o_add_18_OUT> created at line 100.
     Found 18-bit adder for signal <n0157> created at line 124.
     Found 21-bit adder for signal <n0156> created at line 130.
-    Found 9-bit adder for signal <alienXX[8]_GND_89_o_add_57_OUT> created at line 139.
+    Found 9-bit adder for signal <alienXX[8]_GND_39_o_add_57_OUT> created at line 139.
     Found 18-bit adder for signal <n0164> created at line 146.
-    Found 8-bit adder for signal <alienYY[7]_GND_89_o_add_71_OUT> created at line 151.
+    Found 8-bit adder for signal <alienYY[7]_GND_39_o_add_71_OUT> created at line 151.
     Found 21-bit adder for signal <n0166> created at line 152.
-    Found 23-bit adder for signal <alienTimer[22]_GND_89_o_add_79_OUT> created at line 156.
-    Found 3-bit adder for signal <alienDirection[2]_GND_89_o_add_90_OUT> created at line 171.
-    Found 4-bit adder for signal <alienJump[3]_GND_89_o_add_93_OUT> created at line 177.
-    Found 10-bit subtractor for signal <GND_89_o_GND_89_o_sub_12_OUT<9:0>> created at line 92.
-    Found 8-bit subtractor for signal <GND_89_o_GND_89_o_sub_46_OUT<7:0>> created at line 129.
-    Found 9-bit subtractor for signal <GND_89_o_GND_89_o_sub_71_OUT<8:0>> created at line 150.
-    Found 21-bit 8-to-1 multiplexer for signal <alienDirection[2]_GND_89_o_wide_mux_77_OUT> created at line 109.
+    Found 23-bit adder for signal <alienTimer[22]_GND_39_o_add_79_OUT> created at line 156.
+    Found 3-bit adder for signal <alienDirection[2]_GND_39_o_add_90_OUT> created at line 171.
+    Found 4-bit adder for signal <alienJump[3]_GND_39_o_add_93_OUT> created at line 177.
+    Found 10-bit subtractor for signal <GND_39_o_GND_39_o_sub_12_OUT<9:0>> created at line 92.
+    Found 8-bit subtractor for signal <GND_39_o_GND_39_o_sub_46_OUT<7:0>> created at line 129.
+    Found 9-bit subtractor for signal <GND_39_o_GND_39_o_sub_71_OUT<8:0>> created at line 150.
+    Found 21-bit 8-to-1 multiplexer for signal <alienDirection[2]_GND_39_o_wide_mux_77_OUT> created at line 109.
     Found 20-bit comparator greater for signal <n0003> created at line 71
     Found 17-bit comparator greater for signal <n0012> created at line 88
-    Found 10-bit comparator lessequal for signal <GND_89_o_shipPos[9]_LessThan_11_o> created at line 91
-    Found 10-bit comparator lessequal for signal <shipPos[9]_PWR_83_o_LessThan_14_o> created at line 95
+    Found 10-bit comparator lessequal for signal <GND_39_o_shipPos[9]_LessThan_11_o> created at line 91
+    Found 10-bit comparator lessequal for signal <shipPos[9]_PWR_32_o_LessThan_14_o> created at line 95
     Found 23-bit comparator greater for signal <n0027> created at line 107
-    Found 8-bit comparator greater for signal <GND_89_o_alienYY[7]_LessThan_44_o> created at line 127
-    Found 9-bit comparator greater for signal <alienXX[8]_PWR_83_o_LessThan_56_o> created at line 138
-    Found 9-bit comparator greater for signal <GND_89_o_alienXX[8]_LessThan_69_o> created at line 149
-    Found 8-bit comparator greater for signal <alienYY[7]_PWR_83_o_LessThan_70_o> created at line 149
+    Found 8-bit comparator greater for signal <GND_39_o_alienYY[7]_LessThan_44_o> created at line 127
+    Found 9-bit comparator greater for signal <alienXX[8]_PWR_32_o_LessThan_56_o> created at line 138
+    Found 9-bit comparator greater for signal <GND_39_o_alienXX[8]_LessThan_69_o> created at line 149
+    Found 8-bit comparator greater for signal <alienYY[7]_PWR_32_o_LessThan_70_o> created at line 149
     Found 3-bit comparator lessequal for signal <n0080> created at line 168
     Found 4-bit comparator lessequal for signal <n0084> created at line 174
     Summary:
@@ -583,9 +534,9 @@ Synthesizing Unit <rocketManager>.
     Found 1-bit register for signal <MissileXX<2>>.
     Found 1-bit register for signal <MissileXX<1>>.
     Found 1-bit register for signal <MissileXX<0>>.
-    Found 10-bit adder for signal <shipPosition[9]_GND_91_o_add_3_OUT> created at line 59.
-    Found 16-bit adder for signal <missileTimer[15]_GND_91_o_add_8_OUT> created at line 66.
-    Found 10-bit subtractor for signal <GND_91_o_GND_91_o_sub_8_OUT<9:0>> created at line 63.
+    Found 10-bit adder for signal <shipPosition[9]_GND_41_o_add_3_OUT> created at line 59.
+    Found 16-bit adder for signal <missileTimer[15]_GND_41_o_add_8_OUT> created at line 66.
+    Found 10-bit subtractor for signal <GND_41_o_GND_41_o_sub_8_OUT<9:0>> created at line 63.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  36 D-type flip-flop(s).
@@ -600,10 +551,10 @@ Macro Statistics
  32x486-bit single-port Read Only RAM                  : 1
 # Multipliers                                          : 1
  9x8-bit multiplier                                    : 1
-# Adders/Subtractors                                   : 192
+# Adders/Subtractors                                   : 193
  10-bit adder                                          : 15
  10-bit addsub                                         : 1
- 10-bit subtractor                                     : 1
+ 10-bit subtractor                                     : 2
  11-bit adder                                          : 27
  11-bit subtractor                                     : 4
  12-bit adder                                          : 42
@@ -627,9 +578,9 @@ Macro Statistics
  8-bit addsub                                          : 1
  9-bit adder                                           : 1
  9-bit subtractor                                      : 1
-# Registers                                            : 27
- 1-bit register                                        : 15
- 10-bit register                                       : 3
+# Registers                                            : 29
+ 1-bit register                                        : 16
+ 10-bit register                                       : 4
  11-bit register                                       : 1
  16-bit register                                       : 1
  17-bit register                                       : 1
@@ -639,8 +590,6 @@ Macro Statistics
  4-bit register                                        : 1
  8-bit register                                        : 1
  9-bit register                                        : 1
-# Latches                                              : 50
- 1-bit latch                                           : 50
 # Comparators                                          : 132
  10-bit comparator greater                             : 2
  10-bit comparator lessequal                           : 19
@@ -667,11 +616,10 @@ Macro Statistics
  4-bit comparator lessequal                            : 1
  8-bit comparator greater                              : 2
  9-bit comparator greater                              : 2
-# Multiplexers                                         : 1142
- 1-bit 10-to-1 multiplexer                             : 10
- 1-bit 2-to-1 multiplexer                              : 999
- 1-bit 4-to-1 multiplexer                              : 1
- 10-bit 2-to-1 multiplexer                             : 9
+# Multiplexers                                         : 1088
+ 1-bit 10-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 946
+ 10-bit 2-to-1 multiplexer                             : 18
  11-bit 2-to-1 multiplexer                             : 9
  12-bit 2-to-1 multiplexer                             : 9
  13-bit 2-to-1 multiplexer                             : 2
@@ -696,6 +644,7 @@ Macro Statistics
  1-bit xor2                                            : 6
 
 =========================================================================
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
 
 =========================================================================
 *                       Advanced HDL Synthesis                          *
@@ -705,14 +654,14 @@ Reading core <ipcore_dir/StartScreenRom.ngc>.
 Loading core <StartScreenRom> for timing and area information for instance <StartScreenRom_map>.
 
 Synthesizing (advanced) Unit <Display>.
-INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0801> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
+INFO:Xst:3218 - HDL ADVISOR - The RAM <Mram__n0683> will be implemented on LUTs either because you have described an asynchronous read or because of currently unsupported block RAM features. If you have described an asynchronous read, making it synchronous would allow you to take advantage of available block RAM resources, for optimized device usage and improved timings. Please refer to your documentation for coding guidelines.
     -----------------------------------------------------------------------
     | ram_type           | Distributed                         |          |
     -----------------------------------------------------------------------
     | Port A                                                              |
     |     aspect ratio   | 32-word x 486-bit                   |          |
     |     weA            | connected to signal <GND>           | high     |
-    |     addrA          | connected to signal <n0486>         |          |
+    |     addrA          | connected to signal <n0339>         |          |
     |     diA            | connected to signal <GND>           |          |
     |     doA            | connected to internal node          |          |
     -----------------------------------------------------------------------
@@ -745,10 +694,10 @@ Macro Statistics
  32x486-bit single-port distributed Read Only RAM      : 1
 # MACs                                                 : 1
  9x8-to-15-bit MAC                                     : 1
-# Adders/Subtractors                                   : 135
+# Adders/Subtractors                                   : 136
  10-bit adder                                          : 21
  10-bit addsub                                         : 1
- 10-bit subtractor                                     : 1
+ 10-bit subtractor                                     : 2
  11-bit adder                                          : 4
  11-bit adder carry in                                 : 22
  11-bit subtractor                                     : 4
@@ -777,8 +726,8 @@ Macro Statistics
  20-bit up counter                                     : 1
  23-bit up counter                                     : 1
  3-bit up counter                                      : 1
-# Registers                                            : 73
- Flip-Flops                                            : 73
+# Registers                                            : 84
+ Flip-Flops                                            : 84
 # Comparators                                          : 132
  10-bit comparator greater                             : 2
  10-bit comparator lessequal                           : 19
@@ -805,11 +754,10 @@ Macro Statistics
  4-bit comparator lessequal                            : 1
  8-bit comparator greater                              : 2
  9-bit comparator greater                              : 2
-# Multiplexers                                         : 1136
- 1-bit 10-to-1 multiplexer                             : 10
- 1-bit 2-to-1 multiplexer                              : 999
- 1-bit 4-to-1 multiplexer                              : 1
- 10-bit 2-to-1 multiplexer                             : 8
+# Multiplexers                                         : 1082
+ 1-bit 10-to-1 multiplexer                             : 1
+ 1-bit 2-to-1 multiplexer                              : 946
+ 10-bit 2-to-1 multiplexer                             : 17
  11-bit 2-to-1 multiplexer                             : 8
  12-bit 2-to-1 multiplexer                             : 9
  13-bit 2-to-1 multiplexer                             : 2
@@ -851,7 +799,7 @@ INFO:Xst:3203 - The FF/Latch <Input_Map/alienJump_0> in Unit <TopModule> is the 
 
 Mapping all equations...
 Building and optimizing final netlist ...
-Found area constraint ratio of 100 (+ 5) on block TopModule, actual ratio is 25.
+Found area constraint ratio of 100 (+ 5) on block TopModule, actual ratio is 24.
 FlipFlop Input_Map/alienXX_6 has been replicated 1 time(s)
 FlipFlop Input_Map/alienXX_7 has been replicated 1 time(s)
 FlipFlop Input_Map/alienXX_8 has been replicated 1 time(s)
@@ -862,8 +810,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 158
- Flip-Flops                                            : 158
+# Registers                                            : 169
+ Flip-Flops                                            : 169
 
 =========================================================================
 
@@ -886,30 +834,29 @@ Top Level Output File Name         : TopModule.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 2792
+# BELS                             : 2697
 #      GND                         : 2
 #      INV                         : 60
 #      LUT1                        : 76
-#      LUT2                        : 145
-#      LUT3                        : 259
-#      LUT4                        : 187
-#      LUT5                        : 353
-#      LUT6                        : 690
+#      LUT2                        : 147
+#      LUT3                        : 252
+#      LUT4                        : 185
+#      LUT5                        : 337
+#      LUT6                        : 623
 #      MUXCY                       : 503
-#      MUXF7                       : 25
+#      MUXF7                       : 20
 #      VCC                         : 2
 #      XORCY                       : 490
-# FlipFlops/Latches                : 212
+# FlipFlops/Latches                : 173
 #      FDC                         : 86
-#      FDCE                        : 52
+#      FDCE                        : 53
 #      FDE                         : 4
 #      FDP                         : 5
-#      FDPE                        : 15
-#      LDPE                        : 50
+#      FDPE                        : 25
 # RAMS                             : 15
 #      RAMB16BWER                  : 15
-# Clock Buffers                    : 3
-#      BUFG                        : 3
+# Clock Buffers                    : 2
+#      BUFG                        : 2
 # IO Buffers                       : 16
 #      IBUF                        : 5
 #      IBUFG                       : 1
@@ -926,16 +873,16 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             212  out of  18224     1%  
- Number of Slice LUTs:                 1770  out of   9112    19%  
-    Number used as Logic:              1770  out of   9112    19%  
+ Number of Slice Registers:             173  out of  18224     0%  
+ Number of Slice LUTs:                 1680  out of   9112    18%  
+    Number used as Logic:              1680  out of   9112    18%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1828
-   Number with an unused Flip Flop:    1616  out of   1828    88%  
-   Number with an unused LUT:            58  out of   1828     3%  
-   Number of fully used LUT-FF pairs:   154  out of   1828     8%  
-   Number of unique control sets:        61
+ Number of LUT Flip Flop pairs used:   1695
+   Number with an unused Flip Flop:    1522  out of   1695    89%  
+   Number with an unused LUT:            15  out of   1695     0%  
+   Number of fully used LUT-FF pairs:   158  out of   1695     9%  
+   Number of unique control sets:        11
 
 IO Utilization: 
  Number of IOs:                          16
@@ -944,7 +891,7 @@ IO Utilization:
 Specific Feature Utilization:
  Number of Block RAM/FIFO:               15  out of     32    46%  
     Number using Block RAM only:         15
- Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+ Number of BUFG/BUFGCTRLs:                2  out of     16    12%  
  Number of DSP48A1s:                      1  out of     32     3%  
 
 ---------------------------
@@ -965,16 +912,12 @@ NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
 
 Clock Information:
 ------------------
----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
-Clock Signal                                                                           | Clock buffer(FF name)                                                                                                                       | Load  |
----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
-fpga_clk                                                                               | DCM_SP:CLKFX                                                                                                                                | 177   |
-Display_Map/alienYY[9]_GND_18_o_AND_101_o(Display_Map/alienYY[9]_GND_18_o_AND_101_o1:O)| BUFG(*)(Display_Map/alienLine1_0)                                                                                                           | 50    |
-StartScreenRom_map/N1                                                                  | NONE(StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 15    |
----------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
-(*) This 1 clock signal(s) are generated by combinatorial logic,
-and XST is not able to identify which are the primary clock signals.
-Please use the CLOCK_SIGNAL constraint to specify the clock signal(s) generated by combinatorial logic.
+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)                                                                                                                       | Load  |
+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
+fpga_clk                           | DCM_SP:CLKFX                                                                                                                                | 188   |
+StartScreenRom_map/N1              | NONE(StartScreenRom_map/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_init.ram/SP.SIMPLE_PRIM18.ram)| 15    |
+-----------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------+-------+
 INFO:Xst:2169 - HDL ADVISOR - Some clock signals were not automatically buffered by XST with BUFG/BUFR resources. Please use the buffer_type constraint in order to insert these buffers to the clock signals to help prevent skew problems.
 
 Asynchronous Control Signals Information:
@@ -985,9 +928,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 8.385ns (Maximum Frequency: 119.261MHz)
-   Minimum input arrival time before clock: 5.231ns
-   Maximum output required time after clock: 57.163ns
+   Minimum period: 8.162ns (Maximum Frequency: 122.520MHz)
+   Minimum input arrival time before clock: 4.775ns
+   Maximum output required time after clock: 55.801ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -996,95 +939,73 @@ All values displayed in nanoseconds (ns)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'fpga_clk'
-  Clock period: 8.385ns (frequency: 119.261MHz)
-  Total number of paths / destination ports: 150632101436 / 478
+  Clock period: 8.162ns (frequency: 122.520MHz)
+  Total number of paths / destination ports: 109067597105 / 475
 -------------------------------------------------------------------------
-Delay:               20.962ns (Levels of Logic = 21)
+Delay:               20.405ns (Levels of Logic = 21)
   Source:            Input_Map/alienXX_2 (FF)
-  Destination:       rocketManager_Map/MissileXX_0 (FF)
+  Destination:       Display_Map/ali5_9 (FF)
   Source Clock:      fpga_clk rising 0.4X
   Destination Clock: fpga_clk rising 0.4X
 
-  Data Path: Input_Map/alienXX_2 to rocketManager_Map/MissileXX_0
+  Data Path: Input_Map/alienXX_2 to Display_Map/ali5_9
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
      FDCE:C->Q            19   0.447   1.072  Input_Map/alienXX_2 (Input_Map/alienXX_2)
-     LUT2:I1->O            1   0.205   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_232_OUT_lut<2> (Display_Map/Msub_GND_18_o_GND_18_o_sub_232_OUT_lut<2>)
-     MUXCY:S->O            1   0.172   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_232_OUT_cy<2> (Display_Map/Msub_GND_18_o_GND_18_o_sub_232_OUT_cy<2>)
-     XORCY:CI->O          12   0.180   1.156  Display_Map/Msub_GND_18_o_GND_18_o_sub_232_OUT_xor<3> (Display_Map/GND_18_o_GND_18_o_sub_232_OUT<3>)
-     LUT5:I1->O           10   0.203   0.857  Display_Map/GND_18_o_GND_18_o_div_232/Msub_a[10]_unary_minus_1_OUT_cy<4>11 (Display_Map/GND_18_o_GND_18_o_div_232/Msub_a[10]_unary_minus_1_OUT_cy<4>)
-     LUT6:I5->O            5   0.205   0.714  Display_Map/GND_18_o_GND_18_o_div_232/Mmux_a[10]_a[10]_mux_1_OUT101 (Display_Map/GND_18_o_GND_18_o_div_232/Madd_GND_36_o_b[5]_add_13_OUT_Madd_Madd_lut<8>)
-     MUXCY:DI->O           1   0.145   0.000  Display_Map/GND_18_o_GND_18_o_div_232/Madd_a[10]_b[5]_add_17_OUT_Madd_cy<8> (Display_Map/GND_18_o_GND_18_o_div_232/Madd_a[10]_b[5]_add_17_OUT_Madd_cy<8>)
-     XORCY:CI->O           5   0.180   0.715  Display_Map/GND_18_o_GND_18_o_div_232/Madd_a[10]_b[5]_add_17_OUT_Madd_xor<9> (Display_Map/GND_18_o_GND_18_o_div_232/a[10]_b[5]_add_17_OUT<9>)
-     LUT3:I2->O           19   0.205   1.176  Display_Map/GND_18_o_GND_18_o_div_232/Mmux_a[10]_a[10]_MUX_1227_o111 (Display_Map/GND_18_o_GND_18_o_div_232/a[10]_a[10]_MUX_1228_o)
-     LUT6:I4->O            2   0.203   0.616  Display_Map/GND_18_o_GND_18_o_div_232/Mmux_a[10]_a[10]_MUX_1238_o141 (Display_Map/GND_18_o_GND_18_o_div_232/Madd_a[10]_GND_36_o_add_21_OUT[10:0]_Madd_lut<6>)
-     MUXCY:DI->O           1   0.145   0.000  Display_Map/GND_18_o_GND_18_o_div_232/Madd_a[10]_GND_36_o_add_21_OUT[10:0]_Madd_cy<6> (Display_Map/GND_18_o_GND_18_o_div_232/Madd_a[10]_GND_36_o_add_21_OUT[10:0]_Madd_cy<6>)
-     XORCY:CI->O           7   0.180   1.002  Display_Map/GND_18_o_GND_18_o_div_232/Madd_a[10]_GND_36_o_add_21_OUT[10:0]_Madd_xor<7> (Display_Map/GND_18_o_GND_18_o_div_232/a[10]_GND_36_o_add_21_OUT[10:0]<7>)
-     LUT4:I1->O            5   0.205   0.962  Display_Map/GND_18_o_GND_18_o_div_232/Mmux_n047791 (Display_Map/GND_18_o_GND_18_o_div_232/n0477<7>)
-     LUT6:I2->O           14   0.203   0.958  Display_Map/GND_18_o_GND_18_o_div_232/BUS_0010_INV_1122_o1 (Display_Map/GND_18_o_GND_18_o_div_232/Madd_GND_36_o_BUS_0001_add_28_OUT[11:0]_lut<2>)
-     LUT6:I5->O            7   0.205   0.878  Display_Map/GND_18_o_GND_18_o_div_232/BUS_0011_INV_1121_o1111 (Display_Map/GND_18_o_GND_18_o_div_232/BUS_0011_INV_1121_o111)
-     LUT5:I3->O            1   0.203   0.580  Display_Map/GND_18_o_GND_18_o_div_232/BUS_0011_INV_1121_o11_1 (Display_Map/GND_18_o_GND_18_o_div_232/BUS_0011_INV_1121_o11)
-     LUT6:I5->O           10   0.205   0.961  Display_Map/GND_18_o_GND_18_o_div_232/BUS_0012_INV_1120_o11 (Display_Map/GND_18_o_GND_18_o_div_232/BUS_0012_INV_1120_o1)
-     LUT6:I4->O           15   0.203   0.982  Display_Map/GND_18_o_GND_18_o_div_232/Mmux_o21 (Display_Map/n0529<1>)
-     LUT6:I5->O            3   0.205   0.755  Display_Map/Mmux_GND_18_o_X_12_o_Mux_233_o_7 (Display_Map/Mmux_GND_18_o_X_12_o_Mux_233_o_7)
-     LUT5:I3->O            6   0.203   0.849  Display_Map/n0529<3>1 (Display_Map/GND_18_o_X_12_o_Mux_233_o)
-     LUT5:I3->O            2   0.203   0.721  rocketManager_Map/reset_alienKilled_OR_47_o3_SW1 (N154)
-     LUT6:I4->O           19   0.203   1.071  rocketManager_Map/reset_alienKilled_OR_47_o3 (rocketManager_Map/reset_alienKilled_OR_47_o)
-     FDC:CLR                   0.430          rocketManager_Map/MissileXX_0
+     LUT2:I1->O            1   0.205   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_275_OUT_lut<2> (Display_Map/Msub_GND_18_o_GND_18_o_sub_275_OUT_lut<2>)
+     MUXCY:S->O            1   0.172   0.000  Display_Map/Msub_GND_18_o_GND_18_o_sub_275_OUT_cy<2> (Display_Map/Msub_GND_18_o_GND_18_o_sub_275_OUT_cy<2>)
+     XORCY:CI->O          12   0.180   1.156  Display_Map/Msub_GND_18_o_GND_18_o_sub_275_OUT_xor<3> (Display_Map/GND_18_o_GND_18_o_sub_275_OUT<3>)
+     LUT4:I0->O            2   0.203   0.617  Display_Map/GND_18_o_GND_18_o_div_275/Msub_a[10]_unary_minus_1_OUT_cy<4>11_SW1 (N149)
+     LUT6:I5->O            6   0.205   0.744  Display_Map/GND_18_o_GND_18_o_div_275/Mmux_a[10]_a[10]_mux_1_OUT91 (Display_Map/GND_18_o_GND_18_o_div_275/Madd_GND_36_o_b[5]_add_15_OUT_Madd_Madd_cy<7>)
+     MUXCY:DI->O           1   0.145   0.000  Display_Map/GND_18_o_GND_18_o_div_275/Madd_a[10]_b[5]_add_17_OUT_Madd_cy<7> (Display_Map/GND_18_o_GND_18_o_div_275/Madd_a[10]_b[5]_add_17_OUT_Madd_cy<7>)
+     XORCY:CI->O           4   0.180   0.684  Display_Map/GND_18_o_GND_18_o_div_275/Madd_a[10]_b[5]_add_17_OUT_Madd_xor<8> (Display_Map/GND_18_o_GND_18_o_div_275/a[10]_b[5]_add_17_OUT<8>)
+     LUT3:I2->O           19   0.205   1.071  Display_Map/GND_18_o_GND_18_o_div_275/Mmux_a[10]_a[10]_MUX_1227_o121 (Display_Map/GND_18_o_GND_18_o_div_275/Madd_a[10]_GND_36_o_add_19_OUT_Madd_lut<8>)
+     MUXCY:DI->O           1   0.145   0.000  Display_Map/GND_18_o_GND_18_o_div_275/Madd_a[10]_GND_36_o_add_19_OUT_Madd_cy<8> (Display_Map/GND_18_o_GND_18_o_div_275/Madd_a[10]_GND_36_o_add_19_OUT_Madd_cy<8>)
+     MUXCY:CI->O           0   0.019   0.000  Display_Map/GND_18_o_GND_18_o_div_275/Madd_a[10]_GND_36_o_add_19_OUT_Madd_cy<9> (Display_Map/GND_18_o_GND_18_o_div_275/Madd_a[10]_GND_36_o_add_19_OUT_Madd_cy<9>)
+     XORCY:CI->O          12   0.180   0.909  Display_Map/GND_18_o_GND_18_o_div_275/Madd_a[10]_GND_36_o_add_19_OUT_Madd_xor<10> (Display_Map/GND_18_o_GND_18_o_div_275/a[10]_GND_36_o_add_19_OUT<10>)
+     LUT6:I5->O           14   0.205   1.062  Display_Map/GND_18_o_GND_18_o_div_275/Mmux_a[10]_a[10]_MUX_1238_o17 (Display_Map/GND_18_o_GND_18_o_div_275/a[10]_a[10]_MUX_1238_o)
+     LUT6:I4->O           18   0.203   1.278  Display_Map/GND_18_o_GND_18_o_div_275/Mmux_n047781 (Display_Map/GND_18_o_GND_18_o_div_275/Madd_a[10]_GND_36_o_add_23_OUT[10:0]_Madd_lut<6>)
+     LUT6:I3->O           10   0.205   0.857  Display_Map/GND_18_o_GND_18_o_div_275/BUS_0010_INV_1124_o1 (Display_Map/GND_18_o_GND_18_o_div_275/Madd_GND_36_o_BUS_0001_add_28_OUT[11:0]_lut<2>)
+     LUT6:I5->O            9   0.205   0.830  Display_Map/SF011 (Display_Map/SF01)
+     LUT5:I4->O           20   0.205   1.093  Display_Map/GND_18_o_GND_18_o_div_275/BUS_0011_INV_1123_o11 (Display_Map/GND_18_o_GND_18_o_div_275/Madd_GND_36_o_BUS_0001_add_28_OUT[11:0]_lut<1>)
+     LUT6:I5->O            6   0.205   0.745  Display_Map/GND_18_o_GND_18_o_div_275/BUS_0012_INV_1122_o11 (Display_Map/GND_18_o_GND_18_o_div_275/BUS_0012_INV_1122_o1)
+     LUT6:I5->O           14   0.205   1.186  Display_Map/GND_18_o_GND_18_o_div_275/Mmux_o51 (Display_Map/GND_18_o_GND_18_o_div_275_OUT<2>)
+     LUT5:I2->O            2   0.205   0.845  Display_Map/alienLine5[3]_GND_18_o_AND_107_o1 (Display_Map/alienLine5[3]_GND_18_o_AND_107_o)
+     LUT6:I3->O            6   0.205   0.745  Display_Map/Mmux_ali5[9]_GND_18_o_mux_287_OUT_B511 (Display_Map/Mmux_ali5[9]_GND_18_o_mux_287_OUT_B51)
+     LUT6:I5->O           10   0.205   0.856  Display_Map/_n0548_inv1 (Display_Map/_n0548_inv)
+     FDPE:CE                   0.322          Display_Map/ali5_0
     ----------------------------------------
-    Total                     20.962ns (4.938ns logic, 16.024ns route)
-                                       (23.6% logic, 76.4% route)
-
-=========================================================================
-Timing constraint: Default period analysis for Clock 'Display_Map/alienYY[9]_GND_18_o_AND_101_o'
-  Clock period: 5.059ns (frequency: 197.664MHz)
-  Total number of paths / destination ports: 340 / 50
--------------------------------------------------------------------------
-Delay:               5.059ns (Levels of Logic = 3)
-  Source:            Display_Map/alienLine2_8 (LATCH)
-  Destination:       Display_Map/alienLine2_9 (LATCH)
-  Source Clock:      Display_Map/alienYY[9]_GND_18_o_AND_101_o falling
-  Destination Clock: Display_Map/alienYY[9]_GND_18_o_AND_101_o falling
-
-  Data Path: Display_Map/alienLine2_8 to Display_Map/alienLine2_9
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LDPE:G->Q             2   0.498   0.981  Display_Map/alienLine2_8 (Display_Map/alienLine2_8)
-     LUT6:I0->O            2   0.203   0.961  Display_Map/Mmux_GND_18_o_X_12_o_Mux_240_o_5_f7_SW0 (N145)
-     LUT5:I0->O            6   0.203   1.109  Display_Map/n0529<3>11 (Display_Map/GND_18_o_X_12_o_Mux_240_o)
-     LUT6:I0->O            1   0.203   0.579  Display_Map/Mmux__n064011 (Display_Map/_n0640)
-     LDPE:GE                   0.322          Display_Map/alienLine2_9
-    ----------------------------------------
-    Total                      5.059ns (1.429ns logic, 3.630ns route)
-                                       (28.2% logic, 71.8% route)
+    Total                     20.405ns (4.656ns logic, 15.749ns route)
+                                       (22.8% logic, 77.2% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'fpga_clk'
   Total number of paths / destination ports: 199 / 179
 -------------------------------------------------------------------------
-Offset:              5.231ns (Levels of Logic = 2)
-  Source:            rst (PAD)
-  Destination:       rocketManager_Map/MissileXX_0 (FF)
+Offset:              4.775ns (Levels of Logic = 4)
+  Source:            left (PAD)
+  Destination:       Input_Map/shipPos_8 (FF)
   Destination Clock: fpga_clk rising 0.4X
 
-  Data Path: rst to rocketManager_Map/MissileXX_0
+  Data Path: left to Input_Map/shipPos_8
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O           124   1.222   2.305  rst_IBUF (rst_IBUF)
-     LUT6:I0->O           19   0.203   1.071  rocketManager_Map/reset_alienKilled_OR_47_o3 (rocketManager_Map/reset_alienKilled_OR_47_o)
-     FDC:CLR                   0.430          rocketManager_Map/MissileXX_0
+     IBUF:I->O            14   1.222   1.205  left_IBUF (left_IBUF)
+     LUT4:I0->O            3   0.203   0.755  Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_cy<2>12 (Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_cy<2>)
+     LUT5:I3->O            3   0.203   0.879  Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_cy<5>12 (Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_cy<5>)
+     LUT6:I3->O            1   0.205   0.000  Input_Map/Maddsub_shipPos[9]_shipPos[9]_mux_17_OUT_xor<8>11 (Input_Map/shipPos[9]_shipPos[9]_mux_17_OUT<8>)
+     FDPE:D                    0.102          Input_Map/shipPos_8
     ----------------------------------------
-    Total                      5.231ns (1.855ns logic, 3.376ns route)
-                                       (35.5% logic, 64.5% route)
+    Total                      4.775ns (1.935ns logic, 2.840ns route)
+                                       (40.5% logic, 59.5% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk'
-  Total number of paths / destination ports: 162168215373002880 / 10
+  Total number of paths / destination ports: 105315966220466430 / 10
 -------------------------------------------------------------------------
-Offset:              57.163ns (Levels of Logic = 52)
+Offset:              55.801ns (Levels of Logic = 49)
   Source:            Input_Map/alienXX_6 (FF)
   Destination:       red<0> (PAD)
   Source Clock:      fpga_clk rising 0.4X
@@ -1116,9 +1037,9 @@ Offset:              57.163ns (Levels of Logic = 52)
      LUT6:I1->O           19   0.203   1.176  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0011_INV_224_o1 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<2>)
      LUT6:I4->O            3   0.203   1.015  Display_Map/GND_18_o_GND_18_o_div_10/Mmux_n054331 (Display_Map/GND_18_o_GND_18_o_div_10/Mmux_n054331)
      LUT6:I0->O            2   0.203   0.961  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0012_INV_223_o121 (Display_Map/GND_18_o_GND_18_o_div_10/BUS_0012_INV_223_o12)
-     LUT5:I0->O           14   0.203   1.062  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0012_INV_223_o13 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<1>)
+     LUT5:I0->O           15   0.203   1.086  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0012_INV_223_o13 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_lut<1>)
      LUT6:I4->O            2   0.203   0.981  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0013_INV_222_o13 (Display_Map/GND_18_o_GND_18_o_div_10/BUS_0013_INV_222_o12)
-     LUT6:I0->O           16   0.203   1.005  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0013_INV_222_o19 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_cy<0>)
+     LUT6:I0->O           13   0.203   0.933  Display_Map/GND_18_o_GND_18_o_div_10/BUS_0013_INV_222_o19 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_cy<0>)
      LUT5:I4->O           14   0.205   1.205  Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_cy<4>11 (Display_Map/GND_18_o_GND_18_o_div_10/Madd_GND_20_o_BUS_0001_add_30_OUT[12:0]_cy<4>)
      LUT5:I1->O           24   0.203   1.517  Display_Map/GND_18_o_GND_18_o_div_10_OUT<8>1 (Display_Map/GND_18_o_GND_18_o_div_10_OUT<8>)
      LUT5:I0->O           12   0.203   1.253  Display_Map/GND_18_o_GND_18_o_mod_11/Mmux_a[12]_a[12]_MUX_454_o111 (Display_Map/GND_18_o_GND_18_o_mod_11/a[12]_a[12]_MUX_455_o)
@@ -1134,84 +1055,43 @@ Offset:              57.163ns (Levels of Logic = 52)
      LUT4:I2->O            4   0.203   0.684  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_450_o15 (Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_450_o15)
      LUT6:I5->O            5   0.205   1.079  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0013_INV_436_o1 (Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0013_INV_436_o)
      LUT6:I0->O            1   0.203   0.944  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_450_o12 (Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_450_o11)
-     LUT6:I0->O            5   0.203   1.059  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_450_o14 (Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_450_o)
-     LUT5:I0->O            1   0.203   0.684  Display_Map/GND_18_o_GND_18_o_mod_11/Mmux_o311 (Display_Map/GND_18_o_GND_18_o_mod_11/Mmux_o31)
-     LUT3:I1->O            5   0.203   0.714  Display_Map/Mmux_alienIndex<2>11 (Display_Map/alienIndex<2>)
-     MUXF7:S->O            1   0.148   0.580  Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_128_o_5_f7 (Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_128_o_5_f7)
-     LUT6:I5->O            4   0.205   0.788  Display_Map/alienIndex<3>21 (Display_Map/alienIndex[3]_X_12_o_Mux_128_o)
-     LUT4:I2->O            3   0.203   0.898  Display_Map/GND_18_o_vcounter[10]_AND_95_o421 (Display_Map/GND_18_o_vcounter[10]_AND_95_o42)
-     LUT4:I0->O            1   0.203   0.580  Display_Map/Mmux_blue1411_SW0 (N443)
-     LUT6:I5->O            1   0.205   0.808  Display_Map/Mmux_blue1411 (Display_Map/Mmux_blue1410)
-     LUT6:I3->O            1   0.205   0.000  Display_Map/Mmux_blue1421_SW0_F (N525)
-     MUXF7:I0->O           1   0.131   0.808  Display_Map/Mmux_blue1421_SW0 (N439)
+     LUT6:I0->O            6   0.203   1.109  Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_450_o14 (Display_Map/GND_18_o_GND_18_o_mod_11/BUS_0014_INV_450_o)
+     LUT6:I0->O            1   0.203   0.808  Display_Map/Mmux_alienIndex<3>12 (Display_Map/Mmux_alienIndex<3>11)
+     LUT5:I2->O            7   0.205   1.138  Display_Map/Mmux_alienIndex<3>16 (Display_Map/alienIndex<3>)
+     LUT6:I0->O            5   0.203   0.819  Display_Map/GND_18_o_vcounter[10]_AND_95_o421 (Display_Map/GND_18_o_vcounter[10]_AND_95_o42)
+     LUT4:I2->O            1   0.203   0.580  Display_Map/Mmux_blue1417_SW0 (N483)
+     LUT6:I5->O            1   0.205   0.827  Display_Map/Mmux_blue1417 (Display_Map/Mmux_blue1416)
+     LUT6:I2->O            1   0.203   0.808  Display_Map/Mmux_blue1420 (Display_Map/Mmux_blue1419)
      LUT6:I3->O            1   0.205   0.579  Display_Map/Mmux_blue1421 (red_0_OBUF)
      OBUF:I->O                 2.571          red_0_OBUF (red<0>)
     ----------------------------------------
-    Total                     57.163ns (12.412ns logic, 44.751ns route)
-                                       (21.7% logic, 78.3% route)
-
-=========================================================================
-Timing constraint: Default OFFSET OUT AFTER for Clock 'Display_Map/alienYY[9]_GND_18_o_AND_101_o'
-  Total number of paths / destination ports: 360 / 8
--------------------------------------------------------------------------
-Offset:              10.673ns (Levels of Logic = 10)
-  Source:            Display_Map/alienLine3_6 (LATCH)
-  Destination:       red<0> (PAD)
-  Source Clock:      Display_Map/alienYY[9]_GND_18_o_AND_101_o falling
-
-  Data Path: Display_Map/alienLine3_6 to red<0>
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     LDPE:G->Q             2   0.498   0.864  Display_Map/alienLine3_6 (Display_Map/alienLine3_6)
-     LUT6:I2->O            1   0.203   0.000  Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_128_o_6 (Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_128_o_6)
-     MUXF7:I1->O           1   0.140   0.580  Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_128_o_5_f7 (Display_Map/Mmux_alienIndex[3]_X_12_o_Mux_128_o_5_f7)
-     LUT6:I5->O            4   0.205   0.788  Display_Map/alienIndex<3>21 (Display_Map/alienIndex[3]_X_12_o_Mux_128_o)
-     LUT4:I2->O            3   0.203   0.898  Display_Map/GND_18_o_vcounter[10]_AND_95_o421 (Display_Map/GND_18_o_vcounter[10]_AND_95_o42)
-     LUT4:I0->O            1   0.203   0.580  Display_Map/Mmux_blue1411_SW0 (N443)
-     LUT6:I5->O            1   0.205   0.808  Display_Map/Mmux_blue1411 (Display_Map/Mmux_blue1410)
-     LUT6:I3->O            1   0.205   0.000  Display_Map/Mmux_blue1421_SW0_F (N525)
-     MUXF7:I0->O           1   0.131   0.808  Display_Map/Mmux_blue1421_SW0 (N439)
-     LUT6:I3->O            1   0.205   0.579  Display_Map/Mmux_blue1421 (red_0_OBUF)
-     OBUF:I->O                 2.571          red_0_OBUF (red<0>)
-    ----------------------------------------
-    Total                     10.673ns (4.769ns logic, 5.904ns route)
-                                       (44.7% logic, 55.3% route)
+    Total                     55.801ns (11.928ns logic, 43.873ns route)
+                                       (21.4% logic, 78.6% route)
 
 =========================================================================
 
 Cross Clock Domains Report:
 --------------------------
 
-Clock to Setup on destination clock Display_Map/alienYY[9]_GND_18_o_AND_101_o
------------------------------------------+---------+---------+---------+---------+
-                                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------------------------------+---------+---------+---------+---------+
-Display_Map/alienYY[9]_GND_18_o_AND_101_o|         |         |    5.059|         |
-fpga_clk                                 |         |         |   20.621|         |
------------------------------------------+---------+---------+---------+---------+
-
 Clock to Setup on destination clock fpga_clk
------------------------------------------+---------+---------+---------+---------+
-                                         | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
-Source Clock                             |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
------------------------------------------+---------+---------+---------+---------+
-Display_Map/alienYY[9]_GND_18_o_AND_101_o|         |    6.324|         |         |
-fpga_clk                                 |   20.962|         |         |         |
------------------------------------------+---------+---------+---------+---------+
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+fpga_clk       |   20.405|         |         |         |
+---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 19.00 secs
-Total CPU time to Xst completion: 19.22 secs
+Total REAL time to Xst completion: 20.00 secs
+Total CPU time to Xst completion: 20.19 secs
  
 --> 
 
-Total memory usage is 289952 kilobytes
+Total memory usage is 287840 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :   51 (   0 filtered)
-Number of infos    :    4 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    5 (   0 filtered)
 

@@ -46,7 +46,7 @@ begin
   MissileX       <= std_logic_vector(to_unsigned(MissileXX, 10));
 
   -- Update rocketY
-  process(reset, clk)
+  process(reset, clk, alienKilled)
   begin
     if reset = '1' or alienKilled = '1' then
       missileTimer <= 0;

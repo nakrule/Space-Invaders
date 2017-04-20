@@ -25,6 +25,7 @@ entity Display is
     blank          : in  std_logic;     -- If 1, video output must be null
     gameStarted    : in  std_logic;     -- When 0, show start screen
     rocketOnScreen : in  std_logic;     -- If 1, display a rocket
+	 clk            : in  std_logic;     -- 40MHz
     missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
     MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
@@ -57,7 +58,11 @@ architecture logic of Display is
   signal alienLine2 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine3 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine4 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine5 : std_logic_vector(0 to 9) := "1111111111"; -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine5 : std_logic_vector(0 to 9); -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  
+  signal touched    : integer range 0 to 1 := 0; -- if 1, an alien is killed
+  
+  signal ali5 : integer range 0 to 1023 := 1023;
   
   -- Temp signals used for alienLine computation
   signal temp  : integer range 0 to 1023 := 0;
@@ -147,57 +152,69 @@ begin
     end if;
   end process;
   
---	alienLine1 <= "1111111111";
---	alienLine2 <= "1111111111";
---	alienLine3 <= "1111000011";
---	alienLine4 <= "1111111111";
---	alienLine5 <= "1111111111";
+	alienLine1 <= "1111000111";
+	alienLine2 <= "1101010101";
+	alienLine3 <= "1111000011";
+	alienLine4 <= "0011110011";
+	alienLine5 <= std_logic_vector(to_unsigned(ali5,10));
+	alienKilled <= '0';
 	
 	-- Alien collision
-  process(alienXX, gameStarted, alienYY, missileXX, missileYY,alienLine1, alienLine2, alienLine3, alienLine4, alienLine5)
-  begin
-	if gameStarted = '0' then
-		alienLine1 <= "1111111111";
-		alienLine2 <= "1111111111";
-		alienLine3 <= "1111111111";
-		alienLine4 <= "1111111111";
-		alienLine5 <= "1111111111";
-		alienKilled <= '0';
-	-- If rocket position is in the alien table
-	elsif missileYY >= alienYY and missileYY < (alienYY+150) and missileXX >= alienXX and missileXX < (alienXX+300) then
-		alienKilled <= '0';
-		case ((missileYY-alienYY)/30) is
-			when 0 => -- top line
-				if alienLine1((missileXX-alienXX)/30) = '1' then
-					alienLine1((missileXX-alienXX)/30) <= '0';
-					alienKilled <= '1';
+	process(gameStarted, clk)
+	begin
+		if gameStarted = '0' then
+			ali5 <= 1023;
+			touched <= 0;
+		elsif rising_edge(clk) then
+			if missileYY >= alienYY and missileYY < (alienYY+150) and missileXX >= alienXX and missileXX < (alienXX+300) then
+				
+				-- last line
+				if ((missileYY-alienYY)/30) = 4 and touched = 0 then
+
+					if alienLine5(0) = '1' and ((missileXX-alienXX)/30) = 0 then	
+						ali5 <= ali5 - 512;
+						touched <= 1;
+					elsif alienLine5(1) = '1' and ((missileXX-alienXX)/30) = 1 then	
+						ali5 <= ali5 - 256;
+						touched <= 1;
+					elsif alienLine5(2) = '1' and ((missileXX-alienXX)/30) = 2 then	
+						ali5 <= ali5 - 128;
+						touched <= 1;
+					elsif alienLine5(3) = '1' and ((missileXX-alienXX)/30) = 3 then	
+						ali5 <= ali5 - 64;
+						touched <= 1;
+					elsif alienLine5(4) = '1' and ((missileXX-alienXX)/30) = 4 then	
+						ali5 <= ali5 - 32;
+						touched <= 1;
+					elsif alienLine5(5) = '1' and ((missileXX-alienXX)/30) = 5 then	
+						ali5 <= ali5 - 16;
+						touched <= 1;
+					elsif alienLine5(6) = '1' and ((missileXX-alienXX)/30) = 6 then	
+						ali5 <= ali5 - 8;
+						touched <= 1;
+					elsif alienLine5(7) = '1' and ((missileXX-alienXX)/30) = 7 then	
+						ali5 <= ali5 - 4;
+						touched <= 1;
+					elsif alienLine5(8) = '1' and ((missileXX-alienXX)/30) = 8 then	
+						ali5 <= ali5 - 2;
+						touched <= 1;
+					elsif alienLine5(9) = '1' and ((missileXX-alienXX)/30) = 9 then	
+						ali5 <= ali5 - 1;
+						touched <= 1;
+					end if;
+					
 				end if;
-			when 1 =>
-				if alienLine2((missileXX-alienXX)/30) = '1' then
-					alienLine2((missileXX-alienXX)/30) <= '0';
-					alienKilled <= '1';
-				end if;
-			when 2 =>
-				if alienLine3((missileXX-alienXX)/30) = '1' then
-					alienLine3((missileXX-alienXX)/30) <= '0';
-					alienKilled <= '1';
-				end if;
-			when 3 =>
-				if alienLine4((missileXX-alienXX)/30) = '1' then
-					alienLine4((missileXX-alienXX)/30) <= '0';
-					alienKilled <= '1';
-				end if;
-			when others=> -- bottom line
-				if alienLine5((missileXX-alienXX)/30) = '1' then
-					alienLine5((missileXX-alienXX)/30) <= '0';
-					alienKilled <= '1';
-				end if;
-			end case;
-	else
-		alienKilled <= '0';
-	end if;
-  
-  end process;
+			else
+				touched <= 0;
+			end if;
+		end if;
+	end process;
+	
+	
+	
+	
+	
+
   
 
 

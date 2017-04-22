@@ -8,3 +8,6 @@
 -- Version:         1.5
 ----------------------------------------------------------------------------------
 -- Changelog:       - Alien now fire
+                    - Ship can be killed
+                    - Display "game over" and "you win" screen
+                    - Game finish

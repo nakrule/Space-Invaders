@@ -24,7 +24,7 @@ entity rocketManager is
     newMissile     : in  std_logic;     -- If 1, new missile launched
     reset          : in  std_logic;     -- Active high
     clk            : in  std_logic;     -- 40MHz
-	 alienKilled    : in  std_logic;     -- 1 if alien killed
+    alienKilled    : in  std_logic;     -- 1 if alien killed
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
     rocketOnScreen : out std_logic;     -- If 1, display a rocket
     missileY       : out std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position

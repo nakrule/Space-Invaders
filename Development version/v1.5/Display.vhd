@@ -13,6 +13,9 @@
 --          1.2  -  Display mouving aliens
 --          1.3  -  Display ship rockets
 --          1.4  -  Aliens can be killed
+--          1.5  -  Display "game over" or "you win" screen
+--                  Ship can be killed by aliens
+--                  Alien launch rockets
 ----------------------------------------------------------------------------------
 library ieee;
 use ieee.std_logic_1164.all;
@@ -27,8 +30,8 @@ entity Display is
     gameStarted    : in  std_logic;     -- When 0, show start screen
     rocketOnScreen : in  std_logic;     -- If 1, display a rocket
     clk            : in  std_logic;     -- 40MHz
-	 alienRocketx   : in std_logic_vector(9 downto 0); -- Alien rocket x position
-	 alienRockety   : in std_logic_vector(9 downto 0); -- Alien rocket y position
+    alienRocketx   : in  std_logic_vector(9 downto 0);  -- Alien rocket x position
+    alienRockety   : in  std_logic_vector(9 downto 0);  -- Alien rocket y position
     missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
     MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
@@ -41,11 +44,11 @@ entity Display is
     red            : out std_logic_vector(2 downto 0);  -- Red color output
     green          : out std_logic_vector(2 downto 0);  -- Green color output
     blue           : out std_logic_vector(1 downto 0);  -- Blue color output
-	 alienL1     : out std_logic_vector(0 to 9); -- Same value as alienLine1
-	 alienL2     : out std_logic_vector(0 to 9); -- Same value as alienLine2
-	 alienL3     : out std_logic_vector(0 to 9); -- Same value as alienLine3
-	 alienL4     : out std_logic_vector(0 to 9); -- Same value as alienLine4
-	 alienL5     : out std_logic_vector(0 to 9) -- Same value as alienLine5
+    alienL1        : out std_logic_vector(0 to 9);  -- Same value as alienLine1
+    alienL2        : out std_logic_vector(0 to 9);  -- Same value as alienLine2
+    alienL3        : out std_logic_vector(0 to 9);  -- Same value as alienLine3
+    alienL4        : out std_logic_vector(0 to 9);  -- Same value as alienLine4
+    alienL5        : out std_logic_vector(0 to 9)   -- Same value as alienLine5
     );
 end entity Display;
 
@@ -59,19 +62,20 @@ architecture logic of Display is
   signal alienYY    : integer range 0 to 1000;  -- Integer value of alienY
   signal missileYY  : integer range 0 to 1023;  -- Integer value of missileY
   signal missileXX  : integer range shipMargin to (HLINES-shipMargin) := shipMargin;  -- Current Missile x value from left screen
-  signal alienLine  : integer range 0 to 4                            := 0;
-  signal alienIndex : integer range 0 to 9                            := 0;
-  signal gameWin : std_logic := '0'; -- If 1, game win
-  signal gameOver : std_logic := '0'; -- If 1, game loose
+  signal alienLine  : integer range 0 to 4                            := 0;  -- Current alien line displayed
+  signal alienIndex : integer range 0 to 9                            := 0;  -- Current alien in the current line displayed
+  signal gameWin    : std_logic                                       := '0';  -- If 1, game win
+  signal gameOver   : std_logic                                       := '0';  -- If 1, game loose
 
   signal alienLine1 : std_logic_vector(0 to 9) := "1111111111";  -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine2 : std_logic_vector(0 to 9) := "1111111111";  -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine3 : std_logic_vector(0 to 9) := "1111111111";  -- 1 bit for every alien ; 1 alien alive, 0 dead alien
   signal alienLine4 : std_logic_vector(0 to 9) := "1111111111";  -- 1 bit for every alien ; 1 alien alive, 0 dead alien
-  signal alienLine5 : std_logic_vector(0 to 9);  -- 1 bit for every alien ; 1 alien alive, 0 dead alien
+  signal alienLine5 : std_logic_vector(0 to 9) := "1111111111";  -- 1 bit for every alien ; 1 alien alive, 0 dead alien
 
   signal touched : integer range 0 to 1 := 0;  -- if 1, an alien is killed
 
+  -- Integer value of alienLine 1-5
   signal ali1 : integer range 0 to 1023 := 1023;
   signal ali2 : integer range 0 to 1023 := 1023;
   signal ali3 : integer range 0 to 1023 := 1023;
@@ -86,14 +90,16 @@ architecture logic of Display is
 
 begin
 
-	gameWin <= '1' when (alienLine1 = "0000000000" and alienLine2 = "0000000000" and alienLine3 = "0000000000" and alienLine4 = "0000000000"
-	and alienLine5 = "0000000000") else '0';
+  gameWin <= '1' when (alienLine1 = "0000000000" and alienLine2 = "0000000000"
+                       and alienLine3 = "0000000000" and alienLine4 = "0000000000"
+                       and alienLine5 = "0000000000")
+             else '0';
 
-	alienL1 <= alienLine1;
-	alienL2 <= alienLine2;
-	alienL3 <= alienLine3;
-	alienL4 <= alienLine4;
-	alienL5 <= alienLine5;
+  alienL1 <= alienLine1;
+  alienL2 <= alienLine2;
+  alienL3 <= alienLine3;
+  alienL4 <= alienLine4;
+  alienL5 <= alienLine5;
 
   hcounter  <= to_integer(unsigned(hcount));
   vcounter  <= to_integer(unsigned(vcount));
@@ -102,6 +108,12 @@ begin
   alienYY   <= to_integer(unsigned(alienY));
   missileYY <= to_integer(unsigned(missileY));
   missileXX <= to_integer(unsigned(missileX));
+
+  alienLine1 <= std_logic_vector(to_unsigned(ali1, 10));
+  alienLine2 <= std_logic_vector(to_unsigned(ali2, 10));
+  alienLine3 <= std_logic_vector(to_unsigned(ali3, 10));
+  alienLine4 <= std_logic_vector(to_unsigned(ali4, 10));
+  alienLine5 <= std_logic_vector(to_unsigned(ali5, 10));
 
   alienIndex <= (((hcounter-alienXX) / 30) mod 10) when (hcounter-alienXX) >= 0 else 0;
 
@@ -117,23 +129,28 @@ begin
   green <= color(4 downto 2) when blank = '0' else "000";
   blue  <= color(1 downto 0) when blank = '0' else "00";
 
+  -- Main display process
   process(hcounter, vcounter, shipPos, gameStarted, ImageInput, alienXX, alienYY, rocketOnScreen, missileYY, missileXX, alienLine1,
           alienLine2, alienLine3, alienLine4, alienLine5, alienLine, alienIndex, alienrocketx, alienrockety, gameWin, gameOver)
   begin
+    -- Show home screen
     if gameStarted = '0' then
       color <= ImageInput;
-	elsif gameWin = '1' then
-		if hcounter >= 250 and hcounter<550 and vcounter >=273 and vcounter< 327 then
-			color <= std_logic_vector(to_unsigned(win(hcounter-250, vcounter-273),8));
-		else
-			color <= "00000000";
-		end if;
-	elsif gameOver = '1' then
-		if hcounter >= 310 and hcounter<490 and vcounter >=245 and vcounter< 354 then
-			color <= std_logic_vector(to_unsigned(gameOverTable(hcounter-310, vcounter-245),8));
-		else
-			color <= "00000000";
-		end if;
+    -- Show "you win" screen
+    elsif gameWin = '1' then
+      if hcounter >= 250 and hcounter < 550 and vcounter >= 273 and vcounter < 327 then
+        color <= std_logic_vector(to_unsigned(win(hcounter-250, vcounter-273), 8));
+      else
+        color <= "00000000";
+      end if;
+    -- Show "game over" screen
+    elsif gameOver = '1' then
+      if hcounter >= 310 and hcounter < 490 and vcounter >= 245 and vcounter < 354 then
+        color <= std_logic_vector(to_unsigned(gameOverTable(hcounter-310, vcounter-245), 8));
+      else
+        color <= "00000000";
+      end if;
+    -- Show the game
     else
       -- Display the ship
       if hcounter >= shipPos and hcounter < (shipPos+62) and vcounter > 570 then
@@ -184,22 +201,16 @@ begin
           color <= rocketColor;
         end if;
       end if;
-		
-		-- Alien missile
-		if hcounter = to_integer(unsigned(alienRocketx)) and vcounter > to_integer(unsigned(alienRockety)) and vcounter < (to_integer(unsigned(alienRockety))+rocketLength) then
-          color <= rocketColor;
-        end if;
-		
-		
+
+      -- Alien missile
+      if hcounter = to_integer(unsigned(alienRocketx)) and vcounter > to_integer(unsigned(alienRockety)) and vcounter < (to_integer(unsigned(alienRockety))+rocketLength) then
+        color <= rocketColor;
+      end if;
     end if;
   end process;
 
-  alienLine1 <= std_logic_vector(to_unsigned(ali1, 10));
-  alienLine2 <= std_logic_vector(to_unsigned(ali2, 10));
-  alienLine3 <= std_logic_vector(to_unsigned(ali3, 10));
-  alienLine4 <= std_logic_vector(to_unsigned(ali4, 10));
-  alienLine5 <= std_logic_vector(to_unsigned(ali5, 10));
 
+  -- When a rocket killed an alien, stop display the current rocket
   process(touched)
   begin
     if touched = 1 then
@@ -209,7 +220,7 @@ begin
     end if;
   end process;
 
-  -- Alien collision
+  -- Alien rocket collision
   process(gameStarted, clk)
   begin
     if gameStarted = '0' then
@@ -403,20 +414,19 @@ begin
       end if;
     end if;
   end process;
-  
-  -- Update gameOver
+
+  -- Update gameOver, ship and rocket collision detection
   process(gameStarted, clk, shipPos, alienRocketx, alienRockety)
   begin
-  if gameStarted = '0' then
-		gameOver <= '0';
-  elsif rising_edge(clk) then
-		if to_integer(unsigned(alienRockety))>=570 and to_integer(unsigned(alienRockety))<600 then
-			if (to_integer(unsigned(alienRocketx))+6) >= shipPos and to_integer(unsigned(alienRocketx)) < (shipPos+56) then
-				gameOver <= '1';
-			end if;
-		end if;
-  end if;
-  
+    if gameStarted = '0' then
+      gameOver <= '0';
+    elsif rising_edge(clk) then
+      if to_integer(unsigned(alienRockety)) >= 570 and to_integer(unsigned(alienRockety)) < 600 then
+        if (to_integer(unsigned(alienRocketx))+6) >= shipPos and to_integer(unsigned(alienRocketx)) < (shipPos+56) then
+          gameOver <= '1';
+        end if;
+      end if;
+    end if;
   end process;
 
 end architecture;

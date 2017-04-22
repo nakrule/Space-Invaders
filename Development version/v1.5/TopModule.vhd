@@ -11,6 +11,7 @@
 --          1.1  -  Ship and aliens movements implemented
 --          1.2  -  Inputs added
 --          1.3  -  Display now have a clk
+--          1.4  -  Add alienRocket
 ----------------------------------------------------------------------------------
 library IEEE;
 use ieee.std_logic_1164.all;
@@ -50,13 +51,13 @@ architecture Behavioral of TopModule is
   signal vcount            : std_logic_vector(10 downto 0);  -- VGA vertical synchronization
   signal romAddress        : std_logic_vector(14 downto 0);  -- Combination of hcount and vcount
   signal MissileX          : std_logic_vector(9 downto 0);  -- Missile x coordinate
-  signal alienRocketx      : std_logic_vector(9 downto 0); -- Alien rocket x position
-  signal alienRockety      : std_logic_vector(9 downto 0); -- Alien rocket y position
-  signal alienL1           : std_logic_vector(0 to 9); -- Same value as alienLine2
-  signal alienL2           : std_logic_vector(0 to 9); -- Same value as alienLine2
-	signal alienL3     : std_logic_vector(0 to 9); -- Same value as alienLine3
-	signal alienL4     : std_logic_vector(0 to 9); -- Same value as alienLine4
-	signal alienL5     : std_logic_vector(0 to 9); -- Same value as alienLine5
+  signal alienRocketx      : std_logic_vector(9 downto 0);  -- Alien rocket x position
+  signal alienRockety      : std_logic_vector(9 downto 0);  -- Alien rocket y position
+  signal alienL1           : std_logic_vector(0 to 9);  -- Same value as alienLine2
+  signal alienL2           : std_logic_vector(0 to 9);  -- Same value as alienLine2
+  signal alienL3           : std_logic_vector(0 to 9);  -- Same value as alienLine3
+  signal alienL4           : std_logic_vector(0 to 9);  -- Same value as alienLine4
+  signal alienL5           : std_logic_vector(0 to 9);  -- Same value as alienLine5
 
   component display is
     port(
@@ -64,8 +65,8 @@ architecture Behavioral of TopModule is
       gameStarted    : in  std_logic;   -- When 0, show start screen
       rocketOnScreen : in  std_logic;   -- If 1, display a rocket
       clk            : in  std_logic;   -- 40MHz
-	   alienRocketx   : in std_logic_vector(9 downto 0); -- Alien rocket x position
-	   alienRockety   : in std_logic_vector(9 downto 0); -- Alien rocket y position
+      alienRocketx   : in  std_logic_vector(9 downto 0);  -- Alien rocket x position
+      alienRockety   : in  std_logic_vector(9 downto 0);  -- Alien rocket y position
       missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
       shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
       MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
@@ -77,12 +78,12 @@ architecture Behavioral of TopModule is
       alienKilled    : out std_logic;   -- 1 if alien killed
       red            : out std_logic_vector(2 downto 0);  -- Red color output
       green          : out std_logic_vector(2 downto 0);  -- Green color output
-      blue           : out std_logic_vector(1 downto 0);   -- Blue color output
-		alienL1     : out std_logic_vector(0 to 9); -- Same value as alienLine1
-	 alienL2     : out std_logic_vector(0 to 9); -- Same value as alienLine2
-	 alienL3     : out std_logic_vector(0 to 9); -- Same value as alienLine3
-	 alienL4     : out std_logic_vector(0 to 9); -- Same value as alienLine4
-	 alienL5     : out std_logic_vector(0 to 9) -- Same value as alienLine5
+      blue           : out std_logic_vector(1 downto 0);  -- Blue color output
+      alienL1        : out std_logic_vector(0 to 9);  -- Same value as alienLine1
+      alienL2        : out std_logic_vector(0 to 9);  -- Same value as alienLine2
+      alienL3        : out std_logic_vector(0 to 9);  -- Same value as alienLine3
+      alienL4        : out std_logic_vector(0 to 9);  -- Same value as alienLine4
+      alienL5        : out std_logic_vector(0 to 9)  -- Same value as alienLine5
       );
   end component;
 
@@ -144,23 +145,21 @@ architecture Behavioral of TopModule is
       MissileX       : out std_logic_vector(9 downto 0)  -- Missile x coordinate
       );
   end component;
-  
-  component alienRocket is
-	port(
-		reset : in std_logic;
-		clk   : in std_logic;
-		alienLine1 : in std_logic_vector(0 to 9);
-		alienLine2 : in std_logic_vector(0 to 9);
-		alienLine3 : in std_logic_vector(0 to 9);
-		alienLine4 : in std_logic_vector(0 to 9);
-		alienLine5 : in std_logic_vector(0 to 9);
-		shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate, only used to generate random
-      alienX     : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
-      alienY     : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
 
-		alienRocketx : out std_logic_vector(9 downto 0);
-		alienRockety : out std_logic_vector(9 downto 0)
-	);
+  component alienRocket is
+    port(
+      reset        : in  std_logic;       -- Active high
+      clk          : in  std_logic;       -- 40MHz
+      alienLine1   : in  std_logic_vector(0 to 9);  -- Top screen alien line
+      alienLine2   : in  std_logic_vector(0 to 9);
+      alienLine3   : in  std_logic_vector(0 to 9);
+      alienLine4   : in  std_logic_vector(0 to 9);
+      alienLine5   : in  std_logic_vector(0 to 9);  -- Bottom screen alien line
+      shipPosition : in  std_logic_vector(9 downto 0);  -- Ship x coordinate, only used to generate random
+      alienX       : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
+      alienY       : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
+      alienRocketx : out std_logic_vector(9 downto 0);  -- Alien rocket x coordinate from left screen
+      );
   end component;
 
 begin
@@ -203,8 +202,8 @@ begin
       missileY       => missileY,
       hcount         => hcount,
       vcount         => vcount,
-		alienRocketx   => alienRocketx,
-		alienRockety   => alienRockety,
+      alienRocketx   => alienRocketx,
+      alienRockety   => alienRockety,
       alienKilled    => alienKilled,
       MissileX       => MissileX,
       shipPosition   => shipPosition,
@@ -214,11 +213,11 @@ begin
       green          => green,
       imageInput     => startScreenROMOut,
       blue           => blue,
-		alienL1 => alienL1,
-	 alienL2 => alienL2,
-	 alienL3 => alienL3,
-	 alienL4 => alienL4,
-	 alienL5 => alienL5
+      alienL1        => alienL1,
+      alienL2        => alienL2,
+      alienL3        => alienL3,
+      alienL4        => alienL4,
+      alienL5        => alienL5
       );
 
   Input_Map : Input
@@ -248,21 +247,21 @@ begin
       missileY       => missileY,
       MissileX       => missileX
       );
-		
-	alienRocketMap : alienRocket
-	port map(
-		reset => rst,
-		clk => pixel_clk,
-		alienLine1 => alienL1,
-		alienLine2 => alienL2,
-		alienLine3 => alienL3,
-		alienLine4 => alienL4,
-		alienLine5 => alienL5,
-		shipPosition => shipPosition,
-      alienX => alienX,
-      alienY => alienY,
-		alienRocketx => alienRocketx,
-		alienRockety => alienRockety
-	);
+
+  alienRocketMap : alienRocket
+    port map(
+      reset        => rst,
+      clk          => pixel_clk,
+      alienLine1   => alienL1,
+      alienLine2   => alienL2,
+      alienLine3   => alienL3,
+      alienLine4   => alienL4,
+      alienLine5   => alienL5,
+      shipPosition => shipPosition,
+      alienX       => alienX,
+      alienY       => alienY,
+      alienRocketx => alienRocketx,
+      alienRockety => alienRockety
+      );
 
 end architecture;

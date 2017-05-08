@@ -30,6 +30,9 @@ entity Display is
     gameStarted    : in  std_logic;     -- When 0, show start screen
     rocketOnScreen : in  std_logic;     -- If 1, display a rocket
     clk            : in  std_logic;     -- 40MHz
+    imageInput     : in  std_logic_vector(7 downto 0);  -- data from rom
+    alienY         : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
+    alienX         : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
     alienRocketx   : in  std_logic_vector(9 downto 0);  -- Alien rocket x position
     alienRockety   : in  std_logic_vector(9 downto 0);  -- Alien rocket y position
     missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
@@ -37,13 +40,10 @@ entity Display is
     MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
     hcount         : in  std_logic_vector(10 downto 0);  -- Pixel x coordinate
     vcount         : in  std_logic_vector(10 downto 0);  -- Pixel y coordinate
-    alienX         : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
-    alienY         : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
-    imageInput     : in  std_logic_vector(7 downto 0);  -- data from rom
     alienKilled    : out std_logic;     -- 1 if alien killed
+    blue           : out std_logic_vector(1 downto 0);  -- Blue color output
     red            : out std_logic_vector(2 downto 0);  -- Red color output
     green          : out std_logic_vector(2 downto 0);  -- Green color output
-    blue           : out std_logic_vector(1 downto 0);  -- Blue color output
     alienL1        : out std_logic_vector(0 to 9);  -- Same value as alienLine1
     alienL2        : out std_logic_vector(0 to 9);  -- Same value as alienLine2
     alienL3        : out std_logic_vector(0 to 9);  -- Same value as alienLine3

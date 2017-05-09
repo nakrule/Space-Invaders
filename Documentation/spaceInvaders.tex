@@ -1,170 +1,250 @@
-\documentclass[french]{article}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{babel}
-\usepackage{graphicx}
-\usepackage{geometry}
-\usepackage{fancyhdr}
-\usepackage{lipsum}
-\usepackage[european, siunitx]{circuitikz}
-\usepackage{pgfplots}
-\usepackage{nameref} % For reference
-\usepackage{hyperref} % url reference
-\usepackage{tikz} % State diagram
-\usetikzlibrary{automata,positioning} % State diagram
-\usetikzlibrary{arrows} % State diagram
-\usetikzlibrary{automata} 
-\usetikzlibrary[automata]
-\usetikzlibrary{circuits.logic.IEC,calc}
-\usetikzlibrary{babel}
-\usetikzlibrary{positioning} % state diagram x and y 
-\usepackage{amsmath} % For matrix in state machine
-\usepackage{xcolor}
-\usepackage[framemethod=tikz]{mdframed}
-\usepackage{beramono} % monospaced font with bold variant
-\usepackage{lastpage} % To add lastpage référence.
-\usepackage{siunitx} % For microsecond
-\usepackage{listings} % Required for insertion of code
-\usepackage{eso-pic} % Title background
-\usepackage[explicit]{titlesec}
-\usepackage{ulem}
+\documentclass[french]{nakrule}
 
+\author{Samuel Riedo \& Pascal Roulin}
+\title{Space Invaders}
+\subtitle{Projet intégré - Système numérique}
 
-\newcommand\BackgroundPic{%
-\put(0,0){%
-\parbox[b][\paperheight]{\paperwidth}{%
-\vfill
-\centering
-\includegraphics[width=\paperwidth,height=\paperheight,%
-keepaspectratio]{background.png}%
-\vfill
-}}} % For title background
+\makeatletter
+\let\runauthor\@author
+\let\runtitle\@title
+\makeatother
 
-
-%----------------------------------------------------------------------------------
-% Configuration, don't touch it motherfucker
-%----------------------------------------------------------------------------------
-
-\pgfplotsset{width=10cm,compat=1.9}
-
-\titleformat{\section}
-{\normalfont\Large\bfseries}{}{0em}{\colorbox{blue!65}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{\thesection\quad#1}}}}
-\titleformat{name=\section,numberless}
-{\normalfont\Large\bfseries}{}{0em}{\colorbox{blue!65}{\parbox{\dimexpr\textwidth-2\fboxsep\relax}{\textcolor{white}{#1}}}}
-
-\hypersetup{            % reference colors
-    colorlinks=true,
-    linkcolor=darkgreen,
-    pdfborder = {0 0 0},
-    filecolor=magenta,      
-    urlcolor=cyan,
-}
-\hypersetup{linkcolor=black}
-
-
-\setcounter{tocdepth}{2} % Only show up to subsection in table of content
-
-
-\setlength{\parindent}{0ex} % Paragraph indet
-\geometry{margin=1in} % Marging
-\pagestyle{fancy} % For header/footer
-\fancyhf{}
-\cfoot{Fribourg, \today}
-\rhead{\leftmark}
-\lhead{Super Mario Bros - FPGA Edition}
-\rfoot{Page \thepage / \pageref*{LastPage}}
-\lfoot{Samuel Riedo \& Pascal Roulin}
-\renewcommand\headrulewidth{0.4pt} % Size of the header rule
-\renewcommand\footrulewidth{0.4pt} % Size of the footer rule
-
-% Signature
-\newcommand*{\Signature}[1]{%
-    \par\noindent\makebox[2.0in]{\hrulefill} 
-    \par\noindent\makebox[2.0in][l]{#1}
-}
-
-% Double signatures
-\newcommand*{\Doublesignature}[2]{%
-    \par\noindent\makebox[2.0in]{\hrulefill} \hfill\makebox[2.0in]{\hrulefill}%
-    \par\noindent\makebox[2.0in][l]{#1}      \hfill\makebox[2.0in][l]{#2}%
-}
-
-% Quatre signatures
-\newcommand*{\Foursignature}[4]{%
-    \par\noindent\makebox[2.0in]{\hrulefill} \hfill\makebox[2.0in]{\hrulefill}%
-    \par\noindent\makebox[2.0in][l]{#1}      \hfill\makebox[2.0in][l]{#2}%
-    \vspace{0.5in}
-    \par\noindent\makebox[2.0in]{\hrulefill} \hfill\makebox[2.0in]{\hrulefill}%
-    \par\noindent\makebox[2.0in][l]{#3}      \hfill\makebox[2.0in][l]{#4}%
-}
-
-\newcommand{\problemAnswer}[1]{ % Defines the problem answer command with the content as the only argument
-\noindent\framebox[\columnwidth][c]{\begin{minipage}{0.98\columnwidth}#1\end{minipage}} % Makes the box around the problem answer and puts the content inside
-}
-\lstloadlanguages{vhdl}
-\definecolor{darkgreen}{rgb}{0.1, 0.65, 0.35}
-
-\lstset{language=vhdl,
-    frame=single,
-    basicstyle=\footnotesize,
-    keywordstyle=[1]\color{blue}\bf, % VHDL functions bold and blue
-    keywordstyle=[2]\color{red}\bf, % VHDL function arguments red
-    keywordstyle=[3]\color{cyan!50}, % Custom functions cyan
-    stringstyle=\ttfamily\color{orange}, % String style
-    commentstyle=\color{darkgreen}\small, % Comments small dark green courier font
-    showstringspaces=false, % Don't put marks in string spaces
-    tabsize=2, % 2 spaces per tab
-    numbers=left, % Line numbers on left
-    firstnumber=1, % Line numbers start with line 1
-    numberstyle=\tiny\color{blue}, % Line numbers are blue and small
-    stepnumber=5, % Line numbers go in steps of 5
-    morekeywords=[1]{
-    library, use ,all,entity,is,port,in,out,end,architecture,of, body, function, variable,
-    begin,and,or,Not,downto,ALL, signal, process, if, else, elsif, case, when,
-    then, range, to, component, type, with, select, others, constant, inout,
-    buffer, map, true, false, array, subtype, wait, wait for, generic
-    },
-    morekeywords=[2]{
-    STD_LOGIC_VECTOR,STD_LOGIC,IEEE,STD_LOGIC_1164, work, local, real,
-    math_real, time, 
-    NUMERIC_STD,STD_LOGIC_ARITH,STD_LOGIC_UNSIGNED,std_logic_vector,
-    std_logic, ieee, numeric_std, std_ulogic, std_logic_1164, natural, bit, bit_vector, signed, unsigned, boolean, integer
-    },
-    morekeywords=[3]{rising_edge, falling_edge, resize, to_signed, to_unsigned},
-    morecomment=[l]{--},
-    morecomment=[s][\color{orange}]{'}{'}, % Color in orange string between ' and '
-}
-
-\setlength{\headheight}{12.1638pt}
-
+\definecolor{mainColor}{RGB}{255,50,50}
+\definecolor{blockColor}{RGB}{228,132,132}
 
 \begin{document}
 
-%----------------------------------------------------------------------------------
-% Title
-%----------------------------------------------------------------------------------
 
-\begingroup
-\thispagestyle{empty}
-\AddToShipoutPicture*{\includegraphics[width=\paperwidth,height=\paperheight]{pictures/background}} % Image background
-\centering
-\vspace*{5.4cm}
-{ \Huge \bfseries Super Mario Bros \\[1cm] }
-{ \Huge \bfseries FPGA Edition \\[1.5cm] }
-{\huge Samuel Riedo \& Pascal Roulin}\par % Author name
-\endgroup
+\titleTwo[pictures/title]
 
-%----------------------------------------------------------------------------------
-% Table of contents
-%----------------------------------------------------------------------------------
+%--------------------------------------------------------------------
+\chapter{Introduction}
+\label{introduction}
+%--------------------------------------------------------------------
 
-\newpage
-\tableofcontents
-\newpage
+Space Invaders est un jeu vidéo d'arcade créé par Tomohiro Nishikado, paru pour
+la première fois en 1978 au Japon. Il est l'un des tout premier \emph{Shoot 'em
+  up}, c'est-à-dire un type de jeux consistant à abatre un grand nombre d'ennemies en
+leur tirant dessus. Le principe du jeu consiste en un vasseau spacial attaqué
+par des vagues d'aliens qu'il doit détruire sans se faire toucher.
 
-%----------------------------------------------------------------------------------
-% Introduction
-%----------------------------------------------------------------------------------
+\section{Super Mario Bros}
+\label{sec:mario}
+
+Dans un premier temps, nous avions souhaité reproduire \emph{Super Mario Bros}.
+La première tentative pour recréer le monde 1-1 du jeu original fut de créer
+toute la map en une image de 1600x150, puis de la stocker dans une RAM ou ROM. Ceci
+représentait \si{240.000} pixels à stocker. En prenant en compte qu'un pixel
+fait exactement un Byte, les RAM et ROM à disposition de la Spartan 6
+XC6LX16-CS324 ne pouvait pas stocker toutes ses données.
+
+Afin de contourner ce problème, la carte de base a été diviser en 8 image plus
+petite, faisant chacune 200x140 pixels. TODO
+néamoins, à la suite de divers problèmes, nous avons finalement prix la décision
+de préférer un jeu avec un monde plus petit.
+
+\section{Gameplay}
+\label{sec:gameplay}
+
+Space Invaders est un jeu en deux dimension, aussi appelé jeu en 2D ou tout
+simplement jeu 2D.
+
+
+%--------------------------------------------------------------------
+\chapter{Architecture}
+\label{architecture}
+
+
+\symmetricalPage
+
+\section{alienRocket}
+\label{sec:label}
+
+
+\begin{center}
+\begin{tikzpicture}
+  \draw[fill=blockColor] (0,0) rectangle node{alienRocket}(3,-8.25);
+  % Inputs
+  \draw (-1,-.75) node[left]{reset}-- (0,-.75);
+  \draw (-1,-1.5) node[left]{clk}-- (0,-1.5);
+  \draw (-1,-2.25) node[left]{alienLine1}-- (0,-2.25);
+  \draw (-.4,-2.05) node[left]{10} -- (-.6, -2.45);
+  \draw (-1,-3) node[left]{alienLine2}-- (0,-3);
+  \draw (-.4,-2.8) node[left]{10} -- (-.6, -3.25);
+  \draw (-1,-3.75) node[left]{alienLine3}-- (0,-3.75);
+  \draw (-.4,-3.55) node[left]{10} -- (-.6, -3.95);
+  \draw (-1,-4.5) node[left]{alienLine4}-- (0,-4.5);
+  \draw (-.4,-4.2) node[left]{10} -- (-.6, -4.7);
+  \draw (-1,-5.25) node[left]{alienLine5}-- (0,-5.25);
+  \draw (-.4,-5.05) node[left]{10} -- (-.6, -5.45);
+  \draw (-1,-6) node[left]{shipPosition}-- (0,-6);
+  \draw (-.4,-5.8) node[left]{10} -- (-.6, -6.2);
+  \draw (-1,-6.75) node[left]{alienX}-- (0,-6.75);
+  \draw (-.4,-6.55) node[left]{10} -- (-.6, -6.95);
+  \draw (-1,-7.5) node[left]{alienY}-- (0,-7.5);
+  \draw (-.4,-7.3) node[left]{9} -- (-.6, -7.7);
+  % Outputs
+  \draw (4,-.75) node[right]{alienRocketX}-- (3,-.75);
+  \draw (3.6,-.55) node[right]{10} -- (3.4, -.95);
+  \draw (4,-1.5) node[right]{alienRocketY}-- (3,-1.5);
+  \draw (3.6,-1.3) node[right]{10} -- (3.4, -1.7);
+\end{tikzpicture}
+\end{center}
+
+\section{DCM}
+\label{sec:dcm}
+
+Le composant ressemble à sa:
+
+\begin{center}
+\begin{tikzpicture}
+  \draw[fill=blockColor] (0,0) rectangle node{DCM}(3,3);
+  \draw (-1,1) node[left]{clk\_in1}-- (0,1);
+  \draw (-1,2) node[left]{reset}-- (0,2);
+  \draw (4,2) node[right]{clk\_out1}-- (3,2);
+  \draw (4,1) node[right]{locked}-- (3,1);
+\end{tikzpicture}
+\end{center}
+
+\section{Display}
+\label{sec:display}
+
+
+\begin{center}
+\begin{tikzpicture}
+  \draw[fill=blockColor] (0,0) rectangle node{Display}(3,-11.25);
+  % Inputs
+  \draw (-1,-.75) node[left]{blank}-- (0,-.75);
+  \draw (-1,-1.5) node[left]{gameStarted}-- (0,-1.5);
+  \draw (-1,-2.25) node[left]{rocketOnScreen}-- (0,-2.25);
+  \draw (-1,-3) node[left]{clk}-- (0,-3);
+  \draw (-1,-3.75) node[left]{imageInput}-- (0,-3.75);
+  \draw (-.4,-3.55) node[left]{8} -- (-.6, -3.95);
+  \draw (-1,-4.5) node[left]{alienY}-- (0,-4.5);
+  \draw (-.4,-4.2) node[left]{9} -- (-.6, -4.7);
+  \draw (-1,-5.25) node[left]{alienX}-- (0,-5.25);
+  \draw (-.4,-5.05) node[left]{10} -- (-.6, -5.45);
+  \draw (-1,-6) node[left]{alienRocketX}-- (0,-6);
+  \draw (-.4,-5.8) node[left]{10} -- (-.6, -6.2);
+  \draw (-1,-6.75) node[left]{alienRocketY}-- (0,-6.75);
+  \draw (-.4,-6.55) node[left]{10} -- (-.6, -6.95);
+  \draw (-1,-7.5) node[left]{missileY}-- (0,-7.5);
+  \draw (-.4,-7.3) node[left]{10} -- (-.6, -7.7);
+  \draw (-1,-8.25) node[left]{shipPosition}-- (0,-8.25);
+  \draw (-.4,-8.06) node[left]{10} -- (-.6, -8.45);
+  \draw (-1,-9) node[left]{missileX}-- (0,-9);
+  \draw (-.4,-8.8) node[left]{10} -- (-.6, -9.2);
+  \draw (-1,-9.75) node[left]{hcount}-- (0,-9.75);
+  \draw (-.4,-9.55) node[left]{11} -- (-.6, -9.95);
+  \draw (-1,-10.5) node[left]{vcount}-- (0,-10.5);
+  \draw (-.4,-10.3) node[left]{11} -- (-.6, -10.7);
+  % Outputs
+  \draw (4,-.75) node[right]{alienKilled}-- (3,-.75);
+  \draw (4,-1.5) node[right]{blue}-- (3,-1.5);
+  \draw (3.6,-1.3) node[right]{2} -- (3.4, -1.7);
+  \draw (4,-2.25) node[right]{red}-- (3,-2.25);
+  \draw (3.6,-2.05) node[right]{3} -- (3.4, -2.45);
+  \draw (4,-3) node[right]{green}-- (3,-3);
+  \draw (3.6,-2.8) node[right]{3} -- (3.4, -3.2);
+  \draw (4,-3.75) node[right]{alienL1}-- (3,-3.75);
+  \draw (3.6,-3.55) node[right]{10} -- (3.4, -3.95);
+  \draw (4,-4.5) node[right]{alienL2}-- (3,-4.5);
+  \draw (3.6,-4.3) node[right]{10} -- (3.4, -4.7);
+  \draw (4,-5.25) node[right]{alienL3}-- (3,-5.25);
+  \draw (3.6,-5.05) node[right]{10} -- (3.4, -5.45);
+  \draw (4,-6) node[right]{alienL4}-- (3,-6);
+  \draw (3.6,-5.8) node[right]{10} -- (3.4, -6.2);
+  \draw (4,-6.75) node[right]{alienL5}-- (3,-6.75);
+  \draw (3.6,-6.55) node[right]{2} -- (3.4, -6.95);
+\end{tikzpicture}
+\end{center}
+
+\section{Input}
+\label{sec:input}
+
+
+\begin{center}
+\begin{tikzpicture}
+  \draw[fill=blockColor] (0,0) rectangle node{Input}(3,-5.25);
+  % Inputs
+  \draw (-1,-.75) node[left]{startButton} -- (0,-.75);
+  \draw (-1,-1.5) node[left]{fire}-- (0,-1.5);
+  \draw (-1,-2.25) node[left]{clk}-- (0,-2.25);
+  \draw (-1,-3) node[left]{reset}-- (0,-3);
+  \draw (-1,-3.75) node[left]{left}-- (0,-3.75);
+  \draw (-1,-4.5) node[left]{right}-- (0,-4.5);
+  % Outputs
+  \draw (4,-.75) node[right]{newMissile}-- (3,-.75);
+  \draw (4,-1.5) node[right]{gameStarted}-- (3,-1.5);
+  \draw (4,-2.25) node[right]{alienX}-- (3,-2.25);
+  \draw (3.6,-2.05) node[right]{10} -- (3.4, -2.45);
+  \draw (4,-3) node[right]{alienY}-- (3,-3);
+  \draw (3.6,-2.8) node[right]{10} -- (3.4, -3.2);
+  \draw (4,-3.75) node[right]{shipPosition}-- (3,-3.75);
+  \draw (3.6,-3.55) node[right]{10} -- (3.4, -3.95);
+\end{tikzpicture}
+\end{center}
+
+
+\section{rocketManager}
+\label{sec:rocketmanager}
+
+\begin{center}
+\begin{tikzpicture}
+  \draw[fill=blockColor] (0,0) rectangle node{rocketManager}(3,-4.5);
+  % Inputs
+  \draw (-1,-.75) node[left]{newMissile}-- (0,-.75);
+  \draw (-1,-1.5) node[left]{reset}-- (0,-1.5);
+  \draw (-1,-2.25) node[left]{clk}-- (0,-2.25);
+  \draw (-1,-3) node[left]{alienKilled}-- (0,-3);
+  \draw (-1,-3.75) node[left]{shipPosition}-- (0,-3.75);
+  \draw (-.4,-3.55) node[left]{10} -- (-.6, -3.95);
+  % Outputs
+  \draw (4,-.75) node[right]{rocketOnScreen}-- (3,-.75);
+  \draw (4,-1.5) node[right]{missileX}-- (3,-1.5);
+  \draw (3.6,-1.3) node[right]{10} -- (3.4, -1.7);
+  \draw (4,-2.25) node[right]{missileY}-- (3,-2.25);
+  \draw (3.6,-2.05) node[right]{10} -- (3.4, -2.45);
+\end{tikzpicture}
+\end{center}
+
+\section{Top Module}
+\label{sec:topmodule}
+
+\begin{center}
+\begin{tikzpicture}
+  \draw[fill=blockColor] (0,0) rectangle node{TopModule}(3,-5.25);
+  % Inputs
+  \draw (-1,-.75) node[left]{fpga\_clk}-- (0,-.75);
+  \draw (-1,-1.5) node[left]{rst}-- (0,-1.5);
+  \draw (-1,-2.25) node[left]{startButton}-- (0,-2.25);
+  \draw (-1,-3) node[left]{fire}-- (0,-3);
+  \draw (-1,-3.75) node[left]{right}-- (0,-3.75);
+  \draw (-1,-4.5) node[left]{left}-- (0,-4.5);
+  % Outputs
+  \draw (4,-.75) node[right]{blue}-- (3,-.75);
+  \draw (3.6,-.55) node[right]{2} -- (3.4, -.95);
+  \draw (4,-1.5) node[right]{red}-- (3,-1.5);
+  \draw (3.6,-1.3) node[right]{3} -- (3.4, -1.7);
+  \draw (4,-2.25) node[right]{green}-- (3,-2.25);
+  \draw (3.6,-2.05) node[right]{3} -- (3.4, -2.45);
+\end{tikzpicture}
+\end{center}
+
+\section{Package}
+\label{sec:package}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 \end{document}

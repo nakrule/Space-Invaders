@@ -23,7 +23,6 @@ entity Input is
     startButton  : in  std_logic;       -- When 1, start game
     fire         : in  std_logic;       -- When 1, shoot a rocket
     clk          : in  std_logic;       -- 40MHz
-    fastCLK      : in  std_logic;       -- 100MHz clock for random counter
     reset        : in  std_logic;       -- Active high
     left         : in  std_logic;       -- Left arrow button
     right        : in  std_logic;       -- Right arrow button
@@ -158,12 +157,12 @@ begin
     end if;
   end process;
 
-  process(reset, fastCLK)
+  process(reset, clk)
   begin
     if reset = '1' then
       alienDirection <= 0;
       alienJump      <= 1;
-    elsif rising_edge(fastCLK) then
+    elsif rising_edge(clk) then
       -- alien direction
       if alienDirection >= 7 then
         alienDirection <= 0;
@@ -176,7 +175,6 @@ begin
       else
         alienJump <= alienJump + 1;
       end if;
-
     end if;
   end process;
 

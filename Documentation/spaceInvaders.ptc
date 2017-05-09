@@ -1,0 +1,16 @@
+\select@language {french}
+\ttl@starttoc {default@1}
+\contentsline {chapter}{\numberline {1}Introduction}{2}{chapter.1}
+\contentsline {section}{\numberline {1.1}Super Mario Bros}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Gameplay}{2}{section.1.2}
+\ttl@stoptoc {default@1}
+\ttl@starttoc {default@2}
+\contentsline {chapter}{\numberline {2}Architecture}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}alienRocket}{4}{section.2.1}
+\contentsline {section}{\numberline {2.2}DCM}{4}{section.2.2}
+\contentsline {section}{\numberline {2.3}Display}{5}{section.2.3}
+\contentsline {section}{\numberline {2.4}Input}{5}{section.2.4}
+\contentsline {section}{\numberline {2.5}rocketManager}{6}{section.2.5}
+\contentsline {section}{\numberline {2.6}Top Module}{6}{section.2.6}
+\contentsline {section}{\numberline {2.7}Package}{6}{section.2.7}
+\contentsfinish 

@@ -64,7 +64,7 @@ est apparu qu'avoir un font statique, ou alors une répétition permannente d'un
 même arrière plan était indispensable pour que le projet soit synthétisable sur
 notre carte. Un jeu tel que \emph{Super Mario Bros}, avec des mondes très
 différents et non répétifs, n'est pas adapté à la programmation VHDL sur un
-hardware limité.
+hardware limité. Notre choix s'est alors porté sur \emph{Space Invaders}.
 
 
 \clearpage
@@ -427,7 +427,7 @@ uniquement constituée de deux bits.
 \label{sec:input}
 
 
-\begin{wrapfigure}[15]{r}{.6\textwidth}
+\begin{wrapfigure}[16]{r}{.6\textwidth}
 \begin{tikzpicture}
   \draw[fill=blockColor] (0,0) rectangle node{Input}(3,-5.25);
   % Inputs
@@ -457,17 +457,10 @@ une partie, déplacer son vaisseau et tirer. Toutes ses actions sont traiter dan
 \emph{Input}, tout comme le déplacement aléatoire des aliens sur l'écran. Ses
 derniers peuvent se mouvoir en haut, bas, gauche, droite ainsi qu'en diagonale.
 La direction qu'ils prennent est aléatoire, en fonction d'un compteur
-\emph{alienDirection} s'incrémentant à chaque coût d'horloge.
-ddd
-ddd
-ddd
-d
-ddd
-
-
-dddd
-
-\vspace{.1in}
+\emph{alienDirection} s'incrémentant à chaque coût d'horloge. De plus, la
+distance, ou saut, qu'ils parcourent en un déplacement est également aléatoire
+via un autre compteur \emph{alienJump}. La taille maximal d'un saut peut être
+définie en modifiant la valeur \emph{maxAlienJump} dans le package du jeu.
 
 \lstinputlisting[style=vhdl]{vhdl/alienDirection.vhd}
 
@@ -553,16 +546,35 @@ Le bloc \emph{rocketManager} utilise la clock afin de décrémenter le compteur 
 la position Y et le signal reset afin de remettre tous les signaux dans leur
 état d'origine.
 
+\subsection{Entrées \& Sorties}
+\label{subsec:Entrées_Sorties_rocketManager}
+
+\begin{descr}
+  \itemColor{newMissile} Indique par une valeur à 1 qu'un nouveau missile a été
+  tiré par le vaisseau du joueur.
+  \itemColor{reset} Reset du circuit, actif à l'état haut.
+  \itemColor{clk} Horloge 40MHz, active sur front montant.
+  \itemColor{alienKilled} Indique par une valeur à 1 qu'un alien à été touché
+  par une rocket lancée par le joueur.
+  \itemColor{shipPosition} Nombre de pixels entre le bord gauche de l'écran et
+  le bord droit du vaisseau de joueur. Cette valeur est utilisé pour générer de l'aléatoire.
+  \itemColor{rocketOnScreen} Indique par une valeur à 1 qu'une rocket doit être
+  affiché à l'écran.
+  \itemColor{missileX} Nombre de pixels entre le bord gauche de l'écran et la rocket
+  lancée par les aliens.
+  \itemColor{missileY} Nombre de pixels entre le haut de l'écran et le haut de la rocket
+  lancée par les aliens.
+\end{descr}
 
 \clearpage
 
-\section{VGA Intenal}
+\section{VGA Internal}
 \label{sec:vgainternal}
 
 
 \begin{wrapfigure}[13]{r}{.55\textwidth}
 \begin{tikzpicture}
-  \draw[fill=blockColor] (0,0) rectangle node{VGAIntenal}(3,-4.5);
+  \draw[fill=blockColor] (0,0) rectangle node{VGAInternal}(3,-4.5);
   % Inputs
   \draw (-1,-.75) node[left]{pixel\_clk} -- (0,-.75);
   \draw (-1,-1.5) node[left]{rst}-- (0,-1.5);
@@ -623,7 +635,7 @@ dans une erreur d'affichage ``Index out of bound'' s'il n'est pas respecté.
 \section{Top Module}
 \label{sec:topmodule}
 
-\begin{wrapfigure}{r}{.6\textwidth}
+\begin{wrapfigure}[14]{r}{.5\textwidth}
 \begin{tikzpicture}
   \draw[fill=blockColor] (0,0) rectangle node{TopModule}(3,-5.25);
   % Inputs
@@ -645,9 +657,45 @@ dans une erreur d'affichage ``Index out of bound'' s'il n'est pas respecté.
 \label{topModuleBloc}
 \end{wrapfigure}
 
-blabla
+
+Le bloc \emph{topModule} est comme son nom l'indique l'élément tout en haut de notre architecture. C'est lui qui instancie les composants et relie ceux-ci via des signaux intermédiaires. 
+
+Concernant ses entrées et sorties, celles-ci sont des éléments physiques de la carte FPGA et sont assignées via le fichier UCF. 
+
+Le signal d'entrée \emph{fpga\_clk} correspond à la clock de la FPGA. Cette
+clock fonctionne à une fréquence de 100 MHz. Le \emph{reset} est assigné sur l'un des switchs (voir figure \textcolor{red}{XXXXXXX}) et permet le reset software du jeu.
+
+Plusieurs boutons sont utilisés afin de jouer et ont donc été assignés grâce au fichier UCF. Au niveau des signaux, il s'agit de \emph{startButton}, de \emph{fire}, de \emph{right} et de \emph{left}. 
+Le bouton \emph{fire} permet de tirer un missile depuis le vaisseau. Puisqu'il n'est possible que de tirer un seul missile à la fois, celui-ci n'est pas d'effet tant qu'il y a un missile en déplacement. 
+Les boutons \emph{right} et \emph{left} sont explicites. Ils permettent le déplacement latéral du vaisseau que pilote le joueur.
+Le \emph{startButton} permet de passer de l'écran de démarrage au jeu. Il n'a d'effet que durant cette étape afin qu'en cas d'appui involontaire durant la partie celle-ci ne s'en retrouve pas impactée.
+
+Nous avions commencer par utiliser un seul bouton afin de passer de l'écran de démarrage au jeu et pour tirer des missiles. Cependant, lorsque le jeu commençait, un missile était automatiquement tiré et cela ne correspondait pas à ce que nous voulions. Nous avons chercher un moyen de corriger ce problème mais cela s'est avéré compliqué pour un problème mineur alors qu'une solution simple, et finalement plus pratique, était de séparer ces deux fonctions en deux boutons.
+
+Concernant les sorties \emph{blue}, \emph{red} et \emph{green}, celles-ci sont assignées sur la sortie VGA de la carte. Ces signaux correspondent aux trois couleurs (RGB) utilisé par le VGA afin d'afficher sur un écran. Puisque le VGA utilise 8 bits, les signaux \emph{red} et \emph{green} disposent de 3 bits chacun. Le signal \emph{blue} ne dispose que de 2 bits.
+Il est tout de même possible de d'afficher 256 couleurs différentes.
+
+\subsection{Entrées \& Sorties}
+\label{subsec:Entrées_Sorties_topModule}
+
+\begin{descr}
+  \itemColor{fpga\_clk} Horloge 100MHz, active sur front montant.
+  \itemColor{rst} Reset du circuit, actif à l'état haut.
+  \itemColor{startButton} Bouton situé au centre de la croix directionnelle (B8).
+  Utilisé pour démarrer une partie depuis l'écran d'accueil.
+  \itemColor{fire} Bouton supérieur de la croix directionnelle (BTNU, A8).
+  Utilisé pour tirer des lasers depuis le vaisseau vers les aliens pendant une partie.
+  \itemColor{right} Bouton right de la croix directionnelle (BTNR, D9). Utilisé
+  pour déplacer le vaisseau du joueur vers la droite.
+  \itemColor{left} Bouton gauche de la croix directionnelle (BTNL, C4). Utilisé
+  pour déplacer le vaisseau du joueur vers la gauche.
+  \itemColor{blue} Composante bleu de la sortie VGA.
+  \itemColor{red} Composante rouge de la sortie VGA.
+  \itemColor{green} Composante verte de la sortie VGA.
+\end{descr}
 
 \clearpage
+
 
 \section{Package}
 \label{sec:package}

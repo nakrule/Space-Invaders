@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.2.28)  11 MAY 2017 10:03
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.2.28)  11 MAY 2017 10:58
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -4000,6 +4000,22 @@ Package nag Warning: Command \bf is an old LaTeX 2.09 command.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
+(nag)                Use \bfseries or \textbf instead on input line 2.
+
+
+Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
+(nag)                Use \bfseries or \textbf instead on input line 2.
+
+
+Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
+(nag)                Use \bfseries or \textbf instead on input line 2.
+
+
+Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
+(nag)                Use \bfseries or \textbf instead on input line 2.
+
+
+Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 3.
 
 
@@ -4250,11 +4266,16 @@ Package microtype Info: Character `\textgreater ' is missing
 
 ] [14
 
-] [15
+] [15] [16
 
 ]
 Chapitre 3.
-[16
+
+Underfull \hbox (badness 10000) in paragraph at lines 704--704
+ |
+ []
+
+[17
 
 
 ]
@@ -4293,44 +4314,44 @@ Chapitre 3.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 703.
+(nag)                Use \bfseries or \textbf instead on input line 751.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 703.
+(nag)                Use \bfseries or \textbf instead on input line 751.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 703.
+(nag)                Use \bfseries or \textbf instead on input line 751.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 703.
+(nag)                Use \bfseries or \textbf instead on input line 751.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 703.
+(nag)                Use \bfseries or \textbf instead on input line 751.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 703.
+(nag)                Use \bfseries or \textbf instead on input line 751.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 703.
+(nag)                Use \bfseries or \textbf instead on input line 751.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 704.
+(nag)                Use \bfseries or \textbf instead on input line 752.
 
-[17
+[18
 
-] (./matlab/picturesToCOE.m) [18
+] (./matlab/picturesToCOE.m) [19
 
 ] (./matlab/picturesToFPGA.m)
 
 AED: lastpage setting LastPage
-[19
+[20
 
 ]
 \tf@ptc=\write5
@@ -4338,13 +4359,13 @@ AED: lastpage setting LastPage
 
 
 
-Package nag Warning: 33 complaints in total.
+Package nag Warning: 37 complaints in total.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 740.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 740.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 788.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 788.
 (./spaceInvaders.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 740.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 740.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 788.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 788.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -4358,12 +4379,12 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 48305 strings out of 493706
- 951635 string characters out of 6145769
- 1370595 words of memory out of 5000000
- 50686 multiletter control sequences out of 15000+600000
+ 48310 strings out of 493706
+ 951746 string characters out of 6145769
+ 1370946 words of memory out of 5000000
+ 50691 multiletter control sequences out of 15000+600000
  19042 words of font info for 163 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  75i,19n,144p,10372b,1273s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on spaceInvaders.pdf (19 pages).
+Output written on spaceInvaders.pdf (20 pages).

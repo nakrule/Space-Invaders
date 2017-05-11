@@ -1,5 +1,5 @@
-signal alienDirection : integer range 0 to 7 := 0;
-
+signal alienDirection : integer range 0 to 7:= 0;  -- If 0, aliens move left, 1=up left, 2 = up, ...
+signal alienJump      : integer range 1 to maxAlienJump := 1;  -- Pixels number alien use as unit to move
 process(reset, clk)
 begin
   if reset = '1' then

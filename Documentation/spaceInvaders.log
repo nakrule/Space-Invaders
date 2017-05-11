@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.2.28)  11 MAY 2017 10:02
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.2.28)  11 MAY 2017 10:03
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -3981,1042 +3981,108 @@ Overfull \hbox (3.01021pt too wide) in paragraph at lines 310--311
 
 ] (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
-)
+) (./vhdl/alienDirection.vhd
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 464.
-
-(./vhdl/alienDirection.vhd
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
+Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
+(nag)                Use \bfseries or \textbf instead on input line 1.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 1.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 1.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 1.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 3.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 3.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 3.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 3.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 3.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 3.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 3.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 3.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 3.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 3.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 4.
-
-
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 4.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 4.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
+Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
+(nag)                Use \bfseries or \textbf instead on input line 5.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 5.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 5.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 6.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 6.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 6.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 6.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 6.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 6.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 6.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 6.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 6.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 6.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 7.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 8.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 8.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 8.
+(nag)                Use \bfseries or \textbf instead on input line 8.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 8.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 8.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 8.
-
-
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 8.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 8.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 8.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 8.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 8.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 8.
-
-
-Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 8.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 8.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 9.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 9.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 9.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 9.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 9.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 9.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 9.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 9.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 9.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 9.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 9.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 10.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 10.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 11.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 12.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 12.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 12.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 12.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 12.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 12.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 12.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 13.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 14.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 14.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 14.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 14.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 14.
+Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
+(nag)                Use \bfseries or \textbf instead on input line 14.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 14.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 14.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 14.
-
-
-Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 14.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 14.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 14.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 15.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 15.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 15.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 15.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 15.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 15.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 15.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 15.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 15.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 15.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 15.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 16.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 16.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 17.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 18.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 18.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 18.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 18.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 18.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 18.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 18.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 19.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 20.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 20.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 20.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 20.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 20.
+Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
+(nag)                Use \bfseries or \textbf instead on input line 20.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 20.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 20.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 20.
-
-
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 20.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 20.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 20.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 21.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 21.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 21.
+(nag)                Use \bfseries or \textbf instead on input line 21.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 21.
 
 
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 21.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 21.
-
-
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 21.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 21.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 21.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 22.
+(nag)                Use \bfseries or \textbf instead on input line 22.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
 (nag)                Use \bfseries or \textbf instead on input line 22.
 
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 22.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 22.
-
-
-Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 22.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 22.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 22.
-
-)
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 464.
-
-
-Package wrapfig Warning: wrapfigure used inside a conflicting environment on in
-put line 464.
-
-[10
+) [10
 
 ] [11] [12
 
@@ -5227,35 +4293,35 @@ Chapitre 3.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 695.
+(nag)                Use \bfseries or \textbf instead on input line 703.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 695.
+(nag)                Use \bfseries or \textbf instead on input line 703.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 695.
+(nag)                Use \bfseries or \textbf instead on input line 703.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 695.
+(nag)                Use \bfseries or \textbf instead on input line 703.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 695.
+(nag)                Use \bfseries or \textbf instead on input line 703.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 695.
+(nag)                Use \bfseries or \textbf instead on input line 703.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 695.
+(nag)                Use \bfseries or \textbf instead on input line 703.
 
 
 Package nag Warning: Command \bf is an old LaTeX 2.09 command. 
-(nag)                Use \bfseries or \textbf instead on input line 696.
+(nag)                Use \bfseries or \textbf instead on input line 704.
 
 [17
 
@@ -5274,11 +4340,11 @@ AED: lastpage setting LastPage
 
 Package nag Warning: 33 complaints in total.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 732.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 732.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 740.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 740.
 (./spaceInvaders.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 732.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 732.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 740.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 740.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -5294,10 +4360,10 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  48305 strings out of 493706
  951635 string characters out of 6145769
- 1370609 words of memory out of 5000000
+ 1370595 words of memory out of 5000000
  50686 multiletter control sequences out of 15000+600000
  19042 words of font info for 163 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 75i,19n,144p,10372b,1279s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 75i,19n,144p,10372b,1273s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on spaceInvaders.pdf (19 pages).

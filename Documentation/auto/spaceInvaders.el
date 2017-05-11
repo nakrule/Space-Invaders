@@ -44,6 +44,7 @@
     "sec:package"
     "sec:convertPicture"
     "subsec:Script1"
-    "subsec:Script2"))
+    "subsec:Script2"
+    "sec:code"))
  :latex)
 

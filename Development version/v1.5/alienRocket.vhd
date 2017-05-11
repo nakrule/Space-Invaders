@@ -29,7 +29,7 @@ entity alienRocket is
     alienX       : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
     alienY       : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
     alienRocketx : out std_logic_vector(9 downto 0);  -- Alien rocket x coordinate from left screen
-    alienRockety : out std_logic_vector(9 downto 0)  -- Alien rocket y coordinate from top screen
+    alienRockety : out std_logic_vector(9 downto 0)   -- Alien rocket y coordinate from top screen
     );
 end entity;
 

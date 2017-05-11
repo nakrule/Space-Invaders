@@ -1,5 +1,5 @@
 %read the image
-I = imread('pictures/test.jpg');	
+I = imread('yourPicture.jpg');	
 [x,y,z] = size(I); % x = width, y = heigh
 width = x-1;
 		
@@ -34,7 +34,7 @@ R = bitshift(R, 5);
 COLOR = R+G+B;
 
 %save variable COLOR to a file in HEX format for the chip to read
-fileID = fopen ('out.coe', 'w');
+fileID = fopen ('output.coe', 'w');
 fprintf(fileID, 'memory_initialization_radix=16;\n');
 fprintf(fileID, 'memory_initialization_vector=\n');
 

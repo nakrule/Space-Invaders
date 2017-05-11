@@ -1,5 +1,5 @@
 %read the image
-I = imread('pictures/test.jpg');	
+I = imread('yourPicture.jpg');	
 [x,y,z] = size(I); % x = width, y = heigh
 width = x-1;
 		
@@ -34,15 +34,29 @@ R = bitshift(R, 5);
 COLOR = R+G+B;
 
 %save variable COLOR to a file in HEX format for the chip to read
-fileID = fopen ('out.coe', 'w');
-fprintf(fileID, 'memory_initialization_radix=16;\n');
-fprintf(fileID, 'memory_initialization_vector=\n');
-
+fileID = fopen ('output.vhd', 'w');
+fprintf (fileID, 'type memoryPicture is array(0 to ');
+fprintf (fileID, '%d', y-1);
+fprintf (fileID, ', 0 to ');
+fprintf (fileID, '%d', x-1);
+fprintf (fileID, ') of integer;\n');
+fprintf (fileID, 'constant picture : memoryPicture:=(\n(');
 for i = 1:size(COLOR(:), 1)-1
+    fprintf (fileID, '16#');
     fprintf (fileID, '%x', COLOR(i)); % COLOR (dec) -> print to file (hex)
-    fprintf (fileID, ',\n');
+    fprintf (fileID, '#');
+    if width == 0 % line end
+        fprintf (fileID, '),\n(');
+        width=x-1;
+    else % not end of line
+        fprintf (fileID, ',');
+        width=width-1;
+    end
 end
-fprintf (fileID, '%x;', COLOR(size(COLOR(:), 1))); % last pixel
+fprintf (fileID, '16#');
+fprintf (fileID, '%x', COLOR(size(COLOR(:), 1))); % last pixel
+fprintf (fileID, '#');
+fprintf (fileID, '));');
 fclose (fileID);
 
 %translate to hex to see how many lines

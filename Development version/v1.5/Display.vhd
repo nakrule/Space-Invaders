@@ -35,9 +35,9 @@ entity Display is
     alienX         : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
     alienRocketx   : in  std_logic_vector(9 downto 0);  -- Alien rocket x position
     alienRockety   : in  std_logic_vector(9 downto 0);  -- Alien rocket y position
+    missileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
     missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
-    MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
     hcount         : in  std_logic_vector(10 downto 0);  -- Pixel x coordinate
     vcount         : in  std_logic_vector(10 downto 0);  -- Pixel y coordinate
     alienKilled    : out std_logic;     -- 1 if alien killed

@@ -13,15 +13,16 @@
 \contentsline {section}{\numberline {2.3}Display}{8}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Entrées \& Sorties}{9}{subsection.2.3.1}
 \contentsline {section}{\numberline {2.4}Input}{10}{section.2.4}
-\contentsline {section}{\numberline {2.5}rocketManager}{11}{section.2.5}
-\contentsline {section}{\numberline {2.6}VGA Intenal}{12}{section.2.6}
-\contentsline {subsection}{\numberline {2.6.1}Entrées \& Sorties}{12}{subsection.2.6.1}
-\contentsline {section}{\numberline {2.7}Top Module}{13}{section.2.7}
-\contentsline {section}{\numberline {2.8}Package}{14}{section.2.8}
+\contentsline {subsection}{\numberline {2.4.1}Entrées \& Sorties}{10}{subsection.2.4.1}
+\contentsline {section}{\numberline {2.5}rocketManager}{12}{section.2.5}
+\contentsline {section}{\numberline {2.6}VGA Intenal}{13}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Entrées \& Sorties}{13}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.7}Top Module}{14}{section.2.7}
+\contentsline {section}{\numberline {2.8}Package}{15}{section.2.8}
 \ttl@stoptoc {default@2}
 \ttl@starttoc {default@3}
-\contentsline {chapter}{\numberline {3}Annexes}{15}{chapter.3}
-\contentsline {section}{\numberline {3.1}Convertion d'image}{16}{section.3.1}
-\contentsline {subsection}{\numberline {3.1.1}Script Matlab - Convertion en fichier COE}{17}{subsection.3.1.1}
-\contentsline {subsection}{\numberline {3.1.2}Script Matlab - Convertion en tableau VHDL}{18}{subsection.3.1.2}
+\contentsline {chapter}{\numberline {3}Annexes}{16}{chapter.3}
+\contentsline {section}{\numberline {3.1}Convertion d'image}{17}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Script Matlab - Convertion en fichier COE}{18}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Script Matlab - Convertion en tableau VHDL}{19}{subsection.3.1.2}
 \contentsfinish 

@@ -427,7 +427,7 @@ uniquement constituée de deux bits.
 \label{sec:input}
 
 
-\begin{wrapfigure}{r}{.6\textwidth}
+\begin{wrapfigure}[15]{r}{.6\textwidth}
 \begin{tikzpicture}
   \draw[fill=blockColor] (0,0) rectangle node{Input}(3,-5.25);
   % Inputs
@@ -451,14 +451,49 @@ uniquement constituée de deux bits.
 \label{inputBloc}
 \end{wrapfigure}
 
-blabla
+\emph{Input} est chargé de recevoir et traiter les actions faites par le joueur.
+Via quatre des cinq boutons de la croix directionnelle, le joueur peut démarrer
+une partie, déplacer son vaisseau et tirer. Toutes ses actions sont traiter dans
+\emph{Input}, tout comme le déplacement aléatoire des aliens sur l'écran. Ses
+derniers peuvent se mouvoir en haut, bas, gauche, droite ainsi qu'en diagonale.
+La direction qu'ils prennent est aléatoire, en fonction d'un compteur
+\emph{alienDirection} s'incrémentant à chaque coût d'horloge.
+
+\vspace{.1in}
+
+\lstinputlisting[style=vhdl]{vhdl/alienDirection.vhd}
+
+\subsection{Entrées \& Sorties}
+\label{subsec:Entrées_Sorties_input}
+
+\begin{descr}
+  \itemColor{startButton} Bouton situé au centre de la croix directionnelle (B8).
+  Utilisé pour démarrer une partie depuis l'écran d'accueil.
+  \itemColor{fire} Bouton supérieur de la croix directionnelle (BTNU, A8).
+  Utilisé pour tirer des lasers depuis le vaisseau vers les aliens pendant une partie.
+  \itemColor{clk} Horloge 40MHz, active sur front montant.
+  \itemColor{reset} Reset du circuit, actif à l'état haut.
+  \itemColor{left} Bouton gauche de la croix directionnelle (BTNL, C4). Utilisé
+  pour déplacer le vaisseau du joueur vers la gauche.
+  \itemColor{right} Bouton right de la croix directionnelle (BTNR, D9). Utilisé
+  pour déplacer le vaisseau du joueur vers la droite.
+  \itemColor{newMissile} Indique par une valeur à 1 qu'un nouveau missile a été
+  tiré par le vaisseau du joueur.
+  \itemColor{gameStarted} Indique par une valeur à 1 que le jeu à débuté.
+  \itemColor{alienX} Nombre de pixels entre le bord gauche de l'écran et le
+  board droit des aliens à l'index 0.
+  \itemColor{alienY} Nombre de pixels entre le haut de l'écran et le bord
+  supérieur des aliens contenues dans \emph{alienLine1}.
+  \itemColor{shipPosition} Nombre de pixels entre le bord gauche de l'écran et
+  le bord droit du vaisseau de joueur. Cette valeur est utilisé pour générer de l'aléatoire.
+\end{descr}
 
 \clearpage
 
 \section{rocketManager}
 \label{sec:rocketmanager}
 
-\begin{wrapfigure}{r}{.6\textwidth}
+\begin{wrapfigure}[14]{r}{.6\textwidth}
 \begin{tikzpicture}
   \draw[fill=blockColor] (0,0) rectangle node{rocketManager}(3,-4.5);
   % Inputs
@@ -479,7 +514,37 @@ blabla
 \label{rocketManagerBloc}
 \end{wrapfigure}
 
-\emph{rocketManager} 
+Le bloc \emph{rocketManager} a pour rôle de générer les missiles du vaisseau
+spatial que le joueur pilote. Le bloc \emph{Input} fourni à \emph{rocketManager}
+une impulsion, via le signal \emph{newMissile}, lorsque celui-ci doit générer un
+nouveau missile. Cette impulsion apparaît lorsque le jour clique sur le bouton
+pour tirer un nouveau missile. Dès qu'un missile est tiré (\emph{fire}), celui-ci doit avoir
+une coordonnée en X, une coordonnée en Y ainsi qu'être signaler au bloc
+\emph{Display} afin que celui-ci sache qu'un missile doit être affiché.
+
+L'entrée \emph{alienKilled} permet au bloc de savoir si un alien a été touché,
+et dans ce cas le signal de sortie \emph{rocketOnScreen} passera à 0 et le
+missile n'apparaîtra plus à l'écran. Ce signal passe
+également à 0 lorsque le missile atteint le haut de l'écran.
+
+\emph{RocketManager} utilise le signal \emph{shipPosition}, qui correspond à la
+coordonnée sur l'axe horizontale du vaisseau au moment du tire, afin de fournir
+en sortie (\emph{missileX}) la position X du missile. Cette position reste la
+même tant que le missile n'a pas atteint un alien ou le haut de l'écran.
+
+Concernant la position Y du missile, celle-ci se comporte comme un compteur. En
+effet, cette position est remise à la valeur de 570 (hauteur de l'écran moins la
+hauteur du vaisseau), afin que le missile parte du vaisseau, et est ensuite
+décrémenté jusqu'à la valeur minimum de 0 (le missile atteint donc le haut de
+l'écran).
+
+Les positions X et Y sont fouris au bloc \emph{Display} via leur signaux
+respectifs et ce dernier se charge d'afficher le missile.
+
+Le bloc \emph{rocketManager} utilise la clock afin de décrémenter le compteur de
+la position Y et le signal reset afin de remettre tous les signaux dans leur
+état d'origine.
+
 
 \clearpage
 
@@ -530,7 +595,7 @@ de sorties RGB à 0. Ce comportement est définit dans la norme VGA et résulte
 dans une erreur d'affichage ``Index out of bound'' s'il n'est pas respecté.
 
 \subsection{Entrées \& Sorties}
-\label{subsec:Entrées_Sorties_dmc}
+\label{subsec:Entrées_Sorties_vga}
 
 \begin{descr}
   \itemColor{pixel\_clk} Horloge 40MHz, active sur front montant.

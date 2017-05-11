@@ -154,10 +154,10 @@ architecture Behavioral of TopModule is
       alienLine3   : in  std_logic_vector(0 to 9);
       alienLine4   : in  std_logic_vector(0 to 9);
       alienLine5   : in  std_logic_vector(0 to 9);  -- Bottom screen alien line
-      shipPosition : in  std_logic_vector(9 downto 0);  -- Ship x coordinate, only used to generate random
       alienX       : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
       alienY       : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
       alienRocketx : out std_logic_vector(9 downto 0);  -- Alien rocket x coordinate from left screen
+		alienRockety : out std_logic_vector(9 downto 0)   -- Alien rocket y coordinate from top screen
       );
   end component;
 
@@ -255,7 +255,6 @@ begin
       alienLine3   => alienL3,
       alienLine4   => alienL4,
       alienLine5   => alienL5,
-      shipPosition => shipPosition,
       alienX       => alienX,
       alienY       => alienY,
       alienRocketx => alienRocketx,

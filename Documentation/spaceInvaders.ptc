@@ -8,18 +8,25 @@
 \contentsline {chapter}{\numberline {2}Architecture}{4}{chapter.2}
 \contentsline {section}{\numberline {2.1}alienRocket}{5}{section.2.1}
 \contentsline {subsection}{\numberline {2.1.1}Entrées \& Sorties}{6}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Problèmes rencontrés}{6}{subsection.2.1.2}
 \contentsline {section}{\numberline {2.2}Digital Clock Management}{7}{section.2.2}
 \contentsline {subsection}{\numberline {2.2.1}Entrées \& Sorties}{7}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Problèmes rencontrés}{7}{subsection.2.2.2}
 \contentsline {section}{\numberline {2.3}Display}{8}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}Entrées \& Sorties}{9}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Problèmes rencontrés}{9}{subsection.2.3.2}
 \contentsline {section}{\numberline {2.4}Input}{10}{section.2.4}
 \contentsline {subsection}{\numberline {2.4.1}Entrées \& Sorties}{10}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Problèmes rencontrés}{11}{subsection.2.4.2}
 \contentsline {section}{\numberline {2.5}rocketManager}{12}{section.2.5}
 \contentsline {subsection}{\numberline {2.5.1}Entrées \& Sorties}{12}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Problèmes rencontrés}{12}{subsection.2.5.2}
 \contentsline {section}{\numberline {2.6}VGA Internal}{13}{section.2.6}
 \contentsline {subsection}{\numberline {2.6.1}Entrées \& Sorties}{13}{subsection.2.6.1}
+\contentsline {subsection}{\numberline {2.6.2}Problèmes rencontrés}{13}{subsection.2.6.2}
 \contentsline {section}{\numberline {2.7}Top Module}{14}{section.2.7}
 \contentsline {subsection}{\numberline {2.7.1}Entrées \& Sorties}{14}{subsection.2.7.1}
+\contentsline {subsection}{\numberline {2.7.2}Problèmes rencontrés}{15}{subsection.2.7.2}
 \contentsline {section}{\numberline {2.8}Package}{16}{section.2.8}
 \ttl@stoptoc {default@2}
 \ttl@starttoc {default@3}
@@ -30,10 +37,10 @@
 \contentsline {section}{\numberline {3.2}Code source}{21}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}alienRocket}{21}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}Digital Clock Management}{26}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}Display}{28}{subsection.3.2.3}
-\contentsline {subsection}{\numberline {3.2.4}Input}{34}{subsection.3.2.4}
-\contentsline {subsection}{\numberline {3.2.5}rocketManager}{36}{subsection.3.2.5}
-\contentsline {subsection}{\numberline {3.2.6}VGA Internal}{37}{subsection.3.2.6}
-\contentsline {subsection}{\numberline {3.2.7}Top Module}{39}{subsection.3.2.7}
-\contentsline {subsection}{\numberline {3.2.8}Package}{42}{subsection.3.2.8}
+\contentsline {subsection}{\numberline {3.2.3}Display}{27}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Input}{28}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}rocketManager}{28}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}VGA Internal}{28}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Top Module}{29}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}Package}{29}{subsection.3.2.8}
 \contentsfinish 

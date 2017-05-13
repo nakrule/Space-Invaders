@@ -82,7 +82,7 @@ pour détruire le vaisseau spacial contrôlé par le joueur.
 
 Si le vaisseau du joueur se fait toucher par un laser alien, la partie est
 perdue. Si, au contraire, le joueur réussit à détruire tous les aliens sans se
-faire lui-même toucher, il gagne la partie. La figure ci-dessus représente une
+faire lui-même toucher, il gagne la partie. La figure \ref{gameOnArcade} représente une
 partie typique de \emph{Space Invaders} sur borne arcade tel que le jeu était
 lors de son lancement initial en 1978.
 
@@ -110,9 +110,6 @@ fonctionnalités, tel que:\vspace{.1in}
   détruire rapport des points bonus.
 \item Bouclier pour protéger le vaisseaux.
 \end{items}
-
-
-
 
 % --------------------------------------------------------------------
 \asymmetricalPage
@@ -144,9 +141,9 @@ le déroulement d'une partie. De plus, deux composants, \emph{Input} et
 \label{sec:label}
 
 
-\begin{wrapfigure}[23]{r}{.55\textwidth}
+\begin{wrapfigure}[21]{r}{.55\textwidth}
 \begin{tikzpicture}
-  \draw[fill=blockColor] (0,0) rectangle node{alienRocket}(3,-8.25);
+  \draw[fill=blockColor] (0,0) rectangle node{alienRocket}(3,-7.5);
   % Inputs
   \draw (-1,-.75) node[left]{reset}-- (0,-.75);
   \draw (-1,-1.5) node[left]{clk}-- (0,-1.5);
@@ -160,12 +157,10 @@ le déroulement d'une partie. De plus, deux composants, \emph{Input} et
   \draw (-.4,-4.2) node[left]{10} -- (-.6, -4.7);
   \draw (-1,-5.25) node[left]{alienLine5}-- (0,-5.25);
   \draw (-.4,-5.05) node[left]{10} -- (-.6, -5.45);
-  \draw (-1,-6) node[left]{shipPosition}-- (0,-6);
+  \draw (-1,-6) node[left]{alienX}-- (0,-6);
   \draw (-.4,-5.8) node[left]{10} -- (-.6, -6.2);
-  \draw (-1,-6.75) node[left]{alienX}-- (0,-6.75);
-  \draw (-.4,-6.55) node[left]{10} -- (-.6, -6.95);
-  \draw (-1,-7.5) node[left]{alienY}-- (0,-7.5);
-  \draw (-.4,-7.3) node[left]{9} -- (-.6, -7.7);
+  \draw (-1,-6.75) node[left]{alienY}-- (0,-6.75);
+  \draw (-.4,-6.55) node[left]{9} -- (-.6, -6.95);
   % Outputs
   \draw (4,-.75) node[right]{alienRocketX}-- (3,-.75);
   \draw (3.6,-.55) node[right]{10} -- (3.4, -.95);
@@ -178,18 +173,18 @@ le déroulement d'une partie. De plus, deux composants, \emph{Input} et
 
 Le bloc \emph{alienRocket} gère les roquettes, aussi appelé laser ou missile, tirés par
 les aliens en direction du spationef. Il est chargé de générer de nouveaux
-missiles ainsi que de transmettre les informatins nécessaire au bloc \emph{Display} pour afficher
+missiles ainsi que de transmettre les informations nécessaires au bloc \emph{Display} pour afficher
 correctement une roquette à l'écran.
 Dans notre implémentation du jeu, le joueur fait face à 50 aliens, réparties en
 une grille de 5 lignes et 10 colonnes (tableau \ref{alientable}). Par colonne,
-chaque aliens le plus proche du bat de l'écran peut tirer une roquette vers le
-bat pour tenter de détruire le vaisseau du joueur. Une seule roquette peut être
+chaque aliens le plus proche du bas de l'écran peut tirer une roquette vers le
+bas pour tenter de détruire le vaisseau du joueur. Une seule roquette peut être
 affiché à l'écran en même temps (sans compter les tirs du joueur). Cela signifie
 que tant que le missile n'a pas atteint le bat de l'écran, les aliens ne peuvent
 pas en tirer un nouveau.
 
 Lorsqu'une roquette peut être tiré, le choix de la colonne d'alien pouvant tirer
-se fait de manière aléatoire entre toutes les colonnes qui contiennes au moi un
+se fait de manière aléatoire entre toutes les colonnes qui contiennes au moins un
 alien. Par exemple, soit les aliens encore en vie selon le tableau
 \ref{alientable}. Une roquette peut être tiré depuis les aliens 0-4 et 7-9 de la
 ligne 5 (alienLine5), ainsi que depuis les alien 5 et 6 de la ligne 4 (alienLine4).
@@ -229,29 +224,37 @@ ligne 5 (alienLine5), ainsi que depuis les alien 5 et 6 de la ligne 4 (alienLine
     \includegraphics[width=.05\textwidth]{pictures/aliens/green}&
     \includegraphics[width=.05\textwidth]{pictures/aliens/green}&
     \includegraphics[width=.05\textwidth]{pictures/aliens/green}\\
-    $\begin{matrix}\text{alienLine4}\\ \text{ }\end{matrix}$ & \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
-    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
-    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
-    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
-    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
-    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
-    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
-    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
-    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
-    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}\\
-    $\begin{matrix}\text{alienLine5}\\ \text{ }\end{matrix}$ & \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}&
+    $\begin{matrix}\text{alienLine4}\\ \text{ }\end{matrix}$ & \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}&
     \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}&
     \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}&
     \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}&
-    \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}&&&
+    \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}&
+    \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}&
+    \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}&
     \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}&
     \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}&
     \includegraphics[width=.05\textwidth]{pictures/aliens/yellow}\\
+    $\begin{matrix}\text{alienLine5}\\ \text{ }\end{matrix}$ & \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
+    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
+    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
+    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
+    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&&&
+    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
+    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}&
+    \includegraphics[width=.05\textwidth]{pictures/aliens/purple}\\
   \end{tabular}
   \caption{Gestion des aliens dans le jeux}
   \label{alientable}
 \end{table}
 
+Les signaux \emph{alienLine1} à \emph{alienLine5} sont des
+\emph{std\_logic\_vector} de 10 bits. Chaque bits indique par une valeur à 1 la
+présence d'un alien à l'index correspondant, alors qu'un 0 indique que l'alien a
+été tué par le joueur. Par exemple, selon le tableau \ref{alientable},
+\emph{alienLine5} vaut \emph{1111100111}.
+
+La fréquence à laquelle les aliens tirent des roquettes peut être modifiée en
+changant la constante \emph{rocketFrequency} dans le package \emph{SpaceInvadersPackage}.
 
 \clearpage
 
@@ -267,8 +270,6 @@ ligne 5 (alienLine5), ainsi que depuis les alien 5 et 6 de la ligne 4 (alienLine
   \itemColor{alienLine3} Identique à alienLine2, pour la ligne d'alien en dessous.
   \itemColor{alienLine4} Identique à alienLine3, pour la ligne d'alien en dessous.
   \itemColor{alienLine5} Identique à alienLine4, pour la ligne d'alien en dessous.
-  \itemColor{shipPosition} Nombre de pixels entre le bord gauche de l'écran et
-  le bord droit du vaisseau de joueur. Cette valeur est utilisé pour générer de l'aléatoire.
   \itemColor{alienX} Nombre de pixels entre le bord gauche de l'écran et le
   board droit des aliens à l'index 0.
   \itemColor{alienY} Nombre de pixels entre le haut de l'écran et le bord
@@ -279,12 +280,17 @@ ligne 5 (alienLine5), ainsi que depuis les alien 5 et 6 de la ligne 4 (alienLine
   haut de la rocket tirée par les aliens.
 \end{descr}
 
+\subsection{Problèmes rencontrés}
+\label{subsec:Problèmes_rencontrés_alienRocket}
+
+
+
 \clearpage
 
 \section{Digital Clock Management}
 \label{sec:dcm}
 
-\begin{wrapfigure}[10]{r}{.5\textwidth}
+\begin{wrapfigure}[8]{l}{.5\textwidth}
 \begin{tikzpicture}
   \draw[fill=blockColor] (0,0) rectangle node{DCM}(3,3);
   \draw (-1,1) node[left]{clk\_in1}-- (0,1);
@@ -299,8 +305,9 @@ ligne 5 (alienLine5), ainsi que depuis les alien 5 et 6 de la ligne 4 (alienLine
 La norme VGA utilise une fréquence de 40MHz pour le balayage de l’écran. Or,
 l’horloge intégrée à notre carte dispose d’une fréquence de 100MHz. Le bloc DCM
 crée une horloge de 40MHz grâce à une horloge d'entrée de 100MHz.
-Ce type de montage étant très courant, il existe des outils, appelé IP Core, pour générer un
-composant selon nos besoins.
+Ce type de montage étant très courant, il existe des outils, appelé IP Core,
+pour générer des commposants génériques tel qu'un \emph{DCM}. 
+\vspace{.4in}
 
 \subsection{Entrées \& Sorties}
 \label{subsec:Entrées_Sorties_dmc}
@@ -312,12 +319,16 @@ composant selon nos besoins.
   \itemColor{locked} Sortie non utilisée.
 \end{descr}
 
+
+\subsection{Problèmes rencontrés}
+\label{subsec:Problèmes_rencontrés_alienRocket}
+
 \clearpage
 
 \section{Display}
 \label{sec:display}
 
-\begin{wrapfigure}{r}{.6\textwidth}
+\begin{wrapfigure}[30]{r}{.6\textwidth}
 \begin{tikzpicture}
   \draw[fill=blockColor] (0,0) rectangle node{Display}(3,-11.25);
   % Inputs
@@ -372,7 +383,35 @@ Grâce aux signaux généraux par les composants \emph{VGA\_Internal} et
 \emph{DCM}, \emph{Display} est en mesure d'afficher des données à l'écran au
 moyen des trois sorties \emph{red}, \emph{green} et \emph{blue}. Ses dernières
 sont codés sur trois bits, à l'exception de la composante bleu qui n'est
-uniquement constituée de deux bits.
+uniquement constituée de deux bits, en accord avec la norme VGA.
+
+Différent test sont effectué dans \emph{Display} pour distinguer quels éléments
+doivent être affichés et lesquels ne doivent pas l'être. Le premier d'entre eux
+est de consulter la valeur de \emph{gameStarted} pour afficher au non l'écran
+titre du jeu. Si cette valeur vaut 1, le composant détecte si la partie est
+terminée ou encore en cours. Pour celà, il suffit de regarder si la roquette des
+aliens est au même coordonnées que le vaisseau du joueur.
+
+De cette manière, \emph{Display} est non seulement utilisé pour afficher des
+données à l'écran mais également pour faire des tests sur l'état du jeu, comme
+la détection de fin de partie (que se soit une victoire ou un défaite du
+joueur) ainsi que la gestion des collisions entre les rockets et les aliens ou
+le joueur. Le choix d'avoir fait ses tests à l'intérieur de \emph{Display} plutôt
+que de créer un nouveau block spécifique à ce cas fut digirer par le fait que
+tous les signaux nécessaires à ces deux tests étaient déjà présent dans ce
+blocs, et qu'il aurait été redondant de les ajouter ailleurs.
+
+\begin{minipage}{.5\textwidth}
+\lstinputlisting[style=vhdl, firstline=418, lastline=430, caption=Détection de
+la mort du joueur.]{../Development/v1.5/Display.vhd}
+\end{minipage}
+\hspace{.05\textwidth}
+\begin{minipage}{.45\textwidth}
+  Lorsque la partie est en cours, les aliens sont affichées à l'écran selon les
+  signaux internes \emph{alienLine1} à \emph{alienLine5}. Ces derniers
+  fonctionne de la même manière que dans le bloc \emph{alienRocket} (voir
+  tableau \ref{alientable}).
+\end{minipage}
 
 \clearpage
 
@@ -419,6 +458,8 @@ uniquement constituée de deux bits.
   \itemColor{alienL5} Identique à \emph{alienL4} pour la rangée d'aliens inférieur.
 \end{descr}
 
+\subsection{Problèmes rencontrés}
+\label{subsec:Problèmes_rencontrés_alienRocket}
 
 
 \clearpage
@@ -427,7 +468,7 @@ uniquement constituée de deux bits.
 \label{sec:input}
 
 
-\begin{wrapfigure}[16]{r}{.6\textwidth}
+\begin{wrapfigure}[16]{l}{.6\textwidth}
 \begin{tikzpicture}
   \draw[fill=blockColor] (0,0) rectangle node{Input}(3,-5.25);
   % Inputs
@@ -488,6 +529,10 @@ définie en modifiant la valeur \emph{maxAlienJump} dans le package du jeu.
   \itemColor{shipPosition} Nombre de pixels entre le bord gauche de l'écran et
   le bord droit du vaisseau de joueur. Cette valeur est utilisé pour générer de l'aléatoire.
 \end{descr}
+
+
+\subsection{Problèmes rencontrés}
+\label{subsec:Problèmes_rencontrés_alienRocket}
 
 \clearpage
 
@@ -566,13 +611,16 @@ la position Y et le signal reset afin de remettre tous les signaux dans leur
   lancée par les aliens.
 \end{descr}
 
+\subsection{Problèmes rencontrés}
+\label{subsec:Problèmes_rencontrés_alienRocket}
+
 \clearpage
 
 \section{VGA Internal}
 \label{sec:vgainternal}
 
 
-\begin{wrapfigure}[13]{r}{.55\textwidth}
+\begin{wrapfigure}[14]{l}{.5\textwidth}
 \begin{tikzpicture}
   \draw[fill=blockColor] (0,0) rectangle node{VGAInternal}(3,-4.5);
   % Inputs
@@ -599,7 +647,7 @@ savoir à quel pixel il correspond selon l’instant $t$ auquel il lit ses donn
 dans le balayage. Néanmoins, ce n’est pas l’écran qui est chargé de sauter
 automatiquement à la ligne suivante lorsque chaque pixel de la ligne actuel a
 été traité. C’est ce à quoi sert le signal \emph{HS}, alors que \emph{VS} indique un retour à
-la première ligne.
+la première ligne.\\
 
 \infoInfo{Retour à la ligne}{Afin d’informer le monitor que le
 balayage est arrivé à la fin d’une ligne et que le prochain pixel sera le premier de
@@ -630,6 +678,10 @@ dans une erreur d'affichage ``Index out of bound'' s'il n'est pas respecté.
   \itemColor{hcount} Coordonnée $X$ du balayage.
   \itemColor{vcount} Coordonnée $Y$ du balayage.
 \end{descr}
+
+\subsection{Problèmes rencontrés}
+\label{subsec:Problèmes_rencontrés_alienRocket}
+
 \clearpage
 
 \section{Top Module}
@@ -693,6 +745,9 @@ Il est tout de même possible de d'afficher 256 couleurs différentes.
   \itemColor{red} Composante rouge de la sortie VGA.
   \itemColor{green} Composante verte de la sortie VGA.
 \end{descr}
+
+\subsection{Problèmes rencontrés}
+\label{subsec:Problèmes_rencontrés_alienRocket}
 
 \clearpage
 
@@ -794,25 +849,25 @@ dans les commentaires du code.
 
 \clearpage
 \subsection{Digital Clock Management}
-\lstinputlisting[style=vhdl]{../Development/v1.5/dcm.vhd}
+%\lstinputlisting[style=vhdl]{../Development/v1.5/dcm.vhd}
 \clearpage
 \subsection{Display}
-\lstinputlisting[style=vhdl]{../Development/v1.5/Display.vhd}
+%\lstinputlisting[style=vhdl]{../Development/v1.5/Display.vhd}
 \clearpage
 \subsection{Input}
-\lstinputlisting[style=vhdl]{../Development/v1.5/input.vhd}
+%\lstinputlisting[style=vhdl]{../Development/v1.5/input.vhd}
 
 \subsection{rocketManager}
-\lstinputlisting[style=vhdl]{../Development/v1.5/rocketManager.vhd}
+%\lstinputlisting[style=vhdl]{../Development/v1.5/rocketManager.vhd}
 
 \subsection{VGA Internal}
-\lstinputlisting[style=vhdl]{../Development/v1.5/VGA_Internal.vhd}
+%\lstinputlisting[style=vhdl]{../Development/v1.5/VGA_Internal.vhd}
 \clearpage
 \subsection{Top Module}
-\lstinputlisting[style=vhdl]{../Development/v1.5/TopModule.vhd}
+%\lstinputlisting[style=vhdl]{../Development/v1.5/TopModule.vhd}
 
 \subsection{Package}
-\lstinputlisting[style=vhdl, lastline=93]{../Development/v1.5/SpaceInvadersPackage.vhd}
+%\lstinputlisting[style=vhdl, lastline=93]{../Development/v1.5/SpaceInvadersPackage.vhd}
 
 
 \end{document}

@@ -18,13 +18,13 @@ use work.SpaceInvadersPackage.all;
 
 entity alienRocket is
   port(
-    reset        : in  std_logic;       -- Active high
-    clk          : in  std_logic;       -- 40MHz
-    alienLine1   : in  std_logic_vector(0 to 9);  -- Top screen alien line
+    reset        : in  std_logic;                     -- Active high
+    clk          : in  std_logic;                     -- 40MHz
+    alienLine1   : in  std_logic_vector(0 to 9);      -- Top screen alien line
     alienLine2   : in  std_logic_vector(0 to 9);
     alienLine3   : in  std_logic_vector(0 to 9);
     alienLine4   : in  std_logic_vector(0 to 9);
-    alienLine5   : in  std_logic_vector(0 to 9);  -- Bottom screen alien line
+    alienLine5   : in  std_logic_vector(0 to 9);      -- Bottom screen alien line
     alienX       : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
     alienY       : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
     alienRocketx : out std_logic_vector(9 downto 0);  -- Alien rocket x coordinate from left screen
@@ -45,18 +45,27 @@ architecture logic of alienRocket is
   signal column9  : std_logic_vector(4 downto 0);
   signal column10 : std_logic_vector(4 downto 0);  -- Last column of alien
 
-  signal columnCounter  : integer range 0 to 9                                  := 0;  -- Determine the shooting column
-  signal newShoot       : integer range 0 to 1                                  := 0;  -- Force a new shoot if 1
-  signal shootTimer     : integer range 0 to rocketFrequency                    := 0;  -- Determine the shooting column
-  signal rocketYY       : integer range 0 to VLINES                             := VLINES;  -- Alien rocket y position from top screen
-  signal rocketLaunched : integer range 0 to 1                                  := 0;  -- If 1, a rocket is launched
-  signal rocketXX       : integer range alienXMargin to (HLINES - alienXMargin) := alienXMargin;  -- Rocket x position when a new one is launched
-  signal rocketXXX      : integer range alienXMargin to (HLINES - alienXMargin) := alienXMargin;  -- Copy of rocketXX before it is reset to 0
-  signal newRocketYY    : integer range 0 to VLINES                             := 0;  -- Y position of a new rocket launched
-  signal alienXX        : integer range 0 to 1000;  -- Integer value of alienX
-  signal alienYY        : integer range 0 to 1000;  -- Integer value of alienY
+  signal alienXX        : integer range 0 to 1000;             -- Integer value of alienX
+  signal alienYY        : integer range 0 to 1000;             -- Integer value of alienY
   signal rocketSpeed    : integer range 0 to missileSpeed;     -- Missile speed
-  signal rocketFinished : integer range 0 to 1                                  := 1;  -- If 1, a new rocket can be launched
+  signal columnCounter  : integer range 0 to 9          := 0;  -- Determine the shooting column
+  signal newShoot       : integer range 0 to 1          := 0;  -- Force a new shoot if 1
+  signal rocketLaunched : integer range 0 to 1          := 0;  -- If 1, a rocket is launched
+  signal newRocketYY    : integer range 0 to VLINES     := 0;  -- Y position of a new rocket launched
+  signal rocketFinished : integer range 0 to 1          := 1;  -- If 1, a new rocket can be launched
+  signal shootTimer     : integer range 0 to rocketFrequency                    := 0;             -- Determine the
+                                                                                                  -- shooting 
+                                                                                                  -- column
+  signal rocketYY       : integer range 0 to VLINES                             := VLINES;        -- Alien rocket y 
+                                                                                                  -- position from 
+                                                                                                  -- top screen
+  signal rocketXX       : integer range alienXMargin to (HLINES - alienXMargin) := alienXMargin;  -- Rocket x 
+                                                                                                  -- position when
+                                                                                                  -- a new one is 
+                                                                                                  -- launched
+  signal rocketXXX      : integer range alienXMargin to (HLINES - alienXMargin) := alienXMargin;  -- Copy rocketXX 
+                                                                                                  -- before it is 
+                                                                                                  -- reset to 0
 
 begin
 
@@ -77,7 +86,7 @@ begin
   alienXX <= to_integer(unsigned(alienX));
   alienYY <= to_integer(unsigned(alienY));
 
-  -- columnCounter, rocketXXX and shootTimer
+  -- Update columnCounter, rocketXXX and shootTimer.
   process(reset, clk)
   begin
     if reset = '1' then
@@ -86,7 +95,7 @@ begin
       rocketXXX     <= alienXMargin;
     elsif rising_edge(clk) then
       -- rocketXX
-      if rocketXX > alienXMargin then
+      if rocketXX > alienXMargin then      -- If a new rocket has been launched, rocketXX != alienXMargin.
         rocketXXX <= rocketXX;
       else
         rocketXXX <= rocketXXX;
@@ -98,7 +107,7 @@ begin
         columnCounter <= columnCounter + 1;
       end if;
       -- shootTimer
-      if newShoot = 1 then
+      if newShoot = 1 then                -- Force a new shoot.
         shootTimer <= rocketFrequency;
       elsif shootTimer = rocketFrequency then
         shootTimer <= 0;
@@ -108,15 +117,16 @@ begin
     end if;
   end process;
 
-  -- Launch new alien rocket
-  process(shootTimer, columnCounter, column1, column2, column3, column4, column5, column6, column7, column8, column9, column10, alienyy, alienxx, rocketFinished)
+  -- Launch new alien rocket.
+  process(shootTimer, columnCounter, column1, column2, column3, column4, column5, column6, column7, 
+          column8, column9, column10, alienyy, alienxx, rocketFinished)
   begin
     if shootTimer = rocketFrequency and rocketFinished = 1 then
       rocketLaunched <= 1;
       newShoot       <= 0;
-      case columnCounter is
+      case columnCounter is                      -- Check which column will shoot.
         when 0 =>
-          if column1 > "00000" then
+          if column1 > "00000" then              -- Check which alien in the column will shoot.
             if column1 > "01111" then
               newRocketYY <= (alienYY + 150);
               rocketXX    <= (alienXX+15);
@@ -354,7 +364,7 @@ begin
     end if;
   end process;
 
-  -- Update rocketYY
+  -- Update rocketYY.
   process(reset, clk, newShoot)
   begin
     if reset = '1' or newShoot = 1 then
@@ -368,16 +378,15 @@ begin
 
       if rocketSpeed = missileSpeed then
         rocketSpeed <= 0;
-        if rocketYY = VLINES then
+        if rocketYY = VLINES then            -- Rocket is to the top of the screen.
           rocketYY       <= VLINES;
           rocketFinished <= 1;
-        else
+        else                                 -- Rocket go up.
           rocketYY       <= rocketYY + 1;
           rocketFinished <= 0;
         end if;
       else
         rocketSpeed <= rocketSpeed + 1;
-      --rocketFinished <= 0;
       end if;
     end if;
   end process;

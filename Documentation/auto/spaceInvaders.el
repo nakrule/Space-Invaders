@@ -24,6 +24,7 @@
     "alienRocketBloc"
     "alientable"
     "subsec:Entrées_Sorties_alienRocket"
+    "subsec:Problèmes_rencontrés_alienRocket"
     "sec:dcm"
     "dcmBloc"
     "subsec:Entrées_Sorties_dmc"

@@ -21,12 +21,12 @@ use work.SpaceInvadersPackage.all;
 
 entity rocketManager is
   port(
-    newMissile     : in  std_logic;     -- If 1, new missile launched
-    reset          : in  std_logic;     -- Active high
-    clk            : in  std_logic;     -- 40MHz
-    alienKilled    : in  std_logic;     -- 1 if alien killed
+    newMissile     : in  std_logic;                     -- If 1, new missile launched
+    reset          : in  std_logic;                     -- Active high
+    clk            : in  std_logic;                     -- 40MHz
+    alienKilled    : in  std_logic;                     -- 1 if alien killed
     shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
-    rocketOnScreen : out std_logic;     -- If 1, display a rocket
+    rocketOnScreen : out std_logic;                     -- If 1, display a rocket
     missileY       : out std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
     MissileX       : out std_logic_vector(9 downto 0)   -- Missile x coordinate
     );
@@ -34,11 +34,12 @@ end rocketManager;
 
 architecture Behavioral of rocketManager is
 
-  signal rocketDisplayed : std_logic;   -- Integer of rocketOnScreen
+  signal rocketDisplayed : std_logic;                       -- Integer of rocketOnScreen
   signal rocketY         : integer range 0 to (VLINES-30);  -- Pixels between top screen and top missile
-  signal missileTimer    : integer range 0 to missileSpeed;
-  signal shootFinished   : integer range 0 to 1;  -- If 1, current missile is off screen
-  signal MissileXX       : integer range shipMargin to (HLINES-shipMargin) := shipMargin;  -- Current Missile x value from left screen
+  signal missileTimer    : integer range 0 to missileSpeed; -- Slow down fire rate
+  signal shootFinished   : integer range 0 to 1;            -- If 1, current missile is off screen
+  signal MissileXX       : integer range shipMargin to (HLINES-shipMargin) := shipMargin;  -- Missile x value 
+                                                                                           -- from left screen
 
 begin
 

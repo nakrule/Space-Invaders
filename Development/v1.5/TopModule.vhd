@@ -19,14 +19,14 @@ use ieee.numeric_std.all;
 
 entity TopModule is
   port(
-    fpga_clk    : in  std_logic;        -- 100MHz
-    rst         : in  std_logic;        -- Active high
-    startButton : in  std_logic;        -- Start button
-    fire        : in  std_logic;        -- Fire button
-    right       : in  std_logic;        -- Right arrow button
-    left        : in  std_logic;        -- Left arrow button
-    HS          : out std_logic;        -- VGA horizontal synchronization
-    VS          : out std_logic;        -- VGA vertical synchronization
+    fpga_clk    : in  std_logic;                     -- 100MHz
+    rst         : in  std_logic;                     -- Active high
+    startButton : in  std_logic;                     -- Start button
+    fire        : in  std_logic;                     -- Fire button
+    right       : in  std_logic;                     -- Right arrow button
+    left        : in  std_logic;                     -- Left arrow button
+    HS          : out std_logic;                     -- VGA horizontal synchronization
+    VS          : out std_logic;                     -- VGA vertical synchronization
     red         : out std_logic_vector(2 downto 0);  -- VGA red bus
     green       : out std_logic_vector(2 downto 0);  -- VGA green bus
     blue        : out std_logic_vector(1 downto 0)   -- VGA blue bus
@@ -42,22 +42,22 @@ architecture Behavioral of TopModule is
   signal newMissile        : std_logic;  -- When 1, new missile launched
   signal rocketOnScreen    : std_logic;  -- If 1, display a rocket
   signal alienKilled       : std_logic;  -- If 1, the rocket killed an alien
-  signal startScreenROMOut : std_logic_vector(7 downto 0);  -- Used as ImageInput in display
-  signal alienY            : std_logic_vector(8 downto 0);  -- first alien position from top screen
-  signal shipPosition      : std_logic_vector(9 downto 0);  -- From left screen
-  signal alienX            : std_logic_vector(9 downto 0);  -- first alien position from left screen
-  signal missileY          : std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
+  signal startScreenROMOut : std_logic_vector(7 downto 0);   -- Used as ImageInput in display
+  signal alienY            : std_logic_vector(8 downto 0);   -- first alien position from top screen
+  signal shipPosition      : std_logic_vector(9 downto 0);   -- From left screen
+  signal alienX            : std_logic_vector(9 downto 0);   -- first alien position from left screen
+  signal missileY          : std_logic_vector(9 downto 0);   -- Pixels between top screen and top missile position
   signal hcount            : std_logic_vector(10 downto 0);  -- VGA horizontal synchronization
   signal vcount            : std_logic_vector(10 downto 0);  -- VGA vertical synchronization
   signal romAddress        : std_logic_vector(14 downto 0);  -- Combination of hcount and vcount
-  signal MissileX          : std_logic_vector(9 downto 0);  -- Missile x coordinate
-  signal alienRocketx      : std_logic_vector(9 downto 0);  -- Alien rocket x position
-  signal alienRockety      : std_logic_vector(9 downto 0);  -- Alien rocket y position
-  signal alienL1           : std_logic_vector(0 to 9);  -- Same value as alienLine2
-  signal alienL2           : std_logic_vector(0 to 9);  -- Same value as alienLine2
-  signal alienL3           : std_logic_vector(0 to 9);  -- Same value as alienLine3
-  signal alienL4           : std_logic_vector(0 to 9);  -- Same value as alienLine4
-  signal alienL5           : std_logic_vector(0 to 9);  -- Same value as alienLine5
+  signal MissileX          : std_logic_vector(9 downto 0);   -- Missile x coordinate
+  signal alienRocketx      : std_logic_vector(9 downto 0);   -- Alien rocket x position
+  signal alienRockety      : std_logic_vector(9 downto 0);   -- Alien rocket y position
+  signal alienL1           : std_logic_vector(0 to 9);       -- Same value as alienLine2
+  signal alienL2           : std_logic_vector(0 to 9);       -- Same value as alienLine2
+  signal alienL3           : std_logic_vector(0 to 9);       -- Same value as alienLine3
+  signal alienL4           : std_logic_vector(0 to 9);       -- Same value as alienLine4
+  signal alienL5           : std_logic_vector(0 to 9);       -- Same value as alienLine5
 
   component display is
     port(
@@ -65,44 +65,44 @@ architecture Behavioral of TopModule is
       gameStarted    : in  std_logic;   -- When 0, show start screen
       rocketOnScreen : in  std_logic;   -- If 1, display a rocket
       clk            : in  std_logic;   -- 40MHz
-      alienRocketx   : in  std_logic_vector(9 downto 0);  -- Alien rocket x position
-      alienRockety   : in  std_logic_vector(9 downto 0);  -- Alien rocket y position
-      missileY       : in  std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
-      shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
-      MissileX       : in  std_logic_vector(9 downto 0);  -- Missile x coordinate
+      alienRocketx   : in  std_logic_vector(9 downto 0);   -- Alien rocket x position
+      alienRockety   : in  std_logic_vector(9 downto 0);   -- Alien rocket y position
+      missileY       : in  std_logic_vector(9 downto 0);   -- Pixels between top screen and top missile position
+      shipPosition   : in  std_logic_vector(9 downto 0);   -- Ship x coordinate
+      MissileX       : in  std_logic_vector(9 downto 0);   -- Missile x coordinate
       hcount         : in  std_logic_vector(10 downto 0);  -- Pixel x coordinate
       vcount         : in  std_logic_vector(10 downto 0);  -- Pixel y coordinate
-      imageInput     : in  std_logic_vector(7 downto 0);  -- data from rom
-      alienX         : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
-      alienY         : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
-      alienKilled    : out std_logic;   -- 1 if alien killed
-      red            : out std_logic_vector(2 downto 0);  -- Red color output
-      green          : out std_logic_vector(2 downto 0);  -- Green color output
-      blue           : out std_logic_vector(1 downto 0);  -- Blue color output
-      alienL1        : out std_logic_vector(0 to 9);  -- Same value as alienLine1
-      alienL2        : out std_logic_vector(0 to 9);  -- Same value as alienLine2
-      alienL3        : out std_logic_vector(0 to 9);  -- Same value as alienLine3
-      alienL4        : out std_logic_vector(0 to 9);  -- Same value as alienLine4
-      alienL5        : out std_logic_vector(0 to 9)  -- Same value as alienLine5
+      imageInput     : in  std_logic_vector(7 downto 0);   -- data from rom
+      alienX         : in  std_logic_vector(9 downto 0);   -- first alien position from left screen
+      alienY         : in  std_logic_vector(8 downto 0);   -- first alien position from top screen
+      alienKilled    : out std_logic;                      -- 1 if alien killed
+      red            : out std_logic_vector(2 downto 0);   -- Red color output
+      green          : out std_logic_vector(2 downto 0);   -- Green color output
+      blue           : out std_logic_vector(1 downto 0);   -- Blue color output
+      alienL1        : out std_logic_vector(0 to 9);       -- Same value as alienLine1
+      alienL2        : out std_logic_vector(0 to 9);       -- Same value as alienLine2
+      alienL3        : out std_logic_vector(0 to 9);       -- Same value as alienLine3
+      alienL4        : out std_logic_vector(0 to 9);       -- Same value as alienLine4
+      alienL5        : out std_logic_vector(0 to 9)        -- Same value as alienLine5
       );
   end component;
 
   component dcm is
     port(
-      CLK_IN1  : in  std_logic;         -- 100MHz
-      RESET    : in  std_logic;         -- Active high
-      CLK_OUT1 : out std_logic;         -- 40MHz
-      LOCKED   : out std_logic          -- Unused
+      CLK_IN1  : in  std_logic;      -- 100MHz
+      RESET    : in  std_logic;      -- Active high
+      CLK_OUT1 : out std_logic;      -- 40MHz
+      LOCKED   : out std_logic       -- Unused
       );
   end component;
 
   component vga_internal is
     port(
-      pixel_clk : in  std_logic;        -- 40MHz
-      rst       : in  std_logic;        -- active low
-      hs        : out std_logic;        -- Horizontale synchonization impulsion
-      vs        : out std_logic;        -- Vertical synchonization impulsion
-      blank     : out std_logic;        -- If 1,  video output must be null
+      pixel_clk : in  std_logic;     -- 40MHz
+      rst       : in  std_logic;     -- active low
+      hs        : out std_logic;     -- Horizontale synchonization impulsion
+      vs        : out std_logic;     -- Vertical synchonization impulsion
+      blank     : out std_logic;     -- If 1,  video output must be null
       hcount    : out std_logic_vector(10 downto 0);  -- Pixel x coordinate
       vcount    : out std_logic_vector(10 downto 0)   -- Pixel y coordinate
       );
@@ -110,7 +110,7 @@ architecture Behavioral of TopModule is
 
   component StartScreenRom
     port(
-      clka  : in  std_logic;            -- 40MHz
+      clka  : in  std_logic;                      -- 40MHz
       addra : in  std_logic_vector(14 downto 0);  -- Combinaison of hcount and vcount
       douta : out std_logic_vector(7 downto 0)    -- ROM output
       );
@@ -139,9 +139,9 @@ architecture Behavioral of TopModule is
       clk            : in  std_logic;   -- 40MHz
       alienKilled    : in  std_logic;   -- 1 if alien killed
       shipPosition   : in  std_logic_vector(9 downto 0);  -- Ship x coordinate
-      rocketOnScreen : out std_logic;   -- If 1, display a rocket
+      rocketOnScreen : out std_logic;                     -- If 1, display a rocket
       missileY       : out std_logic_vector(9 downto 0);  -- Pixels between top screen and top missile position
-      MissileX       : out std_logic_vector(9 downto 0)  -- Missile x coordinate
+      MissileX       : out std_logic_vector(9 downto 0)   -- Missile x coordinate
       );
   end component;
 
@@ -149,15 +149,15 @@ architecture Behavioral of TopModule is
     port(
       reset        : in  std_logic;       -- Active high
       clk          : in  std_logic;       -- 40MHz
-      alienLine1   : in  std_logic_vector(0 to 9);  -- Top screen alien line
+      alienLine1   : in  std_logic_vector(0 to 9);      -- Top screen alien line
       alienLine2   : in  std_logic_vector(0 to 9);
       alienLine3   : in  std_logic_vector(0 to 9);
       alienLine4   : in  std_logic_vector(0 to 9);
-      alienLine5   : in  std_logic_vector(0 to 9);  -- Bottom screen alien line
+      alienLine5   : in  std_logic_vector(0 to 9);      -- Bottom screen alien line
       alienX       : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
       alienY       : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
       alienRocketx : out std_logic_vector(9 downto 0);  -- Alien rocket x coordinate from left screen
-		alienRockety : out std_logic_vector(9 downto 0)   -- Alien rocket y coordinate from top screen
+		alienRockety : out std_logic_vector(9 downto 0)     -- Alien rocket y coordinate from top screen
       );
   end component;
 

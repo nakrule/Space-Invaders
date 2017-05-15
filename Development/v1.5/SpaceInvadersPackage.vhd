@@ -47,7 +47,8 @@ package SpaceInvadersPackage is
   constant rocketColor      : std_logic_vector(7 downto 0) := "11111111";
 ----------------------------------------------------------------------------------
   -- alienRocket
-  constant rocketFrequency  : integer                      := 6000000;  -- the lower the number, the faster the rocket launched
+  constant rocketFrequency  : integer                      := 6000000;  -- the lower the number, 
+                                                                        -- the faster the rocket launched
 ----------------------------------------------------------------------------------
   -- Tables of aliens and ship
 

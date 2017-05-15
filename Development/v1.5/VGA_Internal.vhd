@@ -3,7 +3,7 @@
 -- Engineer:       Samuel Riedo & Pascal Roulin
 -- Create Date:    09:20:02 03/02/2017
 -- Design Name:    vga_internal.vhd
--- Project Name:   Super Mario World - FPGA Edition
+-- Project Name:   Space Invaders - FPGA Edition
 -- Target Devices: Digilent NEXYS 3 (Xilinx Spartan 6 XC6LX16-CS324)
 -- Description:    Video Graphics Array.
 -- Revision 0.01 - File Created
@@ -17,20 +17,20 @@ use work.SpaceInvadersPackage.all;
 
 entity VGA_Internal is
   port (
-    pixel_clk : in  std_logic;          -- 40MHz
-    rst       : in  std_logic;          -- active high
-    hs        : out std_logic;          -- Horizontale synchonization impulsion
-    vs        : out std_logic;          -- Vertical synchonization impulsion
-    blank     : out std_logic;          -- If 1,  video output must be null
+    pixel_clk : in  std_logic;                       -- 40MHz
+    rst       : in  std_logic;                       -- active high
+    hs        : out std_logic;                       -- Horizontale synchonization impulsion
+    vs        : out std_logic;                       -- Vertical synchonization impulsion
+    blank     : out std_logic;                       -- If 1,  video output must be null
     hcount    : out std_logic_vector(10 downto 0);   -- Pixel x coordinate
     vcount    : out std_logic_vector(10 downto 0));  -- Pixel y coordinate
 end entity VGA_Internal;
 
 architecture logic of VGA_Internal is
 
-  signal hcounter : integer range 0 to HMAX; -- integer version of hcount
-  signal vcounter : integer range 0 to VMAX; -- integer version of vcount
-  signal endOfLine       : std_logic;
+  signal hcounter   : integer range 0 to HMAX; -- integer version of hcount
+  signal vcounter   : integer range 0 to VMAX; -- integer version of vcount
+  signal endOfLine  : std_logic;
 
 begin
 

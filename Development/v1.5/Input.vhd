@@ -20,14 +20,14 @@ use work.SpaceInvadersPackage.all;
 
 entity Input is
   port(
-    startButton  : in  std_logic;       -- When 1, start game
-    fire         : in  std_logic;       -- When 1, shoot a rocket
-    clk          : in  std_logic;       -- 40MHz
-    reset        : in  std_logic;       -- Active high
-    left         : in  std_logic;       -- Left arrow button
-    right        : in  std_logic;       -- Right arrow button
-    newMissile   : out std_logic;       -- If 1, new missile launched
-    gameStarted  : out std_logic;       -- When 0, show start screen
+    startButton  : in  std_logic;                     -- When 1, start game
+    fire         : in  std_logic;                     -- When 1, shoot a rocket
+    clk          : in  std_logic;                     -- 40MHz
+    reset        : in  std_logic;                     -- Active high
+    left         : in  std_logic;                     -- Left arrow button
+    right        : in  std_logic;                     -- Right arrow button
+    newMissile   : out std_logic;                     -- If 1, new missile launched
+    gameStarted  : out std_logic;                     -- When 0, show start screen
     alienX       : out std_logic_vector(9 downto 0);  -- first alien position from left screen
     alienY       : out std_logic_vector(8 downto 0);  -- first alien position from top screen
     shipPosition : out std_logic_vector(9 downto 0)   -- Ship x coordinate
@@ -40,11 +40,15 @@ architecture Behavioral of Input is
   signal fireTimer      : integer range 0 to fireSpeed                     := 0;  -- Slow fire rate
   signal shipTimer      : integer range 0 to shipSpeed                     := 0;  -- Slow ship speed
   signal alienTimer     : integer range 0 to alienSpeed                    := 0;  -- Slow alien speed
-  signal alienDirection : integer range 0 to 7                             := 0;  -- If 0, aliens move left, 1=up left, 2 = up, ...
-  signal alienJump      : integer range 1 to maxAlienJump                  := 1;  -- Pixels number alien use as unit to move
-  signal shipPos        : integer range 0 to 737                           := (maxShipPosValue/2);  -- X position of the ship
-  signal alienXX        : integer range alienXMargin to (500-alienXMargin) := 250;  -- alienX in integer, 499=799-300
+  signal alienDirection : integer range 0 to 7                             := 0;  -- If 0, aliens move left, 
+                                                                                  -- 1=up left, 2 = up, ...
+  signal alienJump      : integer range 1 to maxAlienJump                  := 1;  -- Alien pixels mouvement value
+  signal alienXX        : integer range alienXMargin to (500-alienXMargin) := 250;  -- alienX in integer
   signal alienYY        : integer range alienYUpMargin to alienYDownMargin := 100;  -- alienY in integer
+  signal shipPos        : integer range 0 to 737                           := (maxShipPosValue/2);  -- Ship X 
+                                                                                                    -- position 
+                                                                                                    -- from left 
+                                                                                                    -- screen
 
 begin
 

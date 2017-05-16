@@ -108,7 +108,7 @@ architecture Behavioral of TopModule is
       );
   end component;
 
-  component StartScreenRom
+  component StartScreenRom is
     port(
       clka  : in  std_logic;                      -- 40MHz
       addra : in  std_logic_vector(14 downto 0);  -- Combinaison of hcount and vcount
@@ -157,7 +157,7 @@ architecture Behavioral of TopModule is
       alienX       : in  std_logic_vector(9 downto 0);  -- first alien position from left screen
       alienY       : in  std_logic_vector(8 downto 0);  -- first alien position from top screen
       alienRocketx : out std_logic_vector(9 downto 0);  -- Alien rocket x coordinate from left screen
-		alienRockety : out std_logic_vector(9 downto 0)     -- Alien rocket y coordinate from top screen
+	  	alienRockety : out std_logic_vector(9 downto 0)   -- Alien rocket y coordinate from top screen
       );
   end component;
 

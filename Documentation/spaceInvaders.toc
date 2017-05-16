@@ -1,0 +1,39 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Introduction}{4}{chapter.1}
+\contentsline {section}{\numberline {1.1}Super Mario Bros}{4}{section.1.1}
+\contentsline {section}{\numberline {1.2}Gameplay}{5}{section.1.2}
+\contentsline {section}{\numberline {1.3}Déroulement d'une partie}{6}{section.1.3}
+\contentsline {chapter}{\numberline {2}Architecture}{7}{chapter.2}
+\contentsline {section}{\numberline {2.1}alienRocket}{8}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Entrées \& Sorties}{9}{subsection.2.1.1}
+\contentsline {subsection}{\numberline {2.1.2}Problèmes rencontrés}{9}{subsection.2.1.2}
+\contentsline {section}{\numberline {2.2}Digital Clock Management}{10}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Entrées \& Sorties}{10}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Problèmes rencontrés}{10}{subsection.2.2.2}
+\contentsline {section}{\numberline {2.3}Display}{11}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Entrées \& Sorties}{12}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.4}Input}{13}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Entrées \& Sorties}{13}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Testbench}{14}{subsection.2.4.2}
+\contentsline {section}{\numberline {2.5}rocketManager}{15}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Entrées \& Sorties}{15}{subsection.2.5.1}
+\contentsline {subsection}{\numberline {2.5.2}Testbench}{16}{subsection.2.5.2}
+\contentsline {section}{\numberline {2.6}VGA Internal}{17}{section.2.6}
+\contentsline {subsection}{\numberline {2.6.1}Entrées \& Sorties}{17}{subsection.2.6.1}
+\contentsline {section}{\numberline {2.7}Top Module}{18}{section.2.7}
+\contentsline {subsection}{\numberline {2.7.1}Entrées \& Sorties}{18}{subsection.2.7.1}
+\contentsline {section}{\numberline {2.8}Space Invaders Package}{20}{section.2.8}
+\contentsline {chapter}{\numberline {3}Annexes}{21}{chapter.3}
+\contentsline {section}{\numberline {3.1}Convertion d'image}{22}{section.3.1}
+\contentsline {subsection}{\numberline {3.1.1}Script Matlab - Convertion en fichier COE}{23}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Script Matlab - Convertion en tableau VHDL}{24}{subsection.3.1.2}
+\contentsline {section}{\numberline {3.2}Code source}{25}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}alienRocket}{25}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Digital Clock Management}{30}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Display}{32}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Input}{38}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}rocketManager}{40}{subsection.3.2.5}
+\contentsline {subsection}{\numberline {3.2.6}VGA Internal}{41}{subsection.3.2.6}
+\contentsline {subsection}{\numberline {3.2.7}Top Module}{43}{subsection.3.2.7}
+\contentsline {subsection}{\numberline {3.2.8}Package}{46}{subsection.3.2.8}
+\contentsfinish 

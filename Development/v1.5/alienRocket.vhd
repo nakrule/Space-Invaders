@@ -143,7 +143,7 @@ begin
               newRocketYY <= (alienYY + 30);
               rocketXX    <= (alienXX+15);
             end if;
-          else
+          else                                   -- Force a new shoot
             newRocketYY <= 0;
             rocketXX    <= alienXMargin;
             newShoot    <= 1;

@@ -1,39 +1,37 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.1.1}{Super\040Mario\040Bros}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{Gameplay}{chapter.1}% 3
-\BOOKMARK [0][-]{chapter.2}{Architecture}{}% 4
-\BOOKMARK [1][-]{section.2.1}{alienRocket}{chapter.2}% 5
-\BOOKMARK [2][-]{subsection.2.1.1}{Entrées & Sorties}{section.2.1}% 6
-\BOOKMARK [2][-]{subsection.2.1.2}{Problèmes rencontrés}{section.2.1}% 7
-\BOOKMARK [1][-]{section.2.2}{Digital\040Clock\040Management}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.2.1}{Entrées & Sorties}{section.2.2}% 9
-\BOOKMARK [2][-]{subsection.2.2.2}{Problèmes rencontrés}{section.2.2}% 10
-\BOOKMARK [1][-]{section.2.3}{Display}{chapter.2}% 11
-\BOOKMARK [2][-]{subsection.2.3.1}{Entrées & Sorties}{section.2.3}% 12
-\BOOKMARK [2][-]{subsection.2.3.2}{Problèmes rencontrés}{section.2.3}% 13
+\BOOKMARK [1][-]{section.1.3}{Déroulement d'une partie}{chapter.1}% 4
+\BOOKMARK [0][-]{chapter.2}{Architecture}{}% 5
+\BOOKMARK [1][-]{section.2.1}{alienRocket}{chapter.2}% 6
+\BOOKMARK [2][-]{subsection.2.1.1}{Entrées & Sorties}{section.2.1}% 7
+\BOOKMARK [2][-]{subsection.2.1.2}{Problèmes rencontrés}{section.2.1}% 8
+\BOOKMARK [1][-]{section.2.2}{Digital\040Clock\040Management}{chapter.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.1}{Entrées & Sorties}{section.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.2}{Problèmes rencontrés}{section.2.2}% 11
+\BOOKMARK [1][-]{section.2.3}{Display}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.3.1}{Entrées & Sorties}{section.2.3}% 13
 \BOOKMARK [1][-]{section.2.4}{Input}{chapter.2}% 14
 \BOOKMARK [2][-]{subsection.2.4.1}{Entrées & Sorties}{section.2.4}% 15
-\BOOKMARK [2][-]{subsection.2.4.2}{Problèmes rencontrés}{section.2.4}% 16
+\BOOKMARK [2][-]{subsection.2.4.2}{Testbench}{section.2.4}% 16
 \BOOKMARK [1][-]{section.2.5}{rocketManager}{chapter.2}% 17
 \BOOKMARK [2][-]{subsection.2.5.1}{Entrées & Sorties}{section.2.5}% 18
-\BOOKMARK [2][-]{subsection.2.5.2}{Problèmes rencontrés}{section.2.5}% 19
+\BOOKMARK [2][-]{subsection.2.5.2}{Testbench}{section.2.5}% 19
 \BOOKMARK [1][-]{section.2.6}{VGA\040Internal}{chapter.2}% 20
 \BOOKMARK [2][-]{subsection.2.6.1}{Entrées & Sorties}{section.2.6}% 21
-\BOOKMARK [2][-]{subsection.2.6.2}{Problèmes rencontrés}{section.2.6}% 22
-\BOOKMARK [1][-]{section.2.7}{Top\040Module}{chapter.2}% 23
-\BOOKMARK [2][-]{subsection.2.7.1}{Entrées & Sorties}{section.2.7}% 24
-\BOOKMARK [2][-]{subsection.2.7.2}{Problèmes rencontrés}{section.2.7}% 25
-\BOOKMARK [1][-]{section.2.8}{Package}{chapter.2}% 26
-\BOOKMARK [0][-]{chapter.3}{Annexes}{}% 27
-\BOOKMARK [1][-]{section.3.1}{Convertion\040d'image}{chapter.3}% 28
-\BOOKMARK [2][-]{subsection.3.1.1}{Script\040Matlab\040-\040Convertion\040en\040fichier\040COE}{section.3.1}% 29
-\BOOKMARK [2][-]{subsection.3.1.2}{Script\040Matlab\040-\040Convertion\040en\040tableau\040VHDL}{section.3.1}% 30
-\BOOKMARK [1][-]{section.3.2}{Code\040source}{chapter.3}% 31
-\BOOKMARK [2][-]{subsection.3.2.1}{alienRocket}{section.3.2}% 32
-\BOOKMARK [2][-]{subsection.3.2.2}{Digital\040Clock\040Management}{section.3.2}% 33
-\BOOKMARK [2][-]{subsection.3.2.3}{Display}{section.3.2}% 34
-\BOOKMARK [2][-]{subsection.3.2.4}{Input}{section.3.2}% 35
-\BOOKMARK [2][-]{subsection.3.2.5}{rocketManager}{section.3.2}% 36
-\BOOKMARK [2][-]{subsection.3.2.6}{VGA\040Internal}{section.3.2}% 37
-\BOOKMARK [2][-]{subsection.3.2.7}{Top\040Module}{section.3.2}% 38
-\BOOKMARK [2][-]{subsection.3.2.8}{Package}{section.3.2}% 39
+\BOOKMARK [1][-]{section.2.7}{Top\040Module}{chapter.2}% 22
+\BOOKMARK [2][-]{subsection.2.7.1}{Entrées & Sorties}{section.2.7}% 23
+\BOOKMARK [1][-]{section.2.8}{Space\040Invaders\040Package}{chapter.2}% 24
+\BOOKMARK [0][-]{chapter.3}{Annexes}{}% 25
+\BOOKMARK [1][-]{section.3.1}{Convertion\040d'image}{chapter.3}% 26
+\BOOKMARK [2][-]{subsection.3.1.1}{Script\040Matlab\040-\040Convertion\040en\040fichier\040COE}{section.3.1}% 27
+\BOOKMARK [2][-]{subsection.3.1.2}{Script\040Matlab\040-\040Convertion\040en\040tableau\040VHDL}{section.3.1}% 28
+\BOOKMARK [1][-]{section.3.2}{Code\040source}{chapter.3}% 29
+\BOOKMARK [2][-]{subsection.3.2.1}{alienRocket}{section.3.2}% 30
+\BOOKMARK [2][-]{subsection.3.2.2}{Digital\040Clock\040Management}{section.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.2.3}{Display}{section.3.2}% 32
+\BOOKMARK [2][-]{subsection.3.2.4}{Input}{section.3.2}% 33
+\BOOKMARK [2][-]{subsection.3.2.5}{rocketManager}{section.3.2}% 34
+\BOOKMARK [2][-]{subsection.3.2.6}{VGA\040Internal}{section.3.2}% 35
+\BOOKMARK [2][-]{subsection.3.2.7}{Top\040Module}{section.3.2}% 36
+\BOOKMARK [2][-]{subsection.3.2.8}{Package}{section.3.2}% 37

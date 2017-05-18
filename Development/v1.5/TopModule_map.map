@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Thu May 11 11:07:47 2017
+Mapped Date    : Thu May 18 09:20:37 2017
 
 vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv
 INFO:Security:51 - The XILINXD_LICENSE_FILE environment variable is not set.
@@ -38,7 +38,7 @@ Total REAL time at the beginning of Placer: 27 secs
 Total CPU  time at the beginning of Placer: 6 secs 
 
 Phase 1.1  Initial Placement Analysis
-Phase 1.1  Initial Placement Analysis (Checksum:1e4c8ee4) REAL time: 28 secs 
+Phase 1.1  Initial Placement Analysis (Checksum:1e4c8ee4) REAL time: 27 secs 
 
 Phase 2.7  Design Feasibility Check
 Phase 2.7  Design Feasibility Check (Checksum:1e4c8ee4) REAL time: 28 secs 
@@ -49,19 +49,19 @@ Phase 3.31  Local Placement Optimization (Checksum:1e4c8ee4) REAL time: 28 secs
 Phase 4.2  Initial Placement for Architecture Specific Features
 
 Phase 4.2  Initial Placement for Architecture Specific Features
-(Checksum:4313d31c) REAL time: 30 secs 
+(Checksum:4313d31c) REAL time: 29 secs 
 
 Phase 5.36  Local Placement Optimization
-Phase 5.36  Local Placement Optimization (Checksum:4313d31c) REAL time: 30 secs 
+Phase 5.36  Local Placement Optimization (Checksum:4313d31c) REAL time: 29 secs 
 
 Phase 6.30  Global Clock Region Assignment
-Phase 6.30  Global Clock Region Assignment (Checksum:4313d31c) REAL time: 30 secs 
+Phase 6.30  Global Clock Region Assignment (Checksum:4313d31c) REAL time: 29 secs 
 
 Phase 7.3  Local Placement Optimization
-Phase 7.3  Local Placement Optimization (Checksum:4313d31c) REAL time: 30 secs 
+Phase 7.3  Local Placement Optimization (Checksum:4313d31c) REAL time: 29 secs 
 
 Phase 8.5  Local Placement Optimization
-Phase 8.5  Local Placement Optimization (Checksum:4313d31c) REAL time: 30 secs 
+Phase 8.5  Local Placement Optimization (Checksum:4313d31c) REAL time: 29 secs 
 
 Phase 9.8  Global Placement
 ..........................
@@ -69,22 +69,22 @@ Phase 9.8  Global Placement
 ..........................................................................................................................................................................................................
 ...................................................................................................................................................................................................
 ........................................................
-Phase 9.8  Global Placement (Checksum:ab0bf531) REAL time: 40 secs 
+Phase 9.8  Global Placement (Checksum:ab0bf531) REAL time: 39 secs 
 
 Phase 10.5  Local Placement Optimization
-Phase 10.5  Local Placement Optimization (Checksum:ab0bf531) REAL time: 40 secs 
+Phase 10.5  Local Placement Optimization (Checksum:ab0bf531) REAL time: 39 secs 
 
 Phase 11.18  Placement Optimization
-Phase 11.18  Placement Optimization (Checksum:8cb16698) REAL time: 46 secs 
+Phase 11.18  Placement Optimization (Checksum:8cb16698) REAL time: 44 secs 
 
 Phase 12.5  Local Placement Optimization
-Phase 12.5  Local Placement Optimization (Checksum:8cb16698) REAL time: 46 secs 
+Phase 12.5  Local Placement Optimization (Checksum:8cb16698) REAL time: 44 secs 
 
 Phase 13.34  Placement Validation
-Phase 13.34  Placement Validation (Checksum:5f2fdfc4) REAL time: 46 secs 
+Phase 13.34  Placement Validation (Checksum:5f2fdfc4) REAL time: 44 secs 
 
-Total REAL time to Placer completion: 46 secs 
-Total CPU  time to Placer completion: 24 secs 
+Total REAL time to Placer completion: 44 secs 
+Total CPU  time to Placer completion: 23 secs 
 Running post-placement packing...
 Writing output files...
 
@@ -166,9 +166,9 @@ Specific Feature Utilization:
 
 Average Fanout of Non-Clock Nets:                5.21
 
-Peak Memory Usage:  458 MB
-Total REAL time to MAP completion:  49 secs 
-Total CPU time to MAP completion:   27 secs 
+Peak Memory Usage:  454 MB
+Total REAL time to MAP completion:  47 secs 
+Total CPU time to MAP completion:   26 secs 
 
 Mapping completed.
 See MAP report file "TopModule_map.mrp" for details.

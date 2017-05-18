@@ -5,7 +5,7 @@
      behavior or data corruption.  It is strongly advised that
      users do not edit the contents of this file. -->
 <messages>
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\TopModule.vhd</arg>&quot; line <arg fmt="%s" index="2">176</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">DCM_map</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\TopModule.vhd</arg>&quot; line <arg fmt="%s" index="2">176</arg>: Output port &lt;<arg fmt="%s" index="3">LOCKED</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">DCM_map</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="info" file="Xst" num="1767" delta="old" >HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.

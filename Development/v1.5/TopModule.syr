@@ -4,13 +4,13 @@ Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.06 secs
+Total CPU time to Xst completion: 0.09 secs
  
 --> Reading design: TopModule.prj
 
@@ -108,30 +108,30 @@ Cores Search Directories           : {"ipcore_dir"  }
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\ipcore_dir\StartScreenRom.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\ipcore_dir\StartScreenRom.vhd" into library work
 Parsing entity <StartScreenRom>.
 Parsing architecture <StartScreenRom_a> of entity <startscreenrom>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\SpaceInvadersPackage.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\SpaceInvadersPackage.vhd" into library work
 Parsing package <SpaceInvadersPackage>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\VGA_Internal.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\VGA_Internal.vhd" into library work
 Parsing entity <VGA_Internal>.
 Parsing architecture <logic> of entity <vga_internal>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\rocketManager.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\rocketManager.vhd" into library work
 Parsing entity <rocketManager>.
 Parsing architecture <Behavioral> of entity <rocketmanager>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\Input.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\Input.vhd" into library work
 Parsing entity <Input>.
 Parsing architecture <Behavioral> of entity <input>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\Display.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\Display.vhd" into library work
 Parsing entity <Display>.
 Parsing architecture <logic> of entity <display>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\DCM.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\DCM.vhd" into library work
 Parsing entity <DCM>.
 Parsing architecture <xilinx> of entity <dcm>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\alienRocket.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\alienRocket.vhd" into library work
 Parsing entity <alienRocket>.
 Parsing architecture <logic> of entity <alienrocket>.
-Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\TopModule.vhd" into library work
+Parsing VHDL file "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\TopModule.vhd" into library work
 Parsing entity <TopModule>.
 Parsing architecture <Behavioral> of entity <topmodule>.
 
@@ -160,8 +160,8 @@ Elaborating entity <alienRocket> (architecture <logic>) from library <work>.
 =========================================================================
 
 Synthesizing Unit <TopModule>.
-    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\TopModule.vhd".
-INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\TopModule.vhd" line 176: Output port <LOCKED> of the instance <DCM_map> is unconnected or connected to loadless signal.
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\TopModule.vhd".
+INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\TopModule.vhd" line 176: Output port <LOCKED> of the instance <DCM_map> is unconnected or connected to loadless signal.
     Found 17-bit adder for signal <n0012> created at line 167.
     Found 8x9-bit multiplier for signal <n0023> created at line 167.
     Summary:
@@ -170,13 +170,13 @@ INFO:Xst:3210 - "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development versio
 Unit <TopModule> synthesized.
 
 Synthesizing Unit <DCM>.
-    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\DCM.vhd".
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\DCM.vhd".
     Summary:
 	no macro.
 Unit <DCM> synthesized.
 
 Synthesizing Unit <VGA_Internal>.
-    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\VGA_Internal.vhd".
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\VGA_Internal.vhd".
     Found 1-bit register for signal <blank>.
     Found 10-bit register for signal <vcounter>.
     Found 11-bit register for signal <hcounter>.
@@ -198,7 +198,7 @@ Synthesizing Unit <VGA_Internal>.
 Unit <VGA_Internal> synthesized.
 
 Synthesizing Unit <Display>.
-    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\Display.vhd".
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\Display.vhd".
     Found 10-bit register for signal <ali2>.
     Found 10-bit register for signal <ali3>.
     Found 10-bit register for signal <ali4>.
@@ -206,117 +206,117 @@ Synthesizing Unit <Display>.
     Found 10-bit register for signal <ali1>.
     Found 1-bit register for signal <touched>.
     Found 1-bit register for signal <gameOver>.
-    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_31_OUT> created at line 120.
-    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_359_OUT> created at line 191.
-    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_573_OUT> created at line 342.
-    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_613_OUT> created at line 371.
-    Found 11-bit adder for signal <n1085> created at line 156.
-    Found 11-bit adder for signal <n1090> created at line 163.
-    Found 11-bit adder for signal <n1093> created at line 163.
-    Found 11-bit adder for signal <n1146> created at line 200.
-    Found 11-bit adder for signal <n1149> created at line 206.
-    Found 11-bit adder for signal <n1214> created at line 425.
-    Found 11-bit adder for signal <n1216> created at line 425.
-    Found 9-bit subtractor for signal <GND_18_o_GND_18_o_sub_43_OUT<8:0>> created at line 142.
-    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_98_OUT<5:0>> created at line 142.
-    Found 8-bit subtractor for signal <GND_18_o_GND_18_o_sub_105_OUT<7:0>> created at line 149.
-    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_194_OUT<6:0>> created at line 149.
-    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_201_OUT<5:0>> created at line 157.
-    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_226_OUT<4:0>> created at line 157.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_418_OUT<9:0>> created at line 240.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_422_OUT<9:0>> created at line 243.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_426_OUT<9:0>> created at line 246.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_430_OUT<9:0>> created at line 249.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_434_OUT<9:0>> created at line 252.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_438_OUT<9:0>> created at line 255.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_442_OUT<9:0>> created at line 258.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_446_OUT<9:0>> created at line 261.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_450_OUT<9:0>> created at line 264.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_454_OUT<9:0>> created at line 267.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_472_OUT<9:0>> created at line 275.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_476_OUT<9:0>> created at line 278.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_480_OUT<9:0>> created at line 281.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_484_OUT<9:0>> created at line 284.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_488_OUT<9:0>> created at line 287.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_492_OUT<9:0>> created at line 290.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_496_OUT<9:0>> created at line 293.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_500_OUT<9:0>> created at line 296.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_504_OUT<9:0>> created at line 299.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_508_OUT<9:0>> created at line 302.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_526_OUT<9:0>> created at line 310.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_530_OUT<9:0>> created at line 313.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_534_OUT<9:0>> created at line 316.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_538_OUT<9:0>> created at line 319.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_542_OUT<9:0>> created at line 322.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_546_OUT<9:0>> created at line 325.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_550_OUT<9:0>> created at line 328.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_554_OUT<9:0>> created at line 331.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_558_OUT<9:0>> created at line 334.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_562_OUT<9:0>> created at line 337.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_580_OUT<9:0>> created at line 345.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_584_OUT<9:0>> created at line 348.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_588_OUT<9:0>> created at line 351.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_592_OUT<9:0>> created at line 354.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_596_OUT<9:0>> created at line 357.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_600_OUT<9:0>> created at line 360.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_604_OUT<9:0>> created at line 363.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_608_OUT<9:0>> created at line 366.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_612_OUT<9:0>> created at line 369.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_616_OUT<9:0>> created at line 372.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_634_OUT<9:0>> created at line 380.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_638_OUT<9:0>> created at line 383.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_642_OUT<9:0>> created at line 386.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_646_OUT<9:0>> created at line 389.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_650_OUT<9:0>> created at line 392.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_654_OUT<9:0>> created at line 395.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_658_OUT<9:0>> created at line 398.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_662_OUT<9:0>> created at line 401.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_666_OUT<9:0>> created at line 404.
-    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_670_OUT<9:0>> created at line 407.
+    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_31_OUT> created at line 123.
+    Found 12-bit subtractor for signal <GND_18_o_GND_18_o_sub_359_OUT> created at line 195.
+    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_573_OUT> created at line 347.
+    Found 11-bit subtractor for signal <GND_18_o_GND_18_o_sub_613_OUT> created at line 376.
+    Found 11-bit adder for signal <n1085> created at line 160.
+    Found 11-bit adder for signal <n1090> created at line 167.
+    Found 11-bit adder for signal <n1093> created at line 167.
+    Found 11-bit adder for signal <n1146> created at line 204.
+    Found 11-bit adder for signal <n1149> created at line 211.
+    Found 11-bit adder for signal <n1214> created at line 430.
+    Found 11-bit adder for signal <n1216> created at line 430.
+    Found 9-bit subtractor for signal <GND_18_o_GND_18_o_sub_43_OUT<8:0>> created at line 146.
+    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_98_OUT<5:0>> created at line 146.
+    Found 8-bit subtractor for signal <GND_18_o_GND_18_o_sub_105_OUT<7:0>> created at line 153.
+    Found 7-bit subtractor for signal <GND_18_o_GND_18_o_sub_194_OUT<6:0>> created at line 153.
+    Found 6-bit subtractor for signal <GND_18_o_GND_18_o_sub_201_OUT<5:0>> created at line 161.
+    Found 5-bit subtractor for signal <GND_18_o_GND_18_o_sub_226_OUT<4:0>> created at line 161.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_418_OUT<9:0>> created at line 245.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_422_OUT<9:0>> created at line 248.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_426_OUT<9:0>> created at line 251.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_430_OUT<9:0>> created at line 254.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_434_OUT<9:0>> created at line 257.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_438_OUT<9:0>> created at line 260.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_442_OUT<9:0>> created at line 263.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_446_OUT<9:0>> created at line 266.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_450_OUT<9:0>> created at line 269.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_454_OUT<9:0>> created at line 272.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_472_OUT<9:0>> created at line 280.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_476_OUT<9:0>> created at line 283.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_480_OUT<9:0>> created at line 286.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_484_OUT<9:0>> created at line 289.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_488_OUT<9:0>> created at line 292.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_492_OUT<9:0>> created at line 295.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_496_OUT<9:0>> created at line 298.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_500_OUT<9:0>> created at line 301.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_504_OUT<9:0>> created at line 304.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_508_OUT<9:0>> created at line 307.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_526_OUT<9:0>> created at line 315.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_530_OUT<9:0>> created at line 318.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_534_OUT<9:0>> created at line 321.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_538_OUT<9:0>> created at line 324.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_542_OUT<9:0>> created at line 327.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_546_OUT<9:0>> created at line 330.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_550_OUT<9:0>> created at line 333.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_554_OUT<9:0>> created at line 336.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_558_OUT<9:0>> created at line 339.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_562_OUT<9:0>> created at line 342.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_580_OUT<9:0>> created at line 350.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_584_OUT<9:0>> created at line 353.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_588_OUT<9:0>> created at line 356.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_592_OUT<9:0>> created at line 359.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_596_OUT<9:0>> created at line 362.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_600_OUT<9:0>> created at line 365.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_604_OUT<9:0>> created at line 368.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_608_OUT<9:0>> created at line 371.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_612_OUT<9:0>> created at line 374.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_616_OUT<9:0>> created at line 377.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_634_OUT<9:0>> created at line 385.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_638_OUT<9:0>> created at line 388.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_642_OUT<9:0>> created at line 391.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_646_OUT<9:0>> created at line 394.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_650_OUT<9:0>> created at line 397.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_654_OUT<9:0>> created at line 400.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_658_OUT<9:0>> created at line 403.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_662_OUT<9:0>> created at line 406.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_666_OUT<9:0>> created at line 409.
+    Found 10-bit subtractor for signal <GND_18_o_GND_18_o_sub_670_OUT<9:0>> created at line 412.
     Found 512x426-bit Read Only RAM for signal <_n2092>
     Found 256x696-bit Read Only RAM for signal <_n2349>
     Found 32x486-bit Read Only RAM for signal <_n2460>
-    Found 8-bit 54-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_98_OUT> created at line 142.
-    Found 8-bit 91-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_194_OUT> created at line 149.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_234_o> created at line 166.
-    Found 7-bit 27-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_269_OUT> created at line 167.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_271_o> created at line 172.
-    Found 6-bit 21-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_299_OUT> created at line 173.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_301_o> created at line 178.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_330_o> created at line 184.
-    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_357_o> created at line 190.
-    Found 8-bit 5-to-1 multiplexer for signal <alienLine[2]_GND_18_o_wide_mux_387_OUT> created at line 164.
-    Found 12-bit comparator lessequal for signal <n0026> created at line 118
-    Found 12-bit comparator lessequal for signal <n0029> created at line 120
-    Found 11-bit comparator lessequal for signal <n0039> created at line 141
-    Found 11-bit comparator greater for signal <hcounter[10]_GND_18_o_LessThan_40_o> created at line 141
-    Found 11-bit comparator lessequal for signal <n0042> created at line 141
-    Found 11-bit comparator greater for signal <vcounter[10]_GND_18_o_LessThan_42_o> created at line 141
-    Found 11-bit comparator lessequal for signal <n0106> created at line 148
-    Found 11-bit comparator greater for signal <hcounter[10]_GND_18_o_LessThan_102_o> created at line 148
-    Found 11-bit comparator lessequal for signal <n0109> created at line 148
-    Found 11-bit comparator greater for signal <vcounter[10]_GND_18_o_LessThan_104_o> created at line 148
-    Found 11-bit comparator lessequal for signal <n0207> created at line 156
-    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0001_LessThan_199_o> created at line 156
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_200_o> created at line 156
-    Found 11-bit comparator lessequal for signal <n0227> created at line 163
-    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0002_LessThan_231_o> created at line 163
-    Found 11-bit comparator lessequal for signal <n0231> created at line 163
-    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0003_LessThan_234_o> created at line 163
-    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_390_o> created at line 200
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_391_o> created at line 200
-    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0004_LessThan_393_o> created at line 200
-    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_396_o> created at line 206
-    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_397_o> created at line 206
-    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0005_LessThan_399_o> created at line 206
-    Found 10-bit comparator lessequal for signal <n0353> created at line 234
-    Found 11-bit comparator greater for signal <GND_18_o_BUS_0006_LessThan_407_o> created at line 234
-    Found 10-bit comparator lessequal for signal <n0356> created at line 234
-    Found 11-bit comparator greater for signal <GND_18_o_BUS_0007_LessThan_410_o> created at line 234
-    Found 10-bit comparator lessequal for signal <n0617> created at line 424
-    Found 10-bit comparator greater for signal <alienRockety[9]_PWR_12_o_LessThan_707_o> created at line 424
-    Found 11-bit comparator lessequal for signal <n0622> created at line 425
-    Found 11-bit comparator greater for signal <GND_18_o_BUS_0009_LessThan_711_o> created at line 425
+    Found 8-bit 54-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_98_OUT> created at line 146.
+    Found 8-bit 91-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_194_OUT> created at line 153.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_234_o> created at line 170.
+    Found 7-bit 27-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_269_OUT> created at line 171.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_271_o> created at line 176.
+    Found 6-bit 21-to-1 multiplexer for signal <GND_18_o_X_12_o_wide_mux_299_OUT> created at line 177.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_301_o> created at line 182.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_330_o> created at line 188.
+    Found 1-bit 10-to-1 multiplexer for signal <alienIndex[3]_X_12_o_Mux_357_o> created at line 194.
+    Found 8-bit 5-to-1 multiplexer for signal <alienLine[2]_GND_18_o_wide_mux_387_OUT> created at line 168.
+    Found 12-bit comparator lessequal for signal <n0026> created at line 119
+    Found 12-bit comparator lessequal for signal <n0029> created at line 123
+    Found 11-bit comparator lessequal for signal <n0039> created at line 145
+    Found 11-bit comparator greater for signal <hcounter[10]_GND_18_o_LessThan_40_o> created at line 145
+    Found 11-bit comparator lessequal for signal <n0042> created at line 145
+    Found 11-bit comparator greater for signal <vcounter[10]_GND_18_o_LessThan_42_o> created at line 145
+    Found 11-bit comparator lessequal for signal <n0106> created at line 152
+    Found 11-bit comparator greater for signal <hcounter[10]_GND_18_o_LessThan_102_o> created at line 152
+    Found 11-bit comparator lessequal for signal <n0109> created at line 152
+    Found 11-bit comparator greater for signal <vcounter[10]_GND_18_o_LessThan_104_o> created at line 152
+    Found 11-bit comparator lessequal for signal <n0207> created at line 160
+    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0001_LessThan_199_o> created at line 160
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_200_o> created at line 160
+    Found 11-bit comparator lessequal for signal <n0227> created at line 167
+    Found 11-bit comparator greater for signal <hcounter[10]_BUS_0002_LessThan_231_o> created at line 167
+    Found 11-bit comparator lessequal for signal <n0231> created at line 167
+    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0003_LessThan_234_o> created at line 167
+    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_390_o> created at line 204
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_391_o> created at line 204
+    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0004_LessThan_393_o> created at line 204
+    Found 11-bit comparator equal for signal <GND_18_o_hcounter[10]_equal_396_o> created at line 210
+    Found 11-bit comparator greater for signal <GND_18_o_vcounter[10]_LessThan_397_o> created at line 210
+    Found 11-bit comparator greater for signal <vcounter[10]_BUS_0005_LessThan_399_o> created at line 211
+    Found 10-bit comparator lessequal for signal <n0353> created at line 239
+    Found 11-bit comparator greater for signal <GND_18_o_BUS_0006_LessThan_407_o> created at line 239
+    Found 10-bit comparator lessequal for signal <n0356> created at line 239
+    Found 11-bit comparator greater for signal <GND_18_o_BUS_0007_LessThan_410_o> created at line 239
+    Found 10-bit comparator lessequal for signal <n0617> created at line 429
+    Found 10-bit comparator greater for signal <alienRockety[9]_PWR_12_o_LessThan_707_o> created at line 429
+    Found 11-bit comparator lessequal for signal <n0622> created at line 430
+    Found 11-bit comparator greater for signal <GND_18_o_BUS_0009_LessThan_711_o> created at line 430
     Summary:
 	inferred   3 RAM(s).
 	inferred  22 Adder/Subtractor(s).
@@ -555,7 +555,7 @@ Synthesizing Unit <div_11s_6s>.
 Unit <div_11s_6s> synthesized.
 
 Synthesizing Unit <Input>.
-    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\Input.vhd".
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\Input.vhd".
     Found 9-bit register for signal <alienXX>.
     Found 10-bit register for signal <shipPos>.
     Found 23-bit register for signal <alienTimer>.
@@ -566,33 +566,33 @@ Synthesizing Unit <Input>.
     Found 8-bit register for signal <alienYY>.
     Found 1-bit register for signal <start>.
     Found 1-bit register for signal <newMissile>.
-    Found 20-bit adder for signal <fireTimer[19]_GND_39_o_add_6_OUT> created at line 81.
-    Found 10-bit adder for signal <shipPos[9]_GND_39_o_add_14_OUT> created at line 95.
-    Found 17-bit adder for signal <shipTimer[16]_GND_39_o_add_18_OUT> created at line 99.
-    Found 18-bit adder for signal <n0157> created at line 123.
-    Found 21-bit adder for signal <n0156> created at line 129.
-    Found 9-bit adder for signal <alienXX[8]_GND_39_o_add_57_OUT> created at line 138.
-    Found 18-bit adder for signal <n0164> created at line 145.
-    Found 8-bit adder for signal <alienYY[7]_GND_39_o_add_71_OUT> created at line 150.
-    Found 21-bit adder for signal <n0166> created at line 151.
-    Found 23-bit adder for signal <alienTimer[22]_GND_39_o_add_79_OUT> created at line 155.
-    Found 3-bit adder for signal <alienDirection[2]_GND_39_o_add_90_OUT> created at line 170.
-    Found 4-bit adder for signal <alienJump[3]_GND_39_o_add_93_OUT> created at line 176.
-    Found 10-bit subtractor for signal <GND_39_o_GND_39_o_sub_12_OUT<9:0>> created at line 91.
-    Found 8-bit subtractor for signal <GND_39_o_GND_39_o_sub_46_OUT<7:0>> created at line 128.
-    Found 9-bit subtractor for signal <GND_39_o_GND_39_o_sub_71_OUT<8:0>> created at line 149.
-    Found 21-bit 8-to-1 multiplexer for signal <alienDirection[2]_GND_39_o_wide_mux_77_OUT> created at line 108.
-    Found 20-bit comparator greater for signal <n0003> created at line 70
-    Found 17-bit comparator greater for signal <n0012> created at line 87
-    Found 10-bit comparator lessequal for signal <GND_39_o_shipPos[9]_LessThan_11_o> created at line 90
-    Found 10-bit comparator lessequal for signal <shipPos[9]_PWR_32_o_LessThan_14_o> created at line 94
-    Found 23-bit comparator greater for signal <n0027> created at line 106
-    Found 8-bit comparator greater for signal <GND_39_o_alienYY[7]_LessThan_44_o> created at line 126
-    Found 9-bit comparator greater for signal <alienXX[8]_PWR_32_o_LessThan_56_o> created at line 137
-    Found 9-bit comparator greater for signal <GND_39_o_alienXX[8]_LessThan_69_o> created at line 148
-    Found 8-bit comparator greater for signal <alienYY[7]_PWR_32_o_LessThan_70_o> created at line 148
-    Found 3-bit comparator lessequal for signal <n0080> created at line 167
-    Found 4-bit comparator lessequal for signal <n0084> created at line 173
+    Found 20-bit adder for signal <fireTimer[19]_GND_39_o_add_6_OUT> created at line 85.
+    Found 10-bit adder for signal <shipPos[9]_GND_39_o_add_14_OUT> created at line 99.
+    Found 17-bit adder for signal <shipTimer[16]_GND_39_o_add_18_OUT> created at line 103.
+    Found 18-bit adder for signal <n0157> created at line 127.
+    Found 21-bit adder for signal <n0156> created at line 133.
+    Found 9-bit adder for signal <alienXX[8]_GND_39_o_add_57_OUT> created at line 142.
+    Found 18-bit adder for signal <n0164> created at line 149.
+    Found 8-bit adder for signal <alienYY[7]_GND_39_o_add_71_OUT> created at line 154.
+    Found 21-bit adder for signal <n0166> created at line 155.
+    Found 23-bit adder for signal <alienTimer[22]_GND_39_o_add_79_OUT> created at line 159.
+    Found 3-bit adder for signal <alienDirection[2]_GND_39_o_add_90_OUT> created at line 174.
+    Found 4-bit adder for signal <alienJump[3]_GND_39_o_add_93_OUT> created at line 180.
+    Found 10-bit subtractor for signal <GND_39_o_GND_39_o_sub_12_OUT<9:0>> created at line 95.
+    Found 8-bit subtractor for signal <GND_39_o_GND_39_o_sub_46_OUT<7:0>> created at line 132.
+    Found 9-bit subtractor for signal <GND_39_o_GND_39_o_sub_71_OUT<8:0>> created at line 153.
+    Found 21-bit 8-to-1 multiplexer for signal <alienDirection[2]_GND_39_o_wide_mux_77_OUT> created at line 112.
+    Found 20-bit comparator greater for signal <n0003> created at line 74
+    Found 17-bit comparator greater for signal <n0012> created at line 91
+    Found 10-bit comparator lessequal for signal <GND_39_o_shipPos[9]_LessThan_11_o> created at line 94
+    Found 10-bit comparator lessequal for signal <shipPos[9]_PWR_32_o_LessThan_14_o> created at line 98
+    Found 23-bit comparator greater for signal <n0027> created at line 110
+    Found 8-bit comparator greater for signal <GND_39_o_alienYY[7]_LessThan_44_o> created at line 130
+    Found 9-bit comparator greater for signal <alienXX[8]_PWR_32_o_LessThan_56_o> created at line 141
+    Found 9-bit comparator greater for signal <GND_39_o_alienXX[8]_LessThan_69_o> created at line 152
+    Found 8-bit comparator greater for signal <alienYY[7]_PWR_32_o_LessThan_70_o> created at line 152
+    Found 3-bit comparator lessequal for signal <n0080> created at line 171
+    Found 4-bit comparator lessequal for signal <n0084> created at line 177
     Summary:
 	inferred  13 Adder/Subtractor(s).
 	inferred  96 D-type flip-flop(s).
@@ -601,7 +601,7 @@ Synthesizing Unit <Input>.
 Unit <Input> synthesized.
 
 Synthesizing Unit <rocketManager>.
-    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\rocketManager.vhd".
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\rocketManager.vhd".
     Found 10-bit register for signal <rocketY>.
     Found 16-bit register for signal <missileTimer>.
     Found 1-bit register for signal <MissileXX<9>>.
@@ -614,9 +614,9 @@ Synthesizing Unit <rocketManager>.
     Found 1-bit register for signal <MissileXX<2>>.
     Found 1-bit register for signal <MissileXX<1>>.
     Found 1-bit register for signal <MissileXX<0>>.
-    Found 10-bit adder for signal <shipPosition[9]_GND_41_o_add_3_OUT> created at line 60.
-    Found 16-bit adder for signal <missileTimer[15]_GND_41_o_add_8_OUT> created at line 67.
-    Found 10-bit subtractor for signal <GND_41_o_GND_41_o_sub_8_OUT<9:0>> created at line 64.
+    Found 10-bit adder for signal <shipPosition[9]_GND_41_o_add_3_OUT> created at line 61.
+    Found 16-bit adder for signal <missileTimer[15]_GND_41_o_add_8_OUT> created at line 68.
+    Found 10-bit subtractor for signal <GND_41_o_GND_41_o_sub_8_OUT<9:0>> created at line 65.
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  36 D-type flip-flop(s).
@@ -624,7 +624,7 @@ Synthesizing Unit <rocketManager>.
 Unit <rocketManager> synthesized.
 
 Synthesizing Unit <alienRocket>.
-    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development version\v1.5\alienRocket.vhd".
+    Related source file is "C:\Users\samuel.riedo\Desktop\Space-Invaders\Development\v1.5\alienRocket.vhd".
     Found 23-bit register for signal <shootTimer>.
     Found 4-bit register for signal <columnCounter>.
     Found 10-bit register for signal <rocketXXX>.
@@ -640,79 +640,79 @@ Synthesizing Unit <alienRocket>.
     Found 1-bit register for signal <rocketYY<1>>.
     Found 1-bit register for signal <rocketYY<0>>.
     Found 1-bit register for signal <rocketFinished_0>.
-    Found 4-bit adder for signal <columnCounter[3]_GND_43_o_add_17_OUT> created at line 98.
-    Found 23-bit adder for signal <shootTimer[22]_GND_43_o_add_21_OUT> created at line 106.
-    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_43_OUT> created at line 134.
-    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_68_OUT> created at line 157.
-    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_93_OUT> created at line 180.
-    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_118_OUT> created at line 203.
-    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_143_OUT> created at line 226.
-    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_168_OUT> created at line 249.
-    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_193_OUT> created at line 272.
-    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_218_OUT> created at line 295.
-    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_243_OUT> created at line 318.
-    Found 10-bit adder for signal <alienYY[9]_GND_43_o_add_256_OUT> created at line 328.
-    Found 10-bit adder for signal <alienYY[9]_GND_43_o_add_259_OUT> created at line 331.
-    Found 10-bit adder for signal <alienYY[9]_GND_43_o_add_262_OUT> created at line 334.
-    Found 10-bit adder for signal <alienYY[9]_GND_43_o_add_265_OUT> created at line 337.
-    Found 10-bit adder for signal <alienYY[9]_GND_43_o_add_267_OUT> created at line 340.
-    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_268_OUT> created at line 341.
-    Found 10-bit adder for signal <rocketYY[9]_GND_43_o_add_289_OUT> created at line 375.
-    Found 16-bit adder for signal <rocketSpeed[15]_GND_43_o_add_291_OUT> created at line 379.
-    Found 10-bit 12-to-1 multiplexer for signal <columnCounter[3]_GND_43_o_wide_mux_279_OUT> created at line 117.
-    Found 10-bit 12-to-1 multiplexer for signal <columnCounter[3]_GND_43_o_wide_mux_280_OUT> created at line 117.
-    Found 1-bit 12-to-1 multiplexer for signal <columnCounter[3]_GND_43_o_wide_mux_281_OUT<0>> created at line 117.
-    Found 10-bit comparator greater for signal <GND_43_o_rocketXX[9]_LessThan_15_o> created at line 89
-    Found 5-bit comparator lessequal for signal <GND_43_o_column1[4]_LessThan_30_o> created at line 119
-    Found 5-bit comparator greater for signal <GND_43_o_column1[4]_LessThan_31_o> created at line 120
-    Found 5-bit comparator greater for signal <GND_43_o_column1[4]_LessThan_34_o> created at line 123
-    Found 5-bit comparator greater for signal <GND_43_o_column1[4]_LessThan_37_o> created at line 126
-    Found 5-bit comparator greater for signal <GND_43_o_column1[4]_LessThan_40_o> created at line 129
-    Found 5-bit comparator lessequal for signal <GND_43_o_column2[4]_LessThan_55_o> created at line 142
-    Found 5-bit comparator greater for signal <GND_43_o_column2[4]_LessThan_56_o> created at line 143
-    Found 5-bit comparator greater for signal <GND_43_o_column2[4]_LessThan_59_o> created at line 146
-    Found 5-bit comparator greater for signal <GND_43_o_column2[4]_LessThan_62_o> created at line 149
-    Found 5-bit comparator greater for signal <GND_43_o_column2[4]_LessThan_65_o> created at line 152
-    Found 5-bit comparator lessequal for signal <GND_43_o_column3[4]_LessThan_80_o> created at line 165
-    Found 5-bit comparator greater for signal <GND_43_o_column3[4]_LessThan_81_o> created at line 166
-    Found 5-bit comparator greater for signal <GND_43_o_column3[4]_LessThan_84_o> created at line 169
-    Found 5-bit comparator greater for signal <GND_43_o_column3[4]_LessThan_87_o> created at line 172
-    Found 5-bit comparator greater for signal <GND_43_o_column3[4]_LessThan_90_o> created at line 175
-    Found 5-bit comparator lessequal for signal <GND_43_o_column4[4]_LessThan_105_o> created at line 188
-    Found 5-bit comparator greater for signal <GND_43_o_column4[4]_LessThan_106_o> created at line 189
-    Found 5-bit comparator greater for signal <GND_43_o_column4[4]_LessThan_109_o> created at line 192
-    Found 5-bit comparator greater for signal <GND_43_o_column4[4]_LessThan_112_o> created at line 195
-    Found 5-bit comparator greater for signal <GND_43_o_column4[4]_LessThan_115_o> created at line 198
-    Found 5-bit comparator lessequal for signal <GND_43_o_column5[4]_LessThan_130_o> created at line 211
-    Found 5-bit comparator greater for signal <GND_43_o_column5[4]_LessThan_131_o> created at line 212
-    Found 5-bit comparator greater for signal <GND_43_o_column5[4]_LessThan_134_o> created at line 215
-    Found 5-bit comparator greater for signal <GND_43_o_column5[4]_LessThan_137_o> created at line 218
-    Found 5-bit comparator greater for signal <GND_43_o_column5[4]_LessThan_140_o> created at line 221
-    Found 5-bit comparator lessequal for signal <GND_43_o_column6[4]_LessThan_155_o> created at line 234
-    Found 5-bit comparator greater for signal <GND_43_o_column6[4]_LessThan_156_o> created at line 235
-    Found 5-bit comparator greater for signal <GND_43_o_column6[4]_LessThan_159_o> created at line 238
-    Found 5-bit comparator greater for signal <GND_43_o_column6[4]_LessThan_162_o> created at line 241
-    Found 5-bit comparator greater for signal <GND_43_o_column6[4]_LessThan_165_o> created at line 244
-    Found 5-bit comparator lessequal for signal <GND_43_o_column7[4]_LessThan_180_o> created at line 257
-    Found 5-bit comparator greater for signal <GND_43_o_column7[4]_LessThan_181_o> created at line 258
-    Found 5-bit comparator greater for signal <GND_43_o_column7[4]_LessThan_184_o> created at line 261
-    Found 5-bit comparator greater for signal <GND_43_o_column7[4]_LessThan_187_o> created at line 264
-    Found 5-bit comparator greater for signal <GND_43_o_column7[4]_LessThan_190_o> created at line 267
-    Found 5-bit comparator lessequal for signal <GND_43_o_column8[4]_LessThan_205_o> created at line 280
-    Found 5-bit comparator greater for signal <GND_43_o_column8[4]_LessThan_206_o> created at line 281
-    Found 5-bit comparator greater for signal <GND_43_o_column8[4]_LessThan_209_o> created at line 284
-    Found 5-bit comparator greater for signal <GND_43_o_column8[4]_LessThan_212_o> created at line 287
-    Found 5-bit comparator greater for signal <GND_43_o_column8[4]_LessThan_215_o> created at line 290
-    Found 5-bit comparator lessequal for signal <GND_43_o_column9[4]_LessThan_230_o> created at line 303
-    Found 5-bit comparator greater for signal <GND_43_o_column9[4]_LessThan_231_o> created at line 304
-    Found 5-bit comparator greater for signal <GND_43_o_column9[4]_LessThan_234_o> created at line 307
-    Found 5-bit comparator greater for signal <GND_43_o_column9[4]_LessThan_237_o> created at line 310
-    Found 5-bit comparator greater for signal <GND_43_o_column9[4]_LessThan_240_o> created at line 313
-    Found 5-bit comparator lessequal for signal <GND_43_o_column10[4]_LessThan_255_o> created at line 326
-    Found 5-bit comparator greater for signal <GND_43_o_column10[4]_LessThan_256_o> created at line 327
-    Found 5-bit comparator greater for signal <GND_43_o_column10[4]_LessThan_259_o> created at line 330
-    Found 5-bit comparator greater for signal <GND_43_o_column10[4]_LessThan_262_o> created at line 333
-    Found 5-bit comparator greater for signal <GND_43_o_column10[4]_LessThan_265_o> created at line 336
+    Found 4-bit adder for signal <columnCounter[3]_GND_43_o_add_17_OUT> created at line 107.
+    Found 23-bit adder for signal <shootTimer[22]_GND_43_o_add_21_OUT> created at line 115.
+    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_43_OUT> created at line 144.
+    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_68_OUT> created at line 167.
+    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_93_OUT> created at line 190.
+    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_118_OUT> created at line 213.
+    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_143_OUT> created at line 236.
+    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_168_OUT> created at line 259.
+    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_193_OUT> created at line 282.
+    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_218_OUT> created at line 305.
+    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_243_OUT> created at line 328.
+    Found 10-bit adder for signal <alienYY[9]_GND_43_o_add_256_OUT> created at line 338.
+    Found 10-bit adder for signal <alienYY[9]_GND_43_o_add_259_OUT> created at line 341.
+    Found 10-bit adder for signal <alienYY[9]_GND_43_o_add_262_OUT> created at line 344.
+    Found 10-bit adder for signal <alienYY[9]_GND_43_o_add_265_OUT> created at line 347.
+    Found 10-bit adder for signal <alienYY[9]_GND_43_o_add_267_OUT> created at line 350.
+    Found 10-bit adder for signal <alienXX[9]_GND_43_o_add_268_OUT> created at line 351.
+    Found 10-bit adder for signal <rocketYY[9]_GND_43_o_add_289_OUT> created at line 385.
+    Found 16-bit adder for signal <rocketSpeed[15]_GND_43_o_add_291_OUT> created at line 389.
+    Found 10-bit 12-to-1 multiplexer for signal <columnCounter[3]_GND_43_o_wide_mux_279_OUT> created at line 127.
+    Found 10-bit 12-to-1 multiplexer for signal <columnCounter[3]_GND_43_o_wide_mux_280_OUT> created at line 127.
+    Found 1-bit 12-to-1 multiplexer for signal <columnCounter[3]_GND_43_o_wide_mux_281_OUT<0>> created at line 127.
+    Found 10-bit comparator greater for signal <GND_43_o_rocketXX[9]_LessThan_15_o> created at line 98
+    Found 5-bit comparator lessequal for signal <GND_43_o_column1[4]_LessThan_30_o> created at line 129
+    Found 5-bit comparator greater for signal <GND_43_o_column1[4]_LessThan_31_o> created at line 130
+    Found 5-bit comparator greater for signal <GND_43_o_column1[4]_LessThan_34_o> created at line 133
+    Found 5-bit comparator greater for signal <GND_43_o_column1[4]_LessThan_37_o> created at line 136
+    Found 5-bit comparator greater for signal <GND_43_o_column1[4]_LessThan_40_o> created at line 139
+    Found 5-bit comparator lessequal for signal <GND_43_o_column2[4]_LessThan_55_o> created at line 152
+    Found 5-bit comparator greater for signal <GND_43_o_column2[4]_LessThan_56_o> created at line 153
+    Found 5-bit comparator greater for signal <GND_43_o_column2[4]_LessThan_59_o> created at line 156
+    Found 5-bit comparator greater for signal <GND_43_o_column2[4]_LessThan_62_o> created at line 159
+    Found 5-bit comparator greater for signal <GND_43_o_column2[4]_LessThan_65_o> created at line 162
+    Found 5-bit comparator lessequal for signal <GND_43_o_column3[4]_LessThan_80_o> created at line 175
+    Found 5-bit comparator greater for signal <GND_43_o_column3[4]_LessThan_81_o> created at line 176
+    Found 5-bit comparator greater for signal <GND_43_o_column3[4]_LessThan_84_o> created at line 179
+    Found 5-bit comparator greater for signal <GND_43_o_column3[4]_LessThan_87_o> created at line 182
+    Found 5-bit comparator greater for signal <GND_43_o_column3[4]_LessThan_90_o> created at line 185
+    Found 5-bit comparator lessequal for signal <GND_43_o_column4[4]_LessThan_105_o> created at line 198
+    Found 5-bit comparator greater for signal <GND_43_o_column4[4]_LessThan_106_o> created at line 199
+    Found 5-bit comparator greater for signal <GND_43_o_column4[4]_LessThan_109_o> created at line 202
+    Found 5-bit comparator greater for signal <GND_43_o_column4[4]_LessThan_112_o> created at line 205
+    Found 5-bit comparator greater for signal <GND_43_o_column4[4]_LessThan_115_o> created at line 208
+    Found 5-bit comparator lessequal for signal <GND_43_o_column5[4]_LessThan_130_o> created at line 221
+    Found 5-bit comparator greater for signal <GND_43_o_column5[4]_LessThan_131_o> created at line 222
+    Found 5-bit comparator greater for signal <GND_43_o_column5[4]_LessThan_134_o> created at line 225
+    Found 5-bit comparator greater for signal <GND_43_o_column5[4]_LessThan_137_o> created at line 228
+    Found 5-bit comparator greater for signal <GND_43_o_column5[4]_LessThan_140_o> created at line 231
+    Found 5-bit comparator lessequal for signal <GND_43_o_column6[4]_LessThan_155_o> created at line 244
+    Found 5-bit comparator greater for signal <GND_43_o_column6[4]_LessThan_156_o> created at line 245
+    Found 5-bit comparator greater for signal <GND_43_o_column6[4]_LessThan_159_o> created at line 248
+    Found 5-bit comparator greater for signal <GND_43_o_column6[4]_LessThan_162_o> created at line 251
+    Found 5-bit comparator greater for signal <GND_43_o_column6[4]_LessThan_165_o> created at line 254
+    Found 5-bit comparator lessequal for signal <GND_43_o_column7[4]_LessThan_180_o> created at line 267
+    Found 5-bit comparator greater for signal <GND_43_o_column7[4]_LessThan_181_o> created at line 268
+    Found 5-bit comparator greater for signal <GND_43_o_column7[4]_LessThan_184_o> created at line 271
+    Found 5-bit comparator greater for signal <GND_43_o_column7[4]_LessThan_187_o> created at line 274
+    Found 5-bit comparator greater for signal <GND_43_o_column7[4]_LessThan_190_o> created at line 277
+    Found 5-bit comparator lessequal for signal <GND_43_o_column8[4]_LessThan_205_o> created at line 290
+    Found 5-bit comparator greater for signal <GND_43_o_column8[4]_LessThan_206_o> created at line 291
+    Found 5-bit comparator greater for signal <GND_43_o_column8[4]_LessThan_209_o> created at line 294
+    Found 5-bit comparator greater for signal <GND_43_o_column8[4]_LessThan_212_o> created at line 297
+    Found 5-bit comparator greater for signal <GND_43_o_column8[4]_LessThan_215_o> created at line 300
+    Found 5-bit comparator lessequal for signal <GND_43_o_column9[4]_LessThan_230_o> created at line 313
+    Found 5-bit comparator greater for signal <GND_43_o_column9[4]_LessThan_231_o> created at line 314
+    Found 5-bit comparator greater for signal <GND_43_o_column9[4]_LessThan_234_o> created at line 317
+    Found 5-bit comparator greater for signal <GND_43_o_column9[4]_LessThan_237_o> created at line 320
+    Found 5-bit comparator greater for signal <GND_43_o_column9[4]_LessThan_240_o> created at line 323
+    Found 5-bit comparator lessequal for signal <GND_43_o_column10[4]_LessThan_255_o> created at line 336
+    Found 5-bit comparator greater for signal <GND_43_o_column10[4]_LessThan_256_o> created at line 337
+    Found 5-bit comparator greater for signal <GND_43_o_column10[4]_LessThan_259_o> created at line 340
+    Found 5-bit comparator greater for signal <GND_43_o_column10[4]_LessThan_262_o> created at line 343
+    Found 5-bit comparator greater for signal <GND_43_o_column10[4]_LessThan_265_o> created at line 346
     Summary:
 	inferred  19 Adder/Subtractor(s).
 	inferred  64 D-type flip-flop(s).
@@ -1247,7 +1247,7 @@ Offset:              5.339ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'fpga_clk'
-  Total number of paths / destination ports: 162180839250541630 / 10
+  Total number of paths / destination ports: 162180839250541660 / 10
 -------------------------------------------------------------------------
 Offset:              57.465ns (Levels of Logic = 56)
   Source:            VGA/hcounter_0 (FF)
@@ -1335,12 +1335,12 @@ fpga_clk       |   20.399|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 79.00 secs
-Total CPU time to Xst completion: 78.68 secs
+Total REAL time to Xst completion: 78.00 secs
+Total CPU time to Xst completion: 77.94 secs
  
 --> 
 
-Total memory usage is 533216 kilobytes
+Total memory usage is 527904 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :    0 (   0 filtered)

@@ -47,7 +47,7 @@ architecture bench of Input_tb is
   signal alienY       : std_logic_vector(8 downto 0);
   signal shipPosition : std_logic_vector(9 downto 0);
 
-  constant clock_period : time := 10 ns;
+  constant clock_period : time := 25 ns;
   constant stop_simulation: boolean := False;
 
 begin

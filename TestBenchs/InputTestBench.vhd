@@ -82,13 +82,33 @@ begin
     left <= '0';
     right <= '0';
     wait for 5 ns;
+
     reset <= '0';
     assert (gameStarted = '0') report "gameStarted uninitialized to 0 after reset." severity ERROR;
     assert (newMissile = '0') report "newMissile uninitialized to 0 after reset." severity ERROR;
     assert (alienX = "11111010") report "alienX uninitialized to 250 after reset." severity ERROR;
-    assert (alienY = "01100100") report "alienY uninitialized to 100 after reset." severity ERROR;
+    assert (alienY = "1100100") report "alienY uninitialized to 100 after reset." severity ERROR;
     assert (shipPosition = "0101110000") report "shipPosition uninitialized to 386 after reset." severity ERROR;
-    report "Reset tests passed succesfully.";
+    wait for clock_period;
+
+    startButton <= '1';
+    wait for clock_period;
+    assert (gameStarted = '1') report "Game didn't start after pressing startButton" severity ERROR;
+    left <= '1';
+    wait for clock_period;
+
+    assert (shipPosition = "0101110001") report "Ship didn't moved to the left when pressing left arrow." severity ERROR;
+    left <= '0';
+    right <= '1';
+    wait for clock_period;
+
+    assert (shipPosition = "0101110000") report "Ship didn't moved to the right when pressing right arrow." severity ERROR;
+    right <= '0';
+    fire <= '1';
+    wait for clock_period;
+
+    assert (newMissile = '1') report "Ship didn't shoot to a new missile when pressing fire." severity ERROR;
+
   end process;
 
 end;

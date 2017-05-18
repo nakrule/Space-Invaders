@@ -11,5 +11,26 @@
 <msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/samuel.riedo/Desktop/Space-Invaders/Development/v1.5/DCM.vhd&quot; into library work</arg>
 </msg>
 
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/samuel.riedo/Desktop/Space-Invaders/Development/v1.5/Display.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/samuel.riedo/Desktop/Space-Invaders/Development/v1.5/Input.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/samuel.riedo/Desktop/Space-Invaders/Development/v1.5/SpaceInvadersPackage.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/samuel.riedo/Desktop/Space-Invaders/Development/v1.5/TopModule.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/samuel.riedo/Desktop/Space-Invaders/Development/v1.5/VGA_Internal.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/samuel.riedo/Desktop/Space-Invaders/Development/v1.5/alienRocket.vhd&quot; into library work</arg>
+</msg>
+
+<msg type="info" file="ProjectMgmt" num="1061" ><arg fmt="%s" index="1">Parsing VHDL file &quot;C:/Users/samuel.riedo/Desktop/Space-Invaders/Development/v1.5/rocketManager.vhd&quot; into library work</arg>
+</msg>
+
 </messages>
 

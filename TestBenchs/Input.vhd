@@ -11,85 +11,176 @@
 --          1.1  -  Ship and aliens movements implemented
 --          1.2  -  New buttons for skipping start screen: startButton
 ----------------------------------------------------------------------------------
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
 
-library IEEE;
-use IEEE.Std_logic_1164.all;
-use IEEE.Numeric_Std.all;
+library work;
+use work.SpaceInvadersPackage.all;
 
-entity Input_tb is
-end;
+entity Input is
+  port(
+    startButton  : in  std_logic;                     -- When 1, start game
+    fire         : in  std_logic;                     -- When 1, shoot a rocket
+    clk          : in  std_logic;                     -- 40MHz
+    reset        : in  std_logic;                     -- Active high
+    left         : in  std_logic;                     -- Left arrow button
+    right        : in  std_logic;                     -- Right arrow button
+    newMissile   : out std_logic;                     -- If 1, new missile launched
+    gameStarted  : out std_logic;                     -- When 0, show start screen
+    alienX       : out std_logic_vector(9 downto 0);  -- first alien position from left screen
+    alienY       : out std_logic_vector(8 downto 0);  -- first alien position from top screen
+    shipPosition : out std_logic_vector(9 downto 0)   -- Ship x coordinate
+    );
+end Input;
 
-architecture bench of Input_tb is
+architecture Behavioral of Input is
 
-  component Input
-    port(
-      startButton  : in  std_logic;
-      fire         : in  std_logic;
-      clk          : in  std_logic;
-      reset        : in  std_logic;
-      left         : in  std_logic;
-      right        : in  std_logic;
-      newMissile   : out std_logic;
-      gameStarted  : out std_logic;
-      alienX       : out std_logic_vector(9 downto 0);
-      alienY       : out std_logic_vector(8 downto 0);
-      shipPosition : out std_logic_vector(9 downto 0)
-      );
-  end component;
-
-  signal startButton  : std_logic;
-  signal fire         : std_logic;
-  signal clk          : std_logic;
-  signal reset        : std_logic;
-  signal left         : std_logic;
-  signal right        : std_logic;
-  signal newMissile   : std_logic;
-  signal gameStarted  : std_logic;
-  signal alienX       : std_logic_vector(9 downto 0);
-  signal alienY       : std_logic_vector(8 downto 0);
-  signal shipPosition : std_logic_vector(9 downto 0);
-
-  constant clock_period : time := 10 ns;
-  constant stop_simulation: boolean := False;
+  signal start          : integer range 0 to 1                             := 0;  -- Integer of gameStarted
+  signal fireTimer      : integer range 0 to fireSpeed                     := 0;  -- Slow fire rate
+  signal shipTimer      : integer range 0 to shipSpeed                     := 0;  -- Slow ship speed
+  signal alienTimer     : integer range 0 to alienSpeed                    := 0;  -- Slow alien speed
+  signal alienDirection : integer range 0 to 7                             := 0;  -- If 0, aliens move left, 
+                                                                                  -- 1=up left, 2 = up, ...
+  signal alienJump      : integer range 1 to maxAlienJump                  := 1;  -- Alien pixels mouvement value
+  signal alienXX        : integer range alienXMargin to (500-alienXMargin) := 250;  -- alienX in integer
+  signal alienYY        : integer range alienYUpMargin to alienYDownMargin := 100;  -- alienY in integer
+  signal shipPos        : integer range 0 to 737                           := (maxShipPosValue/2);  -- Ship X 
+                                                                                                    -- position 
+                                                                                                    -- from left 
+                                                                                                    -- screen
 
 begin
 
-  uut : Input port map (startButton  => startButton,
-                        fire         => fire,
-                        clk          => clk,
-                        reset        => reset,
-                        left         => left,
-                        right        => right,
-                        newMissile   => newMissile,
-                        gameStarted  => gameStarted,
-                        alienX       => alienX,
-                        alienY       => alienY,
-                        shipPosition => shipPosition);
+  -- Update outputs according to their integer equivalent
+  gameStarted  <= '1' when start = 1 else '0';
+  shipPosition <= std_logic_vector(to_unsigned(shipPos, 10));
+  alienX       <= std_logic_vector(to_unsigned(alienXX, 10));
+  alienY       <= std_logic_vector(to_unsigned(alienYY, 9));
 
-  clocking : process
+  process(reset, clk)
   begin
-    while not stop_simulation loop
-      clk <= '0', '1' after clock_period / 2;
-      wait for clock_period;
-    end loop;
-    wait;
+    if reset = '1' then
+      alienYY    <= 100;
+      alienXX    <= 250;
+      shipPos    <= (maxShipPosValue/2);
+      alienTimer <= 0;
+      shipTimer  <= 0;
+      fireTimer  <= 0;
+      start      <= 0;
+      newMissile <= '0';
+    elsif rising_edge(clk) then
+      -- fire
+      if fireTimer >= fireSpeed then
+        fireTimer <= 0;
+        if startButton = '1' then
+          start <= 1;
+        end if;
+        if fire = '1' and start = 1 then
+          newMissile <= '1';
+        else
+          newMissile <= '0';
+        end if;
+      else
+        fireTimer  <= fireTimer + 1;
+        newMissile <= '0';
+      end if;
+
+      -- left and right
+      if start = 1 then
+        if shipTimer >= shipSpeed then
+          shipTimer <= 0;
+          if left = '1' then
+            if shipPos > (0+shipMargin) then
+              shipPos <= shipPos - 1;
+            end if;
+          elsif right = '1' then
+            if shipPos < (maxShipPosValue-shipMargin) then
+              shipPos <= shipPos + 1;
+            end if;
+          end if;
+        else
+          shipTimer <= shipTimer + 1;
+        end if;
+      else
+        shipTimer <= 0;
+      end if;
+
+      -- aliens
+      if alienTimer >= alienSpeed then
+        alienTimer <= 0;
+        case alienDirection is
+          when 0 =>                     -- go left
+            if alienXX > alienXMargin then
+              alienXX    <= alienXX -alienJump;
+              alienTimer <= alienXX + fireTimer;
+            end if;
+          when 1 =>                     -- go up left
+            if alienXX > alienXMargin and alienYY > alienYUpMargin then
+              alienXX    <= alienXX -alienJump;
+              alienYY    <= alienYY -alienJump;
+              alienTimer <= alienYY + shipTimer;
+            end if;
+          when 2 =>                     -- go up
+            if alienYY > alienYUpMargin then
+              alienYY    <= alienYY -alienJump;
+              alienTimer <= alienYY + shipTimer;
+            end if;
+          when 3 =>                     -- go up right
+            if alienXX < (500-alienXMargin) and alienYY > alienYUpMargin then
+              alienXX    <= alienXX +alienJump;
+              alienYY    <= alienYY -alienJump;
+              alienTimer <= alienXX + fireTimer;
+            end if;
+          when 4 =>                     -- go right
+            if alienXX < (500-alienXMargin) then
+              alienXX    <= alienXX +alienJump;
+              alienTimer <= alienXX + shipTimer;
+            end if;
+          when 5 =>                     -- go right down
+            if alienXX < (500-alienXMargin) and alienYY < alienYDownMargin then
+              alienXX    <= alienXX +alienJump;
+              alienYY    <= alienYY +alienJump;
+              alienTimer <= alienYY + fireTimer;
+            end if;
+          when 6 =>                     -- go down
+            if alienYY < alienYDownMargin then
+              alienYY    <= alienYY +alienJump;
+              alienTimer <= alienXX + shipTimer;
+            end if;
+          when others =>                -- go down left
+            if alienXX > alienXMargin and alienYY < alienYDownMargin then
+              alienXX    <= alienXX -alienJump;
+              alienYY    <= alienYY +alienJump;
+              alienTimer <= alienYY + fireTimer;
+            end if;
+        end case;
+      else
+        alienTimer <= alienTimer + 1;
+      end if;
+    end if;
   end process;
 
-  stimulis : process
+  process(reset, clk)
   begin
-    report "Simulation start";
-    reset <= '1';
-    startButton <= '0';
-    fire <= '0';
-    left <= '0';
-    right <= '0';
-    wait for 5 ns;
-    reset <= '0';
-    assert (gameStarted = '0') report "gameStarted uninitialized to 0 after reset." severity ERROR;
-    assert (newMissile = '0') report "newMissile uninitialized to 0 after reset." severity ERROR;
-    assert (alienX = "11111010") report "alienX uninitialized to 250 after reset." severity ERROR;
-    assert (alienY = "01100100") report "alienY uninitialized to 100 after reset." severity ERROR;
-    assert (shipPosition = "0101110000") report "shipPosition uninitialized to 386 after reset." severity ERROR;
+    if reset = '1' then
+      alienDirection <= 0;
+      alienJump      <= 1;
+    elsif rising_edge(clk) then
+      -- alien direction
+      if alienDirection >= 7 then
+        alienDirection <= 0;
+      else
+        alienDirection <= alienDirection + 1;
+      end if;
+      -- alien jump
+      if alienJump >= maxAlienJump then
+        alienJump <= 1;
+      else
+        alienJump <= alienJump + 1;
+      end if;
+    end if;
+  end process;
 
+end Behavioral;
 
-end;

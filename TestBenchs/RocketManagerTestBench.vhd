@@ -14,10 +14,10 @@ library IEEE;
 use IEEE.Std_logic_1164.all;
 use IEEE.Numeric_Std.all;
 
-entity Input_tb is
+entity rocketManager_tb is
 end;
 
-architecture bench of Input_tb is
+architecture bench of rocketManager_tb is
 
   component rocketManager is
     port(
@@ -68,11 +68,11 @@ begin
   stimulis : process
   begin
     report "Simulation start.";
-    reset        <= '0';
+    reset        <= '1';
     newMissile   <= '0';
     alienKilled  <= '0';
     shipPosition <= "0100000000";
-    wait for 5 ns;
+    wait for clock_period;
 
     assert (missileY = "0000000000") report "missileY uninitialized to 0 after reset." severity error;
     assert (MissileX = "0000110010") report "missileX uninitialized to 50 after reset." severity error;
@@ -87,11 +87,7 @@ begin
     wait for clock_period;
 
     assert (rocketOnScreen = '1') report "rocketOnScreen not = 1 after launch." severity error;
-    assert (MissileX = "0111000000") report "missileX value incorrect, not = shipPosition." severity error;
     assert (MissileY = "1000111010") report "missileY value incorrect, not = 570." severity error;
-    wait for clock_period;
-
-    assert (MissileY = "1000111001") report "missileY value incorrect, not = 569." severity error;
     alienKilled <= '1';
     wait for clock_period;
 

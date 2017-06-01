@@ -81,7 +81,7 @@ begin
     fire <= '0';
     left <= '0';
     right <= '0';
-    wait for 5 ns;
+    wait for clock_period;
 
     reset <= '0';
     assert (gameStarted = '0') report "gameStarted uninitialized to 0 after reset." severity ERROR;

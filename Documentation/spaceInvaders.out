@@ -21,17 +21,18 @@
 \BOOKMARK [2][-]{subsection.2.6.1}{Entrées & Sorties}{section.2.6}% 21
 \BOOKMARK [1][-]{section.2.7}{Top\040Module}{chapter.2}% 22
 \BOOKMARK [2][-]{subsection.2.7.1}{Entrées & Sorties}{section.2.7}% 23
-\BOOKMARK [1][-]{section.2.8}{Space\040Invaders\040Package}{chapter.2}% 24
-\BOOKMARK [0][-]{chapter.3}{Annexes}{}% 25
-\BOOKMARK [1][-]{section.3.1}{Convertion\040d'image}{chapter.3}% 26
-\BOOKMARK [2][-]{subsection.3.1.1}{Script\040Matlab\040-\040Convertion\040en\040fichier\040COE}{section.3.1}% 27
-\BOOKMARK [2][-]{subsection.3.1.2}{Script\040Matlab\040-\040Convertion\040en\040tableau\040VHDL}{section.3.1}% 28
-\BOOKMARK [1][-]{section.3.2}{Code\040source}{chapter.3}% 29
-\BOOKMARK [2][-]{subsection.3.2.1}{alienRocket}{section.3.2}% 30
-\BOOKMARK [2][-]{subsection.3.2.2}{Digital\040Clock\040Management}{section.3.2}% 31
-\BOOKMARK [2][-]{subsection.3.2.3}{Display}{section.3.2}% 32
-\BOOKMARK [2][-]{subsection.3.2.4}{Input}{section.3.2}% 33
-\BOOKMARK [2][-]{subsection.3.2.5}{rocketManager}{section.3.2}% 34
-\BOOKMARK [2][-]{subsection.3.2.6}{VGA\040Internal}{section.3.2}% 35
-\BOOKMARK [2][-]{subsection.3.2.7}{Top\040Module}{section.3.2}% 36
-\BOOKMARK [2][-]{subsection.3.2.8}{Package}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.2.7.2}{Architecture}{section.2.7}% 24
+\BOOKMARK [1][-]{section.2.8}{Space\040Invaders\040Package}{chapter.2}% 25
+\BOOKMARK [0][-]{chapter.3}{Annexes}{}% 26
+\BOOKMARK [1][-]{section.3.1}{Convertion\040d'image}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.1.1}{Script\040Matlab\040-\040Convertion\040en\040fichier\040COE}{section.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.1.2}{Script\040Matlab\040-\040Convertion\040en\040tableau\040VHDL}{section.3.1}% 29
+\BOOKMARK [1][-]{section.3.2}{Code\040source}{chapter.3}% 30
+\BOOKMARK [2][-]{subsection.3.2.1}{alienRocket}{section.3.2}% 31
+\BOOKMARK [2][-]{subsection.3.2.2}{Digital\040Clock\040Management}{section.3.2}% 32
+\BOOKMARK [2][-]{subsection.3.2.3}{Display}{section.3.2}% 33
+\BOOKMARK [2][-]{subsection.3.2.4}{Input}{section.3.2}% 34
+\BOOKMARK [2][-]{subsection.3.2.5}{rocketManager}{section.3.2}% 35
+\BOOKMARK [2][-]{subsection.3.2.6}{VGA\040Internal}{section.3.2}% 36
+\BOOKMARK [2][-]{subsection.3.2.7}{Top\040Module}{section.3.2}% 37
+\BOOKMARK [2][-]{subsection.3.2.8}{Package}{section.3.2}% 38

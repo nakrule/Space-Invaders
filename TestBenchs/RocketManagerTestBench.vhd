@@ -96,5 +96,4 @@ begin
     assert (rocketOnScreen = '0') report "rocketOnScreen uninitialized to 0 after alien killed." severity error;
 
   end process;
-
 end;

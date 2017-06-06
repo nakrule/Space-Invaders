@@ -206,11 +206,11 @@ l'affichage par VGA, alors que les autres ont été spécialement implémentés 
 ce projet.
 
 Le fait d'avoir déjà une base de départ nous a poussés à implémentés le jeu
-fonction par fonction, puis de tester et débugguer chaque nouvel ajout dès qu'il
+fonction par fonction, puis de tester et déboguer chaque nouvel ajout dès qu'il
 fut coder. Cette approche présente l'avantage, contrairement à un développement
 de chaque composant indépendamment les uns des autres, de réduire le risque
 d'incompatibilité entre deux composants à fin ainsi que le lourd travail de
-debuggage final. En revanche, cette technique ne permet pas de répartir
+débogage final. En revanche, cette technique ne permet pas de répartir
 efficacement le travail dans une équipe constituée de nombreuses personnes.
 
 Bien que nous puissions tester le bon fonctionnement de chaque bloc et fonction
@@ -332,7 +332,7 @@ ligne 5 (alienLine5), ainsi que depuis les aliens 5 et 6 de la ligne 4 (alienLin
 \end{table}
 
 Les signaux \emph{alienLine1} à \emph{alienLine5} sont des
-\emph{std\_logic\_vector} de 10 bits. Chaque bits indique par une valeur à 1 la
+\emph{std\_logic\_vector} de 10 bits. Chaque bit indique par une valeur à 1 la
 présence d'un alien à l'index correspondant, alors qu'un 0 indique que l'alien a
 été tué par le joueur. Par exemple, selon le tableau \ref{alientable},
 \emph{alienLine5} vaut \emph{1111100111}.
@@ -355,7 +355,7 @@ changeant la constante \emph{rocketFrequency} dans le package \emph{SpaceInvader
   \itemColor{alienLine4} Identique à alienLine3, pour la ligne d'alien en dessous.
   \itemColor{alienLine5} Identique à alienLine4, pour la ligne d'alien en dessous.
   \itemColor{alienX} Nombre de pixels entre le bord gauche de l'écran et le
-  board droit des aliens à l'index 0.
+  bord droit des aliens à l'index 0.
   \itemColor{alienY} Nombre de pixels entre le haut de l'écran et le bord
   supérieur des aliens contenus dans \emph{alienLine1}.
   \itemColor{alienRocketX} Nombre de pixels entre le bord gauche de l'écran et
@@ -604,27 +604,27 @@ présent de chaque côté du spationef.
 \clearpage
 
 \subsection{Entrées \& Sorties}
-\label{subsec:Entrees_Sorties_dmc}
+\label{subsec:Entrees_Sorties_display}
 
 \begin{descr}
   \itemColor{blank} Si 1, le balayage est en dehors de l'écran et les
   composantes RGB, c'est-à-dire les sorties \emph{red}, \emph{blue} et
   \emph{green} doivent être nul.
   \itemColor{gameStarted} Indique par une valeur à 1 que le jeu à débuté.
-  \itemColor{rocketOnScreen} Indique par une valeur à 1 qu'une roquet doit être
+  \itemColor{rocketOnScreen} Indique par une valeur à 1 qu'une roquette doit être
   affiché à l'écran.
   \itemColor{clk} Horloge 40MHz, active sur front montant.
   \itemColor{imageInput} Bus de données en provenance de la ROM contenant
   l'image d'accueil du jeu.
   \itemColor{alienY} Nombre de pixels entre le haut de l'écran et le bord
-  supérieur des aliens contenues dans \emph{alienLine1}.
+  supérieur des aliens contenus dans \emph{alienLine1}.
   \itemColor{alienX} Nombre de pixels entre le bord gauche de l'écran et le
-  board droit des aliens à l'index 0.
+  bord droit des aliens à l'index 0.
   \itemColor{alienRocketX} Nombre de pixels entre le bord gauche de l'écran et
-  la roquet tirée par les aliens.
+  la roquette tirée par les aliens.
   \itemColor{alienRocketY} Nombre de pixels entre le le haut de l'écran et le
   haut de la rockette tirée par les aliens.
-  \itemColor{missileX} Nombre de pixels entre le bord gauche de l'écran et la roquet
+  \itemColor{missileX} Nombre de pixels entre le bord gauche de l'écran et la roquette
   lancée par les aliens.
   \itemColor{missileY} Nombre de pixels entre le haut de l'écran et le haut de la rockette
   lancée par les aliens.
@@ -632,9 +632,9 @@ présent de chaque côté du spationef.
   le bord gauche du vaisseau contrôlé par le joueur.
   \itemColor{hcount} Coordonnée $X$ du balayage.
   \itemColor{vcount} Coordonnée $Y$ du balayage.
-  \itemColor{alienKilled} Indique par une valeur à 1 qu'un alien à été touché
+  \itemColor{alienKilled} Indique par une valeur à 1 qu'un alien a été touché
   par une rockette lancée par le joueur.
-  \itemColor{blue} Composante bleu de la sortie VGA.
+  \itemColor{blue} Composante bleue de la sortie VGA.
   \itemColor{red} Composante rouge de la sortie VGA.
   \itemColor{green} Composante verte de la sortie VGA.
   \itemColor{alienL1} Indique par une valeur à 1 la présence d'un alien au même
@@ -701,13 +701,13 @@ définie en modifiant la valeur \emph{maxAlienJump} dans le package du jeu.
   \itemColor{reset} Reset du circuit, actif à l'état haut.
   \itemColor{left} Bouton gauche de la croix directionnelle (BTNL, C4). Utilisé
   pour déplacer le vaisseau du joueur vers la gauche.
-  \itemColor{right} Bouton right de la croix directionnelle (BTNR, D9). Utilisé
+  \itemColor{right} Bouton droit de la croix directionnelle (BTNR, D9). Utilisé
   pour déplacer le vaisseau du joueur vers la droite.
   \itemColor{newMissile} Indique par une valeur à 1 qu'un nouveau missile a été
   tiré par le vaisseau du joueur.
   \itemColor{gameStarted} Indique par une valeur à 1 que le jeu à débuté.
   \itemColor{alienX} Nombre de pixels entre le bord gauche de l'écran et le
-  board droit des aliens à l'index 0.
+  bord droit des aliens à l'index 0.
   \itemColor{alienY} Nombre de pixels entre le haut de l'écran et le bord
   supérieur des aliens contenus dans \emph{alienLine1}.
   \itemColor{shipPosition} Nombre de pixels entre le bord gauche de l'écran et
@@ -715,7 +715,9 @@ définie en modifiant la valeur \emph{maxAlienJump} dans le package du jeu.
 \end{descr}
 
 \subsection{Testbench}
-\label{subsec:Testbench_rocketManager}
+\label{subsec:Testbench_input}
+
+\lstinputlisting[style=vhdl, caption=InputTestbench.]{../TestBenchs/InputTestBench.vhd}
 
 \clearpage
 
@@ -770,7 +772,7 @@ l'écran).
 Les positions X et Y sont fournis au bloc \emph{Display} via leurs signaux
 respectifs et ce dernier se charge d'afficher le missile.
 
-Le bloc \emph{rocketManager} utilise la clock afin de décrémenter le compteur de
+Le bloc \emph{rocketManager} utilise l’horloge afin de décrémenter le compteur de
 la position Y et le signal reset afin de remettre tous les signaux dans leur
 état d'origine.
 
@@ -794,10 +796,11 @@ la position Y et le signal reset afin de remettre tous les signaux dans leur
   lancée par les aliens.
 \end{descr}
 \clearpage
+
 \subsection{Testbench}
 \label{subsec:Testbench_rocketManager}
 
-
+\lstinputlisting[style=vhdl, firstline=20, caption=RocketManagerTestbench.]{../TestBenchs/RocketManagerTestBench.vhd}
 
 \clearpage
 
@@ -894,10 +897,7 @@ dans une erreur d'affichage ``Index out of bound'' s'il n'est pas respecté.
 
 Le bloc \emph{topModule} est comme son nom l'indique l'élément tout en haut de notre architecture. C'est lui qui instancie les composants et relie ceux-ci via des signaux intermédiaires. 
 
-Concernant ses entrées et sorties, celles-ci sont des éléments physiques de la carte FPGA et sont assignées via le fichier UCF. 
-
-Le signal d'entrée \emph{fpga\_clk} correspond à la clock de la FPGA. Cette
-clock fonctionne à une fréquence de 100 MHz. Le \emph{reset} est assigné sur l'un des switchs (voir figure \textcolor{red}{XXXXXXX}) et permet le reset software du jeu.
+Concernant ses entrées et sorties, celles-ci sont des éléments physiques de la carte FPGA et sont assignées via le fichier UCF. Le signal d'entrée \emph{fpga\_clk} correspond à l’horloge de la FPGA. Cette horloge fonctionne à une fréquence de 100 MHz. Le \emph{reset} est assigné sur le switch SW8 (figure \ref{motherboard}) et permet le reset software du jeu.
 
 Plusieurs boutons sont utilisés afin de jouer et ont donc été assignés grâce au fichier UCF. Au niveau des signaux, il s'agit de \emph{startButton}, de \emph{fire}, de \emph{right} et de \emph{left}. 
 Le bouton \emph{fire} permet de tirer un missile depuis le vaisseau. Puisqu'il n'est possible que de tirer un seul missile à la fois, celui-ci n'est pas d'effet tant qu'il y a un missile en déplacement. 
@@ -906,7 +906,7 @@ Le \emph{startButton} permet de passer de l'écran de démarrage au jeu. Il n'a 
 
 Nous avions commencé par utiliser un seul bouton afin de passer de l'écran de démarrage au jeu et pour tirer des missiles. Cependant, lorsque le jeu commençait, un missile était automatiquement tiré et cela ne correspondait pas à ce que nous voulions. Nous avons cherché un moyen de corriger ce problème, mais cela s'est avéré compliqué pour un problème mineur alors qu'une solution simple, et finalement plus pratique était de séparer ces deux fonctions en deux boutons.
 
-Concernant les sorties \emph{blue}, \emph{red} et \emph{green}, celles-ci sont assignées sur la sortie VGA de la carte. Ces signaux correspondent aux trois couleurs (RGB) utilisé par le VGA afin d'afficher sur un écran. Puisque le VGA utilise 8 bits, les signaux \emph{red} et \emph{green} disposent de 3 bits chacun. Le signal \emph{blue} ne dispose que de 2 bits.
+Concernant les sorties \emph{blue}, \emph{red} et \emph{green}, celles-ci sont assignées sur la sortie VGA de la carte. Ces signaux correspondent aux trois couleurs (RGB) utilisées par le VGA afin d'afficher sur un écran. Puisque le VGA utilise 8 bits, les signaux \emph{red} et \emph{green} disposent de 3 bits chacun. Le signal \emph{blue} ne dispose que de 2 bits.
 Il est tout de même possible d'afficher 256 couleurs différentes.
 
 \subsection{Entrées \& Sorties}
@@ -917,16 +917,20 @@ Il est tout de même possible d'afficher 256 couleurs différentes.
   \itemColor{rst} Reset du circuit, actif à l'état haut.
   \itemColor{startButton} Bouton situé au centre de la croix directionnelle (B8).
   Utilisé pour démarrer une partie depuis l'écran d'accueil.
-  \itemColor{fire} Bouton supérieur de la croix directionnelle (BTNU, A8).
-  Utilisé pour tirer des lasers depuis le vaisseau vers les aliens pendant une partie.
-  \itemColor{right} Bouton right de la croix directionnelle (BTNR, D9). Utilisé
-  pour déplacer le vaisseau du joueur vers la droite.
-  \itemColor{left} Bouton gauche de la croix directionnelle (BTNL, C4). Utilisé
-  pour déplacer le vaisseau du joueur vers la gauche.
-  \itemColor{blue} Composante bleu de la sortie VGA.
+  \itemColor{fire} Bouton supérieur de la croix directionnelle (BTNU, A8). Tire des lasers sur les aliens.
+  \itemColor{right} Bouton droit de la croix directionnelle (BTNR, D9). Déplace le vaisseau à droite.
+  \itemColor{left} Bouton gauche de la croix directionnelle (BTNL, C4). Déplace le vaisseau à gauche.
+  \itemColor{blue} Composante bleue de la sortie VGA.
   \itemColor{red} Composante rouge de la sortie VGA.
   \itemColor{green} Composante verte de la sortie VGA.
 \end{descr}
+
+\clearpage
+
+\subsection{Architecture}
+\label{sub:architecture}
+
+Insérer l'image du top module ici
 
 \clearpage
 
@@ -935,34 +939,34 @@ Il est tout de même possible d'afficher 256 couleurs différentes.
 \label{sec:package}
 
 Généralement, il est recommandé de programmer en utilisant des variables et non
-des \emph{Magic Numbers} dans les languages de programmation dit
+des \emph{Magic Numbers} dans les langages de programmation dits
 ``haut-niveau''. Les performances du code ne seront que peux, voir pas du tout
 impacté selon la qualité du compilateur. En revanche, le programme sera plus
-compréhensible dans le cas d'un débuggage ou d'un changement de programmeur.
+compréhensible dans le cas d'un débogage ou d'un changement de programmeur.
 
 Autre avantage, modifier une variable à un seul endroit fera le changement dans
-l'ensemble du code sans qu'il n'y est des risques d'erreurs humaines, tel que
+l'ensemble du code sans qu'il n'y ait des risques d'erreurs humaines, tel que
 modifier le mauvais nombre car deux \emph{Magic Numbers} différents avaient la
 même valeur.
 
 En VHDL, il est également recommandé de programmer selon ce principe. Néanmoins,
 un composant VHDL ne peut transmettre d'information à un autre sans qu'un signal
 contenant les données à partager soit implémenté entre les deux blocs. Lorsqu'un
-programme contient de nombreuses variables dit génériques, ces dernières peuvent
+programme contient de nombreuses variables dites génériques, ces dernières peuvent
 rapidement rendre le design schématique du projet incompréhensible en ajoutant
-énormémenet de connection entre les blocs.
+énormément de connexions entre les blocs.
 
 Une solution à cette problématique est l'utilisation de \emph{package}. Un
-\emph{package} peut être lu et modifé par n'importe quel composant l'ayant
+\emph{package} peut être lu et modifié par n'importe quel composant l'ayant
 importé.
 \begin{lstlisting}[style=vhdl, caption=Importation d'un package]
 library work;
 use work.SpaceInvadersPackage.all;
 \end{lstlisting}
 
-Par défault, un package est contenu dans la librarie \emph{work}, qui doit donc
+Par défaut, un package est contenu dans la libraire \emph{work}, qui doit donc
 également être importée. Notre jeu est codé en utilisant au maximum des signaux
-contenus dans un package, qui peuvent être modifiés pour changant certain
+contenus dans un package, qui peuvent être modifiés pour changeant certains
 paramètres du jeu.
 
 \begin{lstlisting}[style=vhdl, caption=Signaux utilisés par \emph{Input} \& \emph{rocketManager}]
@@ -984,9 +988,9 @@ paramètres du jeu.
   constant rocketColor      : std_logic_vector(7 downto 0) := "11111111";
 \end{lstlisting}
 
-Admettons que l'on souhaite modifier la couleur des roquette pour les rendres
+Admettons que l'on souhaite modifier la couleur des roquettes pour les rendre
 plus visibles. Il suffit de changer la valeur de \emph{rocketColor} pour que ce
-changement soit éffectué dans tous les composants nécessaires. 
+changement soit effectué dans tous les composants nécessaires. 
 
 \asymmetricalPage
 \chapter{Annexes}
@@ -1082,7 +1086,7 @@ dans les commentaires du code.
 
 \clearpage
 \subsection{Digital Clock Management}
-\lstinputlisting[style=vhdl]{../Development/v1.5/dcm.vhd}
+\lstinputlisting[style=vhdl]{vhdl/dcm.vhd}
 \clearpage
 \subsection{Display}
 \lstinputlisting[style=vhdl]{../Development/v1.5/Display.vhd}

@@ -1,6 +1,6 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.2.28)  2 JUN 2017 14:21
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.2.28)  15 JUN 2017 09:15
 entering extended mode
- \write18 enabled.
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **spaceInvaders.tex
 (./spaceInvaders.tex
@@ -4365,7 +4365,13 @@ Package microtype Info: Character `\textgreater ' is missing
 
 ] [19
 
-] [20
+]
+File: pictures/TopModuleArchitecture.jpeg Graphic file (type QTm)
+ <use  "pictures/TopModuleArchitecture.jpeg" >
+
+Package nag Warning: figure with no \caption on input line 936.
+
+[20
 
 ] [21
 
@@ -4434,12 +4440,14 @@ Chapitre 3.
 
 AED: lastpage setting LastPage
 [48]
-No complaints by nag.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1110.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 1110.
+
+Package nag Warning: 1 complaints in total.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1113.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 1113.
 (./spaceInvaders.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1110.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1110.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1113.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1113.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -4450,10 +4458,10 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
  ) 
 Here is how much of TeX's memory you used:
- 52646 strings out of 493706
- 1065053 string characters out of 6145769
- 2044475 words of memory out of 5000000
- 54923 multiletter control sequences out of 15000+600000
+ 52648 strings out of 493706
+ 1065113 string characters out of 6145769
+ 2044535 words of memory out of 5000000
+ 54924 multiletter control sequences out of 15000+600000
  19098 words of font info for 170 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  82i,19n,144p,10365b,2310s stack positions out of 5000i,500n,10000p,200000b,80000s

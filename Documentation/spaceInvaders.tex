@@ -40,8 +40,8 @@ toucher par les tirs des aliens.
 
 \emph{Space Invaders} connu rapidement un succès mondial et est aujourd'hui
 considéré comme un grand classique de l'univers vidéoludique. Il a de ce fait
-connu de nombreux ports et suites sur un grand nombre de plates-formes, vieille
-comme récente.
+connu de nombreux ports et suites sur un grand nombre de plates-formes, vieilles
+comme récentes.
 
 \section{Super Mario Bros}
 \label{sec:mario}
@@ -55,7 +55,7 @@ utiliserons.
 Ceci représentait \si{240.000} pixels à stocker. En prenant en compte qu'un pixel
 fait exactement un Byte (deux bits pour la composante bleu, trois pour la rouge
 et trois pour la verte), les RAM et ROM à disposition de la Spartan 6
-XC6LX16-CS324 ne pouvaient pas stocker toutes ses données.
+XC6LX16-CS324 ne pouvaient pas stocker toutes ces données.
 
 Afin de contourner ce problème, l'image de base a été divisée en 8 images plus
 petites, faisant chacune 200x150 pixels, soit 30kB. Il était alors possible de
@@ -63,7 +63,7 @@ stocker une image dans une ROM/RAM, puis une deuxième dans une seconde ROM/RAM,
 mais il était à nouveau impossible d'enregistrer les six suivantes sans dépasser
 les capacités de la carte.
 
-Devant ses limitations hardware, la décision fut prise de changer de jeu. Il nous
+Devant ces limitations hardware, la décision fut prise de changer de jeu. Il nous
 est apparu qu'avoir un font statique, ou alors une répétition permanente d'un
 même arrière-plan était indispensable pour que le projet soit synthétisable sur
 notre carte. Un jeu tel que \emph{Super Mario Bros}, avec des mondes très
@@ -81,13 +81,13 @@ Space Invaders est un jeu en deux dimensions, aussi appelé jeu en 2D ou tout
 simplement jeu 2D. Le joueur contrôle un vaisseau spatial pouvant se déplacer
 uniquement sur l'axe $X$, et tirer des lasers vers le haut de l'écran. Il est
 confronté à plusieurs aliens, se déplaçant aléatoirement dans la partie
-supérieure de l'écran. Ces derniers tirent aléatoirement des lasers vers le bat
+supérieure de l'écran. Ces derniers tirent aléatoirement des lasers vers le bas
 pour détruire le vaisseau spatial contrôlé par le joueur.
 
 Si le vaisseau du joueur se fait toucher par un laser alien, la partie est
 perdue. Si, au contraire, le joueur réussit à détruire tous les aliens sans se
 faire lui-même toucher, il gagne la partie. La figure \ref{gameOnArcade} représente une
-partie typique de \emph{Space Invaders} sur borne arcade tel que le jeu était
+partie typique de \emph{Space Invaders} sur une borne arcade tel que le jeu était
 lors de son lancement initial en 1978.
 
 \begin{figure}[ht]
@@ -99,12 +99,12 @@ lors de son lancement initial en 1978.
 
 Le vaisseau du joueur est représenté par la forme verte. Ce dernier à tiré un
 laser, symbolisé par un point bleu. Les aliens, au nombre de 10, ont déjà été
-partiellement déssimer. Au début d'une partie, leur nombre et leur disposition
+partiellement déssimés. Au début d'une partie, leur nombre et leur disposition
 forment une grille rectangulaire complète.
 
 \infoInfo{Types d'aliens}{Bien que les aliens peuvent avoir plusieurs formes
   différentes (trois sur la figure \ref{gameOnArcade}), cela n'influence en rien
-  leur comportement. Il ne s'agit ni plus ni moins que d'un skin.}
+  leur comportement. Il ne s'agit ni plus ni moins que de leur apparence.}
 
 Les versions suivantes de \emph{Space Invaders} implémenteront de nouvelles
 fonctionnalités, tel que:\vspace{.1in}
@@ -140,8 +140,7 @@ toucher, ou qu'il y a encore des aliens en vie.
 
 Lorsque la partie se termine, deux fins sont possibles.
 Dans la première, le joueur à éliminer tous les aliens et un écran ``You Win'' est affiché, alors que le texte change
-pour ``Game Over'' dans la deuxième ou il s'est fait toucher. Le bouton BtnC peut-être utilisé pour
-relancer une nouvelle partie à ce moment sans revoir l'écran d'accueil. Il est possible, à tout moment, de réinitialiser le jeu avec un reset software
+pour ``Game Over'' dans la deuxième ou il s'est fait toucher. Il est possible, à tout moment, de réinitialiser le jeu avec un reset software
 en actionnant le switch \emph{SW8}.
 
 \vspace{.1in}
@@ -205,12 +204,12 @@ un package. Trois de ces blocs furent repris du travail pratique concernant
 l'affichage par VGA, alors que les autres ont été spécialement implémentés pour
 ce projet.
 
-Le fait d'avoir déjà une base de départ nous a poussés à implémentés le jeu
+Le fait d'avoir déjà une base de départ nous a poussé à implémenter le jeu
 fonction par fonction, puis de tester et déboguer chaque nouvel ajout dès qu'il
 fut coder. Cette approche présente l'avantage, contrairement à un développement
 de chaque composant indépendamment les uns des autres, de réduire le risque
-d'incompatibilité entre deux composants à fin ainsi que le lourd travail de
-débogage final. En revanche, cette technique ne permet pas de répartir
+d'incompatibilité entre deux composants afin que le lourd travail de
+débogage final soit réduit. En revanche, cette technique ne permet pas de répartir
 efficacement le travail dans une équipe constituée de nombreuses personnes.
 
 Bien que nous puissions tester le bon fonctionnement de chaque bloc et fonction
@@ -255,7 +254,7 @@ le déroulement d'une partie. De plus, deux composants, \emph{Input} et
 \label{alienRocketBloc}
 \end{wrapfigure}
 
-Le bloc \emph{alienRocket} gère les roquettes, aussi appelé laser ou missile, tirés par
+Le bloc \emph{alienRocket} gère les roquettes, aussi appelé laser ou missile, tirées par
 les aliens en direction du spationef. Il est chargé de générer de nouveaux
 missiles ainsi que de transmettre les informations nécessaires au bloc \emph{Display} pour afficher
 correctement une roquette à l'écran.
@@ -264,7 +263,7 @@ une grille de 5 lignes et 10 colonnes (tableau \ref{alientable}). Par colonne,
 chaque alien le plus proche du bas de l'écran peut tirer une roquette vers le
 bas pour tenter de détruire le vaisseau du joueur. Une seule roquette peut être
 affichée à l'écran en même temps (sans compter les tirs du joueur). Cela signifie
-que tant que le missile n'a pas atteint le bat de l'écran, les aliens ne peuvent
+que tant que le missile n'a pas atteint le bas de l'écran, les aliens ne peuvent
 pas en tirer un nouveau.
 
 Lorsqu'une roquette peut être tirée, le choix de la colonne d'alien pouvant tirer
@@ -361,7 +360,7 @@ changeant la constante \emph{rocketFrequency} dans le package \emph{SpaceInvader
   \itemColor{alienRocketX} Nombre de pixels entre le bord gauche de l'écran et
   la roquette tirée par les aliens.
   \itemColor{alienRocketY} Nombre de pixels entre le le haut de l'écran et le
-  haut de la rockette tirée par les aliens.
+  haut de la roquette tirée par les aliens.
 \end{descr}
 
 \subsection{Problèmes rencontrés}
@@ -409,10 +408,10 @@ else
 end if;
 \end{lstlisting}
 \end{wrapfigure}
-Les fonctions d'\emph{alienRocket} ont pratiquement toutes fonctionné du
+Les fonctions d'\emph{alienRocket} ont pratiquement toutes fonctionnées du
 premier coup. Néanmoins, il est rapidement apparu que les roquettes tirées par
 une colonne aléatoire d'aliens suivaient une séquence identique en boucle selon
-certaines fréquences de tir paramétré dans \emph{SpaceInvadersPackage}. Comme
+certaines fréquences de tir paramétrées dans \emph{SpaceInvadersPackage}. Comme
 nous n'avons pas pu utiliser une horloge différente pour la gestion de
 l'aléatoire (voir \ref{subsec:Problemes_rencontres_dcm}), la valeur de
 \emph{rocketFrequency} doit être une valeur impaire afin de résoudre ce
@@ -464,9 +463,9 @@ pour générer des composants génériques tels qu'un \emph{DCM}.
 \label{subsec:Problemes_rencontres_dcm}
 
 Toutes les générations d'éléments aléatoires sont basées sur la lecture d’un
-conteur. Pour éviter que des séquences prédictibles puissent apparaitre, nous
+compteur. Pour éviter que des séquences prédictibles puissent apparaitre, nous
 avons choisi d'utiliser l'horloge à 100MHz de la FPGA en lieu et place de celle
-à 40MHz générés par le bloc \emph{Digital Clock Management}. Néanmoins, lorsque
+à 40MHz générée par le bloc \emph{Digital Clock Management}. Néanmoins, lorsque
 nous avons affecté le signal \emph{fpga\_clk} à l'un de nos composants (excepté
 le bloc \emph{DCM}), le code n'était plus synthétisable.
 
@@ -474,7 +473,7 @@ Pour contourner cet étrange problème, nous avons tenté d'ajouter une sortie a
 composant \emph{DCM} se contentant de copier l'horloge d'entrée sur une deuxième
 horloge de sortie. Pour des raisons inconnues, le problème a persisté et le code
 n'était à nouveau plus synthétisable. De ce fait, la génération d'éléments
-aléatoire a, à partir de ce moment, été généré par des counter utilisant
+aléatoire a, à partir de ce moment, été généré par des compteurs utilisant
 l'horloge de 40MHz, mais étant réinitialisé à leur valeur maximale modulo
 \emph{shipPosition}. Ce dernier signal étant la position entre le bord de
 l'écran et le vaisseau du joueur, il n'est pas possible de prédire sa valeur et
@@ -558,24 +557,23 @@ cela permet d'éviter que l'aléatoire du jeu soit biaisé.
 \label{displayBloc}
 \end{wrapfigure}
 
-Grâce aux signaux généraux par les composants \emph{VGA\_Internal} et
+Grâce aux signaux générés par les composants \emph{VGA\_Internal} et
 \emph{DCM}, \emph{Display} est en mesure d'afficher des données à l'écran au
-moyen des trois sorties \emph{red}, \emph{green} et \emph{blue}. Ses dernières
-sont codées sur trois bits, à l'exception de la composante bleue qui n'est
-uniquement constituée de deux bits, en accord avec la norme VGA.
+moyen des trois sorties \emph{red}, \emph{green} et \emph{blue}. Ces dernières
+sont codées sur trois bits, à l'exception de la composante bleue qui n'est constituée que de deux bits, en accord avec la norme VGA.
 
-Différent test sont effectué dans \emph{Display} pour distinguer quels éléments
+Différents tests sont effectués dans \emph{Display} pour distinguer quels éléments
 doivent être affichés et lesquels ne doivent pas l'être. Le premier d'entre eux,
-est de consulter la valeur de \emph{gameStarted} pour afficher au non l'écran
+est de consulter la valeur de \emph{gameStarted} pour afficher ou non l'écran
 titre du jeu. Si cette valeur vaut 1, le composant détecte si la partie est
 terminée ou encore en cours. Pour cela, il suffit de regarder si la roquette des
-aliens est au même coordonnée que le vaisseau du joueur.
+aliens est aux même coordonnées que le vaisseau du joueur.
 
 De cette manière, \emph{Display} est non seulement utilisé pour afficher des
 données à l'écran, mais également pour faire des tests sur l'état du jeu, comme
-la détection de fin de partie (que se soit une victoire ou une défaite du
+la détection de fin de partie (que ce soit une victoire ou une défaite du
 joueur) ainsi que la gestion des collisions entre les roquettes et les aliens ou
-le joueur. Le choix d'avoir fait ses tests à l'intérieur de \emph{Display} plutôt
+le joueur. Le choix d'avoir fait ces tests à l'intérieur de \emph{Display} plutôt
 que de créer un nouveau bloc spécifique à ce cas fut dirigé par le fait que
 tous les signaux nécessaires à ces deux tests étaient déjà présents dans ce
 bloc, et qu'il aurait été redondant de les ajouter ailleurs.
@@ -596,8 +594,8 @@ de 62 pixels. De ce fait, lorsqu'une roquette a sa position en $Y$ entre 570
 et 600 et que sa position en $X$ est entre la position du vaisseau et cette
 dernière $+ 56$, le joueur s'est fait toucher.
 
-Le range $X$ du vaisseau est calculer entre $\emph{shipPosition}+6$ et
-$\emph{shipPosition}+56$ pour supprimer de la détection les 6 pixels noirs
+Le range $X$ du vaisseau est calculé entre $\emph{shipPosition}+6$ et
+$\emph{shipPosition}+56$ pour supprimer, de la détection, les 6 pixels noirs
 présent de chaque côté du spationef.
 
 
@@ -679,7 +677,7 @@ présent de chaque côté du spationef.
 \emph{Input} est chargé de recevoir et traiter les actions faites par le joueur.
 Via quatre des cinq boutons de la croix directionnelle, le joueur peut démarrer
 une partie, déplacer son vaisseau et tirer. Toutes ses actions sont traiter dans
-\emph{Input}, tout comme le déplacement aléatoire des aliens sur l'écran. Ses
+\emph{Input}, tout comme le déplacement aléatoire des aliens sur l'écran. Ces
 derniers peuvent se mouvoir en haut, bas, gauche, droite ainsi qu'en diagonale.
 La direction qu'ils prennent est aléatoire, en fonction d'un compteur
 \emph{alienDirection} s'incrémentant à chaque coût d'horloge. De plus, la
@@ -766,7 +764,7 @@ même tant que le missile n'a pas atteint un alien ou le haut de l'écran.
 Concernant la position Y du missile, celle-ci se comporte comme un compteur. En
 effet, cette position est remise à la valeur de 570 (hauteur de l'écran moins la
 hauteur du vaisseau), afin que le missile parte du vaisseau, et est ensuite
-décrémentée jusqu'à la valeur minimum de 0 (le missile atteint donc le haut de
+décrémentée jusqu'à la valeur minimale de 0 (le missile atteint donc le haut de
 l'écran).
 
 Les positions X et Y sont fournis au bloc \emph{Display} via leurs signaux
@@ -831,13 +829,13 @@ Une interface VGA fonctionne selon les trois composantes RGB ainsi qu’une
 synchronisation horizontale et verticale. Les signaux RGB décrivent
 la couleur des pixels composant l’image selon un balayage effectué de gauche à
 droite, en ligne de haut en bas. L’écran recevant ce flux RGB est capable de
-savoir à quel pixel il correspond selon l’instant $t$ auquel il lit ses données
+savoir à quel pixel il correspond selon l’instant $t$ auquel il lit ces données
 dans le balayage. Néanmoins, ce n’est pas l’écran qui est chargé de sauter
 automatiquement à la ligne suivante lorsque chaque pixel de la ligne actuel a
 été traité. C’est ce à quoi sert le signal \emph{HS}, alors que \emph{VS} indique un retour à
 la première ligne.\\
 
-\infoInfo{Retour à la ligne}{Afin d’informer le monitor que le
+\infoInfo{Retour à la ligne}{Afin d’informer le moniteur que le
 balayage est arrivé à la fin d’une ligne et que le prochain pixel sera le premier de
 la ligne suivante, le signal HS produit une impulsion
 de synchronisation. De même, lorsque le balayage est
@@ -895,16 +893,16 @@ dans une erreur d'affichage ``Index out of bound'' s'il n'est pas respecté.
 \end{wrapfigure}
 
 
-Le bloc \emph{topModule} est comme son nom l'indique l'élément tout en haut de notre architecture. C'est lui qui instancie les composants et relie ceux-ci via des signaux intermédiaires. 
+Le bloc \emph{topModule} est comme son nom l'indique l'élément tout en haut de notre architecture. Il instancie les composants et relie ceux-ci via des signaux intermédiaires. 
 
 Concernant ses entrées et sorties, celles-ci sont des éléments physiques de la carte FPGA et sont assignées via le fichier UCF. Le signal d'entrée \emph{fpga\_clk} correspond à l’horloge de la FPGA. Cette horloge fonctionne à une fréquence de 100 MHz. Le \emph{reset} est assigné sur le switch SW8 (figure \ref{motherboard}) et permet le reset software du jeu.
 
 Plusieurs boutons sont utilisés afin de jouer et ont donc été assignés grâce au fichier UCF. Au niveau des signaux, il s'agit de \emph{startButton}, de \emph{fire}, de \emph{right} et de \emph{left}. 
-Le bouton \emph{fire} permet de tirer un missile depuis le vaisseau. Puisqu'il n'est possible que de tirer un seul missile à la fois, celui-ci n'est pas d'effet tant qu'il y a un missile en déplacement. 
+Le bouton \emph{fire} permet de tirer un missile depuis le vaisseau. Puisqu'il n'est possible que de tirer un seul missile à la fois, celui-ci n'a pas d'effet tant qu'il y a un missile en déplacement. 
 Les boutons \emph{right} et \emph{left} sont explicites. Ils permettent le déplacement latéral du vaisseau que pilote le joueur.
 Le \emph{startButton} permet de passer de l'écran de démarrage au jeu. Il n'a d'effet que durant cette étape afin qu'en cas d'appui involontaire durant la partie celle-ci ne s'en retrouve pas impactée.
 
-Nous avions commencé par utiliser un seul bouton afin de passer de l'écran de démarrage au jeu et pour tirer des missiles. Cependant, lorsque le jeu commençait, un missile était automatiquement tiré et cela ne correspondait pas à ce que nous voulions. Nous avons cherché un moyen de corriger ce problème, mais cela s'est avéré compliqué pour un problème mineur alors qu'une solution simple, et finalement plus pratique était de séparer ces deux fonctions en deux boutons.
+Nous avions commencé par utiliser un seul bouton afin de passer de l'écran de démarrage au jeu et pour tirer des missiles. Cependant, lorsque le jeu commençait, un missile était automatiquement tiré et cela ne correspondait pas à ce que nous voulions. Nous avons cherché un moyen de corriger ce problème, mais cela s'est avéré compliqué pour un problème mineur alors qu'une solution simple, et finalement plus pratique, était de séparer ces deux fonctions en deux boutons.
 
 Concernant les sorties \emph{blue}, \emph{red} et \emph{green}, celles-ci sont assignées sur la sortie VGA de la carte. Ces signaux correspondent aux trois couleurs (RGB) utilisées par le VGA afin d'afficher sur un écran. Puisque le VGA utilise 8 bits, les signaux \emph{red} et \emph{green} disposent de 3 bits chacun. Le signal \emph{blue} ne dispose que de 2 bits.
 Il est tout de même possible d'afficher 256 couleurs différentes.
@@ -943,12 +941,12 @@ Il est tout de même possible d'afficher 256 couleurs différentes.
 
 Généralement, il est recommandé de programmer en utilisant des variables et non
 des \emph{Magic Numbers} dans les langages de programmation dits
-``haut-niveau''. Les performances du code ne seront que peux, voir pas du tout
+``haut-niveau''. Les performances du code ne seront que peu, voir pas du tout
 impacté selon la qualité du compilateur. En revanche, le programme sera plus
 compréhensible dans le cas d'un débogage ou d'un changement de programmeur.
 
 Autre avantage, modifier une variable à un seul endroit fera le changement dans
-l'ensemble du code sans qu'il n'y ait des risques d'erreurs humaines, tel que
+l'ensemble du code sans qu'il n'y ait de risques d'erreurs humaines, tel que
 modifier le mauvais nombre car deux \emph{Magic Numbers} différents avaient la
 même valeur.
 
@@ -969,7 +967,7 @@ use work.SpaceInvadersPackage.all;
 
 Par défaut, un package est contenu dans la libraire \emph{work}, qui doit donc
 également être importée. Notre jeu est codé en utilisant au maximum des signaux
-contenus dans un package, qui peuvent être modifiés pour changeant certains
+contenus dans un package, qui peuvent être modifiés pour changer certains
 paramètres du jeu.
 
 \begin{lstlisting}[style=vhdl, caption=Signaux utilisés par \emph{Input} \& \emph{rocketManager}]
@@ -991,8 +989,7 @@ paramètres du jeu.
   constant rocketColor      : std_logic_vector(7 downto 0) := "11111111";
 \end{lstlisting}
 
-Admettons que l'on souhaite modifier la couleur des roquettes pour les rendre
-plus visibles. Il suffit de changer la valeur de \emph{rocketColor} pour que ce
+Admettons que l'on souhaite modifier la couleur des roquettes, il suffit de changer la valeur de \emph{rocketColor} pour que ce
 changement soit effectué dans tous les composants nécessaires. 
 
 \asymmetricalPage
@@ -1014,9 +1011,9 @@ signifie que le jeu de couleurs à disposition vaut:
 
 Une couleur est ainsi affectée à chaque pixel, en commençant par celui en haut à
 gauche de l'écran, puis celui à sa droite et ainsi de suite jusqu'à arriver à la
-droite de l'écran et commencer la ligne suivante. Il apparait alors que puis
+droite de l'écran et commencer la ligne suivante. Il apparait alors que pour
 afficher une image, il faut extraire le code couleur de chacun de ses pixels,
-puis les stockers d'une des deux façons suivantes:\vspace{.1in}
+puis les stocker d'une des deux façons suivantes:\vspace{.1in}
 \begin{items}
 \item Dans une RAM ou une ROM, cela implique de convertir l'image en un fichier
   \emph{COE} de la forme suivante:
@@ -1041,6 +1038,7 @@ b6,
 \end{lstlisting}
 \emph{memory\_initialization\_radix=16;} indique les valeurs sont stockées en
 hexadécimale. Il est possible de le faire en binaire ou en décimal.
+\vspace{.1in}
 \item Dans un tableau 2D:
   \begin{lstlisting}[style=vhdl]
 type memoryPicture is array(0 to 4, 0 to 2) of integer;

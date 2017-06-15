@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.2.28)  15 JUN 2017 09:15
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.2.28)  15 JUN 2017 10:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3987,7 +3987,7 @@ Underfull \hbox (badness 1418) in paragraph at lines 135--140
 ]
 Chapitre 2.
 
-Underfull \hbox (badness 10000) in paragraph at lines 200--200
+Underfull \hbox (badness 10000) in paragraph at lines 199--199
  |
  []
 
@@ -4151,13 +4151,8 @@ File: pictures/aliens/purple.png Graphic file (type QTm)
 ] (/usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2014/09/06 1.5e listings language file
 )
-Underfull \hbox (badness 2150) in paragraph at lines 412--420
-\EU1/FiraSansLight(0)/m/n/10 colonne aléatoire d’aliens suivaient
- []
-
-
-Underfull \hbox (badness 1565) in paragraph at lines 412--420
-\EU1/FiraSansLight(0)/m/n/10 lon certaines fréquences de tir pa-
+Underfull \hbox (badness 2662) in paragraph at lines 411--419
+\EU1/FiraSansLight(0)/m/n/10 ment apparu que les roquettes ti-
  []
 
 [9
@@ -4165,25 +4160,41 @@ Underfull \hbox (badness 1565) in paragraph at lines 412--420
 ] [10
 
 ]
-Underfull \hbox (badness 2626) in paragraph at lines 574--582
+Underfull \hbox (badness 1062) in paragraph at lines 565--571
+[]\EU1/FiraSansLight(0)/m/n/10 Différents tests sont effectués dans
+ []
+
+
+Underfull \hbox (badness 5274) in paragraph at lines 565--571
+\EU1/FiraSansLight(0)/m/it/10 Display \EU1/FiraSansLight(0)/m/n/10 pour disting
+uer quels élé-
+ []
+
+
+Underfull \hbox (badness 2134) in paragraph at lines 565--571
+\EU1/FiraSansLight(0)/m/n/10 ments doivent être affichés et les-
+ []
+
+
+Underfull \hbox (badness 2626) in paragraph at lines 572--580
 []\EU1/FiraSansLight(0)/m/n/10 De cette manière, \EU1/FiraSansLight(0)/m/it/10 
 Display \EU1/FiraSansLight(0)/m/n/10 est non
  []
 
 
-Underfull \hbox (badness 1661) in paragraph at lines 574--582
+Underfull \hbox (badness 1661) in paragraph at lines 572--580
 \EU1/FiraSansLight(0)/m/n/10 seulement utilisé pour afficher des
  []
 
 
-Underfull \hbox (badness 2126) in paragraph at lines 574--582
+Underfull \hbox (badness 2126) in paragraph at lines 572--580
 \EU1/FiraSansLight(0)/m/n/10 données à l’écran, mais également
  []
 
 (../Development/v1.5/Display.vhd)
-Underfull \hbox (badness 3815) in paragraph at lines 599--602
+Underfull \hbox (badness 5274) in paragraph at lines 597--600
 []\EU1/FiraSansLight(0)/m/n/10 Le range $\OML/cmm/m/it/10 X$ \EU1/FiraSansLight
-(0)/m/n/10 du vaisseau est calculer entre
+(0)/m/n/10 du vaisseau est calculé entre
  []
 
 [11
@@ -4198,7 +4209,7 @@ Underfull \hbox (badness 3815) in paragraph at lines 599--602
 ] (../TestBenchs/RocketManagerTestBench.vhd) [17
 
 ]
-Underfull \hbox (badness 10000) in paragraph at lines 830--839
+Underfull \hbox (badness 10000) in paragraph at lines 828--837
 
  []
 
@@ -4369,7 +4380,7 @@ Package microtype Info: Character `\textgreater ' is missing
 File: pictures/TopModuleArchitecture.jpeg Graphic file (type QTm)
  <use  "pictures/TopModuleArchitecture.jpeg" >
 
-Package nag Warning: figure with no \caption on input line 936.
+Package nag Warning: figure with no \caption on input line 934.
 
 [20
 
@@ -4443,11 +4454,11 @@ AED: lastpage setting LastPage
 
 Package nag Warning: 1 complaints in total.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1113.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 1113.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1111.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 1111.
 (./spaceInvaders.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1113.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1113.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 1111.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1111.
 
 
 LaTeX Font Warning: Size substitutions with differences

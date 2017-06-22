@@ -1,0 +1,22 @@
+\frametitle{Problèmes rencontrés}
+  \begin{itemize}
+  \item Hardware limité (RAM \& ROM)
+  \item Modulo
+  \item Accès dynamique aux données
+  \item Accès à la clock 100MHz en dehors du DCM
+  \item Génération d'aléatoire sans séquences
+  \end{itemize}
+
+  \begin{lstlisting}[frame=single, basicstyle=\tiny]
+  -- This compile
+  alienIndex <= (((hcounter-alienXX)/30) mod 10) when (hcounter-alienXX) >= 0 else 0;
+
+  -- This doesn't
+  alienLine <= (((vcounter-alienYY)/30) mod 5) when (vcounter-alienYY) >= 0 else 0;
+
+  -- This trick does the same thing, but compile
+  temp      <= (vcounter-alienYY) when (vcounter-alienYY) >= 0 else 0;
+  temp2     <= temp / 30;
+  temp3     <= temp2 mod 5;
+  alienLine <= temp3;
+  \end{lstlisting}

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.2.28)  15 JUN 2017 10:23
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2016.2.28)  21 JUN 2017 21:55
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -4191,7 +4191,7 @@ Underfull \hbox (badness 2126) in paragraph at lines 572--580
 \EU1/FiraSansLight(0)/m/n/10 données à l’écran, mais également
  []
 
-(../Development/v1.5/Display.vhd)
+(../Stable/v1.5/Display.vhd)
 Underfull \hbox (badness 5274) in paragraph at lines 597--600
 []\EU1/FiraSansLight(0)/m/n/10 Le range $\OML/cmm/m/it/10 X$ \EU1/FiraSansLight
 (0)/m/n/10 du vaisseau est calculé entre
@@ -4431,23 +4431,21 @@ Chapitre 3.
 ] (./matlab/picturesToFPGA.m) [25
 
 ]
-(../Development/v1.5/alienRocket.vhd [26
+(../Stable/v1.5/alienRocket.vhd [26
 
 ] [27] [28] [29]) [30] (./vhdl/dcm.vhd
 [31
 
-]) [32] (../Development/v1.5/Display.vhd [33
+]) [32] (../Stable/v1.5/Display.vhd [33
 
 ] [34] [35] [36] [37]) [38]
-(../Development/v1.5/input.vhd [39
+(../Stable/v1.5/input.vhd [39
 
-] [40])
-(../Development/v1.5/rocketManager.vhd [41])
-(../Development/v1.5/VGA_Internal.vhd [42]) [43]
-(../Development/v1.5/TopModule.vhd [44
+] [40]) (../Stable/v1.5/rocketManager.vhd [41])
+(../Stable/v1.5/VGA_Internal.vhd [42]) [43] (../Stable/v1.5/TopModule.vhd
+[44
 
-] [45] [46])
-(../Development/v1.5/SpaceInvadersPackage.vhd [47])
+] [45] [46]) (../Stable/v1.5/SpaceInvadersPackage.vhd [47])
 
 AED: lastpage setting LastPage
 [48]
@@ -4470,8 +4468,8 @@ LaTeX Font Warning: Some font shapes were not available, defaults substituted.
  ) 
 Here is how much of TeX's memory you used:
  52648 strings out of 493706
- 1065113 string characters out of 6145769
- 2044535 words of memory out of 5000000
+ 1064923 string characters out of 6145769
+ 2044465 words of memory out of 5000000
  54924 multiletter control sequences out of 15000+600000
  19098 words of font info for 170 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
